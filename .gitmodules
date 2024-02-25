@@ -1,0 +1,4 @@
+[submodule "EniPy"]
+	path = EniPy
+	url = https://github.com/vlad230596/EniPy.git
+	branch = main
