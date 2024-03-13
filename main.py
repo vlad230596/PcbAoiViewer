@@ -209,5 +209,5 @@ def testMulti(pathA, pathB):
     cv2.destroyAllWindows()
 
 if __name__ == '__main__':
-    # processLine('images/MaxResolution/HighDensity/T/')
-    testMulti('images/MaxResolution/HighDensity/T/', 'images/MaxResolution/HighDensity/B/')
+    processLine('images/MaxResolution/HighDensity/T/')
+    #testMulti('images/MaxResolution/HighDensity/T/', 'images/MaxResolution/HighDensity/B/')
