@@ -4,14 +4,21 @@ from threading import Thread, Lock
 import time
 import cv2
 from datetime import datetime
+from pathlib import Path
 
-StartX = 50
+StartX = 40
 Width = 60
 StepX = 10
 
 StartY = 20
-Height = 20
-StepY = 5
+Length = 110
+StepY = 10
+
+StartZ = 48000
+Height = 10000
+StepZ = 500
+
+outputFolderPrefix = './captured'
 
 class VideoStream(object):
     def __init__(self, capture):
@@ -52,8 +59,8 @@ class VideoStream(object):
 
 def command(ser, command):
     print(f'Command = {command}')
+
     ser.write(str.encode(f'{command}\r\n'))
-    time.sleep(1)
 
     while True:
         line = ser.readline()
@@ -69,19 +76,40 @@ def command(ser, command):
 for n, (portname, desc, hwid) in enumerate(sorted(serial.tools.list_ports.comports())):
     print(f'{portname} - {desc}')
 
-videoCapture = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+videoCapture = cv2.VideoCapture(1)
+videoCapture.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+videoCapture.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+time.sleep(2)
 videoStream = VideoStream(videoCapture)
 
-ser = serial.Serial('COM3', 115200)
-time.sleep(2)
+# while True:
+#     time.sleep(2)
 
-for y in range(StartY, StartY + Height + StepY, StepY):
-    for x in range(StartX, StartX + Width + StepX, StepX):
-        command(ser, f'G28 X{x} Y{y}')
-        time.sleep(1)
-        capturedFrame = videoStream.waitNewFrame()
-        cv2.imwrite(f'captured/{x}_{y}.png', capturedFrame)
-        cv2.imshow('capturedFrame', capturedFrame)
-        cv2.waitKey(1)
+
+
+
+ser = serial.Serial('COM5', 115200)
+time.sleep(2)
+command(ser, f'G28 X0 Y0')
+command(ser, 'M114')
+
+for z in range(StartZ, StartZ + Height + StepZ, StepZ):
+    z_mm = z / 1000
+    outputFolder = f'{outputFolderPrefix}_{z_mm}'
+    print(f'outputFolder = {outputFolder}')
+    Path(outputFolder).mkdir(parents=True, exist_ok=True)
+
+    command(ser, f'G1 Z{z_mm} F1000')
+    command(ser, 'M114')
+    time.sleep(5)
+    for y in range(StartY, StartY + Length + StepY, StepY):
+        for x in range(StartX, StartX + Width + StepX, StepX):
+            command(ser, f'G1 X{x} Y{y} F1000')
+            command(ser, 'M114')
+            time.sleep(1)
+            capturedFrame = videoStream.waitNewFrame()
+            cv2.imwrite(f'{outputFolder}/{x}_{y}.png', capturedFrame)
+            cv2.imshow('capturedFrame', capturedFrame)
+            cv2.waitKey(1)
 
 ser.close()
