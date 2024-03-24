@@ -1,7 +1,10 @@
 import cv2
 import glob
 import numpy as np
+from pathlib import Path
 from dataclasses import dataclass
+
+import dearpygui.dearpygui as dpg
 
 from stitching.stitching_error import StitchingError
 
@@ -17,6 +20,7 @@ import time
 def stitch(images, feature_masks=[]):
     #stitcher = AffineStitcher(confidence_threshold=0.5, crop=False, nfeatures=10000, blender_type="no", finder="no", compensator="no")
     stitcher = AffineStitcher(confidence_threshold=0.5, crop=False, nfeatures=10000)
+
     # return stitcher.stitch_verbose(images, feature_masks, f'verbose')
     images = Images.of(
         images, stitcher.medium_megapix, stitcher.low_megapix, stitcher.final_megapix
@@ -153,15 +157,15 @@ def stitch(images, feature_masks=[]):
 
     return panorama
 def processLine(path):
-    imagesPath = glob.glob(f'{path}/*.JPG')
-
+    imagesPath = glob.glob(f'{path}/*.png')
+    allImages = []
     prev = None
     avalanche = None
     for imagePath in reversed(imagesPath):
         print(f'\nProcessed: {imagePath}')
         current = cv2.imread(imagePath)
         current = imageUtils.getScaledImage(current, 1080)
-
+        allImages.append(current)
         if prev is not None:
             cv2.imshow('prev', prev)
             cv2.imshow('current', current)
@@ -176,12 +180,82 @@ def processLine(path):
             cv2.waitKey()
         prev = current
 
+    multi = stitch(allImages)
+    cv2.imshow('multi', multi)
+    cv2.imwrite('multi.png', multi)
+
     cv2.waitKey()
     cv2.destroyAllWindows()
 
-def testMulti(pathA, pathB):
-    imagesAPath = glob.glob(f'{pathA}/*.JPG')
-    imagesBPath = glob.glob(f'{pathB}/*.JPG')
+class Dataset:
+
+    def __init__(self):
+        self.raw = {}
+        enoughBigInt = 1000000
+        self.minX = enoughBigInt
+        self.minY = enoughBigInt
+
+        self.maxX = -enoughBigInt
+        self.maxY = -enoughBigInt
+
+        self.stepX = enoughBigInt
+        self.stepY = enoughBigInt
+
+    def append(self, x, y, path):
+        if x not in self.raw:
+            self.raw[x] = {}
+        self.raw[x][y] = path
+
+    def calculateRanges(self):
+        self.raw = dict(sorted(self.raw.items()))
+        keys = list(self.raw.keys())
+        if len(keys) == 0:
+            pass
+        self.minX = keys[0]
+        self.maxX = keys[-1]
+
+        for i in range(0, len(keys) - 1):
+            diff = keys[i + 1] - keys[i]
+            if diff < self.stepX:
+                self.stepX = diff
+
+        for rowIndex in self.raw:
+            self.raw[rowIndex] = dict(sorted(self.raw[rowIndex].items()))
+            row = self.raw[rowIndex]
+            keys = list(row.keys())
+            if len(keys) == 0:
+                continue
+
+            for i in range(0, len(keys) - 1):
+                diff = keys[i + 1] - keys[i]
+                if diff < self.stepY:
+                    self.stepY = diff
+
+            if keys[0] < self.minY:
+                self.minY = keys[0]
+            if keys[-1] > self.maxY:
+                self.maxY = keys[-1]
+
+def processSquare(path):
+    imagesPath = glob.glob(f'{path}/*.png')
+    dataset = Dataset()
+
+    for path in imagesPath:
+        p = Path(path)
+        xy = p.stem.split("_")
+        x = int(xy[0])
+        y = int(xy[1])
+        dataset.append(x, y, path)
+    dataset.calculateRanges()
+
+    for row in dataset.raw:
+        for col in dataset.raw[row]:
+            print(f'{row} {col}')
+
+
+def testMulti(pathA):
+    imagesAPath = glob.glob(f'{pathA}/*.png')
+    imagesBPath = glob.glob(f'{pathA}/*.png')
 
     indexSuccess = 0
     for aPath in imagesAPath:
@@ -208,6 +282,65 @@ def testMulti(pathA, pathB):
     cv2.waitKey()
     cv2.destroyAllWindows()
 
-if __name__ == '__main__':
-    processLine('images/MaxResolution/HighDensity/T/')
-    #testMulti('images/MaxResolution/HighDensity/T/', 'images/MaxResolution/HighDensity/B/')
+dpg.create_context()
+dpg.create_viewport(title='Custom Title', width=1920 + 100, height=1080 + 100)
+dpg.setup_dearpygui()
+
+def change_text(sender, app_data):
+    print('click')
+def addImage(name, frame, pos):
+    data = np.flip(frame, 2)  # because the camera data comes in as BGR and we need RGB
+    data = data.ravel()  # flatten camera data to a 1 d stricture
+    data = np.asfarray(data, dtype='f')  # change data type to 32bit floats
+    texture_data = np.true_divide(data, 255.0)  # normalize image data to prepare for GPU
+    with dpg.texture_registry(show=True):
+        dpg.add_raw_texture(frame.shape[1], frame.shape[0], texture_data, tag=name, format=dpg.mvFormat_Float_rgb)
+    dpg.add_image(name, pos=pos, tag=f'{name}_')
+    # with dpg.item_handler_registry(tag=f'{name}_widget handler') as handler:
+    #     dpg.add_item_clicked_handler(callback=change_text)
+    # dpg.bind_item_handler_registry(f'{name}_', f'{name}_widget handler')
+
+with dpg.window(label="Example Window", horizontal_scrollbar=True, width=1920, height=1080):
+    imagesPath = glob.glob(f'./NewPlatform/captured_51.0/*.png')
+    dataset = Dataset()
+
+    for path in imagesPath:
+        p = Path(path)
+        xy = p.stem.split("_")
+        x = int(xy[0])
+        y = int(xy[1])
+        dataset.append(x, y, path)
+    dataset.calculateRanges()
+
+    i = 0
+    for row in dataset.raw:
+        j = 0
+        for col in reversed(dataset.raw[row]):
+            name = f'{row}_{col}'
+            print(name)
+            p = dataset.raw[row][col]
+            image = imageUtils.getScaledImage(cv2.imread(p), 360)
+            addImage(name, image, pos=[i * 400, j * 250 + 50])
+            j = j + 1
+        i = i + 1
+
+dpg.show_metrics()
+dpg.show_viewport()
+
+
+while dpg.is_dearpygui_running():
+    dpg.render_dearpygui_frame()
+
+dpg.destroy_context()
+
+
+# processLine('./sq4')
+
+#testMulti('multi')
+# start_time = time.time()
+# multi = stitch(glob.glob('line/*.png'))
+# print(f"Elapsed: {time.time() - start_time}")
+# cv2.imshow('multi', multi)
+# cv2.imwrite('multi.png', multi)
+cv2.waitKey()
+cv2.destroyAllWindows()
