@@ -160,3 +160,7 @@ cython_debug/
 #.idea/
 /*.jpg
 /verbose/
+/captured/
+/NewPlatform/
+/SocketTester1/
+/SocketTester2/

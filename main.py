@@ -50,8 +50,8 @@ def stitch(images, feature_masks=[]):
             matchColor=(0, 255, 0),
         )
     )
-    for idx1, idx2, img in all_relevant_matches:
-        cv2.imshow('featureMatch', img)
+    # for idx1, idx2, img in all_relevant_matches:
+    #     cv2.imshow('featureMatch', img)
 
     # Subset
     subsetter = stitcher.subsetter
@@ -153,7 +153,7 @@ def stitch(images, feature_masks=[]):
     )
 
     with_seam_polygons = seam_finder.draw_seam_polygons(panorama, blended_seam_masks)
-    cv2.imshow('with_seam_polygons', with_seam_polygons)
+    # cv2.imshow('with_seam_polygons', with_seam_polygons)
 
     return panorama
 def processLine(path):
@@ -187,6 +187,14 @@ def processLine(path):
     cv2.waitKey()
     cv2.destroyAllWindows()
 
+class ImagePart:
+    def __init__(self, path):
+        self.path = path
+    def load(self):
+        self.fullImage = cv2.imread(self.path)
+    def getImage(self):
+        self.image = imageUtils.getScaledImage(self.fullImage, 1080)
+        return self.image
 class Dataset:
 
     def __init__(self):
@@ -201,10 +209,17 @@ class Dataset:
         self.stepX = enoughBigInt
         self.stepY = enoughBigInt
 
+    def at(self, row, column):
+        return self.raw[self.minX + row * self.stepX][self.maxY - column * self.stepY]
     def append(self, x, y, path):
         if x not in self.raw:
             self.raw[x] = {}
-        self.raw[x][y] = path
+        self.raw[x][y] = ImagePart(path)
+
+    def rowsCount(self) -> int:
+        return int((self.maxX - self.minX) / self.stepX + 1)
+    def columnsCount(self) -> int:
+        return int((self.maxY - self.minY) / self.stepY + 1)
 
     def calculateRanges(self):
         self.raw = dict(sorted(self.raw.items()))
@@ -235,6 +250,11 @@ class Dataset:
                 self.minY = keys[0]
             if keys[-1] > self.maxY:
                 self.maxY = keys[-1]
+
+    def loadAllImages(self):
+        for row in self.raw:
+            for col in self.raw[row]:
+                self.raw[row][col].load()
 
 def processSquare(path):
     imagesPath = glob.glob(f'{path}/*.png')
@@ -286,6 +306,8 @@ dpg.create_context()
 dpg.create_viewport(title='Custom Title', width=1920 + 100, height=1080 + 100)
 dpg.setup_dearpygui()
 
+def rectangeCenterTo2Points(center, width = 10, height = 20):
+    return [center[0] - width / 2, center[1] - height / 2], [center[0] + width / 2, center[1] + height / 2]
 def change_text(sender, app_data):
     print('click')
 def addImage(name, frame, pos):
@@ -295,13 +317,15 @@ def addImage(name, frame, pos):
     texture_data = np.true_divide(data, 255.0)  # normalize image data to prepare for GPU
     with dpg.texture_registry(show=True):
         dpg.add_raw_texture(frame.shape[1], frame.shape[0], texture_data, tag=name, format=dpg.mvFormat_Float_rgb)
-    dpg.add_image(name, pos=pos, tag=f'{name}_')
+    #dpg.add_image(name, pos=[pos[0], pos[1]], tag=f'{name}_')
     # with dpg.item_handler_registry(tag=f'{name}_widget handler') as handler:
     #     dpg.add_item_clicked_handler(callback=change_text)
     # dpg.bind_item_handler_registry(f'{name}_', f'{name}_widget handler')
+    dpg.draw_image(name, [pos[0], pos[1]], [pos[0] + frame.shape[1], pos[1] + frame.shape[0]])
 
 with dpg.window(label="Example Window", horizontal_scrollbar=True, width=1920, height=1080):
-    imagesPath = glob.glob(f'./NewPlatform/captured_51.0/*.png')
+    #imagesPath = glob.glob(f'./sq4/*.png')
+    imagesPath = glob.glob(f'./NewPlatform/captured_53.0/*.png')
     dataset = Dataset()
 
     for path in imagesPath:
@@ -311,20 +335,57 @@ with dpg.window(label="Example Window", horizontal_scrollbar=True, width=1920, h
         y = int(xy[1])
         dataset.append(x, y, path)
     dataset.calculateRanges()
+    dataset.loadAllImages()
 
-    i = 0
-    for row in dataset.raw:
-        j = 0
-        for col in reversed(dataset.raw[row]):
-            name = f'{row}_{col}'
-            print(name)
-            p = dataset.raw[row][col]
-            image = imageUtils.getScaledImage(cv2.imread(p), 360)
-            addImage(name, image, pos=[i * 400, j * 250 + 50])
-            j = j + 1
-        i = i + 1
+    imageWidth = 360
+    imageHeight = imageWidth * 9 / 16
+    vSpace = 50
+    hSpace = 50
+    lineThickness = 10
+
+    with dpg.drawlist(width=((imageWidth + hSpace) * dataset.rowsCount()) - hSpace + 500, height=((imageHeight + vSpace) * dataset.columnsCount()) - vSpace + 500):
+        for i in range(0, dataset.rowsCount()):
+            for j in range(0, dataset.columnsCount()):
+                name = f'{i}:{j}'
+                print(name)
+                imagePart = dataset.at(i, j)
+                image = imageUtils.getScaledImage(imagePart.fullImage, imageWidth)
+                imagePosition = [i * (imageWidth + hSpace), j * (imageHeight + vSpace)]
+                addImage(name, image, pos=imagePosition)
+
+        for i in range(0, dataset.rowsCount() - 1):
+            for j in range(0, dataset.columnsCount()):
+                l = dataset.at(i, j).getImage()
+                r = dataset.at(i + 1, j).getImage()
+                color = (0, 255, 0)
+                try:
+                    start_time = time.time()
+                    panorama = stitch([l, r])
+                    print(f"Elapsed: {time.time() - start_time}")
+                except StitchingError:
+                    color = (255, 0, 0)
+
+                center = [i * (imageWidth + hSpace) + imageWidth + hSpace / 2, j * (imageHeight + vSpace) + imageHeight / 2]
+                pos = rectangeCenterTo2Points(center)
+                dpg.draw_rectangle(pos[0], pos[1], fill=color)
+
+        for i in range(0, dataset.rowsCount()):
+            for j in range(0, dataset.columnsCount() - 1):
+                l = dataset.at(i, j).getImage()
+                r = dataset.at(i, j + 1).getImage()
+                color = (0, 255, 0)
+                try:
+                    start_time = time.time()
+                    panorama = stitch([l, r])
+                    print(f"Elapsed: {time.time() - start_time}")
+                except StitchingError:
+                    color = (255, 0, 0)
+                center = [i * (imageWidth + hSpace) + imageWidth / 2, j * (imageHeight + vSpace) + imageHeight + vSpace / 2]
+                pos = rectangeCenterTo2Points(center)
+                dpg.draw_rectangle(pos[0], pos[1], fill=color)
 
 dpg.show_metrics()
+dpg.show_style_editor()
 dpg.show_viewport()
 
 
