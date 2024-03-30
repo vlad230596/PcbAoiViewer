@@ -306,26 +306,8 @@ dpg.create_context()
 dpg.create_viewport(title='Custom Title', width=1920 + 100, height=1080 + 100)
 dpg.setup_dearpygui()
 
-def rectangeCenterTo2Points(center, width = 10, height = 20):
-    return [center[0] - width / 2, center[1] - height / 2], [center[0] + width / 2, center[1] + height / 2]
-def change_text(sender, app_data):
-    print('click')
-def addImage(name, frame, pos):
-    data = np.flip(frame, 2)  # because the camera data comes in as BGR and we need RGB
-    data = data.ravel()  # flatten camera data to a 1 d stricture
-    data = np.asfarray(data, dtype='f')  # change data type to 32bit floats
-    texture_data = np.true_divide(data, 255.0)  # normalize image data to prepare for GPU
-    with dpg.texture_registry(show=True):
-        dpg.add_raw_texture(frame.shape[1], frame.shape[0], texture_data, tag=name, format=dpg.mvFormat_Float_rgb)
-    #dpg.add_image(name, pos=[pos[0], pos[1]], tag=f'{name}_')
-    # with dpg.item_handler_registry(tag=f'{name}_widget handler') as handler:
-    #     dpg.add_item_clicked_handler(callback=change_text)
-    # dpg.bind_item_handler_registry(f'{name}_', f'{name}_widget handler')
-    dpg.draw_image(name, [pos[0], pos[1]], [pos[0] + frame.shape[1], pos[1] + frame.shape[0]])
-
-with dpg.window(label="Example Window", horizontal_scrollbar=True, width=1920, height=1080):
-    #imagesPath = glob.glob(f'./sq4/*.png')
-    imagesPath = glob.glob(f'./NewPlatform/captured_53.0/*.png')
+def loadNewDataset(path):
+    imagesPath = glob.glob(f'{path}/*.png')
     dataset = Dataset()
 
     for path in imagesPath:
@@ -337,26 +319,74 @@ with dpg.window(label="Example Window", horizontal_scrollbar=True, width=1920, h
     dataset.calculateRanges()
     dataset.loadAllImages()
 
-    imageWidth = 360
-    imageHeight = imageWidth * 9 / 16
-    vSpace = 50
-    hSpace = 50
-    lineThickness = 10
+    dpg.delete_item(w, children_only=True)
 
-    with dpg.drawlist(width=((imageWidth + hSpace) * dataset.rowsCount()) - hSpace + 500, height=((imageHeight + vSpace) * dataset.columnsCount()) - vSpace + 500):
-        for i in range(0, dataset.rowsCount()):
-            for j in range(0, dataset.columnsCount()):
+    viewDrawer = ViewDrawer(w, dataset)
+    viewDrawer.drawDatasetIamges()
+    viewDrawer.drawHLinks()
+    viewDrawer.drawVLinks()
+
+
+
+def rectangeCenterTo2Points(center, width = 10, height = 20):
+    return [center[0] - width / 2, center[1] - height / 2], [center[0] + width / 2, center[1] + height / 2]
+def change_text(sender, app_data):
+    print('click')
+def addImage(name, frame, pos, parent):
+    data = np.flip(frame, 2)  # because the camera data comes in as BGR and we need RGB
+    data = data.ravel()  # flatten camera data to a 1 d stricture
+    data = np.asfarray(data, dtype='f')  # change data type to 32bit floats
+    texture_data = np.true_divide(data, 255.0)  # normalize image data to prepare for GPU
+
+    try:
+        with dpg.texture_registry(show=False):
+            dpg.add_raw_texture(frame.shape[1], frame.shape[0], texture_data, tag=name, format=dpg.mvFormat_Float_rgb)
+    except SystemError:
+        dpg.set_value(name, texture_data)
+    #dpg.add_image(name, pos=[pos[0], pos[1]], tag=f'{name}_')
+    # with dpg.item_handler_registry(tag=f'{name}_widget handler') as handler:
+    #     dpg.add_item_clicked_handler(callback=change_text)
+    # dpg.bind_item_handler_registry(f'{name}_', f'{name}_widget handler')
+    dpg.draw_image(name, [pos[0], pos[1]], [pos[0] + frame.shape[1], pos[1] + frame.shape[0]], parent=parent)
+
+def callback(sender, app_data):
+    print('OK was clicked.')
+    print("Sender: ", sender)
+    print("App Data: ", app_data)
+    dpg.configure_item('inputPath', default_value=app_data['current_path'])
+
+
+def cancel_callback(sender, app_data):
+    print('Cancel was clicked.')
+    print("Sender: ", sender)
+    print("App Data: ", app_data)
+
+class ViewDrawer:
+    def __init__(self, parent, dataset):
+        self.dataset = dataset
+        self.imageWidth = 360
+        self.imageHeight = self.imageWidth * 9 / 16
+        self.vSpace = 50
+        self.hSpace = 50
+        self.drawlist = dpg.add_drawlist(width=((self.imageWidth + self.hSpace) * self.dataset.rowsCount()) - self.hSpace, height=((self.imageHeight + self.vSpace) * self.dataset.columnsCount()) - self.vSpace, parent=parent)
+
+
+
+    def drawDatasetIamges(self):
+        for i in range(0, self.dataset.rowsCount()):
+            for j in range(0, self.dataset.columnsCount()):
                 name = f'{i}:{j}'
                 print(name)
-                imagePart = dataset.at(i, j)
-                image = imageUtils.getScaledImage(imagePart.fullImage, imageWidth)
-                imagePosition = [i * (imageWidth + hSpace), j * (imageHeight + vSpace)]
-                addImage(name, image, pos=imagePosition)
+                imagePart = self.dataset.at(i, j)
+                image = imageUtils.getScaledImage(imagePart.fullImage, self.imageWidth)
+                imagePosition = [i * (self.imageWidth + self.hSpace), j * (self.imageHeight + self.vSpace)]
+                addImage(name, image, pos=imagePosition, parent=self.drawlist)
 
-        for i in range(0, dataset.rowsCount() - 1):
-            for j in range(0, dataset.columnsCount()):
-                l = dataset.at(i, j).getImage()
-                r = dataset.at(i + 1, j).getImage()
+    def drawHLinks(self):
+        for i in range(0, self.dataset.rowsCount() - 1):
+            for j in range(0, self.dataset.columnsCount()):
+                l = self.dataset.at(i, j).getImage()
+                r = self.dataset.at(i + 1, j).getImage()
                 color = (0, 255, 0)
                 try:
                     start_time = time.time()
@@ -365,14 +395,15 @@ with dpg.window(label="Example Window", horizontal_scrollbar=True, width=1920, h
                 except StitchingError:
                     color = (255, 0, 0)
 
-                center = [i * (imageWidth + hSpace) + imageWidth + hSpace / 2, j * (imageHeight + vSpace) + imageHeight / 2]
+                center = [i * (self.imageWidth + self.hSpace) + self.imageWidth + self.hSpace / 2, j * (self.imageHeight + self.vSpace) + self.imageHeight / 2]
                 pos = rectangeCenterTo2Points(center)
-                dpg.draw_rectangle(pos[0], pos[1], fill=color)
+                dpg.draw_rectangle(pos[0], pos[1], fill=color, parent=self.drawlist)
 
-        for i in range(0, dataset.rowsCount()):
-            for j in range(0, dataset.columnsCount() - 1):
-                l = dataset.at(i, j).getImage()
-                r = dataset.at(i, j + 1).getImage()
+    def drawVLinks(self):
+        for i in range(0, self.dataset.rowsCount()):
+            for j in range(0, self.dataset.columnsCount() - 1):
+                l = self.dataset.at(i, j).getImage()
+                r = self.dataset.at(i, j + 1).getImage()
                 color = (0, 255, 0)
                 try:
                     start_time = time.time()
@@ -380,13 +411,29 @@ with dpg.window(label="Example Window", horizontal_scrollbar=True, width=1920, h
                     print(f"Elapsed: {time.time() - start_time}")
                 except StitchingError:
                     color = (255, 0, 0)
-                center = [i * (imageWidth + hSpace) + imageWidth / 2, j * (imageHeight + vSpace) + imageHeight + vSpace / 2]
+                center = [i * (self.imageWidth + self.hSpace) + self.imageWidth / 2, j * (self.imageHeight + self.vSpace) + self.imageHeight + self.vSpace / 2]
                 pos = rectangeCenterTo2Points(center)
-                dpg.draw_rectangle(pos[0], pos[1], fill=color)
+                dpg.draw_rectangle(pos[0], pos[1], fill=color, parent=self.drawlist)
 
-dpg.show_metrics()
-dpg.show_style_editor()
+
+dpg.add_file_dialog(
+    directory_selector=True, show=False, callback=callback, tag="file_dialog_id",
+    cancel_callback=cancel_callback, width=700 ,height=400)
+
+
+with dpg.window(label="Controls", width=200, height=1080):
+    with dpg.group(horizontal=True):
+        dpg.add_input_text(hint='Enter path here', tag='inputPath')
+        dpg.add_button(label="...", callback=lambda: dpg.show_item("file_dialog_id"))
+    dpg.add_button(label='Reload', callback=lambda:  loadNewDataset(dpg.get_value('inputPath')))
+
+
+w = dpg.add_window(pos=[200, 0], label="BoardView", horizontal_scrollbar=True, width=1920, height=1080, tag='BoardViewWindow')
+print(f'window BoardView {w} {dpg.last_root()}')
+#dpg.show_metrics()
+#dpg.show_style_editor()
 dpg.show_viewport()
+dpg.show_imgui_demo()
 
 
 while dpg.is_dearpygui_running():
