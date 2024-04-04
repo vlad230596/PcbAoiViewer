@@ -1,10 +1,5 @@
 import cv2
 from EniPy import imageUtils
-import time
-
-from stitching.stitching_error import StitchingError
-from PlaneStitcher import PlaneStitcher
-
 
 class ImagePart:
     def __init__(self, path):
@@ -36,16 +31,6 @@ class Dataset:
     def at(self, row, column):
         return self.raw[self.minX + row * self.stepX][self.maxY - column * self.stepY]
 
-    def getStitchResult(self, left, right):
-        l = self.at(left[0], left[1]).getImage()
-        r = self.at(right[0], right[1]).getImage()
-        try:
-            start_time = time.time()
-            result = PlaneStitcher.stitch([l, r])
-            print(f"Elapsed: {time.time() - start_time}")
-            return True
-        except StitchingError:
-            return False
     def append(self, x, y, path):
         if x not in self.raw:
             self.raw[x] = {}
