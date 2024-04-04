@@ -9,9 +9,13 @@ class ViewDrawer:
         self.vSpace = 50
         self.hSpace = 50
         self.parent = parent
+        self.textures = []
         self.drawlist = dpg.add_drawlist(width=((self.imageWidth + self.hSpace) * self.dataset.rowsCount()) - self.hSpace, height=((self.imageHeight + self.vSpace) * self.dataset.columnsCount()) - self.vSpace, parent=parent)
 
     def updateView(self):
+        for textureTag in self.textures:
+            dpg.delete_item(textureTag)
+        self.textures = []
         dpg.delete_item(self.drawlist)
         self.drawlist = dpg.add_drawlist(
             width=((self.imageWidth + self.hSpace) * self.dataset.rowsCount()) - self.hSpace,
@@ -25,8 +29,8 @@ class ViewDrawer:
     def rectangeCenterTo2Points(center, width=10, height=20):
         return [center[0] - width / 2, center[1] - height / 2], [center[0] + width / 2, center[1] + height / 2]
 
-    @staticmethod
-    def addImage(name, frame, pos, parent):
+
+    def addImage(self, name, frame, pos, parent):
         unique_tag = dpg.generate_uuid()
         data = np.flip(frame, 2)  # because the camera data comes in as BGR and we need RGB
         data = data.ravel()  # flatten camera data to a 1 d stricture
@@ -36,7 +40,7 @@ class ViewDrawer:
         with dpg.texture_registry(show=False):
             dpg.add_raw_texture(
                 frame.shape[1], frame.shape[0], texture_data, tag=unique_tag, format=dpg.mvFormat_Float_rgb)
-
+        self.textures.append(unique_tag)
         # dpg.add_image(name, pos=[pos[0], pos[1]], tag=f'{name}_')
         # with dpg.item_handler_registry(tag=f'{name}_widget handler') as handler:
         #     dpg.add_item_clicked_handler(callback=change_text)

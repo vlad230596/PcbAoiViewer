@@ -91,7 +91,7 @@ with dpg.window(label="Controls", width=200, height=1080):
         dpg.add_input_text(hint='Enter path here', tag='inputPath')
         dpg.add_button(label="...", callback=lambda: dpg.show_item("file_dialog_id"))
     dpg.add_button(label='Reload', callback=lambda:  loadNewDataset(dpg.get_value('inputPath')))
-    dpg.add_input_text(label='Stitch parts', width=50, enabled=False, tag='stitch_parts_text')
+    dpg.add_input_text(label='Stitch parts', width=70, enabled=False, tag='stitch_parts_text')
     dpg.add_input_int(label='ImageWidth', default_value=360, step=90, width=100, tag='imageWidthField')
     dpg.add_input_int(label='vSpace', default_value=50, width=100, tag='vSpaceField')
     dpg.add_input_int(label='hSpace', default_value=50, width=100, tag='hSpaceField')

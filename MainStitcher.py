@@ -10,7 +10,7 @@ class MainStitcher:
         self.substitchResult = [[None for _ in range(dataset.rowsCount() * dataset.columnsCount())] for _ in range(dataset.columnsCount() * dataset.columnsCount())]
 
     def posToIndex(self, pos):
-        return pos[0] * self.dataset.rowsCount() + pos[1]
+        return pos[0] * self.dataset.columnsCount() + pos[1]
     def getCell(self, left, right):
         if self.substitchResult[self.posToIndex(left)] is None:
             self.substitchResult[self.posToIndex(left)] = []
@@ -25,7 +25,9 @@ class MainStitcher:
     def getStitchResult(self, left, right):
         existingResult = self.getCell(left, right)
         if existingResult is not None:
+            print(f'exist {left}[{self.posToIndex(left)}] {right}[{self.posToIndex(right)}]')
             return existingResult.status
+        print(f'new {left}[{self.posToIndex(left)}] {right}[{self.posToIndex(right)}]')
         l = self.dataset.at(left[0], left[1]).getImage()
         r = self.dataset.at(right[0], right[1]).getImage()
 
