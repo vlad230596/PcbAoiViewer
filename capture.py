@@ -15,14 +15,12 @@ Width = 60
 StepX = 10
 
 StartY = 20
-Length = 110
+Length = 100
 StepY = 10
 
-StartZ = 48000
-Height = 10000
+StartZ = 80000
+Height = 00000
 StepZ = 500
-
-outputFolderPrefix = './captured'
 
 class VideoStream(object):
     def __init__(self, capture):
@@ -64,64 +62,54 @@ class VideoStream(object):
 
 
 
-def command(ser, command):
-    print(f'Command = {command}')
-
-    ser.write(str.encode(f'{command}\r\n'))
-
-    while True:
-        line = ser.readline()
-        print(line)
-
-        if line == b'ok\n':
-            break
-
-        if b'pwm_nrfx_set_cycles' in line:#Todo remove, debug only
-            break
 
 
 
 
-# videoCapture = cv2.VideoCapture(0)
-# # videoCapture.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
-# # videoCapture.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
-# time.sleep(2)
-# videoStream = VideoStream(videoCapture)
-#
-# while True:
-#     time.sleep(2)
+videoCapture = cv2.VideoCapture(0)
+videoCapture.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+videoCapture.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+videoStream = VideoStream(videoCapture)
 
 
 
 
-# ser = serial.Serial('COM5', 115200)
-# time.sleep(2)
-# command(ser, f'G28 X0 Y0')
-# command(ser, 'M114')
-#
-# for z in range(StartZ, StartZ + Height + StepZ, StepZ):
-#     z_mm = z / 1000
-#     outputFolder = f'{outputFolderPrefix}_{z_mm}'
-#     print(f'outputFolder = {outputFolder}')
-#     Path(outputFolder).mkdir(parents=True, exist_ok=True)
-#
-#     command(ser, f'G1 Z{z_mm} F1000')
-#     command(ser, 'M114')
-#     time.sleep(5)
-#     for y in range(StartY, StartY + Length + StepY, StepY):
-#         for x in range(StartX, StartX + Width + StepX, StepX):
-#             command(ser, f'G1 X{x} Y{y} F1000')
-#             command(ser, 'M114')
-#             time.sleep(1)
-#             capturedFrame = videoStream.waitNewFrame()
-#             cv2.imwrite(f'{outputFolder}/{x}_{y}.png', capturedFrame)
-#             cv2.imshow('capturedFrame', capturedFrame)
-#             cv2.waitKey(1)
-#
-# ser.close()
+
+class CncController:
+    def __init__(self, serial):
+        self.serial = serial
+
+    def command(self, cmd):
+        print(f'Command = {cmd}')
+
+        self.serial.write(str.encode(f'{cmd}\r\n'))
+
+        while True:
+            line = self.serial.readline()
+            print(line)
+
+            if line == b'ok\n':
+                break
+    def home(self):
+        self.command(serial, f'G28 X0 Y0')
+        self.command(serial, 'M114')
+
+    def move(self, x=None, y=None, z=None):
+        coordinate = f''
+        if x is not None:
+            coordinate = coordinate + f'X{x} '
+        if y is not None:
+            coordinate = coordinate + f'Y{y} '
+        if z is not None:
+            coordinate = coordinate + f'Z{z} '
+
+        self.command(f'G1 {coordinate} F1000')
+        self.command('M114')
+
 
 class App:
     def __init__(self):
+        self.cncController = None
 
         dpg.create_context()
         dpg.create_viewport(title='PcbInspection', width=1920, height=1080)
@@ -136,14 +124,23 @@ class App:
             dpg.add_button(label='Update com port lists', callback=lambda:  self.fillComportLists())
             dpg.add_combo([], label='Com port', tag='ComPortList')
             self.fillComportLists()
-            # dpg.add_input_text(label='Stitch parts', width=70, enabled=False, tag='stitch_parts_text')
-            # dpg.add_input_int(label='ImageWidth', default_value=360, step=90, width=100, tag='imageWidthField')
-            # dpg.add_input_int(label='vSpace', default_value=50, width=100, tag='vSpaceField')
-            # dpg.add_input_int(label='hSpace', default_value=50, width=100, tag='hSpaceField')
-            # dpg.add_button(label='Repaint', callback=lambda: updateView())
+            dpg.add_button(label='Connect', callback=lambda: self.connectComPort(dpg.get_value('ComPortList')))
+            dpg.add_button(label='Home', callback=lambda: self.cncController.home())
+            dpg.add_button(label='Start', callback=lambda: self.start())
+            dpg.add_button(label='End', callback=lambda: self.end())
+            dpg.add_button(label='Run', callback=lambda: self.capture(dpg.get_value('outputPath')))
 
         dpg.show_viewport()
 
+    def start(self):
+        self.cncController.move(StartX, StartY)
+        pass
+    def end(self):
+        self.cncController.move(StartX + Width, StartY + Length)
+        pass
+    def connectComPort(self, name):
+        print(f'Connecting to {name}')
+        self.cncController = CncController(serial.Serial(name, 115200))
     def fillComportLists(self):
         comPorts = []
         for n, (portname, desc, hwid) in enumerate(sorted(serial.tools.list_ports.comports())):
@@ -158,6 +155,24 @@ class App:
         while dpg.is_dearpygui_running():
             dpg.render_dearpygui_frame()
         dpg.destroy_context()
+
+    def capture(self, outputFolderPrefix):
+        for z in range(StartZ, StartZ + Height + StepZ, StepZ):
+            z_mm = z / 1000
+            outputFolder = f'{outputFolderPrefix}_{z_mm}'
+            print(f'outputFolder = {outputFolder}')
+            Path(outputFolder).mkdir(parents=True, exist_ok=True)
+
+            self.cncController.move(z=z_mm)
+
+            for y in range(StartY, StartY + Length + StepY, StepY):
+                for x in range(StartX, StartX + Width + StepX, StepX):
+                    self.cncController.move(x, y)
+                    time.sleep(1)
+                    capturedFrame = videoStream.waitNewFrame()
+                    cv2.imwrite(f'{outputFolder}/{x}_{y}.png', capturedFrame)
+                    cv2.imshow('capturedFrame', capturedFrame)
+                    cv2.waitKey(1)
 
 
 app = App()
