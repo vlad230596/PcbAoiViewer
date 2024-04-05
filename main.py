@@ -18,7 +18,7 @@ from MainStitcher import MainStitcher
 
 
 dpg.create_context()
-dpg.create_viewport(title='Custom Title', width=1920 + 100, height=1080 + 100)
+dpg.create_viewport(title='PcbInspection', width=1920 + 100, height=1080 + 100)
 dpg.setup_dearpygui()
 mainStitcher = None
 viewDrawer = None
