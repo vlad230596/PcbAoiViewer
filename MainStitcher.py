@@ -7,10 +7,11 @@ class MainStitcher:
         self.dataset = dataset
         self.successStitchCount = 0
         self.failStitchCount = 0
-        self.substitchResult = [[None for _ in range(dataset.rowsCount() * dataset.columnsCount())] for _ in range(dataset.columnsCount() * dataset.columnsCount())]
+        self.substitchResult = [[None for _ in range(dataset.rowsCount() * dataset.columnsCount())] for _ in range(dataset.rowsCount() * dataset.columnsCount())]
 
     def posToIndex(self, pos):
-        return pos[0] * self.dataset.columnsCount() + pos[1]
+        result = pos[0] * self.dataset.columnsCount() + pos[1]
+        return result
     def getCell(self, left, right):
         if self.substitchResult[self.posToIndex(left)] is None:
             self.substitchResult[self.posToIndex(left)] = []

@@ -34,20 +34,22 @@ def processLine(path):
     dataset.calculateRanges()
     dataset.loadAllImages()
 
-    for i in range(0, dataset.rowsCount()):
+    # for j in range(0, dataset.columnsCount()):
+    for j in range(0, 1):
         finalResults = None
         prevX, prevY = 0, 0
-        for j in range(1, dataset.columnsCount()):
-            print(f'\nProcessed: {j - 1} - > {j}')
-            prev = dataset.at(i, j - 1).getImage()
+        for i in range(1, dataset.rowsCount()):
+            print(f'\nProcessed: {i - 1} - > {i}')
+            prev = dataset.at(i - 1, j).getImage()
             current = dataset.at(i, j).getImage()
 
             cv2.imshow('prev', prev)
             cv2.imshow('current', current)
 
-            try:
-                start_time = time.time()
-                result = PlaneStitcher.stitch([prev, current])
+
+            start_time = time.time()
+            result = PlaneStitcher.stitch([prev, current])
+            if result.status:
                 print(f"Elapsed: {time.time() - start_time}")
                 patchedResult = result
                 patchedResult.corners = [((x + prevX), (y + prevY)) for x, y in patchedResult.corners]
@@ -76,6 +78,9 @@ def processLine(path):
                 for m in result.masks:
                     mask = m.get()
                     print(f'Mask sizes {mask.shape}')
+            else:
+
+                cv2.imshow('panorama', imageUtils.getBlankImage(10, 10))
                 # width = 0
                 # height = 0
                 # for corner, size in zip(result.corners, result.sizes):
@@ -100,9 +105,8 @@ def processLine(path):
                 #     blank[corner[1]:corner[1]+size[1],corner[0]:corner[0] + size[0]] = roiPartUpdated
                 # cv2.imshow('processed', blank)
 
-            except StitchingError:
-                cv2.imshow('panorama', imageUtils.getBlankImage(10, 10))
-            cv2.waitKey(500)
+
+            cv2.waitKey()
 
 
         blender = Blender(blender_type='multiband')
@@ -112,7 +116,7 @@ def processLine(path):
             blender.feed(img, mask.get(), corner)
         blended = blender.blend()
         cv2.imshow('finalBlended', imageUtils.getScaledImage(blended[0], 640))
-        cv2.imwrite(f'finalBlended{i}.png', blended[0])
+        cv2.imwrite(f'finalBlended{j}.png', blended[0])
 
     # multi = PlaneStitcher.stitch(allImages)
     # cv2.imshow('multi', multi.panorama)
@@ -120,4 +124,4 @@ def processLine(path):
     cv2.waitKey()
     cv2.destroyAllWindows()
 
-processLine(f'NewPlatform/captured_80.0')
+processLine(f'withLight/oneline')
