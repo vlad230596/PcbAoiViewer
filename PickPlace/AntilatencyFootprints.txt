@@ -1,0 +1,113 @@
+{
+  "name": "Antilatency",
+  "footprints": {
+    "QFN40_5X5": {
+      "width": 5,
+      "length": 5
+    },
+	"VSON10(3x3mm)" : {
+	  "width": 3,
+      "length": 3
+	},
+	"USON10(1x2.5x0.55)" : {
+	  "width": 1,
+      "length": 2.5
+	},
+	"UDFN6_3x3_0.95P" : {
+	  "width": 3,
+      "length": 3
+	},
+	"SO8_TermPad" : {
+	  "width": 4.9,
+      "length": 6
+	},
+	"TQFP48" : {
+	  "width": 9,
+      "length": 9
+	},
+	"TSSOP16" : {
+	  "width": 5,
+      "length": 6.4
+	},
+	"TSSOP08" : {
+	  "width": 6.4,
+      "length": 3
+	},
+	"RES_0201": {
+      "width": 0.6,
+      "length": 0.3
+    },	
+    "RES_0402": {
+      "width": 1,
+      "length": 0.5
+    },		
+	"RES_0603": {
+      "width": 1.6,
+      "length": 0.8
+    },
+	"RES_0805": {
+      "width": 2,
+      "length": 1.5 
+    },
+	"RES_1206": {
+      "width": 3.2,
+      "length": 1.6
+    },
+	"RES_1210": {
+      "width": 3.2,
+      "length": 2.5
+    },
+	"RES_1812": {
+      "width": 4.5,
+      "length": 3.2
+    },
+	"RES_2010": {
+      "width": 5,
+      "length": 2.5
+    },
+	"RES_2512": {
+      "width": 6.35,
+      "length": 3.2
+    },
+	"CAP_0201": {
+      "width": 0.6,
+      "length": 0.3
+    },	
+    "CAP_0402": {
+      "width": 1,
+      "length": 0.5
+    },		
+	"CAP_0603": {
+      "width": 1.6,
+      "length": 0.8
+    },
+	"CAP_0805": {
+      "width": 2,
+      "length": 1.5 
+    },
+	"CAP_1206": {
+      "width": 3.2,
+      "length": 1.6
+    },
+	"CAP_1210": {
+      "width": 3.2,
+      "length": 2.5
+    },
+	"CAP_1812": {
+      "width": 4.5,
+      "length": 3.2
+    },
+	"CAP_2010": {
+      "width": 5,
+      "length": 2.5
+    },
+	"CAP_2512": {
+      "width": 6.35,
+      "length": 3.2
+    },
+	"RES_ARRAY_YC124": {
+	  "width": 1,
+      "length": 2
+	}
+  }
+}
