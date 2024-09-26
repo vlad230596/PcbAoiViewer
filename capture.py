@@ -91,8 +91,8 @@ class CncController:
             if line == b'ok\n':
                 break
     def home(self):
-        self.command(serial, f'G28 X0 Y0')
-        self.command(serial, 'M114')
+        self.command(f'G28 X0 Y0')
+        self.command('M114')
 
     def move(self, x=None, y=None, z=None):
         coordinate = f''
