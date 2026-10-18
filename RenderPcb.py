@@ -93,4 +93,5 @@ if len(undefinedComponents) != 0:
     for k, v in undefinedComponents.items():
         print(f'{k} {v}')
 cv2.imshow('render', imageUtils.getScaledImage(render, 1920))
+cv2.imwrite('PickPlace/result.png', render)
 cv2.waitKey()

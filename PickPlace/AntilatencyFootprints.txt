@@ -18,20 +18,24 @@
       "length": 3
 	},
 	"SO8_TermPad" : {
-	  "width": 4.9,
-      "length": 6
+	  "width": 6,
+      "length": 4.9
 	},
 	"TQFP48" : {
 	  "width": 9,
       "length": 9
 	},
 	"TSSOP16" : {
-	  "width": 5,
-      "length": 6.4
+	  "width": 6.4,
+      "length": 5
 	},
 	"TSSOP08" : {
 	  "width": 6.4,
       "length": 3
+	},
+	"Crystal_3.2x2.5": {
+      "width": 3.2,
+      "length": 2.5
 	},
 	"RES_0201": {
       "width": 0.6,
@@ -108,6 +112,10 @@
 	"RES_ARRAY_YC124": {
 	  "width": 1,
       "length": 2
+	},
+	"IND_SPM6530": {
+      "width": 7.1,
+      "length": 6.5
 	}
   }
 }
