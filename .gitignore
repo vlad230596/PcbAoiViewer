@@ -167,3 +167,22 @@ cython_debug/
 /1
 /2
 /captured*
+
+# stitcher outputs
+/out/
+
+# old pipeline outputs and extra captures
+/BlendedTemp/
+/FinalBlended/
+/fullLine/
+/fullLine50/
+/line/
+/map/
+/multi/
+/renders/
+/withLight/
+/lineBlended.png
+/multi.png
+
+/.claude/launch.json
+/PickPlace/
