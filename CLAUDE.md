@@ -6,6 +6,7 @@ Project goal, stage status, results, rationale and roadmap live in `README.md` (
 
 - Python: `venv/Scripts/python.exe` (Windows, Python 3.12, OpenCV 4.9, numpy). scipy is not installed; numpy least squares is enough so far.
 - Current pipeline: `GridStitcher.py` (algorithm), `stitchGrid.py` (CLI), `BuildViewer.py` (Deep Zoom tiles + `index.html`, stack viewer + `3d.html`). Multi-height: `FocusStack.py` (algorithm), `stackFocus.py` (CLI) — reference height stitched by `GridStitcher`, every other height mapped onto it by one similarity, depth from focus, ortho-corrected second pass, all-in-focus. Old pipeline (`main.py`, `MainStitcher.py`, `PlaneStitcher.py`, `ViewDrawer.py`, `Dataset.py`, `test.py`) is history; leave it untouched.
+- Board data: `importBoard.py <artifacts.zip>` (registry server export) -> `boards/<project>-r<rev>/board.json` + `export/` + `datasheets/` (git-ignored). Modules `Ipc2581.py` (server's parser, keep in sync — its snake_case names stay as on the server on purpose, so fixes copy both ways), `AltiumExport.py`, `Components.py`, `Datasheets.py`, `BoardData.py` are stdlib only. Coordinates: mm from IPC-2581 Datum, Y up, top view, bottom not mirrored.
 - Outputs go to `out/` (git-ignored). Datasets (`SocketTester2/`, `captured*`) are git-ignored and large; read only.
 - Code style: camelCase methods, small classes, thresholds given in full-resolution px and scaled by `self.scale` inside `GridStitcher`.
 - Quick iteration: `--scale 0.5 --no-viewer --seam-crops 0` runs in ~15 s; full resolution ~30 s.

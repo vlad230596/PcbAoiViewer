@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Board view</title>
+<!-- board.json viewer (importBoard.py). Serve the repo root: python -m http.server 8600
+     then open http://127.0.0.1:8600/boardView.html?board=boards/<project>-r<rev> -->
+<style>
+:root {
+  --bg: #15171a; --panel: #1d2024; --line: #30353b; --text: #dde1e6; --muted: #8b939c; --accent: #5aa9ff;
+  --board: #1f3b2a; --edge: #9fb7a6; --hole: #0b0c0d;
+  --fitted: #4fbf73; --nc: #e5534b; --optional: #e0a33a; --none: #7d8590; --sel: #ffffff;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font: 13px/1.45 system-ui, sans-serif; }
+#app { display: grid; grid-template-columns: 1fr 420px; height: 100%; }
+#stage { position: relative; overflow: hidden; }
+svg { width: 100%; height: 100%; display: block; cursor: grab; }
+svg.drag { cursor: grabbing; }
+#bar { position: absolute; top: 10px; left: 10px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+#bar button, #bar select, #bar input { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; font: inherit; }
+#bar button.on { border-color: var(--accent); color: var(--accent); }
+#legend { position: absolute; bottom: 10px; left: 10px; background: color-mix(in srgb, var(--panel) 90%, transparent); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; display: flex; gap: 12px; flex-wrap: wrap; max-width: calc(100% - 20px); }
+#legend span { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+#legend span.off { opacity: .35; }
+#legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+#side { background: var(--panel); border-left: 1px solid var(--line); overflow: auto; padding: 14px 16px; }
+h1 { font-size: 15px; margin: 0 0 4px; }
+h2 { font-size: 13px; margin: 16px 0 6px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.muted { color: var(--muted); }
+.kv { display: grid; grid-template-columns: 110px 1fr; gap: 2px 10px; }
+.kv b { font-weight: 500; color: var(--muted); }
+.tag { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 12px; border: 1px solid currentColor; }
+.codes code { background: #2a2f35; padding: 1px 6px; border-radius: 4px; margin-right: 6px; font-size: 13px; }
+.md { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 6px; overflow-x: auto; }
+.md h3, .md h4, .md h5, .md h6 { font-size: 13px; margin: 8px 0 4px; }
+.md table { border-collapse: collapse; font-size: 12px; margin: 4px 0; }
+.md td, .md th { border: 1px solid var(--line); padding: 2px 5px; vertical-align: top; }
+.md img { max-width: 100%; background: #fff; border-radius: 4px; margin: 4px 0; }
+.md p { margin: 4px 0; }
+details { margin: 6px 0; }
+summary { cursor: pointer; color: var(--accent); }
+a { color: var(--accent); }
+ul.list { list-style: none; padding: 0; margin: 0; columns: 3; font-size: 12px; }
+ul.list li { cursor: pointer; }
+ul.list li:hover { color: var(--accent); }
+.err { color: var(--nc); padding: 20px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="stage">
+    <svg id="svg" xmlns="http://www.w3.org/2000/svg"><g id="world"></g></svg>
+    <div id="bar">
+      <button id="sideTop" class="on">Top</button><button id="sideBot">Bottom</button>
+      <select id="mode"><option value="fit">Colour: fit</option><option value="group">Colour: group</option></select>
+      <input id="find" placeholder="R12, 10k, TCA9534…" size="18">
+      <button id="fitView">Fit</button>
+    </div>
+    <div id="legend"></div>
+  </div>
+  <div id="side"><div id="info" class="muted">Loading…</div><div id="card"></div></div>
+</div>
+<script>
+const qs = new URLSearchParams(location.search);
+const base = (qs.get("board") || "boards/Antilatency.SocketTester.Main-r79").replace(/\/$/, "");
+const NS = "http://www.w3.org/2000/svg";
+const FIT = { fitted: "var(--fitted)", nc: "var(--nc)", optional: "var(--optional)", none: "var(--none)" };
+const FIT_LABEL = { fitted: "fitted", nc: "NC — must be empty", optional: "optional (X/NC)", none: "not in BOM" };
+const GROUP_COL = ["#4e9cf5", "#e0a33a", "#b07cf0", "#e5534b", "#3fc1b0", "#f07ac0", "#4fbf73", "#d9d65a", "#9aa5b1", "#f29a5c", "#6c7a89"];
+let B, side = "top", mode = "fit", sel = null, hidden = new Set(), groupCol = {};
+const svg = document.getElementById("svg"), world = document.getElementById("world");
+let vb = [0, 0, 100, 100];
+
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const el = (tag, attrs) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
+const lineOf = c => c.line == null ? null : B.lines[c.line];
+
+fetch(base + "/board.json").then(r => { if (!r.ok) throw new Error(r.status + " " + r.statusText); return r.json(); })
+  .then(b => { B = b; init(); })
+  .catch(e => { document.getElementById("info").innerHTML = `<div class="err">Cannot load ${esc(base)}/board.json: ${esc(e.message)}<br>Run importBoard.py first, serve the repo root and pass ?board=boards/&lt;name&gt;.</div>`; });
+
+function init() {
+  const groups = [...new Set(B.lines.map(l => l.cat.group))];
+  groups.forEach((g, i) => groupCol[g] = GROUP_COL[i % GROUP_COL.length]);
+  document.title = `${B.source.board || B.source.project} r${B.source.rev ?? ""}`;
+  summary();
+  draw();
+  fitView();
+}
+
+function colour(c) {
+  if (mode === "fit") return FIT[c.fit];
+  const l = lineOf(c);
+  return l ? groupCol[l.cat.group] : "var(--none)";
+}
+function key(c) { return mode === "fit" ? c.fit : (lineOf(c)?.cat.group ?? "not in BOM"); }
+
+function draw() {
+  world.innerHTML = "";
+  const flip = side === "bottom" ? -1 : 1;  // view from the bottom: mirror X
+  world.setAttribute("transform", `scale(${flip},-1)`);
+  const bd = B.board;
+  if (bd.outline) world.append(el("path", { d: bd.outline, fill: "var(--board)", stroke: "var(--edge)", "stroke-width": 0.15, "fill-rule": "nonzero" }));
+  for (const s of bd.slots || []) world.append(el("path", { d: s, fill: "var(--hole)" }));
+  const holes = el("g", {});
+  for (const [x, y, d, k] of bd.holes) if (k !== "v") holes.append(el("circle", { cx: x, cy: y, r: d / 2, fill: "var(--hole)", stroke: k === "p" ? "#b08a3c" : "none", "stroke-width": 0.08 }));
+  world.append(holes);
+  const pads = el("g", { opacity: 0.55 }), bodies = el("g", {});
+  for (const [ref, c] of Object.entries(B.components)) {
+    if (c.side !== side) continue;
+    const k = key(c), col = colour(c);
+    const off = hidden.has(k);
+    for (const p of c.pins) if (p.side === side || p.side === "both")
+      pads.append(el("rect", { x: p.bb[0], y: p.bb[1], width: p.bb[2] - p.bb[0], height: p.bb[3] - p.bb[1], fill: "#c9a24a", opacity: off ? 0.3 : 1 }));
+    const g = el("g", { "data-ref": ref, style: "cursor:pointer", opacity: off ? 0.12 : 1 });
+    const shape = c.outline ? el("path", { d: c.outline }) : el("rect", { x: c.bb[0], y: c.bb[1], width: c.bb[2] - c.bb[0], height: c.bb[3] - c.bb[1] });
+    shape.setAttribute("fill", col); shape.setAttribute("fill-opacity", c.fit === "nc" ? 0.15 : 0.35);
+    shape.setAttribute("stroke", ref === sel ? "var(--sel)" : col); shape.setAttribute("stroke-width", ref === sel ? 0.25 : 0.1);
+    if (c.fit === "nc") shape.setAttribute("stroke-dasharray", "0.4 0.25");
+    g.append(shape);
+    const w = c.bb[2] - c.bb[0], h = c.bb[3] - c.bb[1], fs = Math.max(0.25, Math.min(1.2, Math.min(w, h) * 0.45, w / Math.max(ref.length, 2) * 1.6));
+    const t = el("text", { x: 0, y: 0, "font-size": fs, fill: "var(--text)", "text-anchor": "middle", "dominant-baseline": "central",
+      transform: `translate(${(c.bb[0] + c.bb[2]) / 2},${(c.bb[1] + c.bb[3]) / 2}) scale(${flip},-1)`, "pointer-events": "none" });
+    t.textContent = ref; g.append(t);
+    g.addEventListener("click", ev => { ev.stopPropagation(); select(ref); });
+    bodies.append(g);
+  }
+  world.append(pads, bodies);
+  legend();
+}
+
+function legend() {
+  const counts = {};
+  for (const c of Object.values(B.components)) if (c.side === side) counts[key(c)] = (counts[key(c)] || 0) + 1;
+  const items = mode === "fit" ? Object.keys(FIT).map(k => [k, FIT[k], FIT_LABEL[k]]) : [...Object.keys(groupCol).map(g => [g, groupCol[g], g]), ["not in BOM", "var(--none)", "not in BOM"]];
+  document.getElementById("legend").innerHTML = items.filter(([k]) => counts[k]).map(([k, c, l]) =>
+    `<span data-k="${esc(k)}" class="${hidden.has(k) ? "off" : ""}"><i style="background:${c}"></i>${esc(l)} <span class="muted">${counts[k]}</span></span>`).join("");
+  document.querySelectorAll("#legend > span").forEach(s => s.onclick = () => { const k = s.dataset.k; hidden.has(k) ? hidden.delete(k) : hidden.add(k); draw(); });
+}
+
+function summary() {
+  const s = B.source, ck = B.checks, comps = Object.values(B.components);
+  const n = f => comps.filter(c => c.fit === f).length;
+  const withDs = B.lines.filter(l => l.ds).length, withMark = B.lines.filter(l => l.ds && l.ds.sections.marking).length;
+  document.getElementById("info").innerHTML = `
+    <h1>${esc(s.board || s.project)} <span class="muted">${esc(s.ref || "")} r${esc(s.rev ?? "?")}</span></h1>
+    <div class="muted">${comps.length} components · ${B.lines.length} BOM lines · variant: ${esc(B.variant || "—")}</div>
+    <div class="kv" style="margin-top:8px">
+      <b>fitted</b><span>${n("fitted")}</span><b>NC</b><span>${n("nc")}</span><b>optional</b><span>${n("optional")}</span><b>not in BOM</b><span>${n("none")}</span>
+      <b>datasheets</b><span>${withDs} of ${B.lines.length} lines, ${withMark} with a marking section</span>
+      <b>P&amp;P vs IPC</b><span>max ${ck.pnpDelta.max} mm (${ck.pnpDelta.worst.slice(0, 3).map(w => `${esc(w.ref)} ${w.mm}`).join(", ")})</span>
+    </div>
+    ${ck.warnings.length ? `<details><summary>${ck.warnings.length} warnings</summary><pre style="white-space:pre-wrap">${esc(ck.warnings.join("\n"))}</pre></details>` : ""}
+    <p class="muted">Click a component. Wheel zooms, drag pans.</p>`;
+}
+
+function codes(v) {
+  if (!v || !v.marking) return "";
+  const m = v.marking, lab = { zero: "0 Ω", 3: "3-digit", 4: "4-digit", eia96: "EIA-96" };
+  return `<div class="codes">${Object.entries(m).map(([k, c]) => `<code title="${lab[k]}">${esc(c)}</code>`).join("")}<span class="muted">${Object.keys(m).map(k => lab[k]).join(" / ")}</span></div>`;
+}
+
+// minimal markdown: headings, tables, images, paragraphs, bold/code
+function md(text, dir) {
+  const inline = s => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, a, src) => `<img alt="${a}" src="${/^https?:/.test(src) ? src : dir + "/" + src.replace(/&amp;/g, "&")}">`);
+  const out = [], lines = text.split("\n");
+  for (let i = 0; i < lines.length; i++) {
+    const ln = lines[i];
+    let m;
+    if ((m = ln.match(/^(#{2,6})\s+(.*)$/))) { out.push(`<h${Math.min(6, m[1].length + 1)}>${inline(m[2])}</h${Math.min(6, m[1].length + 1)}>`); continue; }
+    if (ln.trim().startsWith("|")) {
+      const rows = [];
+      while (i < lines.length && lines[i].trim().startsWith("|")) rows.push(lines[i++]);
+      i--;
+      const cells = r => r.trim().replace(/^\||\|$/g, "").split("|").map(c => c.trim());
+      const body = rows.filter(r => !/^\s*\|[\s:|-]+\|\s*$/.test(r));
+      out.push("<table>" + body.map((r, j) => "<tr>" + cells(r).map(c => j === 0 ? `<th>${inline(c)}</th>` : `<td>${inline(c)}</td>`).join("") + "</tr>").join("") + "</table>");
+      continue;
+    }
+    if (ln.trim()) out.push(`<p>${inline(ln)}</p>`);
+  }
+  return out.join("");
+}
+
+function select(ref) {
+  sel = ref;
+  draw();
+  const c = B.components[ref], l = lineOf(c);
+  const ds = l && l.ds;
+  const dsDir = ds ? base + "/" + ds.file.replace(/\/[^/]*$/, "") : "";
+  const secs = ds ? Object.entries(ds.sections).map(([kind, list]) => list.map((s, i) =>
+    `<details ${kind === "marking" && i === 0 ? "open" : ""}><summary>${esc(kind)}: ${esc(s.title)}${s.page ? ` <span class="muted">p. ${esc(s.page)}</span>` : ""}</summary><div class="md">${md(s.text, dsDir)}</div></details>`).join("")).join("") : "";
+  document.getElementById("card").innerHTML = `
+    <h2>${esc(ref)}</h2>
+    <div class="kv">
+      <b>fit</b><span><span class="tag" style="color:${FIT[c.fit]}">${esc(FIT_LABEL[c.fit])}</span></span>
+      ${l ? `<b>BOM name</b><span>${esc(l.name)}${l.fittedName && l.fittedName !== l.name ? ` <span class="muted">→ ${esc(l.fittedName)}</span>` : ""}</span>
+      <b>type</b><span>${esc(l.cat.group)} · ${esc(l.cat.sub)} <span class="muted">by ${esc(l.cat.source)}</span></span>
+      ${l.value ? `<b>value</b><span>${esc(l.value.text)}${l.value.voltage ? ` · ${l.value.voltage} V` : ""}${l.value.dielectric ? ` · ${esc(l.value.dielectric)}` : ""}${l.value.current ? ` · ${l.value.current} A` : ""}</span>` : ""}
+      ${l.value && l.value.marking ? `<b>marking</b><span>${codes(l.value)}</span>` : ""}
+      <b>description</b><span>${esc(l.description || "—")}</span>
+      <b>same line</b><span class="muted">${l.designators.length > 1 ? esc(l.designators.join(", ")) : "—"}</span>` : ""}
+      <b>package</b><span>${esc(c.package)}${c.footprint && c.footprint !== c.package ? ` <span class="muted">(${esc(c.footprint)})</span>` : ""}</span>
+      <b>position</b><span>${c.x}, ${c.y} mm · ${c.rot}° · ${esc(c.side)}</span>
+      <b>height</b><span>${c.height ? c.height + " mm" : "—"}</span>
+      <b>pins</b><span>${c.pins.length}</span>
+    </div>
+    ${ds ? `<h2>Datasheet</h2>
+      <div><a href="${esc(base + "/" + ds.file)}" target="_blank">${esc(ds.title)}</a> <span class="muted">${esc(ds.vendor)} · ${esc(ds.status)} · by ${esc(ds.method)}${ds.mpn ? " " + esc(ds.mpn) : ""}</span></div>
+      ${ds.excursus ? `<p><b>${esc(ds.excursus.category)}</b> <span class="muted">${esc(ds.excursus.params.join(" · "))}</span></p>` : ""}
+      ${secs || `<p class="muted">No marking / ordering / package sections.</p>`}` : (l ? `<h2>Datasheet</h2><p class="muted">Not in the library.</p>` : "")}
+    ${c.pins.length && c.pins.length <= 64 ? `<details><summary>Pins</summary><table class="md">${c.pins.map(p => `<tr><td>${esc(p.pin)}</td><td>${esc(p.name)}</td><td class="muted">${esc(p.net)}</td></tr>`).join("")}</table></details>` : ""}`;
+}
+
+// ---- pan / zoom on the viewBox (world units = mm)
+function setVb() { svg.setAttribute("viewBox", vb.join(" ")); }
+function fitView() {
+  const [x0, y0, x1, y1] = B.board.bbox, m = 3, flip = side === "bottom" ? -1 : 1;
+  const xs = [x0 * flip, x1 * flip];
+  vb = [Math.min(...xs) - m, -y1 - m, (x1 - x0) + 2 * m, (y1 - y0) + 2 * m];
+  setVb();
+}
+svg.addEventListener("wheel", e => {
+  e.preventDefault();
+  const r = svg.getBoundingClientRect(), k = e.deltaY > 0 ? 1.2 : 1 / 1.2;
+  const s = Math.max(vb[2] / r.width, vb[3] / r.height);  // preserveAspectRatio meet
+  const ox = vb[0] + (vb[2] - r.width * s) / 2, oy = vb[1] + (vb[3] - r.height * s) / 2;
+  const px = ox + (e.clientX - r.left) * s, py = oy + (e.clientY - r.top) * s;
+  vb = [px - (px - vb[0]) * k, py - (py - vb[1]) * k, vb[2] * k, vb[3] * k];
+  setVb();
+}, { passive: false });
+let drag = null;
+svg.addEventListener("pointerdown", e => { drag = { x: e.clientX, y: e.clientY, vb: [...vb], moved: false }; });
+window.addEventListener("pointermove", e => {
+  if (!drag) return;
+  const r = svg.getBoundingClientRect(), s = Math.max(vb[2] / r.width, vb[3] / r.height);
+  const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+  if (Math.abs(dx) + Math.abs(dy) > 3) { drag.moved = true; svg.classList.add("drag"); }
+  vb = [drag.vb[0] - dx * s, drag.vb[1] - dy * s, vb[2], vb[3]];
+  setVb();
+});
+window.addEventListener("pointerup", () => { drag = null; svg.classList.remove("drag"); });
+
+document.getElementById("sideTop").onclick = () => { side = "top"; toggle(); };
+document.getElementById("sideBot").onclick = () => { side = "bottom"; toggle(); };
+function toggle() {
+  document.getElementById("sideTop").classList.toggle("on", side === "top");
+  document.getElementById("sideBot").classList.toggle("on", side === "bottom");
+  draw(); fitView();
+}
+document.getElementById("mode").onchange = e => { mode = e.target.value; hidden.clear(); draw(); };
+document.getElementById("fitView").onclick = () => fitView();
+document.getElementById("find").addEventListener("keydown", e => {
+  if (e.key !== "Enter") return;
+  const q = e.target.value.trim().toLowerCase();
+  if (!q) return;
+  let ref = Object.keys(B.components).find(r => r.toLowerCase() === q);
+  // value: compare without spaces and unit symbols, so "10k", "4.7k", "100n" find "10 kΩ", "4.7 kΩ", "100 nF"
+  const bare = t => t.toLowerCase().replace(/\s/g, "").replace(/[ωΩfhz]+$/i, "").replace("µ", "u");
+  if (!ref) ref = Object.keys(B.components).find(r => { const l = lineOf(B.components[r]); return l && (l.name.toLowerCase().includes(q) || (l.value && bare(l.value.text) === bare(q))); });
+  if (!ref) return;
+  const c = B.components[ref];
+  if (c.side !== side) { side = c.side; toggle(); }
+  select(ref);
+  const flip = side === "bottom" ? -1 : 1, cx = (c.bb[0] + c.bb[2]) / 2 * flip, cy = -(c.bb[1] + c.bb[3]) / 2, w = 12;
+  vb = [cx - w, cy - w * 0.7, 2 * w, 1.4 * w]; setVb();
+});
+</script>
+</body>
+</html>

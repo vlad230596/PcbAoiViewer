@@ -186,3 +186,6 @@ cython_debug/
 
 /.claude/launch.json
 /PickPlace/
+
+# board data imported from the registry (importBoard.py)
+/boards/
