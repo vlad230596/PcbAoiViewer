@@ -1,0 +1,232 @@
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["| ANE {"], "score": 0.3645, "sec": 0.84, "blank": false}
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["a", "S NEE ————— a"], "score": 0.3229, "sec": 0.635, "blank": false}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["AY"], "score": 0.3049, "sec": 0.538, "blank": false}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["N - Na:", "bs", "3", "|", "t h", "bo", "LY m— R— -~"], "score": 0.2688, "sec": 0.873, "blank": false}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["ye se RT", "BT tna ||"], "score": 0.254, "sec": 0.841, "blank": false}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["RB I w", "( = TT]"], "score": 0.4566, "sec": 0.594, "blank": false}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["aa— ts"], "score": 0.0991, "sec": 0.367, "blank": false}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["ol un | ey hd", "[FeV |", "a TY ar"], "score": 0.418, "sec": 0.73, "blank": false}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["4"], "score": 0.1634, "sec": 0.607, "blank": false}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["| | I", "J % or W RIC", "0. ni r- il &"], "score": 0.3618, "sec": 0.475, "blank": false}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["go —", "ee ————"], "score": 0.025, "sec": 0.662, "blank": false}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["LE. athe"], "score": 0.1009, "sec": 0.612, "blank": false}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["it w x ="], "score": 0.3717, "sec": 0.685, "blank": false}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["Thi EE a ae a"], "score": 0.2677, "sec": 0.604, "blank": false}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["175 i"], "score": 0.5456, "sec": 0.585, "blank": false}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["J e——y", "bo Sh Pa A oT BB ~", "Cy v A", "® J : a", "aw RES So cine A al", "| 1 — a"], "score": 0.2315, "sec": 0.998, "blank": false}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["ld 4 aE i § ip pn", "i 8 3 4", "d I 22-6.", "FE"], "score": 0.2759, "sec": 0.789, "blank": false}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["—. Vd", "3 | “h B® -", "1 i ) \" i }.", "k E & #) pr a", "1 EEE TT"], "score": 0.2953, "sec": 0.736, "blank": false}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["| as", "F228 |", "ara"], "score": 0.3511, "sec": 0.69, "blank": false}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["Boo-el in:", "ar@y"], "score": 0.0272, "sec": 0.727, "blank": false}
+{"ref": "D9", "group": "diode/transistor", "src": "body", "rot": 0, "lines": ["1", "i F B3204", "b jor mw iiss on"], "score": 0.3627, "sec": 0.622, "blank": false}
+{"ref": "D9", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": ["Amu 4", "13 oe ’"], "score": 0.226, "sec": 0.521, "blank": false}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "body", "rot": 0, "lines": ["=* ES", "B940C \\", "a |"], "score": 0.34, "sec": 0.326, "blank": false}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": ["mn NIN. A 4", "Sf 5400 BW", "ATCT ha mg HTS"], "score": 0.3324, "sec": 0.737, "blank": false}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "body", "rot": 0, "lines": ["hl | i", "a | y : Y _ i. ¥i -", ", i LEA ht", "-y fp”"], "score": 0.3625, "sec": 0.617, "blank": false}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": ["Seem il Ji 4 il |", "LT wii) ‘ a hi", ") t — » Ti = N°", "A : 3 3 » 4 NOR Sr", "Re an H ig | 4]", "A i a g vi", "- , Bf] A", "= a — — - > ob RCN", "TN FET"], "score": 0.3524, "sec": 1.32, "blank": false}
+{"ref": "U9_US1", "group": "ic", "src": "body", "rot": 0, "lines": ["LLL EL", "ere"], "score": 0.2608, "sec": 0.592, "blank": false}
+{"ref": "U9_US1", "group": "ic", "src": "mimg", "rot": 0, "lines": ["“NN Lo 11"], "score": 0.4323, "sec": 0.59, "blank": false}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["ah", "R111"], "score": 0.2214, "sec": 0.666, "blank": false}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["I I", "aM oid y 4 hr", "{:& S$ £ yd :", "g Y 3", "a rT IEEE"], "score": 0.3073, "sec": 0.793, "blank": false}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["js fhe ;", "[C718", "PRUETT el oh"], "score": 0.2555, "sec": 0.699, "blank": false}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["an SURE N", "ar"], "score": 0.2524, "sec": 0.739, "blank": false}
+{"ref": "Q3", "group": "diode/transistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.557, "blank": false}
+{"ref": "Q3", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": ["1", "Re.", "LIA", "Bie Re"], "score": 0.2142, "sec": 0.639, "blank": false}
+{"ref": "Q4", "group": "diode/transistor", "src": "body", "rot": 0, "lines": ["on"], "score": 0.2669, "sec": 0.549, "blank": false}
+{"ref": "Q4", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": ["Bp 5 ps", "( ‘maid 7"], "score": 0.2572, "sec": 0.684, "blank": false}
+{"ref": "R2", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.49, "blank": false}
+{"ref": "R2", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["A an", "id ™ B. .", "- 2 Ny"], "score": 0.3295, "sec": 0.561, "blank": false}
+{"ref": "R3", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.59, "blank": false}
+{"ref": "R3", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["or)", ". Top |"], "score": 0.2312, "sec": 0.586, "blank": false}
+{"ref": "R4", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.451, "blank": false}
+{"ref": "R4", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["L SE"], "score": 0.3643, "sec": 0.503, "blank": false}
+{"ref": "R5", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["ee", "=", "I"], "score": 0.3522, "sec": 0.53, "blank": false}
+{"ref": "R6", "group": "resistor", "src": "body", "rot": 0, "lines": ["foi"], "score": 0.0, "sec": 0.561, "blank": false}
+{"ref": "R6", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["_ dock «"], "score": 0.5613, "sec": 0.511, "blank": false}
+{"ref": "R8", "group": "resistor", "src": "body", "rot": 0, "lines": ["{I 3"], "score": 0.3808, "sec": 0.537, "blank": false}
+{"ref": "R8", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["i", "NA aaa"], "score": 0.3041, "sec": 0.684, "blank": false}
+{"ref": "R10", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.422, "blank": false}
+{"ref": "R10", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["“Wary"], "score": 0.1651, "sec": 0.597, "blank": false}
+{"ref": "R11", "group": "resistor", "src": "body", "rot": 0, "lines": ["30R3", "§0IR"], "score": 0.0142, "sec": 0.548, "blank": false}
+{"ref": "R11", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["y CF NE ASR", "(qm Ta", "a:"], "score": 0.2015, "sec": 0.684, "blank": false}
+{"ref": "R12", "group": "resistor", "src": "body", "rot": 0, "lines": ["403"], "score": 0.0, "sec": 0.492, "blank": false}
+{"ref": "R12", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["5 @OCH ©"], "score": 0.3933, "sec": 0.54, "blank": false}
+{"ref": "R13", "group": "resistor", "src": "body", "rot": 0, "lines": ["$0"], "score": 0.4155, "sec": 0.544, "blank": false}
+{"ref": "R13", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["dam"], "score": 0.5563, "sec": 0.548, "blank": false}
+{"ref": "R14", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.519, "blank": false}
+{"ref": "R14", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["&omjs &", ") GOR, |"], "score": 0.3748, "sec": 0.537, "blank": false}
+{"ref": "R15", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.403, "blank": false}
+{"ref": "R15", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["Ln", "ol ar a"], "score": 0.2756, "sec": 0.615, "blank": false}
+{"ref": "R16", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.489, "blank": false}
+{"ref": "R16", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["= ERS"], "score": 0.5001, "sec": 0.537, "blank": false}
+{"ref": "R17", "group": "resistor", "src": "body", "rot": 0, "lines": ["1723"], "score": 0.5551, "sec": 0.577, "blank": false}
+{"ref": "R17", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["- ="], "score": 0.2995, "sec": 0.556, "blank": false}
+{"ref": "R18", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.512, "blank": false}
+{"ref": "R18", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.572, "blank": false}
+{"ref": "R19", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["Ed"], "score": 0.1613, "sec": 0.639, "blank": false}
+{"ref": "R20", "group": "resistor", "src": "body", "rot": 0, "lines": ["0A"], "score": 0.0305, "sec": 0.67, "blank": false}
+{"ref": "R20", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["Te", "LL"], "score": 0.2797, "sec": 0.615, "blank": false}
+{"ref": "R21", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["—"], "score": 0.4626, "sec": 0.608, "blank": false}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.646, "blank": false}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.507, "blank": false}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.417, "blank": false}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.466, "blank": false}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "body", "rot": 0, "lines": ["44"], "score": 0.2648, "sec": 0.484, "blank": false}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["~ fc Lie", "{4a"], "score": 0.3414, "sec": 0.65, "blank": false}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "body", "rot": 0, "lines": ["Lh"], "score": 0.2692, "sec": 0.491, "blank": false}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["4x2 |"], "score": 0.5327, "sec": 0.542, "blank": false}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "body", "rot": 0, "lines": ["UIC,"], "score": 0.0216, "sec": 0.517, "blank": false}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["J as 40"], "score": 0.4951, "sec": 0.537, "blank": false}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "body", "rot": 0, "lines": ["ATR 4"], "score": 0.4787, "sec": 0.588, "blank": false}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["a)"], "score": 0.3332, "sec": 0.538, "blank": false}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "body", "rot": 0, "lines": ["A20]"], "score": 0.0, "sec": 0.558, "blank": false}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "mimg", "rot": 0, "lines": [": a 1 >) KE", "i LT oe"], "score": 0.3082, "sec": 0.693, "blank": false}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "body", "rot": 0, "lines": ["360 a", "36¢"], "score": 0.4526, "sec": 0.589, "blank": false}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.469, "blank": false}
+{"ref": "R28", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.543, "blank": false}
+{"ref": "R29", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["i", "als", "Pomc =", "f A of"], "score": 0.3516, "sec": 0.638, "blank": false}
+{"ref": "R30", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["5"], "score": 0.477, "sec": 0.611, "blank": false}
+{"ref": "R31", "group": "resistor", "src": "body", "rot": 0, "lines": ["n= = NP", "\"I"], "score": 0.2261, "sec": 0.534, "blank": false}
+{"ref": "R31", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["ITN"], "score": 0.0, "sec": 0.495, "blank": false}
+{"ref": "R38", "group": "resistor", "src": "body", "rot": 0, "lines": ["y I", "-"], "score": 0.2322, "sec": 0.584, "blank": false}
+{"ref": "R38", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.579, "blank": false}
+{"ref": "R39", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.546, "blank": false}
+{"ref": "R39", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["L ua - 5S", "O@sRl", "on UE teaae REE"], "score": 0.1555, "sec": 0.662, "blank": false}
+{"ref": "R40", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.469, "blank": false}
+{"ref": "R40", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.445, "blank": false}
+{"ref": "R41", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.634, "blank": false}
+{"ref": "R41", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["Baud", "ee)", "TE a"], "score": 0.304, "sec": 0.649, "blank": false}
+{"ref": "R43", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.519, "blank": false}
+{"ref": "R43", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["LE"], "score": 0.0315, "sec": 0.519, "blank": false}
+{"ref": "R44", "group": "resistor", "src": "body", "rot": 0, "lines": ["K250"], "score": 0.0, "sec": 0.538, "blank": false}
+{"ref": "R44", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["hi", "ap"], "score": 0.1143, "sec": 0.628, "blank": false}
+{"ref": "R45", "group": "resistor", "src": "body", "rot": 0, "lines": ["onk"], "score": 0.0, "sec": 0.666, "blank": false}
+{"ref": "R45", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["RT", "“mp"], "score": 0.3081, "sec": 0.628, "blank": false}
+{"ref": "R47", "group": "resistor", "src": "body", "rot": 0, "lines": ["Kock"], "score": 0.2317, "sec": 0.49, "blank": false}
+{"ref": "R47", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["®."], "score": 0.0, "sec": 0.499, "blank": false}
+{"ref": "R49", "group": "resistor", "src": "body", "rot": 0, "lines": ["417 >"], "score": 0.4293, "sec": 0.529, "blank": false}
+{"ref": "R49", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["Vo - | :", "~ Rit E>", "I = ="], "score": 0.5255, "sec": 0.591, "blank": false}
+{"ref": "R50", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.558, "blank": false}
+{"ref": "R50", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.471, "blank": false}
+{"ref": "R51", "group": "resistor", "src": "body", "rot": 0, "lines": ["$003)", "oi"], "score": 0.6041, "sec": 0.506, "blank": false}
+{"ref": "R51", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.51, "blank": false}
+{"ref": "R52", "group": "resistor", "src": "body", "rot": 0, "lines": ["=", "Np"], "score": 0.418, "sec": 0.637, "blank": false}
+{"ref": "R52", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["ui", "= Re =", "| i §", "i 22R0", "NT an— ="], "score": 0.3899, "sec": 0.661, "blank": false}
+{"ref": "R53", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.529, "blank": false}
+{"ref": "R53", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["(qo®,", "J Ey i"], "score": 0.2176, "sec": 0.566, "blank": false}
+{"ref": "R54", "group": "resistor", "src": "body", "rot": 0, "lines": ["100"], "score": 0.6475, "sec": 0.599, "blank": false}
+{"ref": "R54", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.482, "blank": false}
+{"ref": "R55", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.443, "blank": false}
+{"ref": "R55", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.45, "blank": false}
+{"ref": "R57", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.398, "blank": false}
+{"ref": "R57", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.526, "blank": false}
+{"ref": "R58", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["a=", "[| :"], "score": 0.622, "sec": 0.686, "blank": false}
+{"ref": "R62", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.476, "blank": false}
+{"ref": "R62", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.481, "blank": false}
+{"ref": "R63", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.451, "blank": false}
+{"ref": "R63", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["ET", "Rei,"], "score": 0.4887, "sec": 0.468, "blank": false}
+{"ref": "R65", "group": "resistor", "src": "body", "rot": 0, "lines": ["god]"], "score": 0.2638, "sec": 0.533, "blank": false}
+{"ref": "R65", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.358, "blank": false}
+{"ref": "R66", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.623, "blank": false}
+{"ref": "R66", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["a", "Sl Bit", "NT ee aR"], "score": 0.3805, "sec": 0.627, "blank": false}
+{"ref": "R67", "group": "resistor", "src": "body", "rot": 0, "lines": ["\"513 ‘", "£ p— a"], "score": 0.1943, "sec": 0.544, "blank": false}
+{"ref": "R67", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["err)"], "score": 0.1804, "sec": 0.525, "blank": false}
+{"ref": "R68", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.524, "blank": false}
+{"ref": "R68", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["\\ { Sg"], "score": 0.5542, "sec": 0.559, "blank": false}
+{"ref": "R70", "group": "resistor", "src": "body", "rot": 0, "lines": ["201° 5", "» 3", "A he |", "B"], "score": 0.3133, "sec": 0.726, "blank": false}
+{"ref": "R70", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["KJ -~ ' ;", "nN 1"], "score": 0.3284, "sec": 0.624, "blank": false}
+{"ref": "R71", "group": "resistor", "src": "body", "rot": 0, "lines": ["$0}"], "score": 0.0, "sec": 0.541, "blank": false}
+{"ref": "R71", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["og [-"], "score": 0.0787, "sec": 0.652, "blank": false}
+{"ref": "R72", "group": "resistor", "src": "body", "rot": 0, "lines": ["[238"], "score": 0.4736, "sec": 0.613, "blank": false}
+{"ref": "R72", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["at? A A"], "score": 0.3621, "sec": 0.588, "blank": false}
+{"ref": "R73", "group": "resistor", "src": "body", "rot": 0, "lines": ["ATH"], "score": 0.2923, "sec": 0.455, "blank": false}
+{"ref": "R73", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["J A od ’", "EY"], "score": 0.3736, "sec": 0.44, "blank": false}
+{"ref": "R74", "group": "resistor", "src": "body", "rot": 0, "lines": ["40)"], "score": 0.0489, "sec": 0.56, "blank": false}
+{"ref": "R74", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.501, "blank": false}
+{"ref": "R75", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.512, "blank": false}
+{"ref": "R75", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["a. L.. 4"], "score": 0.2017, "sec": 0.563, "blank": false}
+{"ref": "R76", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.54, "blank": false}
+{"ref": "R76", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["ma oy", "= ~"], "score": 0.2981, "sec": 0.499, "blank": false}
+{"ref": "R77", "group": "resistor", "src": "body", "rot": 0, "lines": ["i nc)"], "score": 0.3468, "sec": 0.573, "blank": false}
+{"ref": "R77", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.502, "blank": false}
+{"ref": "R78", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.575, "blank": false}
+{"ref": "R78", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["ETS Ke."], "score": 0.4334, "sec": 0.602, "blank": false}
+{"ref": "R79", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["J", "oo TL", "Jol", "5 :"], "score": 0.2566, "sec": 0.556, "blank": false}
+{"ref": "R81", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.461, "blank": false}
+{"ref": "R81", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["NP", "Ye"], "score": 0.2522, "sec": 0.684, "blank": false}
+{"ref": "R82", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["~~ ;"], "score": 0.3567, "sec": 0.519, "blank": false}
+{"ref": "R85", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.447, "blank": false}
+{"ref": "R85", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["> PC", "oes TATQI F"], "score": 0.2676, "sec": 0.568, "blank": false}
+{"ref": "R86", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.54, "blank": false}
+{"ref": "R86", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["Ra"], "score": 0.4073, "sec": 0.549, "blank": false}
+{"ref": "R87", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.58, "blank": false}
+{"ref": "R87", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["»"], "score": 0.5946, "sec": 0.538, "blank": false}
+{"ref": "R88", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.538, "blank": false}
+{"ref": "R88", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["i"], "score": 0.2753, "sec": 0.55, "blank": false}
+{"ref": "R89", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.558, "blank": false}
+{"ref": "R89", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["“Jia"], "score": 0.0533, "sec": 0.638, "blank": false}
+{"ref": "R91", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.44, "blank": false}
+{"ref": "R91", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.516, "blank": false}
+{"ref": "R92", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.602, "blank": false}
+{"ref": "R92", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.467, "blank": false}
+{"ref": "R93", "group": "resistor", "src": "body", "rot": 0, "lines": ["pie", "of .", ";", "“ ~~", "z >", "= .", "—"], "score": 0.3987, "sec": 0.766, "blank": false}
+{"ref": "R93", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["|", "na \\ -", "“Od @", "_— 3"], "score": 0.3951, "sec": 0.617, "blank": false}
+{"ref": "R94", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.621, "blank": false}
+{"ref": "R94", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["TR I"], "score": 0.4224, "sec": 0.467, "blank": false}
+{"ref": "R97", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.453, "blank": false}
+{"ref": "R97", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["-l rey"], "score": 0.2102, "sec": 0.609, "blank": false}
+{"ref": "R98", "group": "resistor", "src": "body", "rot": 0, "lines": ["45208"], "score": 0.637, "sec": 0.505, "blank": false}
+{"ref": "R98", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["‘ - 8", "a", "aa"], "score": 0.3085, "sec": 0.595, "blank": false}
+{"ref": "R99", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.575, "blank": false}
+{"ref": "R99", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.463, "blank": false}
+{"ref": "R104", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.494, "blank": false}
+{"ref": "R104", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["A aa—", "Td DR"], "score": 0.3312, "sec": 0.695, "blank": false}
+{"ref": "R106", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["= ."], "score": 0.5554, "sec": 0.572, "blank": false}
+{"ref": "R107", "group": "resistor", "src": "body", "rot": 0, "lines": ["ong"], "score": 0.3814, "sec": 0.501, "blank": false}
+{"ref": "R107", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.432, "blank": false}
+{"ref": "U1", "group": "ic", "src": "body", "rot": 0, "lines": ["ER :", "Sh i", "He BR", "= LL) SORE", "Sere", "=k GRA ln S58 1", "13 SAL ANS a, SONIA SE", "BL is 8", "a A Ae lt"], "score": 0.2312, "sec": 1.12, "blank": false}
+{"ref": "U1", "group": "ic", "src": "mimg", "rot": 0, "lines": ["RJ) BJ W1 |", "i yr £2000 Jo PP . =", "yy nt eis ii J", "ia te z7", "— VAAN AAT pi vo UE", "Me) ¢! ed fr) a OAD,", "35 THEO ay", "HIVE vy", ": i"], "score": 0.2655, "sec": 0.939, "blank": false}
+{"ref": "U2", "group": "ic", "src": "body", "rot": 0, "lines": ["I A Egg wee", "Ee 1 am", "ERS Tl En"], "score": 0.2248, "sec": 0.63, "blank": false}
+{"ref": "U2", "group": "ic", "src": "mimg", "rot": 0, "lines": ["wri, i dtl", "=. nd a i SRAM —- --.", "A", "\"Re LPR pe", "Tr 1\" a 3)"], "score": 0.2477, "sec": 1.028, "blank": false}
+{"ref": "U3", "group": "ic", "src": "body", "rot": 0, "lines": ["bik", "FFFEEEE"], "score": 0.0, "sec": 0.416, "blank": false}
+{"ref": "U3", "group": "ic", "src": "mimg", "rot": 0, "lines": ["fom", "3 At nf"], "score": 0.2054, "sec": 0.589, "blank": false}
+{"ref": "U4", "group": "ic", "src": "body", "rot": 0, "lines": ["kkk EAS", "0 Par)", "THT"], "score": 0.0661, "sec": 0.603, "blank": false}
+{"ref": "U4", "group": "ic", "src": "mimg", "rot": 0, "lines": ["“nmin"], "score": 0.0582, "sec": 0.554, "blank": false}
+{"ref": "U6", "group": "ic", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.533, "blank": false}
+{"ref": "U6", "group": "ic", "src": "mimg", "rot": 0, "lines": ["Adu ®"], "score": 0.0, "sec": 0.482, "blank": false}
+{"ref": "U10_DC_5V", "group": "ic", "src": "body", "rot": 0, "lines": ["ERNE"], "score": 0.3443, "sec": 0.603, "blank": false}
+{"ref": "U10_DC_5V", "group": "ic", "src": "mimg", "rot": 0, "lines": ["=r ul,", "F) mn | Je Eg\""], "score": 0.1787, "sec": 0.572, "blank": false}
+{"ref": "U10_DC_REG", "group": "ic", "src": "body", "rot": 0, "lines": ["- } -", "2 ie EA [y 3 a CAT)", "Ly TR 7 ge", "="], "score": 0.2895, "sec": 0.558, "blank": false}
+{"ref": "U10_DC_REG", "group": "ic", "src": "mimg", "rot": 0, "lines": ["ET", "Ee |"], "score": 0.276, "sec": 0.609, "blank": false}
+{"ref": "U11", "group": "ic", "src": "body", "rot": 0, "lines": ["| | 1 1 | I.", "24 Fant BH SREY ae", "0 Flies"], "score": 0.4325, "sec": 0.556, "blank": false}
+{"ref": "U11", "group": "ic", "src": "mimg", "rot": 0, "lines": ["4.41 WF IL a=", "gl Ava -", "¥3 TEE ilk ="], "score": 0.3954, "sec": 0.693, "blank": false}
+{"ref": "U14", "group": "ic", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.46, "blank": false}
+{"ref": "U14", "group": "ic", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.5, "blank": false}
+{"ref": "U16", "group": "ic", "src": "body", "rot": 0, "lines": ["138 &"], "score": 0.4554, "sec": 0.46, "blank": false}
+{"ref": "U16", "group": "ic", "src": "mimg", "rot": 0, "lines": ["fir ‘"], "score": 0.1836, "sec": 0.506, "blank": false}
+{"ref": "U21_US1", "group": "ic", "src": "body", "rot": 0, "lines": ["AIM Im min 2", "% fugit 8 XA WAAL ‘", "LEAP asl o£ Hao", "AG ok / CX", "Wes > SA 7 Tg", "Lo ar", "1 ov 320 a SA PD", "Ir Wags sos! Ams", "se ATK 1% Jd", "UR) We ml oda SAA", "7 ’ yak r", "MOEN IRIE lor st", "i ."], "score": 0.2322, "sec": 1.405, "blank": false}
+{"ref": "U21_US1", "group": "ic", "src": "mimg", "rot": 0, "lines": ["YE", "SA ASI RAR IR", "NY 5 ig ny", "= Giion", "0 SRC", "= i J °", "—¢ \\ —", "te"], "score": 0.295, "sec": 0.883, "blank": false}
+{"ref": "U23", "group": "ic", "src": "body", "rot": 0, "lines": ["hit & &"], "score": 0.1993, "sec": 0.553, "blank": false}
+{"ref": "U23", "group": "ic", "src": "mimg", "rot": 0, "lines": ["OT a", "ge DL |", "BY Tp =", "“feos r"], "score": 0.2262, "sec": 0.639, "blank": false}
+{"ref": "U24", "group": "ic", "src": "body", "rot": 0, "lines": ["| A", "IS -@ %"], "score": 0.2051, "sec": 0.199, "blank": false}
+{"ref": "U24", "group": "ic", "src": "mimg", "rot": 0, "lines": ["“fission"], "score": 0.0589, "sec": 0.141, "blank": false}
+{"ref": "U25", "group": "ic", "src": "body", "rot": 0, "lines": ["VRIES", "alee |"], "score": 0.3503, "sec": 0.194, "blank": false}
+{"ref": "U25", "group": "ic", "src": "mimg", "rot": 0, "lines": ["3 77", "] | ng ]", "dl (|", "Hii.", "x A »", "“ a ,"], "score": 0.2644, "sec": 0.332, "blank": false}
+{"ref": "U26", "group": "ic", "src": "body", "rot": 0, "lines": ["EL", "vs ge !", "[itis"], "score": 0.1371, "sec": 0.175, "blank": false}
+{"ref": "U26", "group": "ic", "src": "mimg", "rot": 0, "lines": ["| LL wy", "yl er k |"], "score": 0.3318, "sec": 0.252, "blank": false}
+{"ref": "U29", "group": "ic", "src": "body", "rot": 0, "lines": ["ll 8 2.0 Hh ee", "ll Bh 0 HUE AT", "ati] AN EE TR Sh ER § NS -", "== JONES FAL ERY _—", "mer NEE SHERI te", "=", "SONAL 5 4", "mn nh RARRAA"], "score": 0.2417, "sec": 1.266, "blank": false}
+{"ref": "U29", "group": "ic", "src": "mimg", "rot": 0, "lines": ["LL 1 9 A ——t L$", "Paes (TTI ITI VT Y SO.", "—- a SRE Set,", "NRE Ra TRA", "SAN EA 0 Hb .", ": - REE EIN ES ANAS A -", "=e LUN oR a", "eel SRE =", "2 0 AEE 1"], "score": 0.2613, "sec": 1.192, "blank": false}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["li on)", "pis]"], "score": 0.2951, "sec": 0.44, "blank": false}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["Bi", "BR S20 |e", "~. CHET.", "N——"], "score": 0.2049, "sec": 0.755, "blank": false}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.483, "blank": false}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["he me", "jo ;", "1", "a ."], "score": 0.19, "sec": 0.721, "blank": false}
+{"ref": "R5", "group": "resistor", "src": "body", "rot": 0, "lines": ["03"], "score": 0.1318, "sec": 0.122, "blank": false}
+{"ref": "R19", "group": "resistor", "src": "body", "rot": 0, "lines": ["YER"], "score": 0.4259, "sec": 0.146, "blank": false}
+{"ref": "R21", "group": "resistor", "src": "body", "rot": 0, "lines": ["5"], "score": 0.1472, "sec": 0.127, "blank": false}
+{"ref": "R28", "group": "resistor", "src": "body", "rot": 0, "lines": ["= a |"], "score": 0.3999, "sec": 0.138, "blank": false}
+{"ref": "R29", "group": "resistor", "src": "body", "rot": 0, "lines": ["Erie"], "score": 0.4857, "sec": 0.135, "blank": false}
+{"ref": "R30", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.117, "blank": false}
+{"ref": "R58", "group": "resistor", "src": "body", "rot": 0, "lines": [".", "Com"], "score": 0.2037, "sec": 0.154, "blank": false}
+{"ref": "R79", "group": "resistor", "src": "body", "rot": 0, "lines": ["Ciloz"], "score": 0.0, "sec": 0.133, "blank": false}
+{"ref": "R82", "group": "resistor", "src": "body", "rot": 0, "lines": ["="], "score": 0.2491, "sec": 0.126, "blank": false}
+{"ref": "R106", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.102, "blank": false}

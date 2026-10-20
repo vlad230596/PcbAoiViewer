@@ -1,0 +1,81 @@
+image,bodyBox,label,source,board,ref,footprint,turn,origin,split,status,segCost,note,added
+codes/captured_51.5/R10.png,0 42 81 70,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R10,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R104.png,0 43 83 71,18B,captured_51.5,Antilatency.SocketTester.Main@r79,R104,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R106.png,0 25 208 42,101,captured_51.5,Antilatency.SocketTester.Main@r79,R106,RES_ARRAY_YC124,90,auto,train,badseg,1.44,conf medium; array [turn picked by fit -2.10],2026-10-19
+codes/captured_51.5/R107.png,0 45 85 77,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R107,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R11.png,0 40 93 67,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R11,RES_0603,0,auto,val,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R12.png,0 44 93 76,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R12,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R13.png,0 46 78 77,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R13,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R14.png,0 48 101 80,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R14,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R15.png,0 40 86 66,220,captured_51.5,Antilatency.SocketTester.Main@r79,R15,RES_0603,0,auto,val,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R16.png,0 38 83 63,220,captured_51.5,Antilatency.SocketTester.Main@r79,R16,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R17.png,0 46 84 76,272,captured_51.5,Antilatency.SocketTester.Main@r79,R17,RES_0603,0,auto,val,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R18.png,0 47 83 79,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R18,RES_0603,0,auto,train,ok,0.47,conf high; ,2026-10-19
+codes/captured_51.5/R19.png,0 23 195 39,103,captured_51.5,Antilatency.SocketTester.Main@r79,R19,RES_ARRAY_YC124,90,auto,train,ok,0.35,conf medium; array [turn picked by fit -1.94],2026-10-19
+codes/captured_51.5/R2.png,0 44 83 73,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R2,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R20.png,0 44 103 73,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R20,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R21.png,0 26 188 43,101,captured_51.5,Antilatency.SocketTester.Main@r79,R21,RES_ARRAY_YC124,90,auto,train,noline,,conf medium; array [turn picked by fit -inf],2026-10-19
+codes/captured_51.5/R23_DC_5V.png,0 37 83 61,02C,captured_51.5,Antilatency.SocketTester.Main@r79,R23_DC_5V,RES_0603,180,auto,val,ok,0.48,conf high; ,2026-10-19
+codes/captured_51.5/R23_DC_REG.png,0 40 123 66,184,captured_51.5,Antilatency.SocketTester.Main@r79,R23_DC_REG,RES_0603,180,auto,val,badseg,1.78,conf high; ,2026-10-19
+codes/captured_51.5/R24_DC_5V.png,0 38 152 64,76C,captured_51.5,Antilatency.SocketTester.Main@r79,R24_DC_5V,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R24_DC_REG.png,0 33 58 55,76C,captured_51.5,Antilatency.SocketTester.Main@r79,R24_DC_REG,RES_0603,180,auto,train,badseg,0.63,conf high; ,2026-10-19
+codes/captured_51.5/R25_DC_5V.png,0 38 84 64,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R25_DC_5V,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R25_DC_REG.png,0 40 82 66,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R25_DC_REG,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R26_DC_5V.png,0 39 106 65,29B,captured_51.5,Antilatency.SocketTester.Main@r79,R26_DC_5V,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R26_DC_REG.png,0 36 142 60,36C,captured_51.5,Antilatency.SocketTester.Main@r79,R26_DC_REG,RES_0603,180,auto,train,badseg,1.56,conf high; ,2026-10-19
+codes/captured_51.5/R28.png,0 25 230 42,101,captured_51.5,Antilatency.SocketTester.Main@r79,R28,RES_ARRAY_YC124,270,auto,train,ok,0.00,conf medium; array [turn picked by fit -0.74],2026-10-19
+codes/captured_51.5/R29.png,0 25 230 41,101,captured_51.5,Antilatency.SocketTester.Main@r79,R29,RES_ARRAY_YC124,90,auto,train,badseg,2.02,conf medium; array [turn picked by fit -2.07],2026-10-19
+codes/captured_51.5/R3.png,0 40 94 67,01B,captured_51.5,Antilatency.SocketTester.Main@r79,R3,RES_0603,180,auto,val,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R30.png,0 37 227 62,103,captured_51.5,Antilatency.SocketTester.Main@r79,R30,RES_ARRAY_YC124,90,auto,train,badseg,0.63,conf medium; array [turn picked by fit -0.56],2026-10-19
+codes/captured_51.5/R31.png,0 46 88 76,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R31,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R38.png,0 42 125 70,513,captured_51.5,Antilatency.SocketTester.Main@r79,R38,RES_0603,180,auto,val,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R39.png,0 47 90 78,512,captured_51.5,Antilatency.SocketTester.Main@r79,R39,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R4.png,0 44 111 74,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R4,RES_0603,0,auto,train,badseg,0.63,conf high; ,2026-10-19
+codes/captured_51.5/R40.png,0 39 104 65,105,captured_51.5,Antilatency.SocketTester.Main@r79,R40,RES_0603,0,auto,train,badseg,0.63,conf high; ,2026-10-19
+codes/captured_51.5/R41.png,0 34 176 57,18B,captured_51.5,Antilatency.SocketTester.Main@r79,R41,RES_0603,180,auto,train,badseg,6.96,conf high; ,2026-10-19
+codes/captured_51.5/R43.png,0 42 93 76,512,captured_51.5,Antilatency.SocketTester.Main@r79,R43,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R44.png,0 39 98 75,512,captured_51.5,Antilatency.SocketTester.Main@r79,R44,RES_0603,0,auto,train,ok,0.00,conf high; turn corrected 180->0 (Qwen/OCR survey),2026-10-19
+codes/captured_51.5/R45.png,0 47 88 79,01B,captured_51.5,Antilatency.SocketTester.Main@r79,R45,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R47.png,0 43 96 79,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R47,RES_0603,180,auto,train,ok,0.59,conf high; ,2026-10-19
+codes/captured_51.5/R49.png,0 41 94 69,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R49,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R5.png,0 41 211 69,103,captured_51.5,Antilatency.SocketTester.Main@r79,R5,RES_ARRAY_YC124,90,auto,train,ok,0.00,"conf medium; 4-resistor array, text across the part [turn picked by fit -0.33]",2026-10-19
+codes/captured_51.5/R50.png,0 44 97 74,84C,captured_51.5,Antilatency.SocketTester.Main@r79,R50,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R51.png,0 40 95 66,01D,captured_51.5,Antilatency.SocketTester.Main@r79,R51,RES_0603,180,auto,val,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R52.png,0 46 162 153,22R0,captured_51.5,Antilatency.SocketTester.Main@r79,R52,RES_1210,180,auto,train,badseg,1.10,conf high; ,2026-10-19
+codes/captured_51.5/R53.png,0 41 90 68,01D,captured_51.5,Antilatency.SocketTester.Main@r79,R53,RES_0603,180,auto,val,ok,0.22,conf high; ,2026-10-19
+codes/captured_51.5/R54.png,0 42 83 70,01D,captured_51.5,Antilatency.SocketTester.Main@r79,R54,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R55.png,0 43 90 71,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R55,RES_0603,180,auto,val,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R57.png,0 40 89 117,R200,captured_51.5,Antilatency.SocketTester.Main@r79,R57,RES_0805,180,auto,train,ok,0.37,conf high; ,2026-10-19
+codes/captured_51.5/R58.png,0 38 194 64,101,captured_51.5,Antilatency.SocketTester.Main@r79,R58,RES_ARRAY_YC124,270,auto,train,badseg,1.11,conf medium; array [turn picked by fit -1.06],2026-10-19
+codes/captured_51.5/R6.png,0 44 84 74,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R6,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R62.png,0 47 90 78,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R62,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R63.png,0 44 84 73,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R63,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R65.png,0 43 169 144,R100,captured_51.5,Antilatency.SocketTester.Main@r79,R65,RES_1206,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R66.png,0 50 168 133,1000,captured_51.5,Antilatency.SocketTester.Main@r79,R66,RES_1206,0,auto,train,ok,0.59,conf high; ,2026-10-19
+codes/captured_51.5/R67.png,0 37 90 61,513,captured_51.5,Antilatency.SocketTester.Main@r79,R67,RES_0603,0,auto,val,ok,0.42,conf high; ,2026-10-19
+codes/captured_51.5/R68.png,0 40 104 78,623,captured_51.5,Antilatency.SocketTester.Main@r79,R68,RES_0603,180,auto,val,ok,0.50,conf high; ,2026-10-19
+codes/captured_51.5/R70.png,0 0 83 128,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R70,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R71.png,0 46 85 77,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R71,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R72.png,0 38 89 63,223,captured_51.5,Antilatency.SocketTester.Main@r79,R72,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R73.png,0 40 70 66,05C,captured_51.5,Antilatency.SocketTester.Main@r79,R73,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R74.png,0 46 82 77,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R74,RES_0603,0,auto,val,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R75.png,0 41 88 68,01D,captured_51.5,Antilatency.SocketTester.Main@r79,R75,RES_0603,0,auto,train,ok,0.45,conf high; ,2026-10-19
+codes/captured_51.5/R76.png,0 48 84 81,01D,captured_51.5,Antilatency.SocketTester.Main@r79,R76,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R77.png,0 38 81 64,30C,captured_51.5,Antilatency.SocketTester.Main@r79,R77,RES_0603,180,auto,val,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R78.png,0 48 85 80,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R78,RES_0603,0,auto,val,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R79.png,0 44 192 74,102,captured_51.5,Antilatency.SocketTester.Main@r79,R79,RES_ARRAY_YC124,90,auto,train,ok,0.00,conf medium; array [turn picked by fit -0.27],2026-10-19
+codes/captured_51.5/R8.png,0 38 81 63,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R8,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R81.png,0 42 139 70,01B,captured_51.5,Antilatency.SocketTester.Main@r79,R81,RES_0603,0,auto,train,badseg,0.90,conf high; ,2026-10-19
+codes/captured_51.5/R82.png,0 33 212 55,103,captured_51.5,Antilatency.SocketTester.Main@r79,R82,RES_ARRAY_YC124,90,auto,train,ok,0.00,conf medium; array [turn picked by fit -0.32],2026-10-19
+codes/captured_51.5/R85.png,0 44 171 140,R200,captured_51.5,Antilatency.SocketTester.Main@r79,R85,RES_1206,180,auto,train,badseg,0.62,conf high; ,2026-10-19
+codes/captured_51.5/R86.png,0 42 87 70,01A,captured_51.5,Antilatency.SocketTester.Main@r79,R86,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R87.png,0 46 86 76,333,captured_51.5,Antilatency.SocketTester.Main@r79,R87,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R88.png,0 38 83 64,333,captured_51.5,Antilatency.SocketTester.Main@r79,R88,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R89.png,0 40 143 67,01C,captured_51.5,Antilatency.SocketTester.Main@r79,R89,RES_0603,180,auto,train,ok,0.10,conf high; ,2026-10-19
+codes/captured_51.5/R91.png,0 46 86 77,512,captured_51.5,Antilatency.SocketTester.Main@r79,R91,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R92.png,0 42 86 70,512,captured_51.5,Antilatency.SocketTester.Main@r79,R92,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R93.png,0 47 173 138,0,captured_51.5,Antilatency.SocketTester.Main@r79,R93,Resistor_Switch_Triangle_1206,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R94.png,0 36 87 60,18B,captured_51.5,Antilatency.SocketTester.Main@r79,R94,RES_0603,0,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R97.png,0 38 83 77,512,captured_51.5,Antilatency.SocketTester.Main@r79,R97,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19
+codes/captured_51.5/R98.png,0 44 97 73,621,captured_51.5,Antilatency.SocketTester.Main@r79,R98,RES_0603,0,auto,train,ok,0.39,conf high; ,2026-10-19
+codes/captured_51.5/R99.png,0 45 94 75,512,captured_51.5,Antilatency.SocketTester.Main@r79,R99,RES_0603,180,auto,train,ok,0.00,conf high; ,2026-10-19

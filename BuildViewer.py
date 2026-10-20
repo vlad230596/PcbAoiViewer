@@ -67,6 +67,20 @@ def seamImage(stitcher, factor=4):
     return rgba
 
 
+def rebuildHtml(outDir):
+    """Re-renders index.html with the current TEMPLATE and the DATA of the page already there (no re-stitching).
+    For viewer changes; a focus-stack page keeps its stack data too."""
+    path = os.path.join(outDir, 'index.html')
+    with open(path, encoding='utf-8') as fp:
+        html = fp.read()
+    start = html.index('const DATA = ') + len('const DATA = ')
+    end = html.index(';\nconst s = DATA.scale;', start)
+    out = TEMPLATE.replace('__OSD_URL__', OSD_URL).replace('__OSD_IMAGES__', OSD_IMAGES) \
+        .replace('__DATA__', html[start:end])
+    with open(path, 'w', encoding='utf-8') as fp:
+        fp.write(out)
+
+
 def build(stitcher, pano, outDir, stack=None):
     """stack: focus-stack extras for the page (see buildStack), None for a single-height panorama."""
     H, W = pano.shape[:2]
@@ -193,6 +207,51 @@ TEMPLATE = r'''<!doctype html>
   .tag { font-size: 11px; padding: 0 4px; border-radius: 3px; background: #0a6; color: #fff; margin-left: 4px; }
   .legend span { display: inline-block; width: 10px; height: 10px; margin: 0 3px 0 8px; vertical-align: middle; }
   small { color: #999; }
+  #cadPanel select, #cadPanel input[type=text] { background: #222; color: #ddd; border: 1px solid #444; border-radius: 4px; }
+  #cadLegend span.k { display: inline-flex; align-items: center; gap: 4px; margin-right: 8px; cursor: pointer; font-size: 12px; }
+  #cadLegend span.k.off { opacity: .35; }
+  #cadLegend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  .part .kv { display: grid; grid-template-columns: 100px 1fr; gap: 2px 10px; margin-top: 6px; }
+  .part .kv b { font-weight: 500; color: #999; }
+  .part code { background: #2a2f35; padding: 1px 6px; border-radius: 4px; margin-right: 6px; }
+  .part .md { border-top: 1px solid #333; margin-top: 6px; padding-top: 4px; overflow-x: auto; }
+  .part .md table { border-collapse: collapse; font-size: 12px; margin: 4px 0; }
+  .part .md td, .part .md th { border: 1px solid #444; padding: 2px 5px; vertical-align: top; }
+  .part .md img { max-width: 100%; background: #fff; border-radius: 4px; }
+  .part .md h3, .part .md h4, .part .md h5, .part .md h6 { font-size: 13px; margin: 8px 0 4px; }
+  .part details { margin: 5px 0; }
+  .part summary { cursor: pointer; color: #6cf; }
+  .part a { color: #6cf; }
+  .fit { display: inline-block; padding: 0 7px; border-radius: 10px; border: 1px solid currentColor; font-size: 12px; }
+  #cadPanel button { background: #333; color: #ddd; border: 1px solid #555; border-radius: 4px; cursor: pointer; }
+  #hud { position: absolute; left: 8px; bottom: 8px; z-index: 12; background: rgba(10,10,10,.9); border: 1px solid #333;
+         border-radius: 6px; padding: 6px 9px; font: 12px/1.4 monospace; white-space: pre; display: none; }
+  #hud button { background: #333; color: #ddd; border: 1px solid #555; border-radius: 4px; cursor: pointer; font: 12px system-ui; }
+  #list { position: fixed; inset: 0; z-index: 30; background: #121212; overflow-y: auto; display: none; }
+  #list .lhead { position: sticky; top: 0; z-index: 1; background: #181818; border-bottom: 1px solid #333; padding: 8px 14px;
+                 display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  #list .lhead select, #list .lhead input[type=text] { background: #222; color: #ddd; border: 1px solid #444; border-radius: 4px; padding: 3px 6px; }
+  #list .lhead button { background: #333; color: #ddd; border: 1px solid #555; border-radius: 4px; cursor: pointer; padding: 3px 9px; }
+  #lBody { padding: 4px 14px 30px; }
+  #lBody h2 { font-size: 15px; margin: 18px 0 4px; border-bottom: 1px solid #333; padding-bottom: 3px; }
+  #lBody h2 small, .lline small { color: #888; font-weight: normal; }
+  .lline { margin: 10px 0 4px; }
+  .lline code { background: #2a2f35; padding: 1px 6px; border-radius: 4px; margin-left: 4px; color: #ffd36b; }
+  .lcards { display: flex; flex-wrap: wrap; gap: 6px; }
+  .lcard { background: #1c1c1c; border: 1px solid #333; border-radius: 5px; padding: 3px; cursor: pointer; text-align: center; }
+  .lcard:hover { border-color: #6cf; }
+  .lcard img { display: block; height: var(--h, 96px); max-width: calc(var(--h, 96px) * 4); object-fit: contain; background: #000; }
+  .lcard .noimg { height: var(--h, 96px); width: var(--h, 96px); display: flex; align-items: center; justify-content: center;
+                  color: #666; font-size: 11px; background: #0b0b0b; }
+  .lcard div.r { font: 12px monospace; margin-top: 2px; }
+  .lcard .mk { font: 12px/1.25 monospace; color: #ffd36b; margin-top: 2px; min-height: 15px; }
+  .lcard .ck { font-size: 11px; margin-top: 1px; max-width: calc(var(--h, 96px) * 3); }
+  .lcard .oc { font: 11px monospace; margin-top: 1px; }
+  .imgs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+  .imgs figure { margin: 0; }
+  .imgs img { max-height: 240px; max-width: 300px; border-radius: 4px; display: block; background: #000; }
+  .imgs figcaption { font-size: 11px; color: #999; margin-top: 2px; max-width: 300px; }
+  .mkread { font: 13px/1.3 monospace; color: #ffd36b; background: #1c1c1c; padding: 3px 6px; border-radius: 4px; display: inline-block; }
 </style>
 </head>
 <body>
@@ -231,8 +290,41 @@ TEMPLATE = r'''<!doctype html>
     <small>[ / ] step through heights, f = all-in-focus, m = marking</small><br>
     <span id="hCursor"></span>
   </div>
+  <div id="cadPanel" style="display:none">
+    <hr style="border-color:#333">
+    <b>Board (CAD)</b> <small id="cadInfo"></small><br>
+    <label style="display:inline-block"><input type="checkbox" id="cbCad" checked> components</label>
+    <label style="display:inline-block;margin-left:8px"><input type="checkbox" id="cbPads"> pads</label>
+    <label style="display:inline-block;margin-left:8px" id="lblFind" hidden><input type="checkbox" id="cbFindings" checked> findings <small id="findCount"></small></label>
+    <select id="cadMode" style="margin-left:8px"><option value="fit">colour: fit</option><option value="group">colour: group</option></select>
+    <div id="cadLegend" style="margin:4px 0"></div>
+    <input type="text" id="cadFind" placeholder="R12, U1, 10k&hellip;" size="16">
+    <button id="btnList">parts list</button>
+    <small>click a part: its card</small>
+  </div>
+  <hr style="border-color:#333">
+  <label><input type="checkbox" id="cbHud"> diagnostics (fps, draw, tiles) <small>&mdash; key D</small></label>
 </div>
 <div id="info"></div>
+<div id="hud"></div>
+<div id="list">
+  <div class="lhead">
+    <b>Parts</b> <small id="lCount"></small>
+    <select id="lGroup"></select>
+    <select id="lSide"><option value="">both sides</option><option value="top">top</option><option value="bottom">bottom</option></select>
+    <select id="lFit"><option value="">any fit</option><option value="fitted">fitted</option><option value="nc">NC</option>
+      <option value="optional">optional</option><option value="none">not in BOM</option></select>
+    <select id="lCheck"><option value="">any check</option><option value="problems">problems</option>
+      <option value="ok">ok</option><option value="unread">unread</option><option value="text">marking read</option>
+      <option value="ocrdiff">OCR differs</option><option value="ocrsame">OCR agrees</option>
+      <option value="codediff">code differs</option><option value="vlmdiff">VLM differs</option></select>
+    <input type="text" id="lFind" placeholder="ref, name, value, marking" size="16">
+    <label>preview <input type="range" id="lSize" min="48" max="260" value="110" style="vertical-align:middle"></label>
+    <span style="flex:1"></span>
+    <button id="lClose">close &times;</button>
+  </div>
+  <div id="lBody"></div>
+</div>
 <script>
 const DATA = __DATA__;
 const s = DATA.scale;
@@ -324,6 +416,7 @@ function draw() {
     }
     ctx.setLineDash([]);
   }
+  drawCad(zoom);
   if (picked) {
     const [px, py] = toScreen(picked.x, picked.y);
     ctx.strokeStyle = '#f0f'; ctx.lineWidth = 2;
@@ -412,6 +505,9 @@ function renderInfo() {
 viewer.addHandler('canvas-click', e => {
   if (!e.quick || !main()) return;
   const img = main().viewerElementToImageCoordinates(e.position);
+  const p = partAt(img.x, img.y);   // a CAD part when the board layer is on, else the frames inspector
+  if (p) { part = p; picked = null; renderPart(); draw(); return; }
+  part = null;
   picked = { x: img.x, y: img.y };
   renderInfo();
   draw();
@@ -515,12 +611,451 @@ if (ST) {
   } });
 }
 
+// ---------------------------------------------------------------- board (CAD) from alignBoard.py: board.json
+const FIT = { fitted: '#4fbf73', nc: '#e5534b', optional: '#e0a33a', none: '#8b939c' };
+const FIT_LABEL = { fitted: 'fitted', nc: 'NC — must be empty', optional: 'optional (X/NC)', none: 'not in BOM' };
+const GROUP_COL = ['#4e9cf5', '#e0a33a', '#b07cf0', '#e5534b', '#3fc1b0', '#f07ac0', '#4fbf73', '#d9d65a', '#9aa5b1', '#f29a5c', '#6c7a89'];
+const GROUP_ORDER = ['Resistors', 'Capacitors', 'Inductors', 'Diodes & protection', 'Transistors', 'LEDs & optocouplers', 'ICs',
+                     'Crystals & oscillators', 'Connectors', 'Buttons & switches', 'Other', 'not in BOM'];
+let CAD = null, cadPxPerMm = 77, part = null, cadHidden = new Set(), groupCol = {}, cadPaths = null;
+// markings.json (markingSheets.py + markingCheck.py): text read on each part and its check against the BOM
+let MARKS = {};
+const CHECK_COL = { ok: '#4fbf73', mismatch: '#e5534b', missing: '#e5534b', populated: '#e0a33a', unread: '#9aa5b1', info: '#6cbcff' };
+const PROBLEM = new Set(['mismatch', 'missing', 'populated']);
+const OCR_COL = { same: '#4fbf73', close: '#d9d65a', partial: '#a6d96a', differs: '#e0a33a', 'ocr-only': '#e0a33a', none: '#666' };
+function vlmBadge(m) {   // Qwen3-VL-2B second reading (vlmMarkings.py, its own venv)
+  if (!m || !m.vlm) return '';
+  const v = m.vlm, col = OCR_COL[v.agree] || '#999';
+  const txt = v.agree === 'same' ? 'VLM ✓' : v.agree === 'none' ? 'VLM —' : v.agree === 'close' ? 'VLM ≈ ' + v.lines.join(' / ') :
+    v.agree === 'partial' ? 'VLM ✓ part: ' + v.lines.join(' / ') : 'VLM: ' + (v.lines.join(' / ') || '—');
+  return '<span style="color:' + col + '">' + esc(txt) + '</span>';
+}
+function codeBadge(m) {   // our resistor-code classifier (readResistorCodes.py), leave-one-out on parts in the dataset
+  if (!m || !m.resistorCode) return '';
+  const r = m.resistorCode;
+  if (!r.code) return '<span style="color:#666">code —</span>';
+  const col = r.agree === 'same' ? '#4fbf73' : r.bom === 'mismatch' ? '#e5534b' : '#e0a33a';
+  return '<span style="color:' + col + '">' + (r.agree === 'same' ? 'code ✓' : 'code: ' + esc(r.code)) + '</span>';
+}
+function ocrBadge(m) {   // second, independent reading by the local OCR (ocrMarkings.py)
+  if (!m || !m.ocr) return '';
+  const o = m.ocr, alt = o.otherTurn;
+  const txt = o.agree === 'same' ? 'OCR ✓' : o.agree === 'none' ? 'OCR —' : o.agree === 'partial' ? 'OCR ✓ part: ' + o.lines.join(' / ') : alt ? 'OCR ✓ (turned ' + alt.turn + '°)' :
+    'OCR: ' + (o.lines.join(' / ') || '—');
+  return '<span style="color:' + (alt ? OCR_COL[alt.agree] : OCR_COL[o.agree]) + '">' + esc(txt) + '</span>';
+}
+function markOf(ref) { return MARKS[ref] || null; }
+const esc = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+// align.M maps board mm to px of the image it was fitted on (panorama.jpg = the viewer's image)
+function mmToImg(M, x, y) { return [M[0][0] * x + M[0][1] * y + M[0][2], M[1][0] * x + M[1][1] * y + M[1][2]]; }
+function pathPoints(d) { return (d.match(/[ML][^MLZ]+/g) || []).map(t => t.slice(1).trim().split(/[ ,]+/).map(Number)); }
+function lineOf(c) { return c.line == null ? null : CAD.board.lines[c.line]; }
+function groupOf(line) { return line ? line.cat.group : 'not in BOM'; }
+function cadKey(p) { return cb('cadMode').value === 'fit' ? p.c.fit : groupOf(p.line); }
+function cadColour(p) { return cb('cadMode').value === 'fit' ? FIT[p.c.fit] : (p.line ? groupCol[p.line.cat.group] : FIT.none); }
+function toPath(polys) {
+  const P = new Path2D();
+  for (const q of polys) { q.forEach(([x, y], n) => n ? P.lineTo(x, y) : P.moveTo(x, y)); P.closePath(); }
+  return P;
+}
+const natKey = t => t.split(/(\d+)/).map(x => /^\d+$/.test(x) ? x.padStart(6, '0') : x.toLowerCase()).join('');
+
+fetch('board.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(b => {   // revalidate: alignBoard.py rewrites it
+  if (!b || !b.align) return;
+  const M = b.align.M, side = b.align.side;
+  CAD = { board: b, parts: [], byRef: {}, crops: b.align.crops || {} };
+  cadPxPerMm = (b.align.pxPerMm[0] + b.align.pxPerMm[1]) / 2;
+  [...new Set(b.lines.map(l => l.cat.group))].forEach((g, i) => groupCol[g] = GROUP_COL[i % GROUP_COL.length]);
+  for (const [ref, c] of Object.entries(b.components)) {
+    if (c.side !== side) continue;
+    const pts = c.outline ? pathPoints(c.outline) : [[c.bb[0], c.bb[1]], [c.bb[2], c.bb[1]], [c.bb[2], c.bb[3]], [c.bb[0], c.bb[3]]];
+    const poly = pts.map(([x, y]) => mmToImg(M, x, y));
+    const pads = c.pins.filter(p => p.side === side || p.side === 'both').map(p =>
+      [[p.bb[0], p.bb[1]], [p.bb[2], p.bb[1]], [p.bb[2], p.bb[3]], [p.bb[0], p.bb[3]]].map(([x, y]) => mmToImg(M, x, y)));
+    const xs = poly.map(q => q[0]), ys = poly.map(q => q[1]);
+    const box = [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
+    const p = { ref, c, line: lineOf(c), poly, path: toPath([poly]), padPath: toPath(pads), box,
+                cx: (box[0] + box[2]) / 2, cy: (box[1] + box[3]) / 2, area: (box[2] - box[0]) * (box[3] - box[1]) };
+    CAD.parts.push(p); CAD.byRef[ref] = p;
+  }
+  const f = b.align.fine, um = 1000 / cadPxPerMm;
+  cb('cadInfo').textContent = (b.source.board || b.source.project) + ' r' + b.source.rev + ' · ' + side + ' · fit ' +
+    (f.medianPx * um).toFixed(0) + ' µm median (' + f.inliers + ' holes)';
+  cb('btnList').textContent = 'parts list (' + Object.keys(b.components).length + ')';
+  cb('cadPanel').style.display = 'block';
+  cadChanged();
+  return fetch('markings.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(m => {
+    if (!m) return;
+    MARKS = m.parts || {};
+    const bad = Object.values(MARKS).filter(x => x.check && PROBLEM.has(x.check.status)).length;
+    cb('findCount').textContent = '(' + bad + ')';
+    cb('lblFind').hidden = false;
+    cadChanged();
+    if (cb('list').style.display === 'block') renderList();
+  });
+}).catch(e => console.error('board.json / markings.json', e));
+
+// colour / visibility changed: rebuild the cached paths (one Path2D per colour, one for all pads)
+function cadChanged() {
+  const by = new Map(), pads = new Path2D();
+  for (const p of CAD.parts) {
+    if (cadHidden.has(cadKey(p))) continue;
+    const id = cadColour(p) + (p.c.fit === 'nc' ? '|dash' : '|solid');
+    if (!by.has(id)) by.set(id, { col: cadColour(p), dash: p.c.fit === 'nc', path: new Path2D() });
+    by.get(id).path.addPath(p.path);
+    pads.addPath(p.padPath);
+  }
+  const problems = new Path2D();
+  for (const p of CAD.parts) { const m = markOf(p.ref); if (m && m.check && PROBLEM.has(m.check.status)) problems.addPath(p.path); }
+  cadPaths = { groups: [...by.values()], pads, problems };
+  cadLegend();
+  requestDraw();
+}
+
+function cadLegend() {
+  const counts = {};
+  for (const p of CAD.parts) counts[cadKey(p)] = (counts[cadKey(p)] || 0) + 1;
+  const items = cb('cadMode').value === 'fit' ? Object.keys(FIT).map(k => [k, FIT[k], FIT_LABEL[k]])
+    : [...Object.keys(groupCol).map(g => [g, groupCol[g], g]), ['not in BOM', FIT.none, 'not in BOM']];
+  cb('cadLegend').innerHTML = items.filter(([k]) => counts[k]).map(([k, c, l]) =>
+    '<span class="k' + (cadHidden.has(k) ? ' off' : '') + '" data-k="' + esc(k) + '"><i style="background:' + c + '"></i>' +
+    esc(l) + ' <small>' + counts[k] + '</small></span>').join('');
+  cb('cadLegend').querySelectorAll('span.k').forEach(e => e.onclick = () => {
+    const k = e.dataset.k; cadHidden.has(k) ? cadHidden.delete(k) : cadHidden.add(k); cadChanged(); });
+}
+
+// image px -> screen px of the main image (OSD has no rotation here): [a b c d e f] as in setTransform
+function imgToScreenAffine() {
+  const [x0, y0] = toScreen(0, 0), [x1, y1] = toScreen(1000, 0), [x2, y2] = toScreen(0, 1000);
+  return [(x1 - x0) / 1000, (y1 - y0) / 1000, (x2 - x0) / 1000, (y2 - y0) / 1000, x0, y0];
+}
+
+function drawCad(zoom) {
+  if (!CAD || !cadPaths) return;
+  const showParts = cb('cbCad').checked, showPads = cb('cbPads').checked;   // independent layers
+  if (!showParts && !showPads && !part && !cb('cbFindings').checked) return;
+  const dpr = window.devicePixelRatio || 1, [a, b, c, d, e, f] = imgToScreenAffine(), k = Math.hypot(a, b);
+  ctx.save();
+  ctx.setTransform(dpr * a, dpr * b, dpr * c, dpr * d, dpr * e, dpr * f);   // stroke cached paths in image px
+  if (showPads) { ctx.setLineDash([]); ctx.lineWidth = 1 / k; ctx.strokeStyle = 'rgba(0,230,255,.75)'; ctx.stroke(cadPaths.pads); }
+  if (showParts) for (const g of cadPaths.groups) {
+    ctx.lineWidth = 1.5 / k; ctx.setLineDash(g.dash ? [6 / k, 4 / k] : []); ctx.strokeStyle = g.col; ctx.stroke(g.path);
+  }
+  if (cb('cbFindings').checked && !cb('lblFind').hidden) {   // parts that disagree with the BOM
+    ctx.setLineDash([]); ctx.lineWidth = Math.max(4 / k, 0.6 * cadPxPerMm * 0.15); ctx.strokeStyle = 'rgba(255,60,60,.85)';
+    ctx.stroke(cadPaths.problems); ctx.fillStyle = 'rgba(255,60,60,.18)'; ctx.fill(cadPaths.problems);
+  }
+  if (part) {
+    ctx.setLineDash([]); ctx.lineWidth = 3 / k; ctx.strokeStyle = '#fff'; ctx.stroke(part.path);
+    ctx.fillStyle = 'rgba(255,255,255,.12)'; ctx.fill(part.path);
+  }
+  ctx.restore();
+  // names: screen space, only parts in view, only once they are big enough
+  if (showParts && zoom * cadPxPerMm > 14) {
+    const v = main().viewportToImageRectangle(viewer.viewport.getBounds(true));
+    ctx.font = '12px monospace'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    for (const p of CAD.parts) {
+      if (p.box[2] < v.x || p.box[0] > v.x + v.width || p.box[3] < v.y || p.box[1] > v.y + v.height) continue;
+      if (cadHidden.has(cadKey(p))) continue;
+      const sx = a * p.cx + c * p.cy + e, sy = b * p.cx + d * p.cy + f, w = p.ref.length * 7.3 + 6;
+      ctx.fillStyle = 'rgba(0,0,0,.55)'; ctx.fillRect(sx - w / 2, sy - 8, w, 16);
+      ctx.fillStyle = cadColour(p); ctx.fillText(p.ref, sx, sy);
+    }
+    ctx.textAlign = 'start'; ctx.textBaseline = 'alphabetic';
+  }
+  if (HUD.on) HUD.cadStats = { pads: showPads, parts: showParts, groups: cadPaths.groups.length };
+}
+
+function partAt(x, y) {
+  if (!CAD || !cb('cbCad').checked) return null;
+  const hits = CAD.parts.filter(p => !cadHidden.has(cadKey(p)) && x >= p.box[0] && x <= p.box[2] && y >= p.box[1] && y <= p.box[3]
+    && inPolygon(x, y, p.poly));
+  hits.sort((a, b) => a.area - b.area);
+  return hits[0] || null;
+}
+
+// minimal markdown for datasheet sections: headings, tables, images, paragraphs, bold/code
+function md(text, dir) {
+  const inline = t => esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, a, src) => '<img alt="' + a + '" src="' + (/^https?:/.test(src) ? src : dir + '/' + src.replace(/&amp;/g, '&')) + '">');
+  const out = [], lines = text.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    const ln = lines[i]; let m;
+    if ((m = ln.match(/^(#{2,6})\s+(.*)$/))) { const h = Math.min(6, m[1].length + 1); out.push('<h' + h + '>' + inline(m[2]) + '</h' + h + '>'); continue; }
+    if (ln.trim().startsWith('|')) {
+      const rows = []; while (i < lines.length && lines[i].trim().startsWith('|')) rows.push(lines[i++]); i--;
+      const cells = r => r.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+      out.push('<table>' + rows.filter(r => !/^\s*\|[\s:|-]+\|\s*$/.test(r)).map((r, j) => '<tr>' +
+        cells(r).map(c => j ? '<td>' + inline(c) + '</td>' : '<th>' + inline(c) + '</th>').join('') + '</tr>').join('') + '</table>');
+      continue;
+    }
+    if (ln.trim()) out.push('<p>' + inline(ln) + '</p>');
+  }
+  return out.join('');
+}
+
+function renderPart() {
+  const info = cb('info');
+  if (!part) { info.style.display = 'none'; return; }
+  const c = part.c, l = part.line, ds = l && l.ds;
+  const lab = { zero: '0 Ω', 3: '3-digit', 4: '4-digit', eia96: 'EIA-96' };
+  const codes = l && l.value && l.value.marking ? Object.entries(l.value.marking).map(([k, v]) => '<code title="' + lab[k] + '">' + esc(v) + '</code>').join('') +
+    '<small>' + Object.keys(l.value.marking).map(k => lab[k]).join(' / ') + '</small>' : '';
+  const dir = ds ? ds.file.replace(/\/[^/]*$/, '') : '';
+  const secs = ds ? Object.entries(ds.sections).map(([kind, list]) => list.map((x, i) =>
+    '<details' + (kind === 'marking' && i === 0 ? ' open' : '') + '><summary>' + esc(kind) + ': ' + esc(x.title) +
+    (x.page ? ' <small>p. ' + esc(x.page) + '</small>' : '') + '</summary><div class="md">' + md(x.text, dir) + '</div></details>').join('')).join('') : '';
+  info.innerHTML = '<div class="part"><div class="head"><div><b style="font-size:15px">' + esc(part.ref) + '</b> ' +
+    '<span class="fit" style="color:' + FIT[c.fit] + '">' + esc(FIT_LABEL[c.fit]) + '</span></div><div>' +
+    '<button id="btnFrames">frames</button> <button id="btnClose">&times;</button></div></div><div class="kv">' +
+    (l ? '<b>BOM name</b><span>' + esc(l.name) + (l.fittedName && l.fittedName !== l.name ? ' <small>→ ' + esc(l.fittedName) + '</small>' : '') + '</span>' +
+      '<b>type</b><span>' + esc(l.cat.group) + ' · ' + esc(l.cat.sub) + '</span>' +
+      (l.value ? '<b>value</b><span>' + esc(l.value.text) + (l.value.voltage ? ' · ' + l.value.voltage + ' V' : '') +
+        (l.value.dielectric ? ' · ' + esc(l.value.dielectric) : '') + (l.value.current ? ' · ' + l.value.current + ' A' : '') + '</span>' : '') +
+      (codes ? '<b>marking</b><span>' + codes + '</span>' : '') +
+      '<b>description</b><span>' + esc(l.description || '—') + '</span>' +
+      (l.designators.length > 1 ? '<b>same line</b><span><small>' + esc(l.designators.join(', ')) + '</small></span>' : '') : '') +
+    '<b>package</b><span>' + esc(c.package) + '</span><b>position</b><span>' + c.x + ', ' + c.y + ' mm · ' + c.rot + '°</span>' +
+    '<b>height</b><span>' + (c.height ? c.height + ' mm' : '—') + '</span>' +
+    (markOf(part.ref) ? (() => { const m = markOf(part.ref), st = m.check ? m.check.status : '';
+      return '<b>marking read</b><span>' + (m.lines.length ? '<span class="mkread">' + m.lines.map(esc).join('<br>') + '</span>' :
+        '<small>' + (m.present === false ? 'place empty' : 'nothing read') + '</small>') +
+        ' <small>' + esc(m.conf) + (m.note ? ' · ' + esc(m.note) : '') + '</small>' +
+        (st ? '<br><span style="color:' + CHECK_COL[st] + '">' + esc(st) + (m.check.text ? ': ' + esc(m.check.text) : '') + '</span>' : '') +
+        '</span>'; })() : '') +
+    (markOf(part.ref) && markOf(part.ref).ocr ? (() => { const o = markOf(part.ref).ocr;
+      return '<b>OCR</b><span>' + (o.lines.length ? '<span class="mkread" style="color:#9fd">' + o.lines.map(esc).join('<br>') + '</span>' : '<small>nothing</small>') +
+        ' <small>score ' + o.score.toFixed(2) + ', turn ' + o.turn + '°</small> ' + ocrBadge(markOf(part.ref)) +
+        (o.otherTurn ? '<br><small>at ' + o.otherTurn.turn + '°: ' + esc(o.otherTurn.lines.join(' / ')) + '</small>' : '') + '</span>'; })() : '') +
+    (markOf(part.ref) && markOf(part.ref).vlm ? (() => { const v = markOf(part.ref).vlm;
+      return '<b>VLM</b><span>' + (v.lines.length ? '<span class="mkread" style="color:#c9f">' + v.lines.map(esc).join('<br>') + '</span>' : '<small>nothing</small>') +
+        ' <small>score ' + v.score.toFixed(2) + ', turn ' + v.turn + '°, ' + esc(v.model.split('/').pop()) + '</small> ' + vlmBadge(markOf(part.ref)) +
+        '</span>'; })() : '') +
+    (markOf(part.ref) && markOf(part.ref).resistorCode ? (() => { const r = markOf(part.ref).resistorCode;
+      return '<b>resistor code</b><span>' + (r.code ? '<span class="mkread" style="color:#fc9">' + esc(r.code) + '</span>' : '<small>not read</small>') +
+        ' <small>score ' + (r.score ?? 0).toFixed(2) + (r.margin != null ? ', margin ' + r.margin.toFixed(2) : '') +
+        (r.runnerUp ? ', runner-up ' + esc(r.runnerUp) : '') + ', turn ' + r.turn + '°' + (r.value ? ' = ' + esc(r.value) : '') + '</small> ' +
+        codeBadge(markOf(part.ref)) + (r.bom === 'mismatch' ? ' <span style="color:#e5534b">BOM mismatch</span>' : '') +
+        '<br><small>own classifier (readResistorCodes.py), trained without this part</small></span>'; })() : '') +
+    '</div>' +
+    (CAD.crops[part.ref] ? '<div class="imgs"><figure><img src="' + esc(CAD.crops[part.ref].file) + '"><figcaption>crop as cut: the part frame, ' +
+      CAD.crops[part.ref].pxPerMm.toFixed(0) + ' px/mm</figcaption></figure>' +
+      (markOf(part.ref) && markOf(part.ref).img ? '<figure><img src="' + esc(markOf(part.ref).img) + '"><figcaption>reading image: grey (L), CLAHE, ' +
+        'enlarged, turned ' + markOf(part.ref).turn + '° so the text stands upright — what the marking was read from</figcaption></figure>' : '') +
+      '</div>' : '') +
+    (ds ? '<h4 style="margin:12px 0 4px">Datasheet</h4><a href="' + esc(ds.file) + '" target="_blank">' + esc(ds.title) + '</a> <small>' +
+      esc(ds.vendor) + ' · ' + esc(ds.status) + ' · by ' + esc(ds.method) + (ds.mpn ? ' ' + esc(ds.mpn) : '') + '</small>' +
+      (ds.excursus ? '<p><b>' + esc(ds.excursus.category) + '</b> <small>' + esc(ds.excursus.params.join(' · ')) + '</small></p>' : '') +
+      (secs || '<p><small>No marking / ordering / package sections.</small></p>')
+      : (l ? '<p><small>No datasheet in the library.</small></p>' : '')) + '</div>';
+  info.style.display = 'block';
+  cb('btnClose').onclick = () => { part = null; renderPart(); draw(); };
+  cb('btnFrames').onclick = () => { picked = { x: part.cx, y: part.cy }; part = null; renderInfo(); draw(); };
+}
+
+function focusPart(p) {
+  part = p; picked = null; renderPart(); requestDraw();
+  const pad = Math.max(p.box[2] - p.box[0], p.box[3] - p.box[1]) * 3 + 5 * cadPxPerMm;
+  viewer.viewport.fitBounds(main().imageToViewportRectangle(p.cx - pad / 2, p.cy - pad / 2, pad, pad));
+}
+
+cb('cbCad').addEventListener('change', requestDraw);
+cb('cbPads').addEventListener('change', requestDraw);
+cb('cbFindings').addEventListener('change', requestDraw);
+cb('cadMode').addEventListener('change', () => { cadHidden.clear(); cadChanged(); });
+cb('cadFind').addEventListener('keydown', e => {
+  if (e.key !== 'Enter' || !CAD) return;
+  const q = e.target.value.trim().toLowerCase(), n = q.replace(/\s/g, '');
+  const p = CAD.parts.find(p => p.ref.toLowerCase() === q) || CAD.parts.find(p => p.line && (p.line.name.toLowerCase() === q ||
+    (p.line.value && p.line.value.text.toLowerCase().replace(/\s/g, '') === n)));
+  if (p) focusPart(p);
+});
+
+// ---------------------------------------------------------------- parts list: every component, upright crop, counts
+function lineValueKey(l) { return l && l.value ? l.value.value : Infinity; }
+function renderList() {
+  const b = CAD.board, g = cb('lGroup').value, fit = cb('lFit').value, q = cb('lFind').value.trim().toLowerCase();
+  const side = cb('lSide').value, chk = cb('lCheck').value;
+  const qn = q.replace(/\s/g, '');
+  const groups = {};
+  let shown = 0;
+  for (const [ref, c] of Object.entries(b.components)) {
+    const l = lineOf(c), grp = groupOf(l);
+    if (g && grp !== g) continue;
+    if (fit && c.fit !== fit) continue;
+    if (side && c.side !== side) continue;
+    const mk = markOf(ref), st = mk && mk.check ? mk.check.status : '';
+    if (chk === 'problems' && !PROBLEM.has(st)) continue;
+    if ((chk === 'ok' || chk === 'unread') && st !== chk) continue;
+    if (chk === 'text' && !(mk && mk.lines.length)) continue;
+    const oa = mk && mk.ocr ? (mk.ocr.otherTurn ? mk.ocr.otherTurn.agree : mk.ocr.agree) : '';
+    if (chk === 'ocrdiff' && !(oa === 'differs' || oa === 'ocr-only')) continue;
+    if (chk === 'ocrsame' && !(oa === 'same' || oa === 'close' || oa === 'partial')) continue;
+    if (chk === 'vlmdiff' && !(mk && mk.vlm && (mk.vlm.agree === 'differs' || mk.vlm.agree === 'ocr-only'))) continue;
+    if (chk === 'codediff' && !(mk && mk.resistorCode && mk.resistorCode.agree !== 'same')) continue;
+    const mtext = mk ? (mk.lines.join(' ') + ' ' + (mk.ocr ? mk.ocr.lines.join(' ') : '') + ' ' +
+      (mk.vlm ? mk.vlm.lines.join(' ') : '')).toLowerCase() : '';
+    if (q && !mtext.includes(q) && !(ref.toLowerCase().includes(q) || (l && (l.name.toLowerCase().includes(q) ||
+        (l.value && l.value.text.toLowerCase().replace(/\s/g, '') === qn))))) continue;
+    const key = c.line == null ? 'none:' + (c.package || '') : 'line:' + c.line;
+    ((groups[grp] = groups[grp] || {})[key] = (groups[grp][key] || [])).push(ref);
+    shown++;
+  }
+  cb('lCount').textContent = shown + ' of ' + Object.keys(b.components).length;
+  const card = ref => {
+    const c = b.components[ref], cr = CAD.crops[ref];
+    const img = cr ? '<img loading="lazy" style="aspect-ratio:' + cr.w + '/' + cr.h + '" src="' + esc(cr.file) + '" title="' + (cr.w / cr.pxPerMm).toFixed(1) + ' × ' +
+      (cr.h / cr.pxPerMm).toFixed(1) + ' mm">' : '<div class="noimg">' + esc(c.side) + ' side</div>';
+    const mk = markOf(ref), st = mk && mk.check ? mk.check.status : '';
+    const border = PROBLEM.has(st) ? CHECK_COL[st] : (c.fit === 'fitted' ? '#333' : FIT[c.fit]);
+    const mkHtml = mk ? '<div class="mk">' + (mk.lines.length ? mk.lines.map(esc).join('<br>') :
+      '<span style="color:#666">' + (mk.present === false ? 'empty' : '—') + '</span>') + '</div>' +
+      (st && st !== 'info' ? '<div class="ck" style="color:' + CHECK_COL[st] + '">' + esc(st) +
+        (PROBLEM.has(st) || st === 'unread' ? ': ' + esc(mk.check.text) : '') + '</div>' : '') +
+      (mk.ocr && (mk.lines.length || mk.ocr.lines.length) ? '<div class="oc">' + ocrBadge(mk) + '</div>' : '') +
+      (mk.vlm && (mk.lines.length || mk.vlm.lines.length) ? '<div class="oc">' + vlmBadge(mk) + '</div>' : '') +
+      (mk.resistorCode ? '<div class="oc">' + codeBadge(mk) + '</div>' : '') : '';
+    return '<div class="lcard" data-ref="' + esc(ref) + '" style="border-color:' + border + '" title="' +
+      esc(mk ? (mk.note || '') + (mk.conf ? ' · read ' + mk.conf : '') : '') + '">' + img + '<div class="r">' + esc(ref) + '</div>' +
+      mkHtml + '</div>';
+  };
+  let h = '';
+  for (const grp of GROUP_ORDER.filter(x => groups[x]).concat(Object.keys(groups).filter(x => !GROUP_ORDER.includes(x)))) {
+    const lines = Object.entries(groups[grp]);
+    const refs = lines.flatMap(([, r]) => r), byFit = {};
+    for (const r of refs) byFit[b.components[r].fit] = (byFit[b.components[r].fit] || 0) + 1;
+    h += '<h2>' + esc(grp) + ' <small>' + refs.length + ' · ' + Object.entries(byFit).map(([k, n]) => k + ' ' + n).join(', ') +
+      ' · ' + lines.length + ' kinds</small></h2>';
+    lines.sort(([ka, ra], [kb, rb]) => {
+      const la = ka.startsWith('line:') ? b.lines[+ka.slice(5)] : null, lb = kb.startsWith('line:') ? b.lines[+kb.slice(5)] : null;
+      return (lineValueKey(la) - lineValueKey(lb)) || natKey(la ? la.name : ka).localeCompare(natKey(lb ? lb.name : kb));
+    });
+    for (const [key, rs] of lines) {
+      rs.sort((x, y) => natKey(x).localeCompare(natKey(y)));
+      const l = key.startsWith('line:') ? b.lines[+key.slice(5)] : null;
+      let head;
+      if (l) {
+        const codes = l.value && l.value.marking ? Object.entries(l.value.marking).map(([k, v]) =>
+          '<code title="' + ({ zero: '0 Ω', 3: '3-digit', 4: '4-digit', eia96: 'EIA-96' })[k] + '">' + esc(v) + '</code>').join('') : '';
+        head = '<b>' + esc(l.value ? l.value.text : l.name) + '</b>' + (l.value && l.value.voltage ? ' ' + l.value.voltage + ' V' : '') +
+          (l.value && l.name !== l.value.text ? ' <small>(' + esc(l.name) + ')</small>' : '') +
+          ' <small>' + esc(l.footprint) + ' · ×' + rs.length + (l.fit !== 'fitted' ? ' · <span style="color:' + FIT[l.fit] + '">' +
+          esc(FIT_LABEL[l.fit]) + '</span>' : '') + '</small>' + (codes ? ' <small>marking may read</small>' + codes : '');
+      } else {
+        head = '<b>' + esc(key.slice(5) || 'no package') + '</b> <small>not in BOM · ×' + rs.length + '</small>';
+      }
+      h += '<div class="lline">' + head + '</div><div class="lcards">' + rs.map(card).join('') + '</div>';
+    }
+  }
+  cb('lBody').innerHTML = h || '<p><small>nothing matches</small></p>';
+  cb('lBody').querySelectorAll('.lcard').forEach(e => e.onclick = () => {
+    const p = CAD.byRef[e.dataset.ref];
+    if (!p) return;   // other side: not on this panorama
+    cb('list').style.display = 'none'; focusPart(p);
+  });
+}
+function openList() {
+  if (!CAD) return;
+  const counts = {};
+  for (const c of Object.values(CAD.board.components)) { const g = groupOf(lineOf(c)); counts[g] = (counts[g] || 0) + 1; }
+  if (!cb('lGroup').options.length) cb('lSide').value = CAD.board.align.side;   // the side this panorama shows
+  if (cb('lGroup').options.length < 2)
+    cb('lGroup').innerHTML = '<option value="">all groups</option>' + GROUP_ORDER.filter(g => counts[g]).map(g =>
+      '<option value="' + esc(g) + '">' + esc(g) + ' (' + counts[g] + ')</option>').join('');
+  cb('list').style.display = 'block';
+  renderList();
+}
+cb('btnList').addEventListener('click', openList);
+cb('lClose').addEventListener('click', () => { cb('list').style.display = 'none'; });
+for (const id of ['lGroup', 'lFit', 'lSide', 'lCheck']) cb(id).addEventListener('change', renderList);
+cb('lFind').addEventListener('input', renderList);
+cb('lSize').addEventListener('input', () => cb('lBody').style.setProperty('--h', cb('lSize').value + 'px'));
+cb('lBody').style.setProperty('--h', cb('lSize').value + 'px');
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && cb('list').style.display === 'block') cb('list').style.display = 'none';
+});
+
+// ---------------------------------------------------------------- diagnostics HUD: where the time goes
+// Per second: frames (rAF), overlay draw time, OSD tiles drawn / loaded, tile download time (Resource Timing),
+// long main-thread tasks. "copy" puts the last 60 s as JSON on the clipboard to paste into a bug report.
+const HUD = { on: false, frames: [], draws: [], tilesDrawn: 0, tilesLoaded: 0, tileMs: [], longTasks: [], anim: 0,
+              last: 0, history: [], cadStats: null };
+viewer.addHandler('tile-drawn', () => { if (HUD.on) HUD.tilesDrawn++; });
+viewer.addHandler('tile-loaded', () => { if (HUD.on) HUD.tilesLoaded++; });
+viewer.addHandler('animation', () => { if (HUD.on) HUD.anim++; });
+try { new PerformanceObserver(l => { if (HUD.on) for (const e of l.getEntries()) if (e.name.includes('_files/')) HUD.tileMs.push(e.duration); })
+  .observe({ type: 'resource' }); } catch (e) {}
+try { new PerformanceObserver(l => { if (HUD.on) for (const e of l.getEntries()) HUD.longTasks.push(e.duration); })
+  .observe({ type: 'longtask' }); } catch (e) {}
+const pct = (a, q) => { if (!a.length) return 0; const b = [...a].sort((x, y) => x - y); return b[Math.min(b.length - 1, Math.floor(b.length * q))]; };
+function hudLoop(t) { if (!HUD.on) return; if (HUD.last) HUD.frames.push(t - HUD.last); HUD.last = t; requestAnimationFrame(hudLoop); }
+function hudTick() {
+  if (!HUD.on) return;
+  const fr = HUD.frames, it = main();
+  const snap = {
+    t: Math.round(performance.now() / 1000),
+    fps: fr.length, frameMedMs: +pct(fr, .5).toFixed(1), frameP95Ms: +pct(fr, .95).toFixed(1), frameMaxMs: +Math.max(0, ...fr).toFixed(1),
+    overlayDraws: HUD.draws.length, overlayMsAvg: +(HUD.draws.reduce((a, b) => a + b, 0) / (HUD.draws.length || 1)).toFixed(2),
+    overlayMsMax: +Math.max(0, ...HUD.draws).toFixed(2), animEvents: HUD.anim,
+    tilesDrawn: HUD.tilesDrawn, tilesPerFrame: +(HUD.tilesDrawn / (fr.length || 1)).toFixed(1), tilesLoaded: HUD.tilesLoaded,
+    tileFetchMedMs: +pct(HUD.tileMs, .5).toFixed(0), tileFetchMaxMs: +Math.max(0, ...HUD.tileMs).toFixed(0),
+    longTasks: HUD.longTasks.length, longTaskMaxMs: +Math.max(0, ...HUD.longTasks).toFixed(0),
+    zoomImgPxPerScreenPx: it ? +(1 / it.viewportToImageZoom(viewer.viewport.getZoom(true))).toFixed(3) : null,
+    tilesCached: viewer.tileCache ? viewer.tileCache.numTilesLoaded() : null,
+    heapMB: performance.memory ? Math.round(performance.memory.usedJSHeapSize / 1e6) : null,
+  };
+  HUD.history.push(snap); if (HUD.history.length > 60) HUD.history.shift();
+  HUD.frames = []; HUD.draws = []; HUD.tilesDrawn = 0; HUD.tilesLoaded = 0; HUD.tileMs = []; HUD.longTasks = []; HUD.anim = 0;
+  let hint = 'idle';
+  if (snap.animEvents) {
+    if (snap.longTasks && snap.longTaskMaxMs > 50) hint = 'main thread blocked (long tasks) — JS or canvas work';
+    else if (snap.overlayMsMax > 8) hint = 'overlay drawing is slow';
+    else if (snap.frameP95Ms > 40 && snap.tilesPerFrame > 40) hint = 'many tiles per frame — tile drawing / GPU';
+    else if (snap.frameP95Ms > 40) hint = 'slow frames, not the overlay — browser compositing / GPU';
+    else if (snap.tileFetchMedMs > 150) hint = 'tiles arrive slowly — server / disk';
+    else hint = 'ok';
+  }
+  cb('hud').innerHTML = esc(
+    'fps ' + snap.fps + '   frame ' + snap.frameMedMs + ' / p95 ' + snap.frameP95Ms + ' / max ' + snap.frameMaxMs + ' ms\n' +
+    'overlay ' + snap.overlayDraws + ' draws, avg ' + snap.overlayMsAvg + ' max ' + snap.overlayMsMax + ' ms\n' +
+    'tiles drawn ' + snap.tilesDrawn + ' (' + snap.tilesPerFrame + '/frame), loaded ' + snap.tilesLoaded +
+      ', fetch ' + snap.tileFetchMedMs + ' / max ' + snap.tileFetchMaxMs + ' ms, cached ' + snap.tilesCached + '\n' +
+    'long tasks ' + snap.longTasks + ' (max ' + snap.longTaskMaxMs + ' ms)   zoom ' + snap.zoomImgPxPerScreenPx + ' img px/screen px' +
+      (snap.heapMB ? '   heap ' + snap.heapMB + ' MB' : '') + '\n' +
+    'dpr ' + (window.devicePixelRatio || 1) + '   canvas ' + canvas.width + '×' + canvas.height + '   → ' + hint + '\n') +
+    '<button id="hudCopy">copy last 60 s</button>';
+  cb('hudCopy').onclick = () => navigator.clipboard.writeText(JSON.stringify({
+    userAgent: navigator.userAgent, dpr: window.devicePixelRatio, screen: [innerWidth, innerHeight],
+    image: [DATA.width, DATA.height], cad: HUD.cadStats, history: HUD.history }, null, 1));
+}
+function setHud(on) {
+  HUD.on = on; cb('cbHud').checked = on; cb('hud').style.display = on ? 'block' : 'none';
+  if (on) { HUD.last = 0; requestAnimationFrame(hudLoop); cb('hud').textContent = 'measuring… zoom / pan to see the numbers'; }
+}
+setInterval(hudTick, 1000);
+cb('cbHud').addEventListener('change', () => setHud(cb('cbHud').checked));
+document.addEventListener('keydown', e => {
+  if ((e.key === 'd' || e.key === 'D') && !/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)) setHud(!HUD.on);
+});
+
+// ---------------------------------------------------------------- one overlay redraw per frame
+let drawQueued = false;
+function requestDraw() {
+  if (drawQueued) return;
+  drawQueued = true;
+  const run = () => { if (!drawQueued) return; drawQueued = false; draw(); };
+  requestAnimationFrame(run);
+  setTimeout(run, 100);   // rAF does not fire in a hidden tab
+}
+const drawImpl = draw;
+draw = function () { const t0 = performance.now(); drawImpl(); if (HUD.on) HUD.draws.push(performance.now() - t0); };
+
 if (!DATA.regions.length) cb('lblRegions').style.display = 'none';
 for (const id of ['cbFrames', 'cbPairs', 'cbRegions']) cb(id).addEventListener('change', () => {
   cb('legend').style.display = cb('cbPairs').checked ? 'block' : 'none'; draw(); });
 cb('cbSeams').addEventListener('change', () => setSeams(cb('cbSeams').checked));
-for (const ev of ['open', 'animation', 'update-viewport', 'resize']) viewer.addHandler(ev, draw);
-window.addEventListener('resize', draw);
+for (const ev of ['open', 'animation', 'update-viewport', 'resize']) viewer.addHandler(ev, requestDraw);
+window.addEventListener('resize', requestDraw);
 </script>
 </body>
 </html>
@@ -753,3 +1288,13 @@ renderer.setAnimationLoop(() => { controls.update(); renderer.render(scene, came
 </body>
 </html>
 '''
+
+
+if __name__ == '__main__':
+    import argparse
+    ap = argparse.ArgumentParser(description='Re-render index.html of stitchGrid / stackFocus output folders with the '
+                                             'current viewer template (no re-stitching).')
+    ap.add_argument('folders', nargs='+', help='output folders, e.g. out/captured_51.5')
+    for folder in ap.parse_args().folders:
+        rebuildHtml(folder)
+        print(f'{folder}/index.html rebuilt')

@@ -1,0 +1,24 @@
+{"ref": "R2", "group": "resistor", "src": "raw", "rot": 0, "lines": ["01C"], "score": 0.6729, "sec": 1.59, "blank": false}
+{"ref": "R15", "group": "resistor", "src": "raw", "rot": 0, "lines": ["220"], "score": 0.9878, "sec": 1.554, "blank": false}
+{"ref": "R38", "group": "resistor", "src": "raw", "rot": 0, "lines": ["513"], "score": 0.7783, "sec": 1.652, "blank": false}
+{"ref": "R52", "group": "resistor", "src": "raw", "rot": 0, "lines": ["22R0"], "score": 0.7026, "sec": 1.387, "blank": false}
+{"ref": "R57", "group": "resistor", "src": "raw", "rot": 0, "lines": ["R200"], "score": 0.8999, "sec": 1.682, "blank": false}
+{"ref": "R66", "group": "resistor", "src": "raw", "rot": 0, "lines": ["1000"], "score": 0.9941, "sec": 1.837, "blank": false}
+{"ref": "R72", "group": "resistor", "src": "raw", "rot": 0, "lines": ["223"], "score": 0.9987, "sec": 1.534, "blank": false}
+{"ref": "R87", "group": "resistor", "src": "raw", "rot": 0, "lines": ["333"], "score": 0.7342, "sec": 1.568, "blank": false}
+{"ref": "R40", "group": "resistor", "src": "raw", "rot": 0, "lines": ["105"], "score": 0.9913, "sec": 1.5, "blank": false}
+{"ref": "R17", "group": "resistor", "src": "raw", "rot": 0, "lines": ["272"], "score": 0.9728, "sec": 1.544, "blank": false}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "raw", "rot": 0, "lines": ["760"], "score": 0.84, "sec": 1.498, "blank": false}
+{"ref": "R74", "group": "resistor", "src": "raw", "rot": 0, "lines": ["01A"], "score": 0.7644, "sec": 1.517, "blank": false}
+{"ref": "U3", "group": "ic", "src": "raw", "rot": 0, "lines": ["PW534"], "score": 0.9764, "sec": 1.618, "blank": false}
+{"ref": "U6", "group": "ic", "src": "raw", "rot": 0, "lines": ["AGH4"], "score": 0.8429, "sec": 1.271, "blank": false}
+{"ref": "U16", "group": "ic", "src": "raw", "rot": 0, "lines": ["1810"], "score": 0.5002, "sec": 1.344, "blank": false}
+{"ref": "U23", "group": "ic", "src": "raw", "rot": 0, "lines": ["#2061", "Li"], "score": 0.5725, "sec": 1.181, "blank": false}
+{"ref": "U26", "group": "ic", "src": "raw", "rot": 0, "lines": ["R92251", "T118133"], "score": 0.9129, "sec": 1.615, "blank": false}
+{"ref": "U29", "group": "ic", "src": "raw", "rot": 0, "lines": ["PE", "3N791A1819"], "score": 0.628, "sec": 2.125, "blank": false}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "raw", "rot": 0, "lines": ["32.0", "AK9F"], "score": 0.9868, "sec": 1.373, "blank": false}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "raw", "rot": 0, "lines": ["-12.0", "RG5 1G"], "score": 0.9055, "sec": 1.798, "blank": false}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "raw", "rot": 0, "lines": ["P6② 220-16L"], "score": 0.8154, "sec": 2.322, "blank": false}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "raw", "rot": 0, "lines": ["4R7", "11119"], "score": 0.7505, "sec": 1.918, "blank": false}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "raw", "rot": 0, "lines": ["U B540C"], "score": 0.7416, "sec": 2.94, "blank": false}
+{"ref": "Q4", "group": "diode/transistor", "src": "raw", "rot": 0, "lines": ["87JHU", "OTU"], "score": 0.7016, "sec": 2.305, "blank": false}

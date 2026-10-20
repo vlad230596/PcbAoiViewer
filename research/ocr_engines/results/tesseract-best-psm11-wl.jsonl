@@ -1,0 +1,968 @@
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["A 07E", "-"], "score": 0.2724, "sec": 1.259, "blank": false}
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.966, "blank": false}
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 1.032, "blank": false}
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["S"], "score": 0.0, "sec": 1.43, "blank": false}
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["ASI", "-", "3"], "score": 0.061, "sec": 1.359, "blank": false}
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["8", "-"], "score": 0.0, "sec": 1.013, "blank": false}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": [".", "BB"], "score": 0.0497, "sec": 0.911, "blank": false}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.91, "blank": false}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": ["T", "J-"], "score": 0.0, "sec": 1.111, "blank": false}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["A", ".", "A-", "-", "-"], "score": 0.2048, "sec": 0.963, "blank": false}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["-", "FE"], "score": 0.4354, "sec": 0.743, "blank": false}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["E", "J", "A"], "score": 0.3673, "sec": 0.909, "blank": false}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["-", "-3"], "score": 0.0317, "sec": 1.066, "blank": false}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 1.04, "blank": false}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": [".", "2", "BE", "LB", "4", "XX"], "score": 0.1572, "sec": 1.234, "blank": false}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["31", "I", "1"], "score": 0.4255, "sec": 0.969, "blank": false}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["LF", "-", "JE", "4"], "score": 0.2801, "sec": 1.153, "blank": false}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["-", "LR", "4.", "-"], "score": 0.1781, "sec": 1.179, "blank": false}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["47", "A"], "score": 0.1314, "sec": 1.217, "blank": false}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": ["BA"], "score": 0.0, "sec": 0.893, "blank": false}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": ["-", "BS", "85J", "RB"], "score": 0.0125, "sec": 1.184, "blank": false}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["W", "4", "BI"], "score": 0.0, "sec": 1.002, "blank": false}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["ILE", "L", "NC", "I", "JE", "G"], "score": 0.0599, "sec": 1.337, "blank": false}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["801"], "score": 0.3044, "sec": 1.027, "blank": false}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["XK", "1"], "score": 0.3856, "sec": 0.883, "blank": false}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": ["-", "NI"], "score": 0.0, "sec": 1.213, "blank": false}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 1.165, "blank": false}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["0.", "8"], "score": 0.1463, "sec": 1.215, "blank": false}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["1", "LA", "IE"], "score": 0.0429, "sec": 1.125, "blank": false}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["VV", "-"], "score": 0.0, "sec": 0.974, "blank": false}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 1.069, "blank": false}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": ["2", "JE"], "score": 0.4337, "sec": 0.987, "blank": false}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": [".", "DO", "J."], "score": 0.008, "sec": 0.786, "blank": false}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["LN", "A", "S"], "score": 0.0, "sec": 0.593, "blank": false}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["IF", "JE", "0C", "1"], "score": 0.233, "sec": 1.047, "blank": false}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["N", ".", "I"], "score": 0.1021, "sec": 0.998, "blank": false}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["PE"], "score": 0.0, "sec": 0.679, "blank": false}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": ["34", "P"], "score": 0.0, "sec": 0.993, "blank": false}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": ["B.", "--", "ER", "177"], "score": 0.0656, "sec": 1.195, "blank": false}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["4", "B", "PE", "I"], "score": 0.1447, "sec": 0.989, "blank": false}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["A", "3", "3", "-", "L", "I", "2"], "score": 0.0781, "sec": 1.281, "blank": false}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["I"], "score": 0.5209, "sec": 0.982, "blank": false}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["22-16L", "PR"], "score": 0.2284, "sec": 1.049, "blank": false}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": ["I"], "score": 0.0, "sec": 1.376, "blank": false}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": ["BT"], "score": 0.0, "sec": 1.04, "blank": false}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["ACER T", "GE", "PE", "A"], "score": 0.1551, "sec": 1.131, "blank": false}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["S", "-", "8", ".", "-", "TT"], "score": 0.0856, "sec": 1.082, "blank": false}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["F-", "-", "A."], "score": 0.1205, "sec": 0.936, "blank": false}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["1 BE", "P."], "score": 0.1573, "sec": 0.874, "blank": false}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": ["EH I"], "score": 0.3218, "sec": 0.936, "blank": false}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": ["H"], "score": 0.0, "sec": 0.873, "blank": false}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["HN", ".", "RR", ".", "I", "-K", "14", "57", "2", "S", "0"], "score": 0.1562, "sec": 1.677, "blank": false}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["EE", ". -", "1", "4", "8"], "score": 0.3229, "sec": 0.952, "blank": false}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["3", "4", "OL4", "-", "8", ".", "L.A"], "score": 0.0651, "sec": 1.077, "blank": false}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["-", "9"], "score": 0.3479, "sec": 0.98, "blank": false}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": ["-", "X", "-", "3"], "score": 0.5049, "sec": 0.882, "blank": false}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": ["3 LW 4", "A"], "score": 0.0528, "sec": 1.099, "blank": false}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["P WINER", "1S", "22", "JR"], "score": 0.1034, "sec": 1.162, "blank": false}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["-2C", "EPPA", "1"], "score": 0.0361, "sec": 0.839, "blank": false}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["8"], "score": 0.4737, "sec": 1.156, "blank": false}
+{"ref": "D9", "group": "diode/transistor", "src": "body", "rot": 0, "lines": ["1 5 8.", "I", "4.", "B204", "C TH"], "score": 0.1914, "sec": 1.213, "blank": false}
+{"ref": "D9", "group": "diode/transistor", "src": "body", "rot": 180, "lines": ["RE", "YOI", "3", "W"], "score": 0.176, "sec": 1.05, "blank": false}
+{"ref": "D9", "group": "diode/transistor", "src": "body", "rot": 270, "lines": ["I-", "L", "0", "--", "0"], "score": 0.044, "sec": 1.131, "blank": false}
+{"ref": "D9", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": ["L", "4", "L 72", "83204"], "score": 0.3063, "sec": 1.116, "blank": false}
+{"ref": "D9", "group": "diode/transistor", "src": "mimg", "rot": 180, "lines": [".VOZCE", "2", "HN", "SER"], "score": 0.136, "sec": 0.828, "blank": false}
+{"ref": "D9", "group": "diode/transistor", "src": "mimg", "rot": 270, "lines": ["S", "-", "--"], "score": 0.2035, "sec": 1.002, "blank": false}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "body", "rot": 0, "lines": ["XA", "A", "A", "B940C"], "score": 0.1173, "sec": 0.897, "blank": false}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "body", "rot": 180, "lines": ["UE", "J048H", "B", "TR", "4"], "score": 0.0766, "sec": 0.95, "blank": false}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "body", "rot": 270, "lines": ["4", "P", "J", "-", "PA", "LE", "XE.", "EC", "I"], "score": 0.2167, "sec": 0.675, "blank": false}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": [".", "RAL", "3", "E", "1", "940C", ".", ".", "RT"], "score": 0.1062, "sec": 1.238, "blank": false}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "mimg", "rot": 180, "lines": ["1", "3058", "F", "SE", "OE"], "score": 0.0613, "sec": 1.199, "blank": false}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "mimg", "rot": 270, "lines": ["Y", "R", "-", "4", "Y", "-", "-S"], "score": 0.0277, "sec": 1.12, "blank": false}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "body", "rot": 0, "lines": ["KE", "-", "C", "38", "8940C", "1", "0"], "score": 0.344, "sec": 1.122, "blank": false}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "body", "rot": 180, "lines": ["1", "1", "0058", "RD", "1S", "0X"], "score": 0.2157, "sec": 1.015, "blank": false}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "body", "rot": 270, "lines": ["IC", "SL", "2 4", "-", "B", "H"], "score": 0.0707, "sec": 1.154, "blank": false}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": ["I", "RR", "EK", ".", "T", "LO", "LX", "-", "B940C", "1", "SN", "S", "WN"], "score": 0.119, "sec": 1.434, "blank": false}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "mimg", "rot": 180, "lines": ["ULL", "A", "5", "0G4", "-", "WW", "3", "-", "VY", "3", "-"], "score": 0.1456, "sec": 1.399, "blank": false}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "mimg", "rot": 270, "lines": ["DD", "A", "45", "ALD", "FF", "3", "DS", "I", "K", "IE"], "score": 0.2348, "sec": 1.129, "blank": false}
+{"ref": "U9_US1", "group": "ic", "src": "body", "rot": 0, "lines": ["1", "J", "IT"], "score": 0.2112, "sec": 1.044, "blank": false}
+{"ref": "U9_US1", "group": "ic", "src": "body", "rot": 180, "lines": ["1", "S70", "I 4"], "score": 0.1887, "sec": 0.925, "blank": false}
+{"ref": "U9_US1", "group": "ic", "src": "body", "rot": 270, "lines": ["CH.", ".S"], "score": 0.148, "sec": 0.958, "blank": false}
+{"ref": "U9_US1", "group": "ic", "src": "mimg", "rot": 0, "lines": ["RAT", "17", "-", "3"], "score": 0.0931, "sec": 0.644, "blank": false}
+{"ref": "U9_US1", "group": "ic", "src": "mimg", "rot": 180, "lines": ["LI", "HN"], "score": 0.0028, "sec": 0.665, "blank": false}
+{"ref": "U9_US1", "group": "ic", "src": "mimg", "rot": 270, "lines": ["-", "A"], "score": 0.0839, "sec": 1.124, "blank": false}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["J", "CLEEES"], "score": 0.1676, "sec": 0.702, "blank": false}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 1.037, "blank": false}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": ["L", "1"], "score": 0.0, "sec": 0.972, "blank": false}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["S", "R3M", "N", "HA", "C", "TES TWYTTR"], "score": 0.1372, "sec": 1.14, "blank": false}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["E- TEE", "MN", "A", "VB", "NN", "IY"], "score": 0.1944, "sec": 1.285, "blank": false}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["2 F", "S", "IX", "4", "E", "7", "RR"], "score": 0.0782, "sec": 0.943, "blank": false}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["-", "B", "TIS", "TEE"], "score": 0.1319, "sec": 1.184, "blank": false}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": ["8111", "N23", "P"], "score": 0.2023, "sec": 1.098, "blank": false}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": ["XX", "LW", "NS", "LN", "I"], "score": 0.2593, "sec": 1.082, "blank": false}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["RR", "IT", "TOTTORI"], "score": 0.1133, "sec": 1.329, "blank": false}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["EEL", "LH", "L", "HA"], "score": 0.2709, "sec": 1.085, "blank": false}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["NL", "2", "RT RE", "RY"], "score": 0.0633, "sec": 1.536, "blank": false}
+{"ref": "Q3", "group": "diode/transistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 1.091, "blank": false}
+{"ref": "Q3", "group": "diode/transistor", "src": "body", "rot": 180, "lines": ["WW", "11", "J", "4"], "score": 0.2669, "sec": 1.115, "blank": false}
+{"ref": "Q3", "group": "diode/transistor", "src": "body", "rot": 270, "lines": ["BE"], "score": 0.1952, "sec": 0.971, "blank": false}
+{"ref": "Q3", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": ["A"], "score": 0.0, "sec": 1.003, "blank": false}
+{"ref": "Q3", "group": "diode/transistor", "src": "mimg", "rot": 180, "lines": ["8"], "score": 0.5569, "sec": 1.044, "blank": false}
+{"ref": "Q3", "group": "diode/transistor", "src": "mimg", "rot": 270, "lines": ["TY", "ZB", "3", "8", "I", "-", "RH"], "score": 0.3719, "sec": 1.864, "blank": false}
+{"ref": "Q4", "group": "diode/transistor", "src": "body", "rot": 0, "lines": ["C", "FP"], "score": 0.0032, "sec": 1.687, "blank": false}
+{"ref": "Q4", "group": "diode/transistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 1.926, "blank": false}
+{"ref": "Q4", "group": "diode/transistor", "src": "body", "rot": 270, "lines": ["--.", "-", "D3"], "score": 0.0027, "sec": 1.795, "blank": false}
+{"ref": "Q4", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": ["BY.", "N-"], "score": 0.2637, "sec": 2.104, "blank": false}
+{"ref": "Q4", "group": "diode/transistor", "src": "mimg", "rot": 180, "lines": ["F", "C13", "SC", "L"], "score": 0.0322, "sec": 1.721, "blank": false}
+{"ref": "Q4", "group": "diode/transistor", "src": "mimg", "rot": 270, "lines": ["A", "US", "SS", "A"], "score": 0.131, "sec": 1.885, "blank": false}
+{"ref": "R2", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 1.62, "blank": false}
+{"ref": "R2", "group": "resistor", "src": "body", "rot": 180, "lines": ["A300"], "score": 0.1226, "sec": 1.58, "blank": false}
+{"ref": "R2", "group": "resistor", "src": "body", "rot": 270, "lines": ["V"], "score": 0.0, "sec": 1.732, "blank": false}
+{"ref": "R2", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["-"], "score": 0.0, "sec": 1.74, "blank": false}
+{"ref": "R2", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["-", "TY"], "score": 0.0074, "sec": 0.655, "blank": false}
+{"ref": "R2", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 1.074, "blank": false}
+{"ref": "R3", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 1.049, "blank": false}
+{"ref": "R3", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.81, "blank": false}
+{"ref": "R3", "group": "resistor", "src": "body", "rot": 270, "lines": ["J"], "score": 0.0, "sec": 0.632, "blank": false}
+{"ref": "R3", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["L"], "score": 0.0, "sec": 1.068, "blank": false}
+{"ref": "R3", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 1.108, "blank": false}
+{"ref": "R3", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["5", "-", "RR."], "score": 0.1002, "sec": 0.956, "blank": false}
+{"ref": "R4", "group": "resistor", "src": "body", "rot": 0, "lines": ["J"], "score": 0.0, "sec": 0.8, "blank": false}
+{"ref": "R4", "group": "resistor", "src": "body", "rot": 180, "lines": ["JI"], "score": 0.0, "sec": 0.948, "blank": false}
+{"ref": "R4", "group": "resistor", "src": "body", "rot": 270, "lines": ["LJ"], "score": 0.8684, "sec": 0.797, "blank": false}
+{"ref": "R4", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["WEP."], "score": 0.349, "sec": 0.932, "blank": false}
+{"ref": "R4", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 0.792, "blank": false}
+{"ref": "R4", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 0.816, "blank": false}
+{"ref": "R5", "group": "resistor", "src": "mimg", "rot": 0, "lines": [".", "S", "ON"], "score": 0.1176, "sec": 1.519, "blank": false}
+{"ref": "R5", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["S"], "score": 0.0, "sec": 1.516, "blank": false}
+{"ref": "R5", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["AL"], "score": 0.7467, "sec": 1.131, "blank": false}
+{"ref": "R6", "group": "resistor", "src": "body", "rot": 0, "lines": ["SCA"], "score": 0.0, "sec": 0.885, "blank": false}
+{"ref": "R6", "group": "resistor", "src": "body", "rot": 180, "lines": ["NW"], "score": 0.0, "sec": 0.77, "blank": false}
+{"ref": "R6", "group": "resistor", "src": "body", "rot": 270, "lines": ["LJ", "-"], "score": 0.4184, "sec": 1.12, "blank": false}
+{"ref": "R6", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["SN", "7", "--"], "score": 0.2081, "sec": 1.129, "blank": false}
+{"ref": "R6", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["NX", "PC"], "score": 0.0279, "sec": 0.905, "blank": false}
+{"ref": "R6", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["-"], "score": 0.8279, "sec": 0.798, "blank": false}
+{"ref": "R8", "group": "resistor", "src": "body", "rot": 0, "lines": ["OIC"], "score": 0.3484, "sec": 1.155, "blank": false}
+{"ref": "R8", "group": "resistor", "src": "body", "rot": 180, "lines": ["4303"], "score": 0.4555, "sec": 1.01, "blank": false}
+{"ref": "R8", "group": "resistor", "src": "body", "rot": 270, "lines": ["1S"], "score": 0.0, "sec": 1.05, "blank": false}
+{"ref": "R8", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["NA"], "score": 0.0, "sec": 1.064, "blank": false}
+{"ref": "R8", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["IY", "J"], "score": 0.177, "sec": 1.467, "blank": false}
+{"ref": "R8", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["2A", "Y", "SS"], "score": 0.0278, "sec": 2.888, "blank": false}
+{"ref": "R10", "group": "resistor", "src": "body", "rot": 0, "lines": ["X0"], "score": 0.0, "sec": 2.727, "blank": false}
+{"ref": "R10", "group": "resistor", "src": "body", "rot": 180, "lines": ["JI"], "score": 0.0974, "sec": 0.975, "blank": false}
+{"ref": "R10", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 1.375, "blank": false}
+{"ref": "R10", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["RS", "I"], "score": 0.209, "sec": 2.01, "blank": false}
+{"ref": "R10", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["YY", "LLIN"], "score": 0.1002, "sec": 1.908, "blank": false}
+{"ref": "R10", "group": "resistor", "src": "mimg", "rot": 270, "lines": [".", "8", "J", "I", "-"], "score": 0.1195, "sec": 1.779, "blank": false}
+{"ref": "R11", "group": "resistor", "src": "body", "rot": 0, "lines": ["30A"], "score": 0.0, "sec": 1.079, "blank": false}
+{"ref": "R11", "group": "resistor", "src": "body", "rot": 180, "lines": ["LTI."], "score": 0.0, "sec": 1.302, "blank": false}
+{"ref": "R11", "group": "resistor", "src": "body", "rot": 270, "lines": ["C", "3"], "score": 0.2171, "sec": 1.864, "blank": false}
+{"ref": "R11", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["J", "EAS", "DIREC", "0"], "score": 0.3829, "sec": 1.877, "blank": false}
+{"ref": "R11", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["SEH", "8", "1"], "score": 0.1815, "sec": 3.317, "blank": false}
+{"ref": "R11", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["-"], "score": 0.3684, "sec": 2.077, "blank": false}
+{"ref": "R12", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 1.563, "blank": false}
+{"ref": "R12", "group": "resistor", "src": "body", "rot": 180, "lines": ["E"], "score": 0.0, "sec": 1.681, "blank": false}
+{"ref": "R12", "group": "resistor", "src": "body", "rot": 270, "lines": ["C."], "score": 0.0, "sec": 1.745, "blank": false}
+{"ref": "R12", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["LX"], "score": 0.0, "sec": 1.756, "blank": false}
+{"ref": "R12", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["2", ".", "P"], "score": 0.0096, "sec": 1.651, "blank": false}
+{"ref": "R12", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["C", "-"], "score": 0.0, "sec": 1.959, "blank": false}
+{"ref": "R13", "group": "resistor", "src": "body", "rot": 0, "lines": ["OIL"], "score": 0.0886, "sec": 1.764, "blank": false}
+{"ref": "R13", "group": "resistor", "src": "body", "rot": 180, "lines": ["R30"], "score": 0.1885, "sec": 1.293, "blank": false}
+{"ref": "R13", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 1.195, "blank": false}
+{"ref": "R13", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["LN"], "score": 0.0, "sec": 1.505, "blank": false}
+{"ref": "R13", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 1.343, "blank": false}
+{"ref": "R13", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["J .. 8", "22"], "score": 0.3671, "sec": 1.634, "blank": false}
+{"ref": "R14", "group": "resistor", "src": "body", "rot": 0, "lines": ["AT"], "score": 0.1495, "sec": 1.943, "blank": false}
+{"ref": "R14", "group": "resistor", "src": "body", "rot": 180, "lines": ["H0"], "score": 0.0, "sec": 1.288, "blank": false}
+{"ref": "R14", "group": "resistor", "src": "body", "rot": 270, "lines": ["LL"], "score": 0.1448, "sec": 1.706, "blank": false}
+{"ref": "R14", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["A", "0", "9"], "score": 0.0, "sec": 2.174, "blank": false}
+{"ref": "R14", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["ST", "I"], "score": 0.0759, "sec": 2.408, "blank": false}
+{"ref": "R14", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["J", "BR", "J"], "score": 0.3248, "sec": 1.798, "blank": false}
+{"ref": "R15", "group": "resistor", "src": "body", "rot": 0, "lines": ["1220"], "score": 0.3759, "sec": 1.57, "blank": false}
+{"ref": "R15", "group": "resistor", "src": "body", "rot": 180, "lines": ["022"], "score": 0.0, "sec": 1.483, "blank": false}
+{"ref": "R15", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 1.865, "blank": false}
+{"ref": "R15", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["73", "R", "BR", "AN"], "score": 0.1832, "sec": 1.842, "blank": false}
+{"ref": "R15", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["ELL-", "RT", "M22"], "score": 0.0228, "sec": 1.318, "blank": false}
+{"ref": "R15", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 1.486, "blank": false}
+{"ref": "R16", "group": "resistor", "src": "body", "rot": 0, "lines": ["A20"], "score": 0.0, "sec": 1.239, "blank": false}
+{"ref": "R16", "group": "resistor", "src": "body", "rot": 180, "lines": ["22"], "score": 0.0, "sec": 0.708, "blank": false}
+{"ref": "R16", "group": "resistor", "src": "body", "rot": 270, "lines": ["EE", "A"], "score": 0.225, "sec": 1.0, "blank": false}
+{"ref": "R16", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["R", "SN"], "score": 0.1774, "sec": 0.997, "blank": false}
+{"ref": "R16", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 0.86, "blank": false}
+{"ref": "R16", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["J", "-"], "score": 0.0601, "sec": 0.717, "blank": false}
+{"ref": "R17", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.558, "blank": false}
+{"ref": "R17", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 1.053, "blank": false}
+{"ref": "R17", "group": "resistor", "src": "body", "rot": 270, "lines": ["EEN"], "score": 0.1651, "sec": 0.979, "blank": false}
+{"ref": "R17", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["2"], "score": 0.3262, "sec": 0.971, "blank": false}
+{"ref": "R17", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["2", "528"], "score": 0.0, "sec": 1.044, "blank": false}
+{"ref": "R17", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["A"], "score": 0.0, "sec": 0.894, "blank": false}
+{"ref": "R18", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 1.102, "blank": false}
+{"ref": "R18", "group": "resistor", "src": "body", "rot": 180, "lines": ["3203"], "score": 0.4961, "sec": 0.941, "blank": false}
+{"ref": "R18", "group": "resistor", "src": "body", "rot": 270, "lines": ["2", "TT"], "score": 0.0, "sec": 0.936, "blank": false}
+{"ref": "R18", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["S", "J"], "score": 0.0, "sec": 0.845, "blank": false}
+{"ref": "R18", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["ET"], "score": 0.0, "sec": 1.057, "blank": false}
+{"ref": "R18", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 0.845, "blank": false}
+{"ref": "R19", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 1.058, "blank": false}
+{"ref": "R19", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 1.478, "blank": false}
+{"ref": "R19", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 0.997, "blank": false}
+{"ref": "R20", "group": "resistor", "src": "body", "rot": 0, "lines": ["0A"], "score": 0.0305, "sec": 1.371, "blank": false}
+{"ref": "R20", "group": "resistor", "src": "body", "rot": 180, "lines": ["EN"], "score": 0.3674, "sec": 1.545, "blank": false}
+{"ref": "R20", "group": "resistor", "src": "body", "rot": 270, "lines": ["-"], "score": 0.0, "sec": 2.055, "blank": false}
+{"ref": "R20", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["-", "-"], "score": 0.0, "sec": 0.829, "blank": false}
+{"ref": "R20", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["8", "W", "GH-"], "score": 0.0778, "sec": 1.003, "blank": false}
+{"ref": "R20", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["EE", "1 -"], "score": 0.1021, "sec": 0.738, "blank": false}
+{"ref": "R21", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["3", ".", "FW"], "score": 0.0316, "sec": 0.655, "blank": false}
+{"ref": "R21", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["2TH", "CERES"], "score": 0.0911, "sec": 1.11, "blank": false}
+{"ref": "R21", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["CY", "AA"], "score": 0.5878, "sec": 0.988, "blank": false}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 1.046, "blank": false}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "body", "rot": 180, "lines": ["20"], "score": 0.0, "sec": 1.383, "blank": false}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "body", "rot": 270, "lines": ["I"], "score": 0.5714, "sec": 1.507, "blank": false}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 1.469, "blank": false}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 1.281, "blank": false}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["I", "4"], "score": 0.2092, "sec": 2.444, "blank": false}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "body", "rot": 0, "lines": ["18", "YJ"], "score": 0.4779, "sec": 2.119, "blank": false}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "body", "rot": 180, "lines": ["H"], "score": 0.0, "sec": 1.385, "blank": false}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "body", "rot": 270, "lines": ["-"], "score": 0.0, "sec": 1.434, "blank": false}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["4"], "score": 0.3752, "sec": 1.402, "blank": false}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["2"], "score": 0.2971, "sec": 2.18, "blank": false}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["3"], "score": 0.0, "sec": 1.519, "blank": false}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 1.559, "blank": false}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "body", "rot": 180, "lines": ["F"], "score": 0.0, "sec": 2.354, "blank": false}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 1.573, "blank": false}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 1.47, "blank": false}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["WS", "4"], "score": 0.0291, "sec": 1.842, "blank": false}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["."], "score": 0.0, "sec": 1.934, "blank": false}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 1.488, "blank": false}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "body", "rot": 180, "lines": ["4", "WE"], "score": 0.8138, "sec": 1.401, "blank": false}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 1.859, "blank": false}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["YY", "FF"], "score": 0.1602, "sec": 2.107, "blank": false}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["773"], "score": 0.2796, "sec": 1.636, "blank": false}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["0", "18", "L"], "score": 0.3698, "sec": 1.304, "blank": false}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "body", "rot": 0, "lines": ["OIC"], "score": 0.3415, "sec": 1.58, "blank": false}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "body", "rot": 180, "lines": ["A"], "score": 0.0, "sec": 1.705, "blank": false}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 1.488, "blank": false}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["WC"], "score": 0.0205, "sec": 1.478, "blank": false}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["C"], "score": 0.0, "sec": 1.729, "blank": false}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["ST"], "score": 0.0, "sec": 1.938, "blank": false}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "body", "rot": 0, "lines": ["ATR."], "score": 0.0, "sec": 1.62, "blank": false}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "body", "rot": 180, "lines": ["F", "0", "E."], "score": 0.2191, "sec": 1.369, "blank": false}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "body", "rot": 270, "lines": ["TC", "A"], "score": 0.0611, "sec": 1.853, "blank": false}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 1.486, "blank": false}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 1.287, "blank": false}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["L"], "score": 0.0, "sec": 1.321, "blank": false}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "body", "rot": 0, "lines": ["BX", "4298."], "score": 0.537, "sec": 1.525, "blank": false}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "body", "rot": 180, "lines": ["73"], "score": 0.0, "sec": 0.93, "blank": false}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "body", "rot": 270, "lines": ["15"], "score": 0.2676, "sec": 1.765, "blank": false}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["FETT."], "score": 0.0847, "sec": 1.584, "blank": false}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["A3"], "score": 0.0, "sec": 1.445, "blank": false}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["4"], "score": 0.5695, "sec": 1.831, "blank": false}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 1.497, "blank": false}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 1.216, "blank": false}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "body", "rot": 270, "lines": ["J"], "score": 0.5685, "sec": 1.603, "blank": false}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.996, "blank": false}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 1.634, "blank": false}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["1 W"], "score": 0.0, "sec": 1.635, "blank": false}
+{"ref": "R28", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["N", "F"], "score": 0.0, "sec": 1.764, "blank": false}
+{"ref": "R28", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["2", "48"], "score": 0.0793, "sec": 1.045, "blank": false}
+{"ref": "R28", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 0.978, "blank": false}
+{"ref": "R29", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["A"], "score": 0.0, "sec": 0.992, "blank": false}
+{"ref": "R29", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["FE"], "score": 0.0, "sec": 1.113, "blank": false}
+{"ref": "R29", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["I"], "score": 0.204, "sec": 1.379, "blank": false}
+{"ref": "R30", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.668, "blank": false}
+{"ref": "R30", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 0.342, "blank": false}
+{"ref": "R30", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["2"], "score": 0.0, "sec": 0.245, "blank": false}
+{"ref": "R31", "group": "resistor", "src": "body", "rot": 0, "lines": ["4"], "score": 0.2076, "sec": 0.481, "blank": false}
+{"ref": "R31", "group": "resistor", "src": "body", "rot": 180, "lines": ["EJB"], "score": 0.3132, "sec": 0.59, "blank": false}
+{"ref": "R31", "group": "resistor", "src": "body", "rot": 270, "lines": ["2"], "score": 0.6258, "sec": 0.409, "blank": false}
+{"ref": "R31", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["WA."], "score": 0.0663, "sec": 1.31, "blank": false}
+{"ref": "R31", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["YN", "N", "BE"], "score": 0.0988, "sec": 1.658, "blank": false}
+{"ref": "R31", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["YL"], "score": 0.0, "sec": 1.085, "blank": false}
+{"ref": "R38", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 1.012, "blank": false}
+{"ref": "R38", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 1.821, "blank": false}
+{"ref": "R38", "group": "resistor", "src": "body", "rot": 270, "lines": ["12"], "score": 0.5087, "sec": 0.481, "blank": false}
+{"ref": "R38", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["IT"], "score": 0.0, "sec": 0.213, "blank": false}
+{"ref": "R38", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["EP4"], "score": 0.0, "sec": 0.228, "blank": false}
+{"ref": "R38", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["EE"], "score": 0.3456, "sec": 0.251, "blank": false}
+{"ref": "R39", "group": "resistor", "src": "body", "rot": 0, "lines": ["Y"], "score": 0.0, "sec": 1.054, "blank": false}
+{"ref": "R39", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.338, "blank": false}
+{"ref": "R39", "group": "resistor", "src": "body", "rot": 270, "lines": ["NN"], "score": 0.399, "sec": 0.562, "blank": false}
+{"ref": "R39", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["-", "S"], "score": 0.3103, "sec": 0.431, "blank": false}
+{"ref": "R39", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["1", "NN", "-"], "score": 0.046, "sec": 0.161, "blank": false}
+{"ref": "R39", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["J", "7"], "score": 0.2332, "sec": 0.156, "blank": false}
+{"ref": "R40", "group": "resistor", "src": "body", "rot": 0, "lines": ["IO"], "score": 0.1173, "sec": 0.116, "blank": false}
+{"ref": "R40", "group": "resistor", "src": "body", "rot": 180, "lines": ["O"], "score": 0.0, "sec": 0.113, "blank": false}
+{"ref": "R40", "group": "resistor", "src": "body", "rot": 270, "lines": ["3", "A"], "score": 0.3618, "sec": 0.129, "blank": false}
+{"ref": "R40", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["LF", "0"], "score": 0.2101, "sec": 0.111, "blank": false}
+{"ref": "R40", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["O", "4", "J"], "score": 0.2929, "sec": 0.142, "blank": false}
+{"ref": "R40", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["P", "S"], "score": 0.0, "sec": 0.131, "blank": false}
+{"ref": "R41", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.107, "blank": false}
+{"ref": "R41", "group": "resistor", "src": "body", "rot": 180, "lines": ["7"], "score": 0.0, "sec": 0.127, "blank": false}
+{"ref": "R41", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.112, "blank": false}
+{"ref": "R41", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["-", "W", "KC", "J"], "score": 0.1662, "sec": 0.151, "blank": false}
+{"ref": "R41", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["8LE-", "."], "score": 0.0, "sec": 0.138, "blank": false}
+{"ref": "R41", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["2", "K"], "score": 0.1654, "sec": 0.129, "blank": false}
+{"ref": "R43", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.106, "blank": false}
+{"ref": "R43", "group": "resistor", "src": "body", "rot": 180, "lines": ["CE"], "score": 0.0, "sec": 0.127, "blank": false}
+{"ref": "R43", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.11, "blank": false}
+{"ref": "R43", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["HP"], "score": 0.0701, "sec": 0.117, "blank": false}
+{"ref": "R43", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["EF"], "score": 0.0, "sec": 0.124, "blank": false}
+{"ref": "R43", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 0.105, "blank": false}
+{"ref": "R44", "group": "resistor", "src": "body", "rot": 0, "lines": ["K250"], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R44", "group": "resistor", "src": "body", "rot": 180, "lines": ["ES"], "score": 0.3749, "sec": 0.127, "blank": false}
+{"ref": "R44", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.106, "blank": false}
+{"ref": "R44", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["TO"], "score": 0.5291, "sec": 0.122, "blank": false}
+{"ref": "R44", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R44", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["A"], "score": 0.69, "sec": 0.113, "blank": false}
+{"ref": "R45", "group": "resistor", "src": "body", "rot": 0, "lines": ["E"], "score": 0.0, "sec": 0.128, "blank": false}
+{"ref": "R45", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.128, "blank": false}
+{"ref": "R45", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.117, "blank": false}
+{"ref": "R45", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["PIN", "PR"], "score": 0.4466, "sec": 0.141, "blank": false}
+{"ref": "R45", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["NTN", "A"], "score": 0.0, "sec": 0.15, "blank": false}
+{"ref": "R45", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["JE"], "score": 0.684, "sec": 0.149, "blank": false}
+{"ref": "R47", "group": "resistor", "src": "body", "rot": 0, "lines": ["KC"], "score": 0.0, "sec": 0.135, "blank": false}
+{"ref": "R47", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.122, "blank": false}
+{"ref": "R47", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R47", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["4", "-"], "score": 0.0, "sec": 0.157, "blank": false}
+{"ref": "R47", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["T", "."], "score": 0.0, "sec": 0.14, "blank": false}
+{"ref": "R47", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["."], "score": 0.0, "sec": 0.132, "blank": false}
+{"ref": "R49", "group": "resistor", "src": "body", "rot": 0, "lines": ["417."], "score": 0.0, "sec": 0.128, "blank": false}
+{"ref": "R49", "group": "resistor", "src": "body", "rot": 180, "lines": ["303"], "score": 0.4707, "sec": 0.125, "blank": false}
+{"ref": "R49", "group": "resistor", "src": "body", "rot": 270, "lines": ["2"], "score": 0.0, "sec": 0.121, "blank": false}
+{"ref": "R49", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["VINE"], "score": 0.3979, "sec": 0.153, "blank": false}
+{"ref": "R49", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["LL", "PP", "P", "SR", "TF"], "score": 0.0153, "sec": 0.158, "blank": false}
+{"ref": "R49", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["TE-"], "score": 0.0, "sec": 0.122, "blank": false}
+{"ref": "R50", "group": "resistor", "src": "body", "rot": 0, "lines": ["ALN"], "score": 0.0935, "sec": 0.128, "blank": false}
+{"ref": "R50", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.124, "blank": false}
+{"ref": "R50", "group": "resistor", "src": "body", "rot": 270, "lines": ["2"], "score": 0.1603, "sec": 0.121, "blank": false}
+{"ref": "R50", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["."], "score": 0.0, "sec": 0.117, "blank": false}
+{"ref": "R50", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R50", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 0.115, "blank": false}
+{"ref": "R51", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.111, "blank": false}
+{"ref": "R51", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.11, "blank": false}
+{"ref": "R51", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.115, "blank": false}
+{"ref": "R51", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["N", "-", "Y"], "score": 0.0, "sec": 0.143, "blank": false}
+{"ref": "R51", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["10", "W5", "AP"], "score": 0.0, "sec": 0.138, "blank": false}
+{"ref": "R51", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["YS", "A", "45"], "score": 0.3173, "sec": 0.151, "blank": false}
+{"ref": "R52", "group": "resistor", "src": "body", "rot": 0, "lines": ["E"], "score": 0.0, "sec": 0.138, "blank": false}
+{"ref": "R52", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.14, "blank": false}
+{"ref": "R52", "group": "resistor", "src": "body", "rot": 270, "lines": ["9"], "score": 0.0, "sec": 0.118, "blank": false}
+{"ref": "R52", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["LL", "S", "A"], "score": 0.0405, "sec": 0.162, "blank": false}
+{"ref": "R52", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["J", "7", "IN"], "score": 0.2433, "sec": 0.148, "blank": false}
+{"ref": "R52", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["1", "5", "15", "3"], "score": 0.0766, "sec": 0.145, "blank": false}
+{"ref": "R53", "group": "resistor", "src": "body", "rot": 0, "lines": ["ID"], "score": 0.3444, "sec": 0.117, "blank": false}
+{"ref": "R53", "group": "resistor", "src": "body", "rot": 180, "lines": ["GQ"], "score": 0.0, "sec": 0.115, "blank": false}
+{"ref": "R53", "group": "resistor", "src": "body", "rot": 270, "lines": ["162"], "score": 0.4202, "sec": 0.115, "blank": false}
+{"ref": "R53", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["Y", "JE"], "score": 0.1517, "sec": 0.142, "blank": false}
+{"ref": "R53", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["LTE.", "4."], "score": 0.0, "sec": 0.142, "blank": false}
+{"ref": "R53", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["E", "EN", "2"], "score": 0.3619, "sec": 0.152, "blank": false}
+{"ref": "R54", "group": "resistor", "src": "body", "rot": 0, "lines": ["D"], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R54", "group": "resistor", "src": "body", "rot": 180, "lines": ["ROE"], "score": 0.0, "sec": 0.124, "blank": false}
+{"ref": "R54", "group": "resistor", "src": "body", "rot": 270, "lines": ["CD", ".", "J"], "score": 0.2524, "sec": 0.122, "blank": false}
+{"ref": "R54", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.107, "blank": false}
+{"ref": "R54", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 0.111, "blank": false}
+{"ref": "R54", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["J"], "score": 0.0, "sec": 0.124, "blank": false}
+{"ref": "R55", "group": "resistor", "src": "body", "rot": 0, "lines": ["O"], "score": 0.0, "sec": 0.124, "blank": false}
+{"ref": "R55", "group": "resistor", "src": "body", "rot": 180, "lines": ["HID"], "score": 0.2907, "sec": 0.125, "blank": false}
+{"ref": "R55", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.115, "blank": false}
+{"ref": "R55", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["NO A", "A"], "score": 0.3784, "sec": 0.148, "blank": false}
+{"ref": "R55", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["OX", "-", "V", "R"], "score": 0.105, "sec": 0.167, "blank": false}
+{"ref": "R55", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["A", "1", "A", "SAS", "A", "8"], "score": 0.3387, "sec": 0.155, "blank": false}
+{"ref": "R57", "group": "resistor", "src": "body", "rot": 0, "lines": ["2"], "score": 0.0485, "sec": 0.125, "blank": false}
+{"ref": "R57", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.121, "blank": false}
+{"ref": "R57", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.119, "blank": false}
+{"ref": "R57", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["4", "RL"], "score": 0.0, "sec": 0.137, "blank": false}
+{"ref": "R57", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["NP"], "score": 0.0, "sec": 0.136, "blank": false}
+{"ref": "R57", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["L"], "score": 0.0, "sec": 0.122, "blank": false}
+{"ref": "R58", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.115, "blank": false}
+{"ref": "R58", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["J"], "score": 0.0, "sec": 0.112, "blank": false}
+{"ref": "R58", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["1"], "score": 0.1815, "sec": 0.116, "blank": false}
+{"ref": "R62", "group": "resistor", "src": "body", "rot": 0, "lines": ["40"], "score": 0.0, "sec": 0.122, "blank": false}
+{"ref": "R62", "group": "resistor", "src": "body", "rot": 180, "lines": ["AT"], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R62", "group": "resistor", "src": "body", "rot": 270, "lines": ["IE"], "score": 0.501, "sec": 0.114, "blank": false}
+{"ref": "R62", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["B ED", "Q"], "score": 0.0705, "sec": 0.143, "blank": false}
+{"ref": "R62", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["PR", "LTP"], "score": 0.1813, "sec": 0.151, "blank": false}
+{"ref": "R62", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["A", "11", "1"], "score": 0.3857, "sec": 0.128, "blank": false}
+{"ref": "R63", "group": "resistor", "src": "body", "rot": 0, "lines": ["QS"], "score": 0.318, "sec": 0.121, "blank": false}
+{"ref": "R63", "group": "resistor", "src": "body", "rot": 180, "lines": ["L0"], "score": 0.0, "sec": 0.124, "blank": false}
+{"ref": "R63", "group": "resistor", "src": "body", "rot": 270, "lines": ["1", "--", "."], "score": 0.1624, "sec": 0.12, "blank": false}
+{"ref": "R63", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["-BE", "PTT", "1"], "score": 0.0926, "sec": 0.148, "blank": false}
+{"ref": "R63", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["1", "9"], "score": 0.0384, "sec": 0.13, "blank": false}
+{"ref": "R63", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["E"], "score": 0.3735, "sec": 0.117, "blank": false}
+{"ref": "R65", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.131, "blank": false}
+{"ref": "R65", "group": "resistor", "src": "body", "rot": 180, "lines": ["J0"], "score": 0.0, "sec": 0.127, "blank": false}
+{"ref": "R65", "group": "resistor", "src": "body", "rot": 270, "lines": ["."], "score": 0.0, "sec": 0.118, "blank": false}
+{"ref": "R65", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["R10", "-"], "score": 0.2798, "sec": 0.117, "blank": false}
+{"ref": "R65", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["00"], "score": 0.0842, "sec": 0.113, "blank": false}
+{"ref": "R65", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["CX"], "score": 0.0749, "sec": 0.112, "blank": false}
+{"ref": "R66", "group": "resistor", "src": "body", "rot": 0, "lines": ["RH", "1000"], "score": 0.5794, "sec": 0.141, "blank": false}
+{"ref": "R66", "group": "resistor", "src": "body", "rot": 180, "lines": ["O0L"], "score": 0.0, "sec": 0.121, "blank": false}
+{"ref": "R66", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.108, "blank": false}
+{"ref": "R66", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["-", "IN PP SN"], "score": 0.2129, "sec": 0.15, "blank": false}
+{"ref": "R66", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["-", "-.", "UL"], "score": 0.257, "sec": 0.139, "blank": false}
+{"ref": "R66", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["6", "-.", "F", "-"], "score": 0.0192, "sec": 0.147, "blank": false}
+{"ref": "R67", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R67", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.107, "blank": false}
+{"ref": "R67", "group": "resistor", "src": "body", "rot": 270, "lines": ["4"], "score": 0.3835, "sec": 0.112, "blank": false}
+{"ref": "R67", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["E", "G1"], "score": 0.0, "sec": 0.136, "blank": false}
+{"ref": "R67", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["7", "43"], "score": 0.3213, "sec": 0.123, "blank": false}
+{"ref": "R67", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["1"], "score": 0.3196, "sec": 0.146, "blank": false}
+{"ref": "R68", "group": "resistor", "src": "body", "rot": 0, "lines": ["3", "A", "3"], "score": 0.2086, "sec": 0.126, "blank": false}
+{"ref": "R68", "group": "resistor", "src": "body", "rot": 180, "lines": ["132"], "score": 0.2467, "sec": 0.122, "blank": false}
+{"ref": "R68", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.114, "blank": false}
+{"ref": "R68", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["A", "A"], "score": 0.664, "sec": 0.113, "blank": false}
+{"ref": "R68", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["1", "3"], "score": 0.3277, "sec": 0.114, "blank": false}
+{"ref": "R68", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["J"], "score": 0.3372, "sec": 0.11, "blank": false}
+{"ref": "R70", "group": "resistor", "src": "body", "rot": 0, "lines": ["BRE"], "score": 0.0, "sec": 0.134, "blank": false}
+{"ref": "R70", "group": "resistor", "src": "body", "rot": 180, "lines": ["LWES"], "score": 0.0, "sec": 0.132, "blank": false}
+{"ref": "R70", "group": "resistor", "src": "body", "rot": 270, "lines": ["-", "-", "V"], "score": 0.2324, "sec": 0.116, "blank": false}
+{"ref": "R70", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["OJ", "CS", "N", "-"], "score": 0.0602, "sec": 0.147, "blank": false}
+{"ref": "R70", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["SS", "H", "W."], "score": 0.0, "sec": 0.145, "blank": false}
+{"ref": "R70", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["E", "38"], "score": 0.233, "sec": 0.128, "blank": false}
+{"ref": "R71", "group": "resistor", "src": "body", "rot": 0, "lines": ["103"], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R71", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R71", "group": "resistor", "src": "body", "rot": 270, "lines": ["3"], "score": 0.7004, "sec": 0.12, "blank": false}
+{"ref": "R71", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["OWO", "1"], "score": 0.0, "sec": 0.14, "blank": false}
+{"ref": "R71", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["LE", "SS"], "score": 0.1617, "sec": 0.139, "blank": false}
+{"ref": "R71", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["53OB"], "score": 0.0, "sec": 0.131, "blank": false}
+{"ref": "R72", "group": "resistor", "src": "body", "rot": 0, "lines": ["SS", "238"], "score": 0.2786, "sec": 0.131, "blank": false}
+{"ref": "R72", "group": "resistor", "src": "body", "rot": 180, "lines": ["52", "J", "4", "P"], "score": 0.2175, "sec": 0.138, "blank": false}
+{"ref": "R72", "group": "resistor", "src": "body", "rot": 270, "lines": ["1"], "score": 0.0, "sec": 0.13, "blank": false}
+{"ref": "R72", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["223", "3"], "score": 0.4806, "sec": 0.139, "blank": false}
+{"ref": "R72", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["4", "1", "244", "74"], "score": 0.3809, "sec": 0.172, "blank": false}
+{"ref": "R72", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["-F", ".", "ONF", "EC"], "score": 0.0172, "sec": 0.176, "blank": false}
+{"ref": "R73", "group": "resistor", "src": "body", "rot": 0, "lines": ["ISC"], "score": 0.0, "sec": 0.126, "blank": false}
+{"ref": "R73", "group": "resistor", "src": "body", "rot": 180, "lines": ["R503"], "score": 0.1346, "sec": 0.121, "blank": false}
+{"ref": "R73", "group": "resistor", "src": "body", "rot": 270, "lines": ["J", "3"], "score": 0.0724, "sec": 0.136, "blank": false}
+{"ref": "R73", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.106, "blank": false}
+{"ref": "R73", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["7"], "score": 0.0, "sec": 0.111, "blank": false}
+{"ref": "R73", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["A", "3", "C"], "score": 0.1404, "sec": 0.131, "blank": false}
+{"ref": "R74", "group": "resistor", "src": "body", "rot": 0, "lines": ["A0R"], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R74", "group": "resistor", "src": "body", "rot": 180, "lines": ["RHF"], "score": 0.0, "sec": 0.119, "blank": false}
+{"ref": "R74", "group": "resistor", "src": "body", "rot": 270, "lines": ["E", "-."], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R74", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["SN", "NN"], "score": 0.2853, "sec": 0.142, "blank": false}
+{"ref": "R74", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["- . . .", "N", "N", "0.", "NN"], "score": 0.1052, "sec": 0.163, "blank": false}
+{"ref": "R74", "group": "resistor", "src": "mimg", "rot": 270, "lines": [". J"], "score": 0.259, "sec": 0.112, "blank": false}
+{"ref": "R75", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.107, "blank": false}
+{"ref": "R75", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.108, "blank": false}
+{"ref": "R75", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.104, "blank": false}
+{"ref": "R75", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["UL", "8 4"], "score": 0.3039, "sec": 0.117, "blank": false}
+{"ref": "R75", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 0.122, "blank": false}
+{"ref": "R75", "group": "resistor", "src": "mimg", "rot": 270, "lines": [".", "N", "NN"], "score": 0.0485, "sec": 0.132, "blank": false}
+{"ref": "R76", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.107, "blank": false}
+{"ref": "R76", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.104, "blank": false}
+{"ref": "R76", "group": "resistor", "src": "body", "rot": 270, "lines": ["P"], "score": 0.0, "sec": 0.117, "blank": false}
+{"ref": "R76", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["ND", "RV", "NC", "G"], "score": 0.1557, "sec": 0.16, "blank": false}
+{"ref": "R76", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["-", "NC"], "score": 0.2442, "sec": 0.142, "blank": false}
+{"ref": "R76", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 0.11, "blank": false}
+{"ref": "R77", "group": "resistor", "src": "body", "rot": 0, "lines": ["J0C"], "score": 0.1666, "sec": 0.112, "blank": false}
+{"ref": "R77", "group": "resistor", "src": "body", "rot": 180, "lines": ["0"], "score": 0.3872, "sec": 0.122, "blank": false}
+{"ref": "R77", "group": "resistor", "src": "body", "rot": 270, "lines": ["2", "J"], "score": 0.2688, "sec": 0.127, "blank": false}
+{"ref": "R77", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["A"], "score": 0.0, "sec": 0.125, "blank": false}
+{"ref": "R77", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["L2"], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R77", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 0.112, "blank": false}
+{"ref": "R78", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.11, "blank": false}
+{"ref": "R78", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.108, "blank": false}
+{"ref": "R78", "group": "resistor", "src": "body", "rot": 270, "lines": ["CS"], "score": 0.5111, "sec": 0.115, "blank": false}
+{"ref": "R78", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["N-", "K."], "score": 0.0, "sec": 0.127, "blank": false}
+{"ref": "R78", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["TN"], "score": 0.0, "sec": 0.124, "blank": false}
+{"ref": "R78", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["1-"], "score": 0.0, "sec": 0.13, "blank": false}
+{"ref": "R79", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["M"], "score": 0.0, "sec": 0.119, "blank": false}
+{"ref": "R79", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["V"], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R79", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["D"], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R81", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.103, "blank": false}
+{"ref": "R81", "group": "resistor", "src": "body", "rot": 180, "lines": ["ITT"], "score": 0.1845, "sec": 0.121, "blank": false}
+{"ref": "R81", "group": "resistor", "src": "body", "rot": 270, "lines": ["2"], "score": 0.3307, "sec": 0.117, "blank": false}
+{"ref": "R81", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["JEX", "Y"], "score": 0.0, "sec": 0.146, "blank": false}
+{"ref": "R81", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["JEL", "SE30P", "0 ."], "score": 0.0379, "sec": 0.148, "blank": false}
+{"ref": "R81", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["N T"], "score": 0.2226, "sec": 0.115, "blank": false}
+{"ref": "R82", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["I", "Z"], "score": 0.0196, "sec": 0.121, "blank": false}
+{"ref": "R82", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["0", "A"], "score": 0.0, "sec": 0.121, "blank": false}
+{"ref": "R82", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["Y", "S1"], "score": 0.0, "sec": 0.139, "blank": false}
+{"ref": "R85", "group": "resistor", "src": "body", "rot": 0, "lines": ["R200"], "score": 0.6297, "sec": 0.119, "blank": false}
+{"ref": "R85", "group": "resistor", "src": "body", "rot": 180, "lines": ["0B"], "score": 0.2673, "sec": 0.129, "blank": false}
+{"ref": "R85", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.108, "blank": false}
+{"ref": "R85", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["I", "0", "THIEF"], "score": 0.0099, "sec": 0.151, "blank": false}
+{"ref": "R85", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["210010", "I"], "score": 0.045, "sec": 0.151, "blank": false}
+{"ref": "R85", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["O", "HE", "UB", "-"], "score": 0.2639, "sec": 0.146, "blank": false}
+{"ref": "R86", "group": "resistor", "src": "body", "rot": 0, "lines": ["A"], "score": 0.4685, "sec": 0.138, "blank": false}
+{"ref": "R86", "group": "resistor", "src": "body", "rot": 180, "lines": ["HID"], "score": 0.279, "sec": 0.124, "blank": false}
+{"ref": "R86", "group": "resistor", "src": "body", "rot": 270, "lines": ["1"], "score": 0.0, "sec": 0.13, "blank": false}
+{"ref": "R86", "group": "resistor", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.105, "blank": false}
+{"ref": "R86", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 0.105, "blank": false}
+{"ref": "R86", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["I", "C13"], "score": 0.2811, "sec": 0.123, "blank": false}
+{"ref": "R87", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.104, "blank": false}
+{"ref": "R87", "group": "resistor", "src": "body", "rot": 180, "lines": ["3"], "score": 0.0, "sec": 0.118, "blank": false}
+{"ref": "R87", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.114, "blank": false}
+{"ref": "R87", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["UR", "I.", "F"], "score": 0.0875, "sec": 0.135, "blank": false}
+{"ref": "R87", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["IK11", "1B"], "score": 0.0371, "sec": 0.136, "blank": false}
+{"ref": "R87", "group": "resistor", "src": "mimg", "rot": 270, "lines": [".", "A"], "score": 0.0, "sec": 0.124, "blank": false}
+{"ref": "R88", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.105, "blank": false}
+{"ref": "R88", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.103, "blank": false}
+{"ref": "R88", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.113, "blank": false}
+{"ref": "R88", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["7S", "AT"], "score": 0.0505, "sec": 0.138, "blank": false}
+{"ref": "R88", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 0.105, "blank": false}
+{"ref": "R88", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 0.105, "blank": false}
+{"ref": "R89", "group": "resistor", "src": "body", "rot": 0, "lines": ["20IC5"], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R89", "group": "resistor", "src": "body", "rot": 180, "lines": ["."], "score": 0.0, "sec": 0.121, "blank": false}
+{"ref": "R89", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.106, "blank": false}
+{"ref": "R89", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["-", "A"], "score": 0.0, "sec": 0.128, "blank": false}
+{"ref": "R89", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["A"], "score": 0.2133, "sec": 0.122, "blank": false}
+{"ref": "R89", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["LX"], "score": 0.0, "sec": 0.117, "blank": false}
+{"ref": "R91", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.104, "blank": false}
+{"ref": "R91", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.104, "blank": false}
+{"ref": "R91", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.103, "blank": false}
+{"ref": "R91", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["-", "A"], "score": 0.0, "sec": 0.125, "blank": false}
+{"ref": "R91", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["BC"], "score": 0.8262, "sec": 0.111, "blank": false}
+{"ref": "R91", "group": "resistor", "src": "mimg", "rot": 270, "lines": [".", "YY"], "score": 0.0585, "sec": 0.131, "blank": false}
+{"ref": "R92", "group": "resistor", "src": "body", "rot": 0, "lines": ["SI2F"], "score": 0.0, "sec": 0.122, "blank": false}
+{"ref": "R92", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.103, "blank": false}
+{"ref": "R92", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.114, "blank": false}
+{"ref": "R92", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["MS", "-82P"], "score": 0.0468, "sec": 0.138, "blank": false}
+{"ref": "R92", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["TB", "E"], "score": 0.1052, "sec": 0.137, "blank": false}
+{"ref": "R92", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["X", "C"], "score": 0.0, "sec": 0.129, "blank": false}
+{"ref": "R93", "group": "resistor", "src": "body", "rot": 0, "lines": ["-", "N", "-", "-", "-", "-"], "score": 0.0, "sec": 0.177, "blank": false}
+{"ref": "R93", "group": "resistor", "src": "body", "rot": 180, "lines": ["-"], "score": 0.0, "sec": 0.139, "blank": false}
+{"ref": "R93", "group": "resistor", "src": "body", "rot": 270, "lines": ["XIE.", "Z"], "score": 0.0386, "sec": 0.13, "blank": false}
+{"ref": "R93", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["NF", "0"], "score": 0.0, "sec": 0.146, "blank": false}
+{"ref": "R93", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["-", "-", "-"], "score": 0.0438, "sec": 0.125, "blank": false}
+{"ref": "R93", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["I L", "1 3", "S"], "score": 0.2838, "sec": 0.13, "blank": false}
+{"ref": "R94", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.103, "blank": false}
+{"ref": "R94", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.105, "blank": false}
+{"ref": "R94", "group": "resistor", "src": "body", "rot": 270, "lines": ["8", "00"], "score": 0.0939, "sec": 0.13, "blank": false}
+{"ref": "R94", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["L474", "TR"], "score": 0.2017, "sec": 0.139, "blank": false}
+{"ref": "R94", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 0.106, "blank": false}
+{"ref": "R94", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["J"], "score": 0.3937, "sec": 0.127, "blank": false}
+{"ref": "R97", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.103, "blank": false}
+{"ref": "R97", "group": "resistor", "src": "body", "rot": 180, "lines": ["PT"], "score": 0.1545, "sec": 0.122, "blank": false}
+{"ref": "R97", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.117, "blank": false}
+{"ref": "R97", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["-", "AN", "A25"], "score": 0.0508, "sec": 0.173, "blank": false}
+{"ref": "R97", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["C", "K-", "I"], "score": 0.0, "sec": 0.177, "blank": false}
+{"ref": "R97", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["JL"], "score": 0.0, "sec": 0.128, "blank": false}
+{"ref": "R98", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.107, "blank": false}
+{"ref": "R98", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.22, "blank": false}
+{"ref": "R98", "group": "resistor", "src": "body", "rot": 270, "lines": ["LB", "T"], "score": 0.1157, "sec": 0.257, "blank": false}
+{"ref": "R98", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["1746", "A I"], "score": 0.1815, "sec": 0.614, "blank": false}
+{"ref": "R98", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["TI", "3", "1231", "-B"], "score": 0.2109, "sec": 0.48, "blank": false}
+{"ref": "R98", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["NE"], "score": 0.1401, "sec": 0.463, "blank": false}
+{"ref": "R99", "group": "resistor", "src": "body", "rot": 0, "lines": ["E"], "score": 0.0, "sec": 0.595, "blank": false}
+{"ref": "R99", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.467, "blank": false}
+{"ref": "R99", "group": "resistor", "src": "body", "rot": 270, "lines": ["S"], "score": 0.0, "sec": 0.694, "blank": false}
+{"ref": "R99", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["B-"], "score": 0.0, "sec": 0.583, "blank": false}
+{"ref": "R99", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["VEN"], "score": 0.0, "sec": 0.516, "blank": false}
+{"ref": "R99", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 0.537, "blank": false}
+{"ref": "R104", "group": "resistor", "src": "body", "rot": 0, "lines": ["EL"], "score": 0.194, "sec": 0.494, "blank": false}
+{"ref": "R104", "group": "resistor", "src": "body", "rot": 180, "lines": ["LEER"], "score": 0.4949, "sec": 0.505, "blank": false}
+{"ref": "R104", "group": "resistor", "src": "body", "rot": 270, "lines": ["5"], "score": 0.1408, "sec": 0.401, "blank": false}
+{"ref": "R104", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["3", "NR"], "score": 0.3091, "sec": 0.322, "blank": false}
+{"ref": "R104", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["TTY", "LL"], "score": 0.2159, "sec": 0.801, "blank": false}
+{"ref": "R104", "group": "resistor", "src": "mimg", "rot": 270, "lines": [], "score": 0.0, "sec": 0.239, "blank": false}
+{"ref": "R106", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["7"], "score": 0.4849, "sec": 0.471, "blank": false}
+{"ref": "R106", "group": "resistor", "src": "mimg", "rot": 180, "lines": [], "score": 0.0, "sec": 0.578, "blank": false}
+{"ref": "R106", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["YF"], "score": 0.0, "sec": 0.511, "blank": false}
+{"ref": "R107", "group": "resistor", "src": "body", "rot": 0, "lines": ["O"], "score": 0.0, "sec": 0.563, "blank": false}
+{"ref": "R107", "group": "resistor", "src": "body", "rot": 180, "lines": ["0"], "score": 0.0091, "sec": 0.52, "blank": false}
+{"ref": "R107", "group": "resistor", "src": "body", "rot": 270, "lines": ["-", "-"], "score": 0.1357, "sec": 0.541, "blank": false}
+{"ref": "R107", "group": "resistor", "src": "mimg", "rot": 0, "lines": ["A"], "score": 0.0, "sec": 0.469, "blank": false}
+{"ref": "R107", "group": "resistor", "src": "mimg", "rot": 180, "lines": ["0", "V-"], "score": 0.3991, "sec": 0.566, "blank": false}
+{"ref": "R107", "group": "resistor", "src": "mimg", "rot": 270, "lines": ["WS", "N", "J"], "score": 0.2751, "sec": 0.747, "blank": false}
+{"ref": "U1", "group": "ic", "src": "body", "rot": 0, "lines": ["5", "1", "7", "7", "343", "WE", "5", "2", "PAY", "A", "C", "BE", "7 7", ".", "5", "-", "2", "5", "0", "F7", "7", "A", "SH", "--", "Z3", "1", "1", "2.", "-", "IW", "BI", "THE", "1"], "score": 0.1674, "sec": 0.774, "blank": false}
+{"ref": "U1", "group": "ic", "src": "body", "rot": 180, "lines": ["UJ", "LIN", "J", "44", "27", "2", "3", "5", "2", "32", "EA", "5", "24", "2", "B", "104", "20", "J", "VL", "-", "3", "17", "H A", "Y", "318", "22", "A", "4", "I", "2", "Z", "199", "WZ"], "score": 0.2512, "sec": 1.142, "blank": false}
+{"ref": "U1", "group": "ic", "src": "body", "rot": 270, "lines": ["111", "SE", "NEN", "NR", "SO", "LC", "-", "A", "RN", "RNR", "PORTE", "RAEN", "N", "SS", "-", "2", "NS", "RS", "NS", "-", "1", "A", "NN", "RY.", "3", "EEPDTPR"], "score": 0.2096, "sec": 0.928, "blank": false}
+{"ref": "U1", "group": "ic", "src": "mimg", "rot": 0, "lines": ["34", "7", "1", "7", "J", "7", "EAT", "71", "SO", "5", "7", "HV", "NE"], "score": 0.1829, "sec": 0.769, "blank": false}
+{"ref": "U1", "group": "ic", "src": "mimg", "rot": 180, "lines": ["1", "3", "U", "A", "74", "-W", "2", "5", "7", "0", "7", "7", "48", "LL", "77", "3"], "score": 0.26, "sec": 0.807, "blank": false}
+{"ref": "U1", "group": "ic", "src": "mimg", "rot": 270, "lines": ["ANNE", "BU", "XG", "SX", "AT", "A", "SRESRE", "W", "T", "NE", "EN", "SOAS", "AE", "EN", "5", "NS", "A", "SR", "NW", "S", "1"], "score": 0.1532, "sec": 1.005, "blank": false}
+{"ref": "U2", "group": "ic", "src": "body", "rot": 0, "lines": ["IR", "EE", ".", "SE", "RE", "S"], "score": 0.0813, "sec": 0.497, "blank": false}
+{"ref": "U2", "group": "ic", "src": "body", "rot": 180, "lines": ["UL", "PR", "RS", "ES"], "score": 0.1722, "sec": 0.703, "blank": false}
+{"ref": "U2", "group": "ic", "src": "body", "rot": 270, "lines": ["TH", "LG", "5", "3"], "score": 0.2128, "sec": 0.602, "blank": false}
+{"ref": "U2", "group": "ic", "src": "mimg", "rot": 0, "lines": ["J", "J", "-", "DP", "-", "1"], "score": 0.1288, "sec": 0.767, "blank": false}
+{"ref": "U2", "group": "ic", "src": "mimg", "rot": 180, "lines": ["100", "C", "P. ET."], "score": 0.0676, "sec": 0.598, "blank": false}
+{"ref": "U2", "group": "ic", "src": "mimg", "rot": 270, "lines": ["J", "BS", "FN", "1"], "score": 0.1109, "sec": 0.27, "blank": false}
+{"ref": "U3", "group": "ic", "src": "body", "rot": 0, "lines": ["1 I F", "B", "KE"], "score": 0.2129, "sec": 0.294, "blank": false}
+{"ref": "U3", "group": "ic", "src": "body", "rot": 180, "lines": ["1", "3 H"], "score": 0.5304, "sec": 0.685, "blank": false}
+{"ref": "U3", "group": "ic", "src": "body", "rot": 270, "lines": ["SS", "4", "F", "B57", "BO", "THT", "TH"], "score": 0.2143, "sec": 1.11, "blank": false}
+{"ref": "U3", "group": "ic", "src": "mimg", "rot": 0, "lines": ["N", "R", "-"], "score": 0.1331, "sec": 0.506, "blank": false}
+{"ref": "U3", "group": "ic", "src": "mimg", "rot": 180, "lines": ["LS"], "score": 0.0, "sec": 0.586, "blank": false}
+{"ref": "U3", "group": "ic", "src": "mimg", "rot": 270, "lines": ["W", "F", "3", "5", "GS"], "score": 0.1413, "sec": 0.693, "blank": false}
+{"ref": "U4", "group": "ic", "src": "body", "rot": 0, "lines": ["BITRE", "P", "PRN", "HHH"], "score": 0.0682, "sec": 0.692, "blank": false}
+{"ref": "U4", "group": "ic", "src": "body", "rot": 180, "lines": ["L", "H 3 .", "J", "LS", "ST"], "score": 0.0813, "sec": 0.63, "blank": false}
+{"ref": "U4", "group": "ic", "src": "body", "rot": 270, "lines": ["I", "R", "DN", "LOU", "EE", "LR"], "score": 0.0244, "sec": 0.829, "blank": false}
+{"ref": "U4", "group": "ic", "src": "mimg", "rot": 0, "lines": ["2KG8", "CREP", "J"], "score": 0.1386, "sec": 0.646, "blank": false}
+{"ref": "U4", "group": "ic", "src": "mimg", "rot": 180, "lines": ["1", "WERE", "R", "ITS"], "score": 0.1686, "sec": 0.681, "blank": false}
+{"ref": "U4", "group": "ic", "src": "mimg", "rot": 270, "lines": ["RN", "6", "5", "N", "2.3", "4", "SER", "SR", "BENE", "-", "J", "XY.", "-", "X"], "score": 0.1861, "sec": 0.883, "blank": false}
+{"ref": "U6", "group": "ic", "src": "body", "rot": 0, "lines": ["-", "A", "GH4"], "score": 0.0, "sec": 0.65, "blank": false}
+{"ref": "U6", "group": "ic", "src": "body", "rot": 180, "lines": ["I", "THI", "BR"], "score": 0.1251, "sec": 0.674, "blank": false}
+{"ref": "U6", "group": "ic", "src": "body", "rot": 270, "lines": ["-", "34", "F"], "score": 0.1114, "sec": 0.581, "blank": false}
+{"ref": "U6", "group": "ic", "src": "mimg", "rot": 0, "lines": ["GH4"], "score": 0.0, "sec": 0.553, "blank": false}
+{"ref": "U6", "group": "ic", "src": "mimg", "rot": 180, "lines": ["2", "7H"], "score": 0.0371, "sec": 0.592, "blank": false}
+{"ref": "U6", "group": "ic", "src": "mimg", "rot": 270, "lines": ["1", "F", "FN"], "score": 0.0872, "sec": 0.6, "blank": false}
+{"ref": "U10_DC_5V", "group": "ic", "src": "body", "rot": 0, "lines": ["BE", "W", "4", "8", ".", "LS", "AY", "ERNE"], "score": 0.2392, "sec": 0.649, "blank": false}
+{"ref": "U10_DC_5V", "group": "ic", "src": "body", "rot": 180, "lines": ["RA", "J", "1"], "score": 0.212, "sec": 0.52, "blank": false}
+{"ref": "U10_DC_5V", "group": "ic", "src": "body", "rot": 270, "lines": ["BN", "2", "5", "LO", "1", ".", "-", "XR.", "SRS"], "score": 0.1062, "sec": 0.78, "blank": false}
+{"ref": "U10_DC_5V", "group": "ic", "src": "mimg", "rot": 0, "lines": ["453", "25", "B"], "score": 0.2002, "sec": 0.582, "blank": false}
+{"ref": "U10_DC_5V", "group": "ic", "src": "mimg", "rot": 180, "lines": ["TE", "LIW", "11", "4"], "score": 0.4207, "sec": 0.571, "blank": false}
+{"ref": "U10_DC_5V", "group": "ic", "src": "mimg", "rot": 270, "lines": ["J.", "RE", "3", "3", "L", ".", "2", "PEAR", "AWS", "F2", "B", "18", "5"], "score": 0.1175, "sec": 1.027, "blank": false}
+{"ref": "U10_DC_REG", "group": "ic", "src": "body", "rot": 0, "lines": ["DE", "5.", "P", "7", "7", "5", "A", "4", "W", "7", "ARE.", "18", "1"], "score": 0.1718, "sec": 0.597, "blank": false}
+{"ref": "U10_DC_REG", "group": "ic", "src": "body", "rot": 180, "lines": ["D", "5", "Y", "F7", "L", "0", "4", "5", "AM"], "score": 0.1578, "sec": 0.667, "blank": false}
+{"ref": "U10_DC_REG", "group": "ic", "src": "body", "rot": 270, "lines": ["SS", "F", "ONE", "A", "RG", "RB", "0", "4", "5", "2", "BL", "PE", "S"], "score": 0.1059, "sec": 0.742, "blank": false}
+{"ref": "U10_DC_REG", "group": "ic", "src": "mimg", "rot": 0, "lines": ["LIE", "R", "3", "F", "1EE", "7", "SY"], "score": 0.1594, "sec": 0.653, "blank": false}
+{"ref": "U10_DC_REG", "group": "ic", "src": "mimg", "rot": 180, "lines": ["1", "EA", "A -", "I", "4", "EF"], "score": 0.2826, "sec": 0.676, "blank": false}
+{"ref": "U10_DC_REG", "group": "ic", "src": "mimg", "rot": 270, "lines": ["0", "P", "3", "413", "5", "P", "PL", "-", "F-", "NER", "A", "SS", "1", "T"], "score": 0.1237, "sec": 0.941, "blank": false}
+{"ref": "U11", "group": "ic", "src": "body", "rot": 0, "lines": ["11141 2", "AY", "I", "NG", "74", "E", "H", "J", "LY", "55", "AR", "BC", "1", "IAEES"], "score": 0.1962, "sec": 0.831, "blank": false}
+{"ref": "U11", "group": "ic", "src": "body", "rot": 180, "lines": ["TIRES", "8", "L", "5", "2", "V 5", "V.", "F", "BT", "HH", "HE"], "score": 0.1719, "sec": 0.783, "blank": false}
+{"ref": "U11", "group": "ic", "src": "body", "rot": 270, "lines": ["2", "4", "AE", "LR", ".", "4", "0", "ER", "NG", "HAW", "DER", "BX", "AT309090ON 0"], "score": 0.1484, "sec": 0.99, "blank": false}
+{"ref": "U11", "group": "ic", "src": "mimg", "rot": 0, "lines": ["74", "5", "YE", "5", "7", "YA", "WB", "J", "TR"], "score": 0.2009, "sec": 0.764, "blank": false}
+{"ref": "U11", "group": "ic", "src": "mimg", "rot": 180, "lines": ["-", "2", "--", "4", "97", "XBL", "SK", "HHH", "4"], "score": 0.2277, "sec": 0.791, "blank": false}
+{"ref": "U11", "group": "ic", "src": "mimg", "rot": 270, "lines": ["-", "-", "SF", "5", "5X", "AS", "ESN", "D-", ".", "Y", "TE", "RR"], "score": 0.1594, "sec": 0.987, "blank": false}
+{"ref": "U14", "group": "ic", "src": "body", "rot": 0, "lines": ["A", "TY"], "score": 0.0664, "sec": 0.525, "blank": false}
+{"ref": "U14", "group": "ic", "src": "body", "rot": 180, "lines": ["EST", "-", "1", "R1"], "score": 0.2251, "sec": 0.821, "blank": false}
+{"ref": "U14", "group": "ic", "src": "body", "rot": 270, "lines": ["-", "EE 3 NS", "EA"], "score": 0.1091, "sec": 0.694, "blank": false}
+{"ref": "U14", "group": "ic", "src": "mimg", "rot": 0, "lines": ["VN", "LL"], "score": 0.0, "sec": 0.598, "blank": false}
+{"ref": "U14", "group": "ic", "src": "mimg", "rot": 180, "lines": ["1", "G"], "score": 0.175, "sec": 0.587, "blank": false}
+{"ref": "U14", "group": "ic", "src": "mimg", "rot": 270, "lines": ["E", "I"], "score": 0.2068, "sec": 0.584, "blank": false}
+{"ref": "U16", "group": "ic", "src": "body", "rot": 0, "lines": ["4", "EO", "1248"], "score": 0.2113, "sec": 0.667, "blank": false}
+{"ref": "U16", "group": "ic", "src": "body", "rot": 180, "lines": ["2E 4", "-"], "score": 0.2659, "sec": 0.606, "blank": false}
+{"ref": "U16", "group": "ic", "src": "body", "rot": 270, "lines": ["J", "FH", "BS"], "score": 0.0585, "sec": 0.686, "blank": false}
+{"ref": "U16", "group": "ic", "src": "mimg", "rot": 0, "lines": ["-10", "I"], "score": 0.0, "sec": 0.495, "blank": false}
+{"ref": "U16", "group": "ic", "src": "mimg", "rot": 180, "lines": ["E11", "015381-", "R"], "score": 0.0, "sec": 0.573, "blank": false}
+{"ref": "U16", "group": "ic", "src": "mimg", "rot": 270, "lines": ["-", "A", "..T"], "score": 0.065, "sec": 0.623, "blank": false}
+{"ref": "U21_US1", "group": "ic", "src": "body", "rot": 0, "lines": ["A", "7", "H", "H", "L", "LL", "A", "7", "NC.", "4", "A", "7L", "4", "1", "LD", "214", "F", "A", "3", "LL", "APY", "GF", "A", "WY", "SAN", "ON.", "2"], "score": 0.1683, "sec": 0.749, "blank": false}
+{"ref": "U21_US1", "group": "ic", "src": "body", "rot": 180, "lines": ["N", "4", "7", "1", "NT3", "4", "A", "P", "8D", "AZ", "T", "A", "QA", "14", "7142", "745", "J", "745", "AH", "F", "AG", "LL", "A", "7", "F", "LP", "HH", "5", "11", "IB", "TN"], "score": 0.2079, "sec": 1.034, "blank": false}
+{"ref": "U21_US1", "group": "ic", "src": "body", "rot": 270, "lines": ["-", "A", ".", "N", "NN.", "A", "Y", ".S", "1", "-", "RASA", "MN", "PRLS", "A", ".", "VA", "EE", "-", ".", "-", "A", "2", "L-", "-", "30", "NN", "AA", "A", ".", "A", "WW", "BSN", "WV", "---"], "score": 0.1301, "sec": 1.198, "blank": false}
+{"ref": "U21_US1", "group": "ic", "src": "mimg", "rot": 0, "lines": ["P", "EY", "105", "7", "47", "G", "M"], "score": 0.2976, "sec": 0.538, "blank": false}
+{"ref": "U21_US1", "group": "ic", "src": "mimg", "rot": 180, "lines": ["I", "A", "E", "J", "2", "5", "AIAN", "3", "20", "A", "7", "4", "A", "ES", "1", "RE"], "score": 0.1863, "sec": 0.374, "blank": false}
+{"ref": "U21_US1", "group": "ic", "src": "mimg", "rot": 270, "lines": ["A...", "A", "A", "J NC", "SC", "CG", "C", "GT0"], "score": 0.1468, "sec": 0.364, "blank": false}
+{"ref": "U23", "group": "ic", "src": "body", "rot": 0, "lines": ["2089 I", "B"], "score": 0.0685, "sec": 0.285, "blank": false}
+{"ref": "U23", "group": "ic", "src": "body", "rot": 180, "lines": ["E"], "score": 0.0, "sec": 0.47, "blank": false}
+{"ref": "U23", "group": "ic", "src": "body", "rot": 270, "lines": ["OF1", "RED", "LA"], "score": 0.1159, "sec": 0.431, "blank": false}
+{"ref": "U23", "group": "ic", "src": "mimg", "rot": 0, "lines": ["3", "-", "069", "B-", "TO"], "score": 0.2281, "sec": 0.485, "blank": false}
+{"ref": "U23", "group": "ic", "src": "mimg", "rot": 180, "lines": ["-.", "OF", "90", "IS", "L"], "score": 0.1624, "sec": 0.585, "blank": false}
+{"ref": "U23", "group": "ic", "src": "mimg", "rot": 270, "lines": [".", "14", "Y3"], "score": 0.1348, "sec": 0.528, "blank": false}
+{"ref": "U24", "group": "ic", "src": "body", "rot": 0, "lines": ["11810", "IS-R8"], "score": 0.0, "sec": 0.606, "blank": false}
+{"ref": "U24", "group": "ic", "src": "body", "rot": 180, "lines": ["4", "183", "TBE"], "score": 0.2042, "sec": 0.681, "blank": false}
+{"ref": "U24", "group": "ic", "src": "body", "rot": 270, "lines": ["PEE", "."], "score": 0.0, "sec": 0.744, "blank": false}
+{"ref": "U24", "group": "ic", "src": "mimg", "rot": 0, "lines": ["1810", "G"], "score": 0.0, "sec": 0.548, "blank": false}
+{"ref": "U24", "group": "ic", "src": "mimg", "rot": 180, "lines": ["WE", "1", "I", "8"], "score": 0.0935, "sec": 0.547, "blank": false}
+{"ref": "U24", "group": "ic", "src": "mimg", "rot": 270, "lines": ["LC", "-B"], "score": 0.0, "sec": 0.586, "blank": false}
+{"ref": "U25", "group": "ic", "src": "body", "rot": 0, "lines": ["LL1", "WB", "I"], "score": 0.0641, "sec": 0.498, "blank": false}
+{"ref": "U25", "group": "ic", "src": "body", "rot": 180, "lines": ["L 4", "A TTT"], "score": 0.2184, "sec": 0.678, "blank": false}
+{"ref": "U25", "group": "ic", "src": "body", "rot": 270, "lines": ["N", ".", "S", "STS.", "TR", "D4"], "score": 0.0361, "sec": 0.83, "blank": false}
+{"ref": "U25", "group": "ic", "src": "mimg", "rot": 0, "lines": ["SS", "BL", "H", "A", "1", "EWEYWYT", "J"], "score": 0.1327, "sec": 0.756, "blank": false}
+{"ref": "U25", "group": "ic", "src": "mimg", "rot": 180, "lines": ["18", "EE", "7", "TH", "B..SLP"], "score": 0.1856, "sec": 0.92, "blank": false}
+{"ref": "U25", "group": "ic", "src": "mimg", "rot": 270, "lines": ["L RF", "E", "P", "JS", "3", "N", "S", "O", "L", "ST"], "score": 0.0746, "sec": 0.892, "blank": false}
+{"ref": "U26", "group": "ic", "src": "body", "rot": 0, "lines": ["ITI"], "score": 0.1592, "sec": 0.606, "blank": false}
+{"ref": "U26", "group": "ic", "src": "body", "rot": 180, "lines": ["H", "L"], "score": 0.0, "sec": 0.629, "blank": false}
+{"ref": "U26", "group": "ic", "src": "body", "rot": 270, "lines": ["X", "-", "NC", "0", "PE", "WN", "EE", "EB"], "score": 0.1388, "sec": 0.804, "blank": false}
+{"ref": "U26", "group": "ic", "src": "mimg", "rot": 0, "lines": ["3", "0", "1", "W", "2", "2X", "A", "4", "-", "W"], "score": 0.219, "sec": 0.442, "blank": false}
+{"ref": "U26", "group": "ic", "src": "mimg", "rot": 180, "lines": ["L", "3Y", "L", "111", "9"], "score": 0.0928, "sec": 0.703, "blank": false}
+{"ref": "U26", "group": "ic", "src": "mimg", "rot": 270, "lines": ["-", "YE-", "CR", "3", "DR", "NN", "RN"], "score": 0.1008, "sec": 0.757, "blank": false}
+{"ref": "U29", "group": "ic", "src": "body", "rot": 0, "lines": ["SN", "A", "S", "-", "PR", "3", "FE", "WN", "ES", "BRR", "A", "-", "-", "NN", "CN", "FN", "AD", "PR", "RY", "SN", "IE", "C", "BN", "SQ", "NR", "SHEN", "HL", "SE", "2A CS"], "score": 0.2105, "sec": 0.837, "blank": false}
+{"ref": "U29", "group": "ic", "src": "body", "rot": 180, "lines": ["PLUS 2", "WH", "J", "SR N", "NT", "RY TN", "NN.", "ERG", "FE", "SAVE RA", "UR", "RIN", "5", "88", "NS", "RA", "SN", "SS", "DN", "BA", "NN", "3", "J", "QL", "E", "ST", "HH", "K", "-"], "score": 0.2036, "sec": 1.379, "blank": false}
+{"ref": "U29", "group": "ic", "src": "body", "rot": 270, "lines": ["I", "0", "HHH", "2SFLARH", "R15", "25", "4", "A", ".", "ET", "J", "C", "A", "EE", "3", "2", "2", "22", "DH", "2", "7", "A", "Z1", "7", "ET", "AI", "J", "F", "G", "J", "F", "TTT", "TH"], "score": 0.1873, "sec": 1.323, "blank": false}
+{"ref": "U29", "group": "ic", "src": "mimg", "rot": 0, "lines": [".", "I", "I", "ER", "REE", "35", "SN", "RE", "EN", "SAE", "2", "AR", "K", "-", "VN", ".", "2", "AR", "N", "AY", "RAE", "ON", "-", "J", "SH", "3", "30", "ER", "N", "NS", "RR", "A", "NN", "1", "HW", "HH", "RS", "11", "FP"], "score": 0.2495, "sec": 1.398, "blank": false}
+{"ref": "U29", "group": "ic", "src": "mimg", "rot": 180, "lines": ["J", "J.", "LB", "A", "W", "4", "WY", "WN", "WN", "NE", "NS", "RR", "M.", "AM", "NN", "ED.", "NN", "A", "EE", "NEN", "0", "NN", "W", "NR", "A", "ON", "AS", "NS", "PESHRTAEINEPENCRMSETA", "P", "H", "I"], "score": 0.2121, "sec": 1.302, "blank": false}
+{"ref": "U29", "group": "ic", "src": "mimg", "rot": 270, "lines": ["2", "PY", "0", "ER", "L", "-", "SN", "EE", "1", "TN", "Z", "EC", "79", "1", "J", "JS", "OV", "I"], "score": 0.1084, "sec": 1.268, "blank": false}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["32.0", "SLAKIF"], "score": 0.3397, "sec": 0.598, "blank": false}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": ["169", "3"], "score": 0.0348, "sec": 0.538, "blank": false}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": ["Q.", "4", "N", "A", "4"], "score": 0.1608, "sec": 0.588, "blank": false}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["W", ".V", "-TT", "-", "32.0", "AKOF"], "score": 0.1893, "sec": 0.597, "blank": false}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["JGHY", "89", "WS", "SN", "BE"], "score": 0.1143, "sec": 0.623, "blank": false}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["LA", "LL", "EL", "ME"], "score": 0.2637, "sec": 0.55, "blank": false}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "body", "rot": 0, "lines": ["AU-", "2", "RR", "L"], "score": 0.0, "sec": 0.642, "blank": false}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "body", "rot": 180, "lines": ["N", "TY"], "score": 0.0, "sec": 0.533, "blank": false}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "body", "rot": 270, "lines": ["-", "1", "YX", "8"], "score": 0.2245, "sec": 0.659, "blank": false}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["2B", "AL", "S R"], "score": 0.1443, "sec": 0.541, "blank": false}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "mimg", "rot": 180, "lines": ["-", "CTR", "8"], "score": 0.0867, "sec": 0.625, "blank": false}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "mimg", "rot": 270, "lines": ["4", "B", "1", "-", "- -", "."], "score": 0.1287, "sec": 0.625, "blank": false}
+{"ref": "C1", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["BH 1"], "score": 0.5175, "sec": 0.551, "blank": true}
+{"ref": "C3", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["-", "9", "3", "NRT"], "score": 0.1145, "sec": 0.698, "blank": true}
+{"ref": "C5", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["-", "N2"], "score": 0.0, "sec": 0.595, "blank": true}
+{"ref": "C7", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["J.", "S", "48"], "score": 0.3395, "sec": 0.641, "blank": true}
+{"ref": "C9", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["1.", "RA J", "TE"], "score": 0.3372, "sec": 0.609, "blank": true}
+{"ref": "C12", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["78", "A"], "score": 0.0, "sec": 0.603, "blank": true}
+{"ref": "C14", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["E-"], "score": 0.0, "sec": 0.557, "blank": true}
+{"ref": "C16", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["S", "SI", "YS"], "score": 0.0, "sec": 0.679, "blank": true}
+{"ref": "C18", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["BN"], "score": 0.1027, "sec": 0.567, "blank": true}
+{"ref": "C23", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["7T9"], "score": 0.0, "sec": 0.471, "blank": true}
+{"ref": "C26", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["A"], "score": 0.302, "sec": 0.558, "blank": true}
+{"ref": "C28", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["."], "score": 0.0, "sec": 0.492, "blank": true}
+{"ref": "C30", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["-"], "score": 0.2083, "sec": 0.55, "blank": true}
+{"ref": "C32", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.588, "blank": true}
+{"ref": "C34", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["-7NLLEE", "-", "2"], "score": 0.0688, "sec": 0.595, "blank": true}
+{"ref": "C37", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.588, "blank": true}
+{"ref": "C39", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["TAT", "SES."], "score": 0.3551, "sec": 0.555, "blank": true}
+{"ref": "C41", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["M", "PH"], "score": 0.0474, "sec": 0.549, "blank": true}
+{"ref": "C44", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.595, "blank": true}
+{"ref": "C47_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["F", "C"], "score": 0.0, "sec": 0.702, "blank": true}
+{"ref": "C48", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["SO", "RE"], "score": 0.1189, "sec": 0.686, "blank": true}
+{"ref": "C65", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["-", "-", "W", "BH"], "score": 0.1477, "sec": 0.773, "blank": true}
+{"ref": "C67", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["3"], "score": 0.1509, "sec": 0.55, "blank": true}
+{"ref": "C69", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["SA", "C2", "BAL", "BY 1", "A", "4"], "score": 0.3147, "sec": 0.543, "blank": true}
+{"ref": "C72", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["B", "F"], "score": 0.0, "sec": 0.615, "blank": true}
+{"ref": "C78", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["S", "-3"], "score": 0.0, "sec": 0.545, "blank": true}
+{"ref": "C81_US1", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["L", "NS"], "score": 0.1236, "sec": 0.556, "blank": true}
+{"ref": "C87", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["LU", "- NC"], "score": 0.2369, "sec": 0.577, "blank": true}
+{"ref": "C89", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.553, "blank": true}
+{"ref": "C92", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["0", "."], "score": 0.2117, "sec": 0.582, "blank": true}
+{"ref": "C94", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": [], "score": 0.0, "sec": 0.496, "blank": true}
+{"ref": "C97_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["7", "C", "118"], "score": 0.2929, "sec": 0.598, "blank": true}
+{"ref": "C98_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["BN", "A", "A"], "score": 0.2215, "sec": 0.658, "blank": true}
+{"ref": "C99_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["0", "WA", "8", "3", "7", "-."], "score": 0.3276, "sec": 0.58, "blank": true}
+{"ref": "C100_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["-", "3", "7"], "score": 0.205, "sec": 0.446, "blank": true}
+{"ref": "C103_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["ES", "0"], "score": 0.1163, "sec": 0.593, "blank": true}
+{"ref": "C104_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["BP", "CC"], "score": 0.1739, "sec": 0.579, "blank": true}
+{"ref": "C105_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 0, "lines": ["5", "S", "4"], "score": 0.0259, "sec": 0.659, "blank": true}
+{"ref": "D3", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": ["WE", "SS", "LY", "WR", "E", "-B", "-", "5AE-7.5"], "score": 0.0454, "sec": 0.749, "blank": true}
+{"ref": "D5", "group": "diode/transistor", "src": "mimg", "rot": 0, "lines": ["CW", "5"], "score": 0.0, "sec": 0.607, "blank": true}
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["--"], "score": 0.0, "sec": 0.137, "blank": false}
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["C", "A"], "score": 0.0, "sec": 0.16, "blank": false}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": [".M", "R"], "score": 0.0, "sec": 0.148, "blank": false}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["NJ", "7"], "score": 0.2631, "sec": 0.139, "blank": false}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["7", "SM", "Y", "S", "RS"], "score": 0.0804, "sec": 0.176, "blank": false}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["A", "8", "-."], "score": 0.0646, "sec": 0.155, "blank": false}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["N", "L", "Y"], "score": 0.0, "sec": 0.162, "blank": false}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["-", "EH", "L", "4", "-", "IN"], "score": 0.0951, "sec": 0.171, "blank": false}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": [".", "-"], "score": 0.0, "sec": 0.136, "blank": false}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["1B"], "score": 0.4272, "sec": 0.151, "blank": false}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["L6"], "score": 0.0, "sec": 0.138, "blank": false}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["6", "D"], "score": 0.0502, "sec": 0.165, "blank": false}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["T", "SG", "- L"], "score": 0.0, "sec": 0.177, "blank": false}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["O."], "score": 0.0, "sec": 0.168, "blank": false}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["BE", "R.", "O"], "score": 0.2052, "sec": 0.153, "blank": false}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["I", "5", "-", "B"], "score": 0.2271, "sec": 0.181, "blank": false}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["EE", "4"], "score": 0.4161, "sec": 0.146, "blank": false}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": [".A6", "1", "LB", "--", "5", "CC", ".", "3", "R ."], "score": 0.2219, "sec": 0.242, "blank": false}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["K", "JP", "O", "SS -"], "score": 0.1445, "sec": 0.199, "blank": false}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["-", "O", "GN"], "score": 0.0, "sec": 0.189, "blank": false}
+{"ref": "D9", "group": "diode/transistor", "src": "body", "rot": 90, "lines": ["B", "--", "BE", "NS", "J", "-"], "score": 0.2389, "sec": 0.192, "blank": false}
+{"ref": "D9", "group": "diode/transistor", "src": "mimg", "rot": 90, "lines": ["BW", "--", "-", "."], "score": 0.0796, "sec": 0.175, "blank": false}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "body", "rot": 90, "lines": ["LA", "N-", "N", "7", "Y4"], "score": 0.0, "sec": 0.232, "blank": false}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "mimg", "rot": 90, "lines": ["4", "L", "-", "--", "SO", "SJ -", "Y.8", "AT 4", "1"], "score": 0.1377, "sec": 0.271, "blank": false}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "body", "rot": 90, "lines": ["CL", "FF", "N", "BC", "WP", "LI"], "score": 0.0255, "sec": 0.209, "blank": false}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "mimg", "rot": 90, "lines": ["73", "J", "4", "1", "4", "EE", "BA", ".", "5", "RE", "SS", "J"], "score": 0.2548, "sec": 0.25, "blank": false}
+{"ref": "U9_US1", "group": "ic", "src": "body", "rot": 90, "lines": ["5", "3", "3"], "score": 0.1053, "sec": 0.122, "blank": false}
+{"ref": "U9_US1", "group": "ic", "src": "mimg", "rot": 90, "lines": ["NN", "-.", "85", "BS"], "score": 0.0645, "sec": 0.153, "blank": false}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["QO"], "score": 0.0, "sec": 0.135, "blank": false}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["SC", "Y", "ER", "YP", "-", "8", "F", "TE", "CES"], "score": 0.1117, "sec": 0.276, "blank": false}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["NG", "EA", "LL"], "score": 0.1989, "sec": 0.179, "blank": false}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["-", "TE", "I", "TT", "7"], "score": 0.1403, "sec": 0.194, "blank": false}
+{"ref": "Q3", "group": "diode/transistor", "src": "body", "rot": 90, "lines": ["5"], "score": 0.2834, "sec": 0.129, "blank": false}
+{"ref": "Q3", "group": "diode/transistor", "src": "mimg", "rot": 90, "lines": ["CE .T-", "-", "0", "A", "MV"], "score": 0.124, "sec": 0.201, "blank": false}
+{"ref": "Q4", "group": "diode/transistor", "src": "body", "rot": 90, "lines": ["34", "WH", "EF"], "score": 0.1007, "sec": 0.153, "blank": false}
+{"ref": "Q4", "group": "diode/transistor", "src": "mimg", "rot": 90, "lines": ["TT", "1", "-", "J"], "score": 0.1878, "sec": 0.187, "blank": false}
+{"ref": "R2", "group": "resistor", "src": "body", "rot": 90, "lines": ["J"], "score": 0.4906, "sec": 0.132, "blank": false}
+{"ref": "R2", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.122, "blank": false}
+{"ref": "R3", "group": "resistor", "src": "body", "rot": 90, "lines": [".."], "score": 0.0, "sec": 0.119, "blank": false}
+{"ref": "R3", "group": "resistor", "src": "mimg", "rot": 90, "lines": [".W", "TB", "TW", "CT"], "score": 0.1626, "sec": 0.145, "blank": false}
+{"ref": "R4", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.114, "blank": false}
+{"ref": "R4", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["5"], "score": 0.1089, "sec": 0.114, "blank": false}
+{"ref": "R5", "group": "resistor", "src": "body", "rot": 0, "lines": ["103", "LF"], "score": 0.4228, "sec": 0.135, "blank": false}
+{"ref": "R5", "group": "resistor", "src": "body", "rot": 90, "lines": ["VF", "8"], "score": 0.0508, "sec": 0.143, "blank": false}
+{"ref": "R5", "group": "resistor", "src": "body", "rot": 180, "lines": ["LE", "FER", "01"], "score": 0.2208, "sec": 0.15, "blank": false}
+{"ref": "R5", "group": "resistor", "src": "body", "rot": 270, "lines": ["RAAT", "T"], "score": 0.1307, "sec": 0.144, "blank": false}
+{"ref": "R5", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["S"], "score": 0.0, "sec": 0.138, "blank": false}
+{"ref": "R6", "group": "resistor", "src": "body", "rot": 90, "lines": ["J", "1", "LC"], "score": 0.4684, "sec": 0.125, "blank": false}
+{"ref": "R6", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["AZ", "LJ"], "score": 0.326, "sec": 0.128, "blank": false}
+{"ref": "R8", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.122, "blank": false}
+{"ref": "R8", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["J", "E-"], "score": 0.0, "sec": 0.146, "blank": false}
+{"ref": "R10", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.101, "blank": false}
+{"ref": "R10", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["71"], "score": 0.4983, "sec": 0.121, "blank": false}
+{"ref": "R11", "group": "resistor", "src": "body", "rot": 90, "lines": ["3", "13"], "score": 0.3755, "sec": 0.125, "blank": false}
+{"ref": "R11", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["-"], "score": 0.7168, "sec": 0.111, "blank": false}
+{"ref": "R12", "group": "resistor", "src": "body", "rot": 90, "lines": ["-", "Y"], "score": 0.1664, "sec": 0.151, "blank": false}
+{"ref": "R12", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["5"], "score": 0.0, "sec": 0.151, "blank": false}
+{"ref": "R13", "group": "resistor", "src": "body", "rot": 90, "lines": ["IA"], "score": 0.0014, "sec": 0.128, "blank": false}
+{"ref": "R13", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["SE"], "score": 0.0337, "sec": 0.131, "blank": false}
+{"ref": "R14", "group": "resistor", "src": "body", "rot": 90, "lines": ["P"], "score": 0.0, "sec": 0.125, "blank": false}
+{"ref": "R14", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["1"], "score": 0.2435, "sec": 0.132, "blank": false}
+{"ref": "R15", "group": "resistor", "src": "body", "rot": 90, "lines": ["J"], "score": 0.1765, "sec": 0.119, "blank": false}
+{"ref": "R15", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.109, "blank": false}
+{"ref": "R16", "group": "resistor", "src": "body", "rot": 90, "lines": ["AY", "3"], "score": 0.2996, "sec": 0.13, "blank": false}
+{"ref": "R16", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["BE", "7", "1N"], "score": 0.1685, "sec": 0.14, "blank": false}
+{"ref": "R17", "group": "resistor", "src": "body", "rot": 90, "lines": ["I"], "score": 0.063, "sec": 0.118, "blank": false}
+{"ref": "R17", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.126, "blank": false}
+{"ref": "R18", "group": "resistor", "src": "body", "rot": 90, "lines": ["5"], "score": 0.5339, "sec": 0.127, "blank": false}
+{"ref": "R18", "group": "resistor", "src": "mimg", "rot": 90, "lines": [".", "NE"], "score": 0.0299, "sec": 0.133, "blank": false}
+{"ref": "R19", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R19", "group": "resistor", "src": "body", "rot": 90, "lines": ["LTS"], "score": 0.0, "sec": 0.129, "blank": false}
+{"ref": "R19", "group": "resistor", "src": "body", "rot": 180, "lines": ["S"], "score": 0.0, "sec": 0.125, "blank": false}
+{"ref": "R19", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.126, "blank": false}
+{"ref": "R19", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.11, "blank": false}
+{"ref": "R20", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.118, "blank": false}
+{"ref": "R20", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["E", "LW"], "score": 0.0311, "sec": 0.145, "blank": false}
+{"ref": "R21", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.128, "blank": false}
+{"ref": "R21", "group": "resistor", "src": "body", "rot": 90, "lines": ["SN", "4"], "score": 0.1611, "sec": 0.162, "blank": false}
+{"ref": "R21", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.11, "blank": false}
+{"ref": "R21", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.149, "blank": false}
+{"ref": "R21", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["2TH", "CERES"], "score": 0.0911, "sec": 0.147, "blank": false}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.125, "blank": false}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["7", "TT -", "2"], "score": 0.3964, "sec": 0.158, "blank": false}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "body", "rot": 90, "lines": ["J"], "score": 0.0, "sec": 0.126, "blank": false}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["J", "4"], "score": 0.0393, "sec": 0.138, "blank": false}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.119, "blank": false}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["NO"], "score": 0.0, "sec": 0.152, "blank": false}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "body", "rot": 90, "lines": ["I"], "score": 0.0, "sec": 0.14, "blank": false}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["4"], "score": 0.1889, "sec": 0.131, "blank": false}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.105, "blank": false}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.121, "blank": false}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.111, "blank": false}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["2"], "score": 0.0195, "sec": 0.12, "blank": false}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "body", "rot": 90, "lines": ["1"], "score": 0.4362, "sec": 0.128, "blank": false}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["3"], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "body", "rot": 90, "lines": ["I"], "score": 0.5673, "sec": 0.127, "blank": false}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["L 18", "TA"], "score": 0.1904, "sec": 0.125, "blank": false}
+{"ref": "R28", "group": "resistor", "src": "body", "rot": 0, "lines": [], "score": 0.0, "sec": 0.107, "blank": false}
+{"ref": "R28", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.111, "blank": false}
+{"ref": "R28", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.116, "blank": false}
+{"ref": "R28", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.109, "blank": false}
+{"ref": "R28", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["2", "48"], "score": 0.0793, "sec": 0.136, "blank": false}
+{"ref": "R29", "group": "resistor", "src": "body", "rot": 0, "lines": ["ELEN", "NC"], "score": 0.0573, "sec": 0.13, "blank": false}
+{"ref": "R29", "group": "resistor", "src": "body", "rot": 90, "lines": ["T", "AB", ".TH."], "score": 0.0164, "sec": 0.154, "blank": false}
+{"ref": "R29", "group": "resistor", "src": "body", "rot": 180, "lines": ["-", "1", "0"], "score": 0.0738, "sec": 0.153, "blank": false}
+{"ref": "R29", "group": "resistor", "src": "body", "rot": 270, "lines": ["5", "3", "-", ".", "."], "score": 0.1257, "sec": 0.144, "blank": false}
+{"ref": "R29", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["FE"], "score": 0.0, "sec": 0.13, "blank": false}
+{"ref": "R30", "group": "resistor", "src": "body", "rot": 0, "lines": ["ASEAN", "-"], "score": 0.1914, "sec": 0.144, "blank": false}
+{"ref": "R30", "group": "resistor", "src": "body", "rot": 90, "lines": ["I", "FP"], "score": 0.002, "sec": 0.132, "blank": false}
+{"ref": "R30", "group": "resistor", "src": "body", "rot": 180, "lines": ["W--", "ED", "20"], "score": 0.0427, "sec": 0.161, "blank": false}
+{"ref": "R30", "group": "resistor", "src": "body", "rot": 270, "lines": ["M", "ER", "RR"], "score": 0.0007, "sec": 0.146, "blank": false}
+{"ref": "R30", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.116, "blank": false}
+{"ref": "R31", "group": "resistor", "src": "body", "rot": 90, "lines": ["A", "-"], "score": 0.0921, "sec": 0.125, "blank": false}
+{"ref": "R31", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["4", "IP"], "score": 0.1794, "sec": 0.139, "blank": false}
+{"ref": "R38", "group": "resistor", "src": "body", "rot": 90, "lines": ["EH."], "score": 0.0, "sec": 0.119, "blank": false}
+{"ref": "R38", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["LE"], "score": 0.3262, "sec": 0.118, "blank": false}
+{"ref": "R39", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.105, "blank": false}
+{"ref": "R39", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["2", "I", "-", "J3"], "score": 0.0, "sec": 0.16, "blank": false}
+{"ref": "R40", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R40", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["PY", "BS"], "score": 0.1599, "sec": 0.129, "blank": false}
+{"ref": "R41", "group": "resistor", "src": "body", "rot": 90, "lines": ["L"], "score": 0.0, "sec": 0.121, "blank": false}
+{"ref": "R41", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["RS-", "8"], "score": 0.0899, "sec": 0.141, "blank": false}
+{"ref": "R43", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.11, "blank": false}
+{"ref": "R43", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["MN"], "score": 0.3808, "sec": 0.127, "blank": false}
+{"ref": "R44", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.118, "blank": false}
+{"ref": "R44", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.116, "blank": false}
+{"ref": "R45", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R45", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["4", "LL"], "score": 0.0, "sec": 0.119, "blank": false}
+{"ref": "R47", "group": "resistor", "src": "body", "rot": 90, "lines": ["2"], "score": 0.2845, "sec": 0.123, "blank": false}
+{"ref": "R47", "group": "resistor", "src": "mimg", "rot": 90, "lines": [".", "-"], "score": 0.0, "sec": 0.125, "blank": false}
+{"ref": "R49", "group": "resistor", "src": "body", "rot": 90, "lines": ["I"], "score": 0.4122, "sec": 0.121, "blank": false}
+{"ref": "R49", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.117, "blank": false}
+{"ref": "R50", "group": "resistor", "src": "body", "rot": 90, "lines": ["2"], "score": 0.7834, "sec": 0.128, "blank": false}
+{"ref": "R50", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.113, "blank": false}
+{"ref": "R51", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R51", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["-I", "A", "Y"], "score": 0.0, "sec": 0.17, "blank": false}
+{"ref": "R52", "group": "resistor", "src": "body", "rot": 90, "lines": ["W"], "score": 0.0, "sec": 0.135, "blank": false}
+{"ref": "R52", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["4", "2", "1"], "score": 0.0603, "sec": 0.152, "blank": false}
+{"ref": "R53", "group": "resistor", "src": "body", "rot": 90, "lines": ["5"], "score": 0.1746, "sec": 0.112, "blank": false}
+{"ref": "R53", "group": "resistor", "src": "mimg", "rot": 90, "lines": [".", "5"], "score": 0.3615, "sec": 0.156, "blank": false}
+{"ref": "R54", "group": "resistor", "src": "body", "rot": 90, "lines": ["J", "J"], "score": 0.2604, "sec": 0.123, "blank": false}
+{"ref": "R54", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["I", "4"], "score": 0.2457, "sec": 0.126, "blank": false}
+{"ref": "R55", "group": "resistor", "src": "body", "rot": 90, "lines": ["."], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R55", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["2", "NE", "- DE"], "score": 0.259, "sec": 0.151, "blank": false}
+{"ref": "R57", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.116, "blank": false}
+{"ref": "R57", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["1", "2"], "score": 0.4867, "sec": 0.13, "blank": false}
+{"ref": "R58", "group": "resistor", "src": "body", "rot": 0, "lines": ["CL"], "score": 0.0474, "sec": 0.139, "blank": false}
+{"ref": "R58", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.138, "blank": false}
+{"ref": "R58", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.126, "blank": false}
+{"ref": "R58", "group": "resistor", "src": "body", "rot": 270, "lines": ["B", "2"], "score": 0.1593, "sec": 0.135, "blank": false}
+{"ref": "R58", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["J"], "score": 0.0, "sec": 0.118, "blank": false}
+{"ref": "R62", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.127, "blank": false}
+{"ref": "R62", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["LB", "J"], "score": 0.1593, "sec": 0.128, "blank": false}
+{"ref": "R63", "group": "resistor", "src": "body", "rot": 90, "lines": ["-", "I"], "score": 0.2086, "sec": 0.127, "blank": false}
+{"ref": "R63", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["FE", "D3"], "score": 0.1788, "sec": 0.122, "blank": false}
+{"ref": "R65", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.135, "blank": false}
+{"ref": "R65", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.116, "blank": false}
+{"ref": "R66", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.11, "blank": false}
+{"ref": "R66", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["S", "7", ".", "SE."], "score": 0.0, "sec": 0.142, "blank": false}
+{"ref": "R67", "group": "resistor", "src": "body", "rot": 90, "lines": ["5"], "score": 0.1157, "sec": 0.121, "blank": false}
+{"ref": "R67", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["I", "L"], "score": 0.0, "sec": 0.152, "blank": false}
+{"ref": "R68", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.106, "blank": false}
+{"ref": "R68", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["SY"], "score": 0.327, "sec": 0.128, "blank": false}
+{"ref": "R70", "group": "resistor", "src": "body", "rot": 90, "lines": [".", "-"], "score": 0.2631, "sec": 0.128, "blank": false}
+{"ref": "R70", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["W"], "score": 0.0, "sec": 0.133, "blank": false}
+{"ref": "R71", "group": "resistor", "src": "body", "rot": 90, "lines": ["3", "-"], "score": 0.2022, "sec": 0.131, "blank": false}
+{"ref": "R71", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["310A", "2"], "score": 0.4092, "sec": 0.144, "blank": false}
+{"ref": "R72", "group": "resistor", "src": "body", "rot": 90, "lines": ["RE"], "score": 0.1677, "sec": 0.117, "blank": false}
+{"ref": "R72", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["C-", "-", "IN", "C8"], "score": 0.3138, "sec": 0.152, "blank": false}
+{"ref": "R73", "group": "resistor", "src": "body", "rot": 90, "lines": ["-", "J"], "score": 0.0125, "sec": 0.132, "blank": false}
+{"ref": "R73", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["ER", "IE"], "score": 0.232, "sec": 0.144, "blank": false}
+{"ref": "R74", "group": "resistor", "src": "body", "rot": 90, "lines": ["I"], "score": 0.6359, "sec": 0.128, "blank": false}
+{"ref": "R74", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["EP", "4"], "score": 0.3963, "sec": 0.133, "blank": false}
+{"ref": "R75", "group": "resistor", "src": "body", "rot": 90, "lines": ["E"], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R75", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["2M", "."], "score": 0.0972, "sec": 0.128, "blank": false}
+{"ref": "R76", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.126, "blank": false}
+{"ref": "R76", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.113, "blank": false}
+{"ref": "R77", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.126, "blank": false}
+{"ref": "R77", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["-"], "score": 0.0, "sec": 0.122, "blank": false}
+{"ref": "R78", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.137, "blank": false}
+{"ref": "R78", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.119, "blank": false}
+{"ref": "R79", "group": "resistor", "src": "body", "rot": 0, "lines": ["102."], "score": 0.3376, "sec": 0.143, "blank": false}
+{"ref": "R79", "group": "resistor", "src": "body", "rot": 90, "lines": ["F"], "score": 0.0, "sec": 0.133, "blank": false}
+{"ref": "R79", "group": "resistor", "src": "body", "rot": 180, "lines": ["4", "20"], "score": 0.0, "sec": 0.154, "blank": false}
+{"ref": "R79", "group": "resistor", "src": "body", "rot": 270, "lines": ["30"], "score": 0.315, "sec": 0.126, "blank": false}
+{"ref": "R79", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["V"], "score": 0.0, "sec": 0.118, "blank": false}
+{"ref": "R81", "group": "resistor", "src": "body", "rot": 90, "lines": ["8"], "score": 0.686, "sec": 0.127, "blank": false}
+{"ref": "R81", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["BL"], "score": 0.1581, "sec": 0.124, "blank": false}
+{"ref": "R82", "group": "resistor", "src": "body", "rot": 0, "lines": ["B."], "score": 0.0, "sec": 0.139, "blank": false}
+{"ref": "R82", "group": "resistor", "src": "body", "rot": 90, "lines": [".", "1", "9"], "score": 0.0, "sec": 0.17, "blank": false}
+{"ref": "R82", "group": "resistor", "src": "body", "rot": 180, "lines": ["SX"], "score": 0.2403, "sec": 0.156, "blank": false}
+{"ref": "R82", "group": "resistor", "src": "body", "rot": 270, "lines": [], "score": 0.0, "sec": 0.126, "blank": false}
+{"ref": "R82", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["0", "A"], "score": 0.0, "sec": 0.124, "blank": false}
+{"ref": "R85", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.107, "blank": false}
+{"ref": "R85", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["-", "QE-", "-", "0", "-4"], "score": 0.1268, "sec": 0.156, "blank": false}
+{"ref": "R86", "group": "resistor", "src": "body", "rot": 90, "lines": ["353"], "score": 0.2335, "sec": 0.117, "blank": false}
+{"ref": "R86", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["S85", "2"], "score": 0.1598, "sec": 0.135, "blank": false}
+{"ref": "R87", "group": "resistor", "src": "body", "rot": 90, "lines": ["I"], "score": 0.0, "sec": 0.127, "blank": false}
+{"ref": "R87", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["2", "CJS"], "score": 0.0808, "sec": 0.127, "blank": false}
+{"ref": "R88", "group": "resistor", "src": "body", "rot": 90, "lines": ["T"], "score": 0.0, "sec": 0.118, "blank": false}
+{"ref": "R88", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.108, "blank": false}
+{"ref": "R89", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.105, "blank": false}
+{"ref": "R89", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["."], "score": 0.0, "sec": 0.117, "blank": false}
+{"ref": "R91", "group": "resistor", "src": "body", "rot": 90, "lines": ["NG", "ST"], "score": 0.0083, "sec": 0.128, "blank": false}
+{"ref": "R91", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["Z", "F", "PE"], "score": 0.0476, "sec": 0.14, "blank": false}
+{"ref": "R92", "group": "resistor", "src": "body", "rot": 90, "lines": ["-"], "score": 0.0, "sec": 0.119, "blank": false}
+{"ref": "R92", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["F3"], "score": 0.0, "sec": 0.134, "blank": false}
+{"ref": "R93", "group": "resistor", "src": "body", "rot": 90, "lines": ["5", "AA"], "score": 0.2696, "sec": 0.133, "blank": false}
+{"ref": "R93", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["O", "V", "FARA", "4 J"], "score": 0.3851, "sec": 0.139, "blank": false}
+{"ref": "R94", "group": "resistor", "src": "body", "rot": 90, "lines": ["-", "CO"], "score": 0.2969, "sec": 0.152, "blank": false}
+{"ref": "R94", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["3", "."], "score": 0.1457, "sec": 0.137, "blank": false}
+{"ref": "R97", "group": "resistor", "src": "body", "rot": 90, "lines": ["T-"], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R97", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["IE", "31-7"], "score": 0.1068, "sec": 0.148, "blank": false}
+{"ref": "R98", "group": "resistor", "src": "body", "rot": 90, "lines": ["CA", "NJ"], "score": 0.2401, "sec": 0.144, "blank": false}
+{"ref": "R98", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["5"], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R99", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.123, "blank": false}
+{"ref": "R99", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.112, "blank": false}
+{"ref": "R104", "group": "resistor", "src": "body", "rot": 90, "lines": ["BH"], "score": 0.4047, "sec": 0.121, "blank": false}
+{"ref": "R104", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.126, "blank": false}
+{"ref": "R106", "group": "resistor", "src": "body", "rot": 0, "lines": ["LY1"], "score": 0.0, "sec": 0.131, "blank": false}
+{"ref": "R106", "group": "resistor", "src": "body", "rot": 90, "lines": [], "score": 0.0, "sec": 0.121, "blank": false}
+{"ref": "R106", "group": "resistor", "src": "body", "rot": 180, "lines": [], "score": 0.0, "sec": 0.127, "blank": false}
+{"ref": "R106", "group": "resistor", "src": "body", "rot": 270, "lines": ["E"], "score": 0.0, "sec": 0.12, "blank": false}
+{"ref": "R106", "group": "resistor", "src": "mimg", "rot": 90, "lines": [], "score": 0.0, "sec": 0.132, "blank": false}
+{"ref": "R107", "group": "resistor", "src": "body", "rot": 90, "lines": ["3", "X13"], "score": 0.3333, "sec": 0.131, "blank": false}
+{"ref": "R107", "group": "resistor", "src": "mimg", "rot": 90, "lines": ["IN", "ON"], "score": 0.2928, "sec": 0.16, "blank": false}
+{"ref": "U1", "group": "ic", "src": "body", "rot": 90, "lines": ["I", "T", "EY", "R", "A", "NN", "REA", "-", "3", "SN", "AY", "RLAN", "5", "SR", "3", "NA", "E", "SONA", "A", "RE", "A", "NS", "5", "11", "11"], "score": 0.1946, "sec": 0.329, "blank": false}
+{"ref": "U1", "group": "ic", "src": "mimg", "rot": 90, "lines": ["A", "NG", "5", "2", "SH", "SN", "EA", "NEEDS", "S", "EA", "A", "RRR", "TY", "3", "I", "QE", "3", "INK", "RE", "SN", "2X", "2", "ND", "NN", "OR", "83", "ER", "LANE", "0", "LL", "ATR", "LIK", "LUNN"], "score": 0.2249, "sec": 0.378, "blank": false}
+{"ref": "U2", "group": "ic", "src": "body", "rot": 90, "lines": ["YG", "A", "AL"], "score": 0.1236, "sec": 0.16, "blank": false}
+{"ref": "U2", "group": "ic", "src": "mimg", "rot": 90, "lines": ["A", "TT"], "score": 0.5161, "sec": 0.167, "blank": false}
+{"ref": "U3", "group": "ic", "src": "body", "rot": 90, "lines": ["UAL", "P", "1", "4", "HEY", "N", "100TTEE"], "score": 0.1406, "sec": 0.24, "blank": false}
+{"ref": "U3", "group": "ic", "src": "mimg", "rot": 90, "lines": ["TT", "25", "OED", "BY", "2", "1", "1"], "score": 0.257, "sec": 0.211, "blank": false}
+{"ref": "U4", "group": "ic", "src": "body", "rot": 90, "lines": ["DW", "EE", "A", "8", "1M", "G", "-"], "score": 0.0287, "sec": 0.27, "blank": false}
+{"ref": "U4", "group": "ic", "src": "mimg", "rot": 90, "lines": ["-", "N", "PP", "NU", "0", "0", "FR", "TT"], "score": 0.0859, "sec": 0.31, "blank": false}
+{"ref": "U6", "group": "ic", "src": "body", "rot": 90, "lines": [".", "4", "5"], "score": 0.2054, "sec": 0.146, "blank": false}
+{"ref": "U6", "group": "ic", "src": "mimg", "rot": 90, "lines": ["A", "E"], "score": 0.1634, "sec": 0.137, "blank": false}
+{"ref": "U10_DC_5V", "group": "ic", "src": "body", "rot": 90, "lines": ["2", "-", "A", "S", "E1", "OF", "REA"], "score": 0.1169, "sec": 0.254, "blank": false}
+{"ref": "U10_DC_5V", "group": "ic", "src": "mimg", "rot": 90, "lines": ["SA", "CAT", "SB", "SF", "I", "LN", "L", "S", "F", "1"], "score": 0.1573, "sec": 0.277, "blank": false}
+{"ref": "U10_DC_REG", "group": "ic", "src": "body", "rot": 90, "lines": ["A", ".", "2", "NG", "FR", "3", "LS", "RE", "XS", "32", "SL"], "score": 0.1243, "sec": 0.249, "blank": false}
+{"ref": "U10_DC_REG", "group": "ic", "src": "mimg", "rot": 90, "lines": ["-..", "A", "A", "L388", "A", "3", "8", "T", "ES", "5", "AVE", "5", "R", "-", "8B", "WP", "AB", "S", "T", "WW", "SR", "-", "W"], "score": 0.1171, "sec": 0.336, "blank": false}
+{"ref": "U11", "group": "ic", "src": "body", "rot": 90, "lines": ["RR", "-", "S", "NN", "IAQ", "MN", "LSS", "ES", "SE", "4", "RO", "ER", "1."], "score": 0.0922, "sec": 0.293, "blank": false}
+{"ref": "U11", "group": "ic", "src": "mimg", "rot": 90, "lines": ["SN", "Y", "QF", "EE", "NEG", "MN", "ERR", "1", "P", "3", "C", "S", "WW", "0"], "score": 0.166, "sec": 0.312, "blank": false}
+{"ref": "U14", "group": "ic", "src": "body", "rot": 90, "lines": ["E", "EEL", "S"], "score": 0.0, "sec": 0.238, "blank": false}
+{"ref": "U14", "group": "ic", "src": "mimg", "rot": 90, "lines": ["I", "RY", "-", "JO"], "score": 0.1294, "sec": 0.156, "blank": false}
+{"ref": "U16", "group": "ic", "src": "body", "rot": 90, "lines": ["0", "A", "I"], "score": 0.0353, "sec": 0.172, "blank": false}
+{"ref": "U16", "group": "ic", "src": "mimg", "rot": 90, "lines": ["CE"], "score": 0.1139, "sec": 0.134, "blank": false}
+{"ref": "U21_US1", "group": "ic", "src": "body", "rot": 90, "lines": [".", "ARN", "AN", ".", "5", "A", "N", "S", "3", "53", "A", "LL", "NS", "A", "CN", "AN", "N", "NS", "-", "BL", "EARS", "BAAS", ".-", "NY", "NN", "-", "NW", "0", "N", "XY", "WN", "TS", "SS.", "WW", "-N", "NE"], "score": 0.1137, "sec": 0.448, "blank": false}
+{"ref": "U21_US1", "group": "ic", "src": "mimg", "rot": 90, "lines": ["FH", "3R3", "LR", "2", "23", "ENON", "1", "B"], "score": 0.194, "sec": 0.192, "blank": false}
+{"ref": "U23", "group": "ic", "src": "body", "rot": 90, "lines": ["R", "140"], "score": 0.0, "sec": 0.186, "blank": false}
+{"ref": "U23", "group": "ic", "src": "mimg", "rot": 90, "lines": ["5", "PS"], "score": 0.0518, "sec": 0.149, "blank": false}
+{"ref": "U24", "group": "ic", "src": "body", "rot": 90, "lines": ["-", "R", "-", "RE"], "score": 0.0, "sec": 0.212, "blank": false}
+{"ref": "U24", "group": "ic", "src": "mimg", "rot": 90, "lines": ["3", "1", "1", ".", "--"], "score": 0.0843, "sec": 0.186, "blank": false}
+{"ref": "U25", "group": "ic", "src": "body", "rot": 90, "lines": ["SI", "I", "3", "5", "TT ET", "LL"], "score": 0.0203, "sec": 0.281, "blank": false}
+{"ref": "U25", "group": "ic", "src": "mimg", "rot": 90, "lines": ["-", "VU", "5", "TE", "-", "SO", "S CR", "4", "5 C.."], "score": 0.0319, "sec": 0.346, "blank": false}
+{"ref": "U26", "group": "ic", "src": "body", "rot": 90, "lines": ["SIRS", "S", "SONS", "RS", "I"], "score": 0.1844, "sec": 0.272, "blank": false}
+{"ref": "U26", "group": "ic", "src": "mimg", "rot": 90, "lines": ["AE", "CD", "F", "4", "A", "SOA", "-", "T", "TE", "BC"], "score": 0.1766, "sec": 0.264, "blank": false}
+{"ref": "U29", "group": "ic", "src": "body", "rot": 90, "lines": ["3", "HLLLLLLILE", "4", "YH", "ASX", "7", "ES", "775", "2", "7", "ZA", "SI", "4", "Z", ".", "-", "AT", "7", "4", "G", "V", "A", "2", "7.", "JE", "7", "V", "3", "G", "7", "7", "0", "CS", "72", "U", "SL", "S", "HEE", "HH"], "score": 0.1857, "sec": 0.618, "blank": false}
+{"ref": "U29", "group": "ic", "src": "mimg", "rot": 90, "lines": ["L", "1", "OD", "4", "5", "N", "A", "LS", "I", "IY", "DW", ".", "25", "2", "-", "7", "2", "NC", "7", "A", "7", "5", "Z5", "2", "5", "RAL", "IO", "J"], "score": 0.2086, "sec": 0.431, "blank": false}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["3", "B", "ND", "70"], "score": 0.2663, "sec": 0.153, "blank": false}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["VY", "C", "14", "ZN I"], "score": 0.2953, "sec": 0.171, "blank": false}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "body", "rot": 90, "lines": ["30", "AG", "L", "-"], "score": 0.2575, "sec": 0.198, "blank": false}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "mimg", "rot": 90, "lines": ["-", "-", "FE"], "score": 0.0307, "sec": 0.156, "blank": false}

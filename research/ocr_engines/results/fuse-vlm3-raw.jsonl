@@ -1,0 +1,464 @@
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["▲07E", "40A91"], "score": 0.3127, "sec": 0.987, "blank": false, "voters": 3}
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["40A91", "△07E"], "score": 0.303, "sec": 1.277, "blank": false, "voters": 3}
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["▲07E", "40A91"], "score": 0.2995, "sec": 1.203, "blank": false, "voters": 3}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["▲10E", "40A01"], "score": 0.3104, "sec": 1.174, "blank": false, "voters": 3}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["10V E", "40A31"], "score": 0.3098, "sec": 0.723, "blank": false, "voters": 3}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["10E", "40A1"], "score": 0.3111, "sec": 1.02, "blank": false, "voters": 3}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["ar"], "score": 0.3173, "sec": 0.315, "blank": false, "voters": 3}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["JE"], "score": 0.5583, "sec": 0.312, "blank": false, "voters": 3}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["The quick brown fox jumps over the lazy dog"], "score": 0.2604, "sec": 0.769, "blank": false, "voters": 3}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["er"], "score": 0.2572, "sec": 0.331, "blank": false, "voters": 3}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["Je"], "score": 0.5124, "sec": 0.368, "blank": false, "voters": 3}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": [], "score": 0.3333, "sec": 0.371, "blank": false, "voters": 3}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["The quick brown fox jumps over the lazy dog."], "score": 0.2693, "sec": 0.825, "blank": false, "voters": 3}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["JE"], "score": 0.2744, "sec": 0.792, "blank": false, "voters": 3}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["13"], "score": 0.2633, "sec": 0.434, "blank": false, "voters": 3}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["ar"], "score": 0.5879, "sec": 0.333, "blank": false, "voters": 3}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["JE"], "score": 0.485, "sec": 0.404, "blank": false, "voters": 3}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["The quick brown fox jumps over the lazy dog."], "score": 0.2793, "sec": 0.914, "blank": false, "voters": 3}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["220-16L", "P6 ②"], "score": 0.5175, "sec": 1.622, "blank": false, "voters": 3}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["220-16L", "P6", "2"], "score": 0.3256, "sec": 1.187, "blank": false, "voters": 3}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["220-16L", "P2"], "score": 0.3066, "sec": 1.509, "blank": false, "voters": 3}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["221-16L", "P6 ②"], "score": 0.5887, "sec": 1.586, "blank": false, "voters": 3}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["221-16L", "P6", "②"], "score": 0.3211, "sec": 1.19, "blank": false, "voters": 3}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["22-16L", "P(2)"], "score": 0.3074, "sec": 1.584, "blank": false, "voters": 3}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["22J-16L", "P6 (2)"], "score": 0.3146, "sec": 1.465, "blank": false, "voters": 3}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["220-16L", "P6", "2"], "score": 0.3152, "sec": 1.057, "blank": false, "voters": 3}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["223-16L", "P6 ②"], "score": 0.2965, "sec": 1.422, "blank": false, "voters": 3}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["22-16L", "P; 2"], "score": 0.3094, "sec": 1.28, "blank": false, "voters": 3}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["22-16L", "P:"], "score": 0.302, "sec": 1.014, "blank": false, "voters": 3}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["22-16L", "P;"], "score": 0.5432, "sec": 1.514, "blank": false, "voters": 3}
+{"ref": "D9", "group": "diode/transistor", "src": "fused", "rot": 0, "lines": ["725", "8320A"], "score": 0.2901, "sec": 1.254, "blank": false, "voters": 3}
+{"ref": "D9", "group": "diode/transistor", "src": "fused", "rot": 180, "lines": ["8320A", "729"], "score": 0.3118, "sec": 0.863, "blank": false, "voters": 3}
+{"ref": "D9", "group": "diode/transistor", "src": "fused", "rot": 270, "lines": ["725", "5320A"], "score": 0.2575, "sec": 3.952, "blank": false, "voters": 3}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "fused", "rot": 0, "lines": ["B540C"], "score": 0.5953, "sec": 0.999, "blank": false, "voters": 3}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "fused", "rot": 180, "lines": ["185400"], "score": 0.2873, "sec": 1.05, "blank": false, "voters": 3}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "fused", "rot": 270, "lines": ["B540C"], "score": 0.9116, "sec": 0.804, "blank": false, "voters": 3}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "fused", "rot": 0, "lines": ["B540C"], "score": 0.629, "sec": 0.899, "blank": false, "voters": 3}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "fused", "rot": 180, "lines": ["B540C", "133"], "score": 0.3048, "sec": 0.943, "blank": false, "voters": 3}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "fused", "rot": 270, "lines": ["B540C"], "score": 0.8792, "sec": 0.83, "blank": false, "voters": 3}
+{"ref": "U9_US1", "group": "ic", "src": "fused", "rot": 0, "lines": ["1C15G"], "score": 0.2716, "sec": 0.601, "blank": false, "voters": 3}
+{"ref": "U9_US1", "group": "ic", "src": "fused", "rot": 180, "lines": ["98136"], "score": 0.2195, "sec": 0.569, "blank": false, "voters": 3}
+{"ref": "U9_US1", "group": "ic", "src": "fused", "rot": 270, "lines": ["C"], "score": 0.2142, "sec": 0.56, "blank": false, "voters": 3}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["4R7", "11119"], "score": 0.3161, "sec": 0.774, "blank": false, "voters": 3}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["61111", "4R7"], "score": 0.324, "sec": 0.734, "blank": false, "voters": 3}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["4R7", "J1119"], "score": 0.2928, "sec": 1.179, "blank": false, "voters": 3}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["4R7", "1119"], "score": 0.3326, "sec": 0.686, "blank": false, "voters": 3}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["61119", "4R7"], "score": 0.3232, "sec": 0.767, "blank": false, "voters": 3}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["4R7", "C1119"], "score": 0.3159, "sec": 0.74, "blank": false, "voters": 3}
+{"ref": "Q3", "group": "diode/transistor", "src": "fused", "rot": 0, "lines": ["B"], "score": 0.2763, "sec": 0.42, "blank": false, "voters": 3}
+{"ref": "Q3", "group": "diode/transistor", "src": "fused", "rot": 180, "lines": ["C"], "score": 0.2285, "sec": 0.495, "blank": false, "voters": 3}
+{"ref": "Q3", "group": "diode/transistor", "src": "fused", "rot": 270, "lines": ["L"], "score": 0.3585, "sec": 0.272, "blank": false, "voters": 3}
+{"ref": "Q4", "group": "diode/transistor", "src": "fused", "rot": 0, "lines": ["B7JHU"], "score": 0.8864, "sec": 0.516, "blank": false, "voters": 3}
+{"ref": "Q4", "group": "diode/transistor", "src": "fused", "rot": 180, "lines": ["NHT28"], "score": 0.4551, "sec": 0.537, "blank": false, "voters": 3}
+{"ref": "Q4", "group": "diode/transistor", "src": "fused", "rot": 270, "lines": ["B7J2B"], "score": 0.244, "sec": 0.651, "blank": false, "voters": 3}
+{"ref": "R2", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.7843, "sec": 0.453, "blank": false, "voters": 3}
+{"ref": "R2", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.2651, "sec": 0.497, "blank": false, "voters": 3}
+{"ref": "R2", "group": "resistor", "src": "fused", "rot": 270, "lines": ["01C"], "score": 0.3328, "sec": 0.827, "blank": false, "voters": 3}
+{"ref": "R3", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01B"], "score": 0.6148, "sec": 0.502, "blank": false, "voters": 3}
+{"ref": "R3", "group": "resistor", "src": "fused", "rot": 180, "lines": ["810"], "score": 0.3283, "sec": 0.488, "blank": false, "voters": 3}
+{"ref": "R3", "group": "resistor", "src": "fused", "rot": 270, "lines": ["010"], "score": 0.3177, "sec": 0.501, "blank": false, "voters": 3}
+{"ref": "R4", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.879, "sec": 0.53, "blank": false, "voters": 3}
+{"ref": "R4", "group": "resistor", "src": "fused", "rot": 180, "lines": ["DIC"], "score": 0.27, "sec": 0.387, "blank": false, "voters": 3}
+{"ref": "R4", "group": "resistor", "src": "fused", "rot": 270, "lines": ["01C"], "score": 0.3119, "sec": 0.371, "blank": false, "voters": 3}
+{"ref": "R6", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.8529, "sec": 0.438, "blank": false, "voters": 3}
+{"ref": "R6", "group": "resistor", "src": "fused", "rot": 180, "lines": ["DIC"], "score": 0.2612, "sec": 0.395, "blank": false, "voters": 3}
+{"ref": "R6", "group": "resistor", "src": "fused", "rot": 270, "lines": ["01C"], "score": 0.2836, "sec": 0.538, "blank": false, "voters": 3}
+{"ref": "R8", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.8766, "sec": 0.486, "blank": false, "voters": 3}
+{"ref": "R8", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.3261, "sec": 0.514, "blank": false, "voters": 3}
+{"ref": "R8", "group": "resistor", "src": "fused", "rot": 270, "lines": ["01C"], "score": 0.33, "sec": 0.495, "blank": false, "voters": 3}
+{"ref": "R10", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.5977, "sec": 0.515, "blank": false, "voters": 3}
+{"ref": "R10", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.5542, "sec": 0.481, "blank": false, "voters": 3}
+{"ref": "R10", "group": "resistor", "src": "fused", "rot": 270, "lines": ["OIC"], "score": 0.5542, "sec": 0.464, "blank": false, "voters": 3}
+{"ref": "R11", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01A"], "score": 0.8384, "sec": 0.524, "blank": false, "voters": 3}
+{"ref": "R11", "group": "resistor", "src": "fused", "rot": 180, "lines": ["HID"], "score": 0.2641, "sec": 0.527, "blank": false, "voters": 3}
+{"ref": "R11", "group": "resistor", "src": "fused", "rot": 270, "lines": ["DIB"], "score": 0.2277, "sec": 0.504, "blank": false, "voters": 3}
+{"ref": "R12", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.8293, "sec": 0.521, "blank": false, "voters": 3}
+{"ref": "R12", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.3302, "sec": 0.516, "blank": false, "voters": 3}
+{"ref": "R12", "group": "resistor", "src": "fused", "rot": 270, "lines": ["00C"], "score": 0.2115, "sec": 0.533, "blank": false, "voters": 3}
+{"ref": "R13", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.7977, "sec": 0.522, "blank": false, "voters": 3}
+{"ref": "R13", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.2758, "sec": 0.444, "blank": false, "voters": 3}
+{"ref": "R13", "group": "resistor", "src": "fused", "rot": 270, "lines": ["The quick brown fox jumps over the lazy dog"], "score": 0.2623, "sec": 0.835, "blank": false, "voters": 3}
+{"ref": "R14", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01A"], "score": 0.8336, "sec": 0.602, "blank": false, "voters": 3}
+{"ref": "R14", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.5351, "sec": 0.497, "blank": false, "voters": 3}
+{"ref": "R14", "group": "resistor", "src": "fused", "rot": 270, "lines": ["BIO"], "score": 0.2706, "sec": 0.525, "blank": false, "voters": 3}
+{"ref": "R15", "group": "resistor", "src": "fused", "rot": 0, "lines": ["220"], "score": 0.9019, "sec": 0.486, "blank": false, "voters": 3}
+{"ref": "R15", "group": "resistor", "src": "fused", "rot": 180, "lines": ["022"], "score": 0.8258, "sec": 0.508, "blank": false, "voters": 3}
+{"ref": "R15", "group": "resistor", "src": "fused", "rot": 270, "lines": ["220"], "score": 0.58, "sec": 0.51, "blank": false, "voters": 3}
+{"ref": "R16", "group": "resistor", "src": "fused", "rot": 0, "lines": ["220"], "score": 0.9344, "sec": 0.483, "blank": false, "voters": 3}
+{"ref": "R16", "group": "resistor", "src": "fused", "rot": 180, "lines": ["220"], "score": 0.6367, "sec": 0.5, "blank": false, "voters": 3}
+{"ref": "R16", "group": "resistor", "src": "fused", "rot": 270, "lines": ["220"], "score": 0.9048, "sec": 0.529, "blank": false, "voters": 3}
+{"ref": "R17", "group": "resistor", "src": "fused", "rot": 0, "lines": ["272"], "score": 0.9129, "sec": 0.502, "blank": false, "voters": 3}
+{"ref": "R17", "group": "resistor", "src": "fused", "rot": 180, "lines": ["222"], "score": 0.5775, "sec": 0.45, "blank": false, "voters": 3}
+{"ref": "R17", "group": "resistor", "src": "fused", "rot": 270, "lines": ["272"], "score": 0.3333, "sec": 0.476, "blank": false, "voters": 3}
+{"ref": "R18", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.879, "sec": 0.462, "blank": false, "voters": 3}
+{"ref": "R18", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.3141, "sec": 0.482, "blank": false, "voters": 3}
+{"ref": "R18", "group": "resistor", "src": "fused", "rot": 270, "lines": ["OIC"], "score": 0.478, "sec": 0.456, "blank": false, "voters": 3}
+{"ref": "R20", "group": "resistor", "src": "fused", "rot": 0, "lines": ["D1A"], "score": 0.5694, "sec": 0.467, "blank": false, "voters": 3}
+{"ref": "R20", "group": "resistor", "src": "fused", "rot": 180, "lines": ["01R"], "score": 0.3287, "sec": 0.374, "blank": false, "voters": 3}
+{"ref": "R20", "group": "resistor", "src": "fused", "rot": 270, "lines": ["DIR"], "score": 0.2212, "sec": 0.5, "blank": false, "voters": 3}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "fused", "rot": 0, "lines": ["02C"], "score": 0.6277, "sec": 0.474, "blank": false, "voters": 3}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "fused", "rot": 180, "lines": ["02C"], "score": 0.3112, "sec": 0.495, "blank": false, "voters": 3}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "fused", "rot": 270, "lines": ["02C"], "score": 0.3304, "sec": 0.462, "blank": false, "voters": 3}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "fused", "rot": 0, "lines": ["184"], "score": 0.9176, "sec": 0.479, "blank": false, "voters": 3}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "fused", "rot": 180, "lines": ["H81"], "score": 0.5934, "sec": 0.44, "blank": false, "voters": 3}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "fused", "rot": 270, "lines": ["184"], "score": 0.3152, "sec": 0.528, "blank": false, "voters": 3}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "fused", "rot": 0, "lines": ["76C"], "score": 0.3324, "sec": 0.571, "blank": false, "voters": 3}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "fused", "rot": 180, "lines": ["76C"], "score": 0.3074, "sec": 0.562, "blank": false, "voters": 3}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "fused", "rot": 270, "lines": ["76E"], "score": 0.3258, "sec": 0.486, "blank": false, "voters": 3}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "fused", "rot": 0, "lines": ["76C"], "score": 0.6478, "sec": 0.474, "blank": false, "voters": 3}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "fused", "rot": 180, "lines": ["75C"], "score": 0.2964, "sec": 0.494, "blank": false, "voters": 3}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "fused", "rot": 270, "lines": ["76C"], "score": 0.322, "sec": 0.543, "blank": false, "voters": 3}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "fused", "rot": 0, "lines": ["D1C"], "score": 0.8862, "sec": 0.457, "blank": false, "voters": 3}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "fused", "rot": 180, "lines": ["10"], "score": 0.3893, "sec": 0.359, "blank": false, "voters": 3}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "fused", "rot": 270, "lines": ["DIC"], "score": 0.5258, "sec": 0.371, "blank": false, "voters": 3}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.8697, "sec": 0.446, "blank": false, "voters": 3}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "fused", "rot": 180, "lines": ["DIC"], "score": 0.3059, "sec": 0.375, "blank": false, "voters": 3}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "fused", "rot": 270, "lines": ["DIC"], "score": 0.5196, "sec": 0.355, "blank": false, "voters": 3}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "fused", "rot": 0, "lines": ["29B"], "score": 0.8549, "sec": 0.469, "blank": false, "voters": 3}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "fused", "rot": 180, "lines": ["862"], "score": 0.8804, "sec": 0.467, "blank": false, "voters": 3}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "fused", "rot": 270, "lines": ["862"], "score": 0.3161, "sec": 0.551, "blank": false, "voters": 3}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "fused", "rot": 0, "lines": ["36C"], "score": 0.9323, "sec": 0.5, "blank": false, "voters": 3}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "fused", "rot": 180, "lines": ["36C"], "score": 0.3174, "sec": 0.486, "blank": false, "voters": 3}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "fused", "rot": 270, "lines": ["36C"], "score": 0.2896, "sec": 0.48, "blank": false, "voters": 3}
+{"ref": "R31", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01A"], "score": 0.9172, "sec": 0.495, "blank": false, "voters": 3}
+{"ref": "R31", "group": "resistor", "src": "fused", "rot": 180, "lines": ["810"], "score": 0.6101, "sec": 0.5, "blank": false, "voters": 3}
+{"ref": "R31", "group": "resistor", "src": "fused", "rot": 270, "lines": ["A10"], "score": 0.2562, "sec": 0.533, "blank": false, "voters": 3}
+{"ref": "R38", "group": "resistor", "src": "fused", "rot": 0, "lines": ["513"], "score": 0.8879, "sec": 0.479, "blank": false, "voters": 3}
+{"ref": "R38", "group": "resistor", "src": "fused", "rot": 180, "lines": ["E15"], "score": 0.9146, "sec": 0.435, "blank": false, "voters": 3}
+{"ref": "R38", "group": "resistor", "src": "fused", "rot": 270, "lines": ["E15"], "score": 0.6113, "sec": 0.472, "blank": false, "voters": 3}
+{"ref": "R39", "group": "resistor", "src": "fused", "rot": 0, "lines": ["512"], "score": 0.9345, "sec": 0.458, "blank": false, "voters": 3}
+{"ref": "R39", "group": "resistor", "src": "fused", "rot": 180, "lines": ["215"], "score": 0.5864, "sec": 0.482, "blank": false, "voters": 3}
+{"ref": "R39", "group": "resistor", "src": "fused", "rot": 270, "lines": ["215"], "score": 0.5721, "sec": 0.474, "blank": false, "voters": 3}
+{"ref": "R40", "group": "resistor", "src": "fused", "rot": 0, "lines": ["105"], "score": 0.9255, "sec": 0.469, "blank": false, "voters": 3}
+{"ref": "R40", "group": "resistor", "src": "fused", "rot": 180, "lines": ["SDI"], "score": 0.8684, "sec": 0.473, "blank": false, "voters": 3}
+{"ref": "R40", "group": "resistor", "src": "fused", "rot": 270, "lines": ["105"], "score": 0.3333, "sec": 0.483, "blank": false, "voters": 3}
+{"ref": "R41", "group": "resistor", "src": "fused", "rot": 0, "lines": ["188"], "score": 0.9106, "sec": 0.5, "blank": false, "voters": 3}
+{"ref": "R41", "group": "resistor", "src": "fused", "rot": 180, "lines": ["188"], "score": 0.3177, "sec": 0.476, "blank": false, "voters": 3}
+{"ref": "R41", "group": "resistor", "src": "fused", "rot": 270, "lines": ["188"], "score": 0.6062, "sec": 0.486, "blank": false, "voters": 3}
+{"ref": "R43", "group": "resistor", "src": "fused", "rot": 0, "lines": ["S12"], "score": 0.9119, "sec": 0.496, "blank": false, "voters": 3}
+{"ref": "R43", "group": "resistor", "src": "fused", "rot": 180, "lines": ["215"], "score": 0.8815, "sec": 0.485, "blank": false, "voters": 3}
+{"ref": "R43", "group": "resistor", "src": "fused", "rot": 270, "lines": ["215"], "score": 0.8614, "sec": 0.507, "blank": false, "voters": 3}
+{"ref": "R44", "group": "resistor", "src": "fused", "rot": 0, "lines": ["215"], "score": 0.8878, "sec": 0.467, "blank": false, "voters": 3}
+{"ref": "R44", "group": "resistor", "src": "fused", "rot": 180, "lines": ["512"], "score": 0.8652, "sec": 0.472, "blank": false, "voters": 3}
+{"ref": "R44", "group": "resistor", "src": "fused", "rot": 270, "lines": ["215"], "score": 0.3181, "sec": 0.553, "blank": false, "voters": 3}
+{"ref": "R45", "group": "resistor", "src": "fused", "rot": 0, "lines": ["D1B"], "score": 0.8527, "sec": 0.48, "blank": false, "voters": 3}
+{"ref": "R45", "group": "resistor", "src": "fused", "rot": 180, "lines": ["810"], "score": 0.6015, "sec": 0.472, "blank": false, "voters": 3}
+{"ref": "R45", "group": "resistor", "src": "fused", "rot": 270, "lines": ["018"], "score": 0.5907, "sec": 0.428, "blank": false, "voters": 3}
+{"ref": "R47", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.6008, "sec": 0.489, "blank": false, "voters": 3}
+{"ref": "R47", "group": "resistor", "src": "fused", "rot": 180, "lines": ["310"], "score": 0.3252, "sec": 0.434, "blank": false, "voters": 3}
+{"ref": "R47", "group": "resistor", "src": "fused", "rot": 270, "lines": ["010"], "score": 0.3159, "sec": 0.381, "blank": false, "voters": 3}
+{"ref": "R49", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.4993, "sec": 0.505, "blank": false, "voters": 3}
+{"ref": "R49", "group": "resistor", "src": "fused", "rot": 180, "lines": ["310"], "score": 0.2753, "sec": 0.468, "blank": false, "voters": 3}
+{"ref": "R49", "group": "resistor", "src": "fused", "rot": 270, "lines": ["D1C"], "score": 0.3024, "sec": 0.443, "blank": false, "voters": 3}
+{"ref": "R50", "group": "resistor", "src": "fused", "rot": 0, "lines": ["84C"], "score": 0.6136, "sec": 0.479, "blank": false, "voters": 3}
+{"ref": "R50", "group": "resistor", "src": "fused", "rot": 180, "lines": ["JHC"], "score": 0.2807, "sec": 0.392, "blank": false, "voters": 3}
+{"ref": "R50", "group": "resistor", "src": "fused", "rot": 270, "lines": ["C"], "score": 0.1927, "sec": 0.393, "blank": false, "voters": 3}
+{"ref": "R51", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01D"], "score": 0.5364, "sec": 0.486, "blank": false, "voters": 3}
+{"ref": "R51", "group": "resistor", "src": "fused", "rot": 180, "lines": ["Q10"], "score": 0.7603, "sec": 0.503, "blank": false, "voters": 3}
+{"ref": "R51", "group": "resistor", "src": "fused", "rot": 270, "lines": ["000"], "score": 0.2858, "sec": 0.5, "blank": false, "voters": 3}
+{"ref": "R52", "group": "resistor", "src": "fused", "rot": 0, "lines": ["22RD"], "score": 0.5752, "sec": 0.464, "blank": false, "voters": 3}
+{"ref": "R52", "group": "resistor", "src": "fused", "rot": 180, "lines": ["ZZRO"], "score": 0.2829, "sec": 0.43, "blank": false, "voters": 3}
+{"ref": "R52", "group": "resistor", "src": "fused", "rot": 270, "lines": ["22R0"], "score": 0.315, "sec": 0.432, "blank": false, "voters": 3}
+{"ref": "R53", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01D"], "score": 0.5774, "sec": 0.504, "blank": false, "voters": 3}
+{"ref": "R53", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.8321, "sec": 0.499, "blank": false, "voters": 3}
+{"ref": "R53", "group": "resistor", "src": "fused", "rot": 270, "lines": ["DID"], "score": 0.4225, "sec": 0.5, "blank": false, "voters": 3}
+{"ref": "R54", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01D"], "score": 0.805, "sec": 0.484, "blank": false, "voters": 3}
+{"ref": "R54", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.7466, "sec": 0.471, "blank": false, "voters": 3}
+{"ref": "R54", "group": "resistor", "src": "fused", "rot": 270, "lines": ["000"], "score": 0.2844, "sec": 0.484, "blank": false, "voters": 3}
+{"ref": "R55", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01A"], "score": 0.8721, "sec": 0.493, "blank": false, "voters": 3}
+{"ref": "R55", "group": "resistor", "src": "fused", "rot": 180, "lines": ["019"], "score": 0.3063, "sec": 0.372, "blank": false, "voters": 3}
+{"ref": "R55", "group": "resistor", "src": "fused", "rot": 270, "lines": ["018"], "score": 0.297, "sec": 0.373, "blank": false, "voters": 3}
+{"ref": "R57", "group": "resistor", "src": "fused", "rot": 0, "lines": ["R200"], "score": 0.5842, "sec": 0.568, "blank": false, "voters": 3}
+{"ref": "R57", "group": "resistor", "src": "fused", "rot": 180, "lines": ["K200"], "score": 0.277, "sec": 0.529, "blank": false, "voters": 3}
+{"ref": "R57", "group": "resistor", "src": "fused", "rot": 270, "lines": ["R200"], "score": 0.5562, "sec": 0.562, "blank": false, "voters": 3}
+{"ref": "R62", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01A"], "score": 0.9071, "sec": 0.497, "blank": false, "voters": 3}
+{"ref": "R62", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.4723, "sec": 0.501, "blank": false, "voters": 3}
+{"ref": "R62", "group": "resistor", "src": "fused", "rot": 270, "lines": ["A10"], "score": 0.2505, "sec": 0.452, "blank": false, "voters": 3}
+{"ref": "R63", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01A"], "score": 0.8731, "sec": 0.488, "blank": false, "voters": 3}
+{"ref": "R63", "group": "resistor", "src": "fused", "rot": 180, "lines": ["BIO"], "score": 0.2865, "sec": 0.518, "blank": false, "voters": 3}
+{"ref": "R63", "group": "resistor", "src": "fused", "rot": 270, "lines": ["A10"], "score": 0.2917, "sec": 0.46, "blank": false, "voters": 3}
+{"ref": "R65", "group": "resistor", "src": "fused", "rot": 0, "lines": ["R100"], "score": 0.8991, "sec": 0.59, "blank": false, "voters": 3}
+{"ref": "R65", "group": "resistor", "src": "fused", "rot": 180, "lines": ["R100"], "score": 0.6174, "sec": 0.585, "blank": false, "voters": 3}
+{"ref": "R65", "group": "resistor", "src": "fused", "rot": 270, "lines": ["R100"], "score": 0.9015, "sec": 0.617, "blank": false, "voters": 3}
+{"ref": "R66", "group": "resistor", "src": "fused", "rot": 0, "lines": ["1000"], "score": 0.9315, "sec": 0.597, "blank": false, "voters": 3}
+{"ref": "R66", "group": "resistor", "src": "fused", "rot": 180, "lines": ["0001"], "score": 0.53, "sec": 0.616, "blank": false, "voters": 3}
+{"ref": "R66", "group": "resistor", "src": "fused", "rot": 270, "lines": ["1000"], "score": 0.6286, "sec": 0.618, "blank": false, "voters": 3}
+{"ref": "R67", "group": "resistor", "src": "fused", "rot": 0, "lines": ["513"], "score": 0.8972, "sec": 0.487, "blank": false, "voters": 3}
+{"ref": "R67", "group": "resistor", "src": "fused", "rot": 180, "lines": ["EIS"], "score": 0.9107, "sec": 0.394, "blank": false, "voters": 3}
+{"ref": "R67", "group": "resistor", "src": "fused", "rot": 270, "lines": ["E15"], "score": 0.5689, "sec": 0.475, "blank": false, "voters": 3}
+{"ref": "R68", "group": "resistor", "src": "fused", "rot": 0, "lines": ["623"], "score": 0.9105, "sec": 0.503, "blank": false, "voters": 3}
+{"ref": "R68", "group": "resistor", "src": "fused", "rot": 180, "lines": ["E29"], "score": 0.5742, "sec": 0.496, "blank": false, "voters": 3}
+{"ref": "R68", "group": "resistor", "src": "fused", "rot": 270, "lines": ["523"], "score": 0.3148, "sec": 0.462, "blank": false, "voters": 3}
+{"ref": "R70", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01A"], "score": 0.5503, "sec": 0.477, "blank": false, "voters": 3}
+{"ref": "R70", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.292, "sec": 0.424, "blank": false, "voters": 3}
+{"ref": "R70", "group": "resistor", "src": "fused", "rot": 270, "lines": ["01P"], "score": 0.5509, "sec": 0.419, "blank": false, "voters": 3}
+{"ref": "R71", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01A"], "score": 0.8922, "sec": 0.489, "blank": false, "voters": 3}
+{"ref": "R71", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.487, "sec": 0.5, "blank": false, "voters": 3}
+{"ref": "R71", "group": "resistor", "src": "fused", "rot": 270, "lines": ["01A"], "score": 0.3295, "sec": 0.394, "blank": false, "voters": 3}
+{"ref": "R72", "group": "resistor", "src": "fused", "rot": 0, "lines": ["223"], "score": 0.9491, "sec": 0.498, "blank": false, "voters": 3}
+{"ref": "R72", "group": "resistor", "src": "fused", "rot": 180, "lines": ["223"], "score": 0.6525, "sec": 0.476, "blank": false, "voters": 3}
+{"ref": "R72", "group": "resistor", "src": "fused", "rot": 270, "lines": ["223"], "score": 0.6598, "sec": 0.472, "blank": false, "voters": 3}
+{"ref": "R73", "group": "resistor", "src": "fused", "rot": 0, "lines": ["OSC"], "score": 0.6409, "sec": 0.342, "blank": false, "voters": 3}
+{"ref": "R73", "group": "resistor", "src": "fused", "rot": 180, "lines": ["050"], "score": 0.3312, "sec": 0.456, "blank": false, "voters": 3}
+{"ref": "R73", "group": "resistor", "src": "fused", "rot": 270, "lines": ["OSC"], "score": 0.2867, "sec": 0.413, "blank": false, "voters": 3}
+{"ref": "R74", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01A"], "score": 0.8965, "sec": 0.493, "blank": false, "voters": 3}
+{"ref": "R74", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.2897, "sec": 0.417, "blank": false, "voters": 3}
+{"ref": "R74", "group": "resistor", "src": "fused", "rot": 270, "lines": ["100"], "score": 0.248, "sec": 0.433, "blank": false, "voters": 3}
+{"ref": "R75", "group": "resistor", "src": "fused", "rot": 0, "lines": ["010"], "score": 0.8922, "sec": 0.479, "blank": false, "voters": 3}
+{"ref": "R75", "group": "resistor", "src": "fused", "rot": 180, "lines": ["OLD"], "score": 0.8224, "sec": 0.43, "blank": false, "voters": 3}
+{"ref": "R75", "group": "resistor", "src": "fused", "rot": 270, "lines": ["000"], "score": 0.3303, "sec": 0.485, "blank": false, "voters": 3}
+{"ref": "R76", "group": "resistor", "src": "fused", "rot": 0, "lines": ["DID"], "score": 0.7722, "sec": 0.38, "blank": false, "voters": 3}
+{"ref": "R76", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.8262, "sec": 0.451, "blank": false, "voters": 3}
+{"ref": "R76", "group": "resistor", "src": "fused", "rot": 270, "lines": ["D1D"], "score": 0.4355, "sec": 0.367, "blank": false, "voters": 3}
+{"ref": "R77", "group": "resistor", "src": "fused", "rot": 0, "lines": ["3DC"], "score": 0.5332, "sec": 0.402, "blank": false, "voters": 3}
+{"ref": "R77", "group": "resistor", "src": "fused", "rot": 180, "lines": ["JOE"], "score": 0.888, "sec": 0.429, "blank": false, "voters": 3}
+{"ref": "R77", "group": "resistor", "src": "fused", "rot": 270, "lines": ["30E"], "score": 0.3295, "sec": 0.371, "blank": false, "voters": 3}
+{"ref": "R78", "group": "resistor", "src": "fused", "rot": 0, "lines": ["DIC"], "score": 0.7575, "sec": 0.44, "blank": false, "voters": 3}
+{"ref": "R78", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.2949, "sec": 0.468, "blank": false, "voters": 3}
+{"ref": "R78", "group": "resistor", "src": "fused", "rot": 270, "lines": ["DIC"], "score": 0.4348, "sec": 0.366, "blank": false, "voters": 3}
+{"ref": "R81", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01B"], "score": 0.5966, "sec": 0.434, "blank": false, "voters": 3}
+{"ref": "R81", "group": "resistor", "src": "fused", "rot": 180, "lines": ["810"], "score": 0.5958, "sec": 0.391, "blank": false, "voters": 3}
+{"ref": "R81", "group": "resistor", "src": "fused", "rot": 270, "lines": ["DIB"], "score": 0.279, "sec": 0.517, "blank": false, "voters": 3}
+{"ref": "R85", "group": "resistor", "src": "fused", "rot": 0, "lines": ["R200"], "score": 0.8848, "sec": 0.58, "blank": false, "voters": 3}
+{"ref": "R85", "group": "resistor", "src": "fused", "rot": 180, "lines": ["R200"], "score": 0.3326, "sec": 0.717, "blank": false, "voters": 3}
+{"ref": "R85", "group": "resistor", "src": "fused", "rot": 270, "lines": ["R200"], "score": 0.7996, "sec": 0.58, "blank": false, "voters": 3}
+{"ref": "R86", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01A"], "score": 0.8911, "sec": 0.482, "blank": false, "voters": 3}
+{"ref": "R86", "group": "resistor", "src": "fused", "rot": 180, "lines": ["010"], "score": 0.3225, "sec": 0.354, "blank": false, "voters": 3}
+{"ref": "R86", "group": "resistor", "src": "fused", "rot": 270, "lines": ["DIIH"], "score": 0.2299, "sec": 0.414, "blank": false, "voters": 3}
+{"ref": "R87", "group": "resistor", "src": "fused", "rot": 0, "lines": ["333"], "score": 0.5668, "sec": 0.468, "blank": false, "voters": 3}
+{"ref": "R87", "group": "resistor", "src": "fused", "rot": 180, "lines": ["EEE"], "score": 0.814, "sec": 0.309, "blank": false, "voters": 3}
+{"ref": "R87", "group": "resistor", "src": "fused", "rot": 270, "lines": ["EEE"], "score": 0.8117, "sec": 0.316, "blank": false, "voters": 3}
+{"ref": "R88", "group": "resistor", "src": "fused", "rot": 0, "lines": ["333"], "score": 0.8925, "sec": 0.47, "blank": false, "voters": 3}
+{"ref": "R88", "group": "resistor", "src": "fused", "rot": 180, "lines": ["EEE"], "score": 0.8122, "sec": 0.312, "blank": false, "voters": 3}
+{"ref": "R88", "group": "resistor", "src": "fused", "rot": 270, "lines": ["EEE"], "score": 0.5664, "sec": 0.302, "blank": false, "voters": 3}
+{"ref": "R89", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01C"], "score": 0.6028, "sec": 0.519, "blank": false, "voters": 3}
+{"ref": "R89", "group": "resistor", "src": "fused", "rot": 180, "lines": ["JIO"], "score": 0.4587, "sec": 0.356, "blank": false, "voters": 3}
+{"ref": "R89", "group": "resistor", "src": "fused", "rot": 270, "lines": ["DIL"], "score": 0.2275, "sec": 0.399, "blank": false, "voters": 3}
+{"ref": "R91", "group": "resistor", "src": "fused", "rot": 0, "lines": ["512"], "score": 0.6019, "sec": 0.52, "blank": false, "voters": 3}
+{"ref": "R91", "group": "resistor", "src": "fused", "rot": 180, "lines": ["512"], "score": 0.2951, "sec": 0.511, "blank": false, "voters": 3}
+{"ref": "R91", "group": "resistor", "src": "fused", "rot": 270, "lines": ["512"], "score": 0.333, "sec": 0.535, "blank": false, "voters": 3}
+{"ref": "R92", "group": "resistor", "src": "fused", "rot": 0, "lines": ["512"], "score": 0.6512, "sec": 0.479, "blank": false, "voters": 3}
+{"ref": "R92", "group": "resistor", "src": "fused", "rot": 180, "lines": ["215"], "score": 0.9165, "sec": 0.48, "blank": false, "voters": 3}
+{"ref": "R92", "group": "resistor", "src": "fused", "rot": 270, "lines": ["25"], "score": 0.3224, "sec": 0.445, "blank": false, "voters": 3}
+{"ref": "R93", "group": "resistor", "src": "fused", "rot": 0, "lines": ["0"], "score": 0.2933, "sec": 0.269, "blank": false, "voters": 3}
+{"ref": "R93", "group": "resistor", "src": "fused", "rot": 180, "lines": ["R93"], "score": 0.6069, "sec": 0.403, "blank": false, "voters": 3}
+{"ref": "R93", "group": "resistor", "src": "fused", "rot": 270, "lines": ["R93"], "score": 0.3264, "sec": 0.328, "blank": false, "voters": 3}
+{"ref": "R94", "group": "resistor", "src": "fused", "rot": 0, "lines": ["188"], "score": 0.9415, "sec": 0.487, "blank": false, "voters": 3}
+{"ref": "R94", "group": "resistor", "src": "fused", "rot": 180, "lines": ["88l"], "score": 0.4748, "sec": 0.509, "blank": false, "voters": 3}
+{"ref": "R94", "group": "resistor", "src": "fused", "rot": 270, "lines": ["188"], "score": 0.591, "sec": 0.467, "blank": false, "voters": 3}
+{"ref": "R97", "group": "resistor", "src": "fused", "rot": 0, "lines": ["512"], "score": 0.8924, "sec": 0.487, "blank": false, "voters": 3}
+{"ref": "R97", "group": "resistor", "src": "fused", "rot": 180, "lines": ["215"], "score": 0.8807, "sec": 0.489, "blank": false, "voters": 3}
+{"ref": "R97", "group": "resistor", "src": "fused", "rot": 270, "lines": ["215"], "score": 0.5511, "sec": 0.459, "blank": false, "voters": 3}
+{"ref": "R98", "group": "resistor", "src": "fused", "rot": 0, "lines": ["621"], "score": 0.3326, "sec": 0.479, "blank": false, "voters": 3}
+{"ref": "R98", "group": "resistor", "src": "fused", "rot": 180, "lines": ["129"], "score": 0.9315, "sec": 0.466, "blank": false, "voters": 3}
+{"ref": "R98", "group": "resistor", "src": "fused", "rot": 270, "lines": ["129"], "score": 0.5699, "sec": 0.492, "blank": false, "voters": 3}
+{"ref": "R99", "group": "resistor", "src": "fused", "rot": 0, "lines": ["512"], "score": 0.943, "sec": 0.48, "blank": false, "voters": 3}
+{"ref": "R99", "group": "resistor", "src": "fused", "rot": 180, "lines": ["215"], "score": 0.6068, "sec": 0.474, "blank": false, "voters": 3}
+{"ref": "R99", "group": "resistor", "src": "fused", "rot": 270, "lines": ["215"], "score": 0.5599, "sec": 0.468, "blank": false, "voters": 3}
+{"ref": "R104", "group": "resistor", "src": "fused", "rot": 0, "lines": ["188"], "score": 0.8984, "sec": 0.501, "blank": false, "voters": 3}
+{"ref": "R104", "group": "resistor", "src": "fused", "rot": 180, "lines": ["188"], "score": 0.3127, "sec": 0.49, "blank": false, "voters": 3}
+{"ref": "R104", "group": "resistor", "src": "fused", "rot": 270, "lines": ["188"], "score": 0.5265, "sec": 0.465, "blank": false, "voters": 3}
+{"ref": "R107", "group": "resistor", "src": "fused", "rot": 0, "lines": ["01A"], "score": 0.908, "sec": 0.491, "blank": false, "voters": 3}
+{"ref": "R107", "group": "resistor", "src": "fused", "rot": 180, "lines": ["610"], "score": 0.3129, "sec": 0.471, "blank": false, "voters": 3}
+{"ref": "R107", "group": "resistor", "src": "fused", "rot": 270, "lines": ["800"], "score": 0.2596, "sec": 0.394, "blank": false, "voters": 3}
+{"ref": "U1", "group": "ic", "src": "fused", "rot": 0, "lines": ["R52833", "0DAAA0", "264200"], "score": 0.2752, "sec": 1.002, "blank": false, "voters": 3}
+{"ref": "U1", "group": "ic", "src": "fused", "rot": 180, "lines": ["N2833", "00440", "20420"], "score": 0.2993, "sec": 0.814, "blank": false, "voters": 3}
+{"ref": "U1", "group": "ic", "src": "fused", "rot": 270, "lines": ["S3XAA0", "S3XAA0", "S3XAA0", "S3XAA0", "S3XAA0", "S3XAA0", "S3XAA0", "S3XAA0"], "score": 0.2992, "sec": 1.778, "blank": false, "voters": 3}
+{"ref": "U2", "group": "ic", "src": "fused", "rot": 0, "lines": ["1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. 14. 1"], "score": 0.3021, "sec": 3.838, "blank": false, "voters": 3}
+{"ref": "U2", "group": "ic", "src": "fused", "rot": 180, "lines": ["C"], "score": 0.218, "sec": 0.718, "blank": false, "voters": 3}
+{"ref": "U2", "group": "ic", "src": "fused", "rot": 270, "lines": [], "score": 0.3333, "sec": 0.348, "blank": false, "voters": 3}
+{"ref": "U3", "group": "ic", "src": "fused", "rot": 0, "lines": ["PW534", "23K-34", "41052"], "score": 0.2284, "sec": 0.997, "blank": false, "voters": 3}
+{"ref": "U3", "group": "ic", "src": "fused", "rot": 180, "lines": ["100000000000000000000000000000000000000000000000"], "score": 0.2637, "sec": 3.048, "blank": false, "voters": 3}
+{"ref": "U3", "group": "ic", "src": "fused", "rot": 270, "lines": ["PM534"], "score": 0.3075, "sec": 0.869, "blank": false, "voters": 3}
+{"ref": "U4", "group": "ic", "src": "fused", "rot": 0, "lines": ["P"], "score": 0.2029, "sec": 1.025, "blank": false, "voters": 3}
+{"ref": "U4", "group": "ic", "src": "fused", "rot": 180, "lines": ["100000000000000000000000000000000000000000000000"], "score": 0.2682, "sec": 3.115, "blank": false, "voters": 3}
+{"ref": "U4", "group": "ic", "src": "fused", "rot": 270, "lines": ["811212121212121212121212121212121212121212121212"], "score": 0.2736, "sec": 3.704, "blank": false, "voters": 3}
+{"ref": "U6", "group": "ic", "src": "fused", "rot": 0, "lines": ["AGH4"], "score": 0.5717, "sec": 0.422, "blank": false, "voters": 3}
+{"ref": "U6", "group": "ic", "src": "fused", "rot": 180, "lines": ["AGH4"], "score": 0.5069, "sec": 0.417, "blank": false, "voters": 3}
+{"ref": "U6", "group": "ic", "src": "fused", "rot": 270, "lines": ["ZAGH4"], "score": 0.2765, "sec": 0.479, "blank": false, "voters": 3}
+{"ref": "U10_DC_5V", "group": "ic", "src": "fused", "rot": 0, "lines": ["542832", "TLC 18", "248.50"], "score": 0.2453, "sec": 0.991, "blank": false, "voters": 3}
+{"ref": "U10_DC_5V", "group": "ic", "src": "fused", "rot": 180, "lines": ["542832", "11 16", "2915"], "score": 0.2274, "sec": 0.743, "blank": false, "voters": 3}
+{"ref": "U10_DC_5V", "group": "ic", "src": "fused", "rot": 270, "lines": ["54"], "score": 0.2272, "sec": 0.717, "blank": false, "voters": 3}
+{"ref": "U10_DC_REG", "group": "ic", "src": "fused", "rot": 0, "lines": ["100000000000000000000000000000000000000000000000"], "score": 0.2627, "sec": 2.773, "blank": false, "voters": 3}
+{"ref": "U10_DC_REG", "group": "ic", "src": "fused", "rot": 180, "lines": ["D/30X/31", "H.8 11", "558824"], "score": 0.2042, "sec": 1.046, "blank": false, "voters": 3}
+{"ref": "U10_DC_REG", "group": "ic", "src": "fused", "rot": 270, "lines": ["380000000000000000000000000000000000000000000000"], "score": 0.2951, "sec": 1.563, "blank": false, "voters": 3}
+{"ref": "U11", "group": "ic", "src": "fused", "rot": 0, "lines": ["P22301"], "score": 0.2542, "sec": 0.438, "blank": false, "voters": 3}
+{"ref": "U11", "group": "ic", "src": "fused", "rot": 180, "lines": ["1111"], "score": 0.2259, "sec": 0.312, "blank": false, "voters": 3}
+{"ref": "U11", "group": "ic", "src": "fused", "rot": 270, "lines": ["The quick brown fox jumps over the lazy dog."], "score": 0.2707, "sec": 0.781, "blank": false, "voters": 3}
+{"ref": "U14", "group": "ic", "src": "fused", "rot": 0, "lines": ["101D"], "score": 0.5061, "sec": 0.499, "blank": false, "voters": 3}
+{"ref": "U14", "group": "ic", "src": "fused", "rot": 180, "lines": ["D101"], "score": 0.5167, "sec": 0.493, "blank": false, "voters": 3}
+{"ref": "U14", "group": "ic", "src": "fused", "rot": 270, "lines": ["1010"], "score": 0.2988, "sec": 0.49, "blank": false, "voters": 3}
+{"ref": "U16", "group": "ic", "src": "fused", "rot": 0, "lines": ["L161D"], "score": 0.312, "sec": 0.517, "blank": false, "voters": 3}
+{"ref": "U16", "group": "ic", "src": "fused", "rot": 180, "lines": ["0181"], "score": 0.2915, "sec": 0.505, "blank": false, "voters": 3}
+{"ref": "U16", "group": "ic", "src": "fused", "rot": 270, "lines": ["C"], "score": 0.2209, "sec": 0.406, "blank": false, "voters": 3}
+{"ref": "U21_US1", "group": "ic", "src": "fused", "rot": 0, "lines": ["ZVG", "05K", "CQON"], "score": 0.2602, "sec": 0.966, "blank": false, "voters": 3}
+{"ref": "U21_US1", "group": "ic", "src": "fused", "rot": 180, "lines": ["CNOO", "X30", "DALL"], "score": 0.2257, "sec": 0.602, "blank": false, "voters": 3}
+{"ref": "U21_US1", "group": "ic", "src": "fused", "rot": 270, "lines": [], "score": 0.3333, "sec": 0.392, "blank": false, "voters": 3}
+{"ref": "U23", "group": "ic", "src": "fused", "rot": 0, "lines": ["2061"], "score": 0.6243, "sec": 0.494, "blank": false, "voters": 3}
+{"ref": "U23", "group": "ic", "src": "fused", "rot": 180, "lines": ["2061"], "score": 0.5627, "sec": 0.502, "blank": false, "voters": 3}
+{"ref": "U23", "group": "ic", "src": "fused", "rot": 270, "lines": ["2069"], "score": 0.3299, "sec": 0.487, "blank": false, "voters": 3}
+{"ref": "U24", "group": "ic", "src": "fused", "rot": 0, "lines": ["1810"], "score": 0.5736, "sec": 0.488, "blank": false, "voters": 3}
+{"ref": "U24", "group": "ic", "src": "fused", "rot": 180, "lines": ["0181"], "score": 0.3221, "sec": 0.493, "blank": false, "voters": 3}
+{"ref": "U24", "group": "ic", "src": "fused", "rot": 270, "lines": ["11810"], "score": 0.3135, "sec": 0.51, "blank": false, "voters": 3}
+{"ref": "U25", "group": "ic", "src": "fused", "rot": 0, "lines": ["100000000000000000000000000000000000000000000000"], "score": 0.2624, "sec": 3.118, "blank": false, "voters": 3}
+{"ref": "U25", "group": "ic", "src": "fused", "rot": 180, "lines": ["SMA"], "score": 0.2317, "sec": 0.824, "blank": false, "voters": 3}
+{"ref": "U25", "group": "ic", "src": "fused", "rot": 270, "lines": ["1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. 14. 1"], "score": 0.3025, "sec": 3.007, "blank": false, "voters": 3}
+{"ref": "U26", "group": "ic", "src": "fused", "rot": 0, "lines": ["RS2251", "T11S733"], "score": 0.315, "sec": 1.273, "blank": false, "voters": 3}
+{"ref": "U26", "group": "ic", "src": "fused", "rot": 180, "lines": ["111833", "R52251"], "score": 0.2455, "sec": 1.193, "blank": false, "voters": 3}
+{"ref": "U26", "group": "ic", "src": "fused", "rot": 270, "lines": ["1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. 14. 1"], "score": 0.3035, "sec": 4.021, "blank": false, "voters": 3}
+{"ref": "U29", "group": "ic", "src": "fused", "rot": 0, "lines": ["PE", "USB 2.0 HUB", "L03N791A1813"], "score": 0.3306, "sec": 3.12, "blank": false, "voters": 3}
+{"ref": "U29", "group": "ic", "src": "fused", "rot": 180, "lines": ["USB 2.0 HUB", "103N791A1813"], "score": 0.3009, "sec": 6.678, "blank": false, "voters": 3}
+{"ref": "U29", "group": "ic", "src": "fused", "rot": 270, "lines": ["USB 2.0 Hub", "L08N791A1818", "PE"], "score": 0.3034, "sec": 1.697, "blank": false, "voters": 3}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["32.0", "AK9F"], "score": 0.9578, "sec": 0.784, "blank": false, "voters": 3}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["AK9F", "32.0"], "score": 0.3329, "sec": 0.671, "blank": false, "voters": 3}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["32.0", "AK9F"], "score": 0.6427, "sec": 0.783, "blank": false, "voters": 3}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "fused", "rot": 0, "lines": ["-12.0", "R65 1G"], "score": 0.8493, "sec": 1.053, "blank": false, "voters": 3}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "fused", "rot": 180, "lines": ["120", "R05 16"], "score": 0.304, "sec": 0.619, "blank": false, "voters": 3}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "fused", "rot": 270, "lines": ["-120", "R6516"], "score": 0.6008, "sec": 0.914, "blank": false, "voters": 3}
+{"ref": "C46_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["▲07E", "4091"], "score": 0.3024, "sec": 0.826, "blank": false, "voters": 3}
+{"ref": "C46_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["▲10V E 40A31"], "score": 0.2863, "sec": 1.062, "blank": false, "voters": 3}
+{"ref": "C73", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["The quick brown fox jumps over the lazy dog."], "score": 0.2667, "sec": 0.859, "blank": false, "voters": 3}
+{"ref": "C74", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["The quick brown fox jumps over the lazy dog."], "score": 0.2758, "sec": 0.866, "blank": false, "voters": 3}
+{"ref": "C75", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["10"], "score": 0.2321, "sec": 0.345, "blank": false, "voters": 3}
+{"ref": "C76", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["The quick brown fox jumps over the lazy dog."], "score": 0.2789, "sec": 0.839, "blank": false, "voters": 3}
+{"ref": "C101_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["P6", "220-16R"], "score": 0.3059, "sec": 1.297, "blank": false, "voters": 3}
+{"ref": "C101_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["P6", "220-16L"], "score": 0.3281, "sec": 1.263, "blank": false, "voters": 3}
+{"ref": "C102_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["P6", "223-16L"], "score": 0.3179, "sec": 1.303, "blank": false, "voters": 3}
+{"ref": "C102_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["22-16r", "D:"], "score": 0.2858, "sec": 1.089, "blank": false, "voters": 3}
+{"ref": "D9", "group": "diode/transistor", "src": "fused", "rot": 90, "lines": ["8320A", "4H 729"], "score": 0.2661, "sec": 0.939, "blank": false, "voters": 3}
+{"ref": "D25_DC_5V", "group": "diode/transistor", "src": "fused", "rot": 90, "lines": ["B540C"], "score": 0.5693, "sec": 0.936, "blank": false, "voters": 3}
+{"ref": "D25_DC_REG", "group": "diode/transistor", "src": "fused", "rot": 90, "lines": ["B540C"], "score": 0.5851, "sec": 0.91, "blank": false, "voters": 3}
+{"ref": "U9_US1", "group": "ic", "src": "fused", "rot": 90, "lines": ["D"], "score": 0.2433, "sec": 0.304, "blank": false, "voters": 3}
+{"ref": "L4_DC_5V", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["4R7"], "score": 0.6159, "sec": 0.542, "blank": false, "voters": 3}
+{"ref": "L4_DC_REG", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["C1119", "4R7"], "score": 0.3175, "sec": 0.757, "blank": false, "voters": 3}
+{"ref": "Q3", "group": "diode/transistor", "src": "fused", "rot": 90, "lines": [], "score": 0.5, "sec": 0.283, "blank": false, "voters": 3}
+{"ref": "Q4", "group": "diode/transistor", "src": "fused", "rot": 90, "lines": ["BZJHU"], "score": 0.2983, "sec": 0.525, "blank": false, "voters": 3}
+{"ref": "R2", "group": "resistor", "src": "fused", "rot": 90, "lines": ["DIC"], "score": 0.2757, "sec": 0.872, "blank": false, "voters": 3}
+{"ref": "R3", "group": "resistor", "src": "fused", "rot": 90, "lines": ["018"], "score": 0.6654, "sec": 0.483, "blank": false, "voters": 3}
+{"ref": "R4", "group": "resistor", "src": "fused", "rot": 90, "lines": ["01C"], "score": 0.5387, "sec": 0.473, "blank": false, "voters": 3}
+{"ref": "R5", "group": "resistor", "src": "fused", "rot": 0, "lines": ["103"], "score": 0.8757, "sec": 0.458, "blank": false, "voters": 3}
+{"ref": "R5", "group": "resistor", "src": "fused", "rot": 90, "lines": ["103"], "score": 0.3018, "sec": 0.411, "blank": false, "voters": 3}
+{"ref": "R5", "group": "resistor", "src": "fused", "rot": 180, "lines": ["E01"], "score": 0.8241, "sec": 0.435, "blank": false, "voters": 3}
+{"ref": "R5", "group": "resistor", "src": "fused", "rot": 270, "lines": ["103"], "score": 0.3239, "sec": 0.411, "blank": false, "voters": 3}
+{"ref": "R6", "group": "resistor", "src": "fused", "rot": 90, "lines": ["EIC"], "score": 0.2533, "sec": 0.461, "blank": false, "voters": 3}
+{"ref": "R8", "group": "resistor", "src": "fused", "rot": 90, "lines": ["OIC"], "score": 0.2665, "sec": 0.468, "blank": false, "voters": 3}
+{"ref": "R10", "group": "resistor", "src": "fused", "rot": 90, "lines": ["OIC"], "score": 0.7756, "sec": 0.414, "blank": false, "voters": 3}
+{"ref": "R11", "group": "resistor", "src": "fused", "rot": 90, "lines": ["004"], "score": 0.2543, "sec": 0.441, "blank": false, "voters": 3}
+{"ref": "R12", "group": "resistor", "src": "fused", "rot": 90, "lines": ["01C"], "score": 0.2298, "sec": 0.576, "blank": false, "voters": 3}
+{"ref": "R13", "group": "resistor", "src": "fused", "rot": 90, "lines": ["100"], "score": 0.2762, "sec": 0.875, "blank": false, "voters": 3}
+{"ref": "R14", "group": "resistor", "src": "fused", "rot": 90, "lines": ["DIA"], "score": 0.242, "sec": 0.552, "blank": false, "voters": 3}
+{"ref": "R15", "group": "resistor", "src": "fused", "rot": 90, "lines": ["220"], "score": 0.6021, "sec": 0.49, "blank": false, "voters": 3}
+{"ref": "R16", "group": "resistor", "src": "fused", "rot": 90, "lines": ["220"], "score": 0.6295, "sec": 0.489, "blank": false, "voters": 3}
+{"ref": "R17", "group": "resistor", "src": "fused", "rot": 90, "lines": ["272"], "score": 0.3331, "sec": 0.508, "blank": false, "voters": 3}
+{"ref": "R18", "group": "resistor", "src": "fused", "rot": 90, "lines": ["01C"], "score": 0.2831, "sec": 0.423, "blank": false, "voters": 3}
+{"ref": "R19", "group": "resistor", "src": "fused", "rot": 0, "lines": ["103"], "score": 0.5899, "sec": 0.445, "blank": false, "voters": 3}
+{"ref": "R19", "group": "resistor", "src": "fused", "rot": 90, "lines": ["E01"], "score": 0.5768, "sec": 0.395, "blank": false, "voters": 3}
+{"ref": "R19", "group": "resistor", "src": "fused", "rot": 180, "lines": ["EDI"], "score": 0.8189, "sec": 0.387, "blank": false, "voters": 3}
+{"ref": "R19", "group": "resistor", "src": "fused", "rot": 270, "lines": ["E01"], "score": 0.5888, "sec": 0.389, "blank": false, "voters": 3}
+{"ref": "R20", "group": "resistor", "src": "fused", "rot": 90, "lines": ["DIB"], "score": 0.2604, "sec": 0.564, "blank": false, "voters": 3}
+{"ref": "R21", "group": "resistor", "src": "fused", "rot": 0, "lines": ["101"], "score": 0.5861, "sec": 0.479, "blank": false, "voters": 3}
+{"ref": "R21", "group": "resistor", "src": "fused", "rot": 90, "lines": ["10"], "score": 0.3167, "sec": 0.434, "blank": false, "voters": 3}
+{"ref": "R21", "group": "resistor", "src": "fused", "rot": 180, "lines": ["101"], "score": 0.5156, "sec": 0.447, "blank": false, "voters": 3}
+{"ref": "R21", "group": "resistor", "src": "fused", "rot": 270, "lines": ["101"], "score": 0.4725, "sec": 0.439, "blank": false, "voters": 3}
+{"ref": "R23_DC_5V", "group": "resistor", "src": "fused", "rot": 90, "lines": ["02C"], "score": 0.3307, "sec": 0.561, "blank": false, "voters": 3}
+{"ref": "R23_DC_REG", "group": "resistor", "src": "fused", "rot": 90, "lines": ["181"], "score": 0.2713, "sec": 0.481, "blank": false, "voters": 3}
+{"ref": "R24_DC_5V", "group": "resistor", "src": "fused", "rot": 90, "lines": ["76E"], "score": 0.564, "sec": 0.516, "blank": false, "voters": 3}
+{"ref": "R24_DC_REG", "group": "resistor", "src": "fused", "rot": 90, "lines": ["76C"], "score": 0.3103, "sec": 0.499, "blank": false, "voters": 3}
+{"ref": "R25_DC_5V", "group": "resistor", "src": "fused", "rot": 90, "lines": ["DIC"], "score": 0.748, "sec": 0.388, "blank": false, "voters": 3}
+{"ref": "R25_DC_REG", "group": "resistor", "src": "fused", "rot": 90, "lines": ["OIC"], "score": 0.466, "sec": 0.35, "blank": false, "voters": 3}
+{"ref": "R26_DC_5V", "group": "resistor", "src": "fused", "rot": 90, "lines": ["298"], "score": 0.333, "sec": 0.571, "blank": false, "voters": 3}
+{"ref": "R26_DC_REG", "group": "resistor", "src": "fused", "rot": 90, "lines": ["36C"], "score": 0.5732, "sec": 0.494, "blank": false, "voters": 3}
+{"ref": "R28", "group": "resistor", "src": "fused", "rot": 0, "lines": ["101"], "score": 0.7894, "sec": 0.447, "blank": false, "voters": 3}
+{"ref": "R28", "group": "resistor", "src": "fused", "rot": 90, "lines": [], "score": 0.3333, "sec": 0.296, "blank": false, "voters": 3}
+{"ref": "R28", "group": "resistor", "src": "fused", "rot": 180, "lines": ["101"], "score": 0.7016, "sec": 0.45, "blank": false, "voters": 3}
+{"ref": "R28", "group": "resistor", "src": "fused", "rot": 270, "lines": [], "score": 0.3333, "sec": 0.409, "blank": false, "voters": 3}
+{"ref": "R29", "group": "resistor", "src": "fused", "rot": 0, "lines": ["101"], "score": 0.5646, "sec": 0.47, "blank": false, "voters": 3}
+{"ref": "R29", "group": "resistor", "src": "fused", "rot": 90, "lines": ["101"], "score": 0.468, "sec": 0.461, "blank": false, "voters": 3}
+{"ref": "R29", "group": "resistor", "src": "fused", "rot": 180, "lines": ["101"], "score": 0.83, "sec": 0.477, "blank": false, "voters": 3}
+{"ref": "R29", "group": "resistor", "src": "fused", "rot": 270, "lines": ["101"], "score": 0.4726, "sec": 0.462, "blank": false, "voters": 3}
+{"ref": "R30", "group": "resistor", "src": "fused", "rot": 0, "lines": ["103"], "score": 0.3333, "sec": 0.445, "blank": false, "voters": 3}
+{"ref": "R30", "group": "resistor", "src": "fused", "rot": 90, "lines": ["E01"], "score": 0.5627, "sec": 0.401, "blank": false, "voters": 3}
+{"ref": "R30", "group": "resistor", "src": "fused", "rot": 180, "lines": ["E01"], "score": 0.8429, "sec": 0.398, "blank": false, "voters": 3}
+{"ref": "R30", "group": "resistor", "src": "fused", "rot": 270, "lines": ["EDI"], "score": 0.2914, "sec": 0.407, "blank": false, "voters": 3}
+{"ref": "R31", "group": "resistor", "src": "fused", "rot": 90, "lines": ["018"], "score": 0.2599, "sec": 0.435, "blank": false, "voters": 3}
+{"ref": "R38", "group": "resistor", "src": "fused", "rot": 90, "lines": ["EIS"], "score": 0.5737, "sec": 0.43, "blank": false, "voters": 3}
+{"ref": "R39", "group": "resistor", "src": "fused", "rot": 90, "lines": ["512"], "score": 0.8841, "sec": 0.498, "blank": false, "voters": 3}
+{"ref": "R40", "group": "resistor", "src": "fused", "rot": 90, "lines": ["105"], "score": 0.8624, "sec": 0.509, "blank": false, "voters": 3}
+{"ref": "R41", "group": "resistor", "src": "fused", "rot": 90, "lines": ["188"], "score": 0.6146, "sec": 0.503, "blank": false, "voters": 3}
+{"ref": "R43", "group": "resistor", "src": "fused", "rot": 90, "lines": ["215"], "score": 0.6156, "sec": 0.524, "blank": false, "voters": 3}
+{"ref": "R44", "group": "resistor", "src": "fused", "rot": 90, "lines": ["215"], "score": 0.3313, "sec": 0.575, "blank": false, "voters": 3}
+{"ref": "R45", "group": "resistor", "src": "fused", "rot": 90, "lines": ["018"], "score": 0.6023, "sec": 0.563, "blank": false, "voters": 3}
+{"ref": "R47", "group": "resistor", "src": "fused", "rot": 90, "lines": ["010"], "score": 0.2621, "sec": 0.527, "blank": false, "voters": 3}
+{"ref": "R49", "group": "resistor", "src": "fused", "rot": 90, "lines": ["The quick brown fox jumps over the lazy dog"], "score": 0.2655, "sec": 0.793, "blank": false, "voters": 3}
+{"ref": "R50", "group": "resistor", "src": "fused", "rot": 90, "lines": ["88C"], "score": 0.2069, "sec": 0.496, "blank": false, "voters": 3}
+{"ref": "R51", "group": "resistor", "src": "fused", "rot": 90, "lines": ["100"], "score": 0.3967, "sec": 0.507, "blank": false, "voters": 3}
+{"ref": "R52", "group": "resistor", "src": "fused", "rot": 90, "lines": ["ZZRO"], "score": 0.3093, "sec": 0.37, "blank": false, "voters": 3}
+{"ref": "R53", "group": "resistor", "src": "fused", "rot": 90, "lines": [], "score": 0.3333, "sec": 0.379, "blank": false, "voters": 3}
+{"ref": "R54", "group": "resistor", "src": "fused", "rot": 90, "lines": ["000"], "score": 0.3091, "sec": 0.387, "blank": false, "voters": 3}
+{"ref": "R55", "group": "resistor", "src": "fused", "rot": 90, "lines": ["019"], "score": 0.3071, "sec": 0.392, "blank": false, "voters": 3}
+{"ref": "R57", "group": "resistor", "src": "fused", "rot": 90, "lines": ["R2000"], "score": 0.2964, "sec": 0.619, "blank": false, "voters": 3}
+{"ref": "R58", "group": "resistor", "src": "fused", "rot": 0, "lines": ["101"], "score": 0.5279, "sec": 0.418, "blank": false, "voters": 3}
+{"ref": "R58", "group": "resistor", "src": "fused", "rot": 90, "lines": [], "score": 0.3333, "sec": 0.387, "blank": false, "voters": 3}
+{"ref": "R58", "group": "resistor", "src": "fused", "rot": 180, "lines": ["101"], "score": 0.3232, "sec": 0.339, "blank": false, "voters": 3}
+{"ref": "R58", "group": "resistor", "src": "fused", "rot": 270, "lines": [], "score": 0.5, "sec": 0.282, "blank": false, "voters": 3}
+{"ref": "R62", "group": "resistor", "src": "fused", "rot": 90, "lines": ["DIP"], "score": 0.2469, "sec": 0.515, "blank": false, "voters": 3}
+{"ref": "R63", "group": "resistor", "src": "fused", "rot": 90, "lines": ["OH"], "score": 0.2625, "sec": 0.556, "blank": false, "voters": 3}
+{"ref": "R65", "group": "resistor", "src": "fused", "rot": 90, "lines": ["R100"], "score": 0.8649, "sec": 0.609, "blank": false, "voters": 3}
+{"ref": "R66", "group": "resistor", "src": "fused", "rot": 90, "lines": ["1000"], "score": 0.5561, "sec": 0.614, "blank": false, "voters": 3}
+{"ref": "R67", "group": "resistor", "src": "fused", "rot": 90, "lines": ["E15"], "score": 0.3174, "sec": 0.523, "blank": false, "voters": 3}
+{"ref": "R68", "group": "resistor", "src": "fused", "rot": 90, "lines": ["523"], "score": 0.3019, "sec": 0.515, "blank": false, "voters": 3}
+{"ref": "R70", "group": "resistor", "src": "fused", "rot": 90, "lines": ["019"], "score": 0.2683, "sec": 0.439, "blank": false, "voters": 3}
+{"ref": "R71", "group": "resistor", "src": "fused", "rot": 90, "lines": ["019"], "score": 0.3171, "sec": 0.5, "blank": false, "voters": 3}
+{"ref": "R72", "group": "resistor", "src": "fused", "rot": 90, "lines": ["223"], "score": 0.9339, "sec": 0.484, "blank": false, "voters": 3}
+{"ref": "R73", "group": "resistor", "src": "fused", "rot": 90, "lines": ["OSC"], "score": 0.6176, "sec": 0.341, "blank": false, "voters": 3}
+{"ref": "R74", "group": "resistor", "src": "fused", "rot": 90, "lines": ["DIB"], "score": 0.2528, "sec": 0.508, "blank": false, "voters": 3}
+{"ref": "R75", "group": "resistor", "src": "fused", "rot": 90, "lines": ["000"], "score": 0.2645, "sec": 0.486, "blank": false, "voters": 3}
+{"ref": "R76", "group": "resistor", "src": "fused", "rot": 90, "lines": ["010"], "score": 0.4508, "sec": 0.371, "blank": false, "voters": 3}
+{"ref": "R77", "group": "resistor", "src": "fused", "rot": 90, "lines": ["JIE"], "score": 0.455, "sec": 0.4, "blank": false, "voters": 3}
+{"ref": "R78", "group": "resistor", "src": "fused", "rot": 90, "lines": ["OIC"], "score": 0.4137, "sec": 0.478, "blank": false, "voters": 3}
+{"ref": "R79", "group": "resistor", "src": "fused", "rot": 0, "lines": ["102"], "score": 0.8797, "sec": 0.48, "blank": false, "voters": 3}
+{"ref": "R79", "group": "resistor", "src": "fused", "rot": 90, "lines": ["102"], "score": 0.6239, "sec": 0.482, "blank": false, "voters": 3}
+{"ref": "R79", "group": "resistor", "src": "fused", "rot": 180, "lines": ["201"], "score": 0.5842, "sec": 0.512, "blank": false, "voters": 3}
+{"ref": "R79", "group": "resistor", "src": "fused", "rot": 270, "lines": ["102"], "score": 0.626, "sec": 0.456, "blank": false, "voters": 3}
+{"ref": "R81", "group": "resistor", "src": "fused", "rot": 90, "lines": ["BID"], "score": 0.2402, "sec": 0.413, "blank": false, "voters": 3}
+{"ref": "R82", "group": "resistor", "src": "fused", "rot": 0, "lines": ["103"], "score": 0.3333, "sec": 0.454, "blank": false, "voters": 3}
+{"ref": "R82", "group": "resistor", "src": "fused", "rot": 90, "lines": ["101"], "score": 0.287, "sec": 0.403, "blank": false, "voters": 3}
+{"ref": "R82", "group": "resistor", "src": "fused", "rot": 180, "lines": ["E01"], "score": 0.9144, "sec": 0.402, "blank": false, "voters": 3}
+{"ref": "R82", "group": "resistor", "src": "fused", "rot": 270, "lines": ["E01"], "score": 0.6126, "sec": 0.415, "blank": false, "voters": 3}
+{"ref": "R85", "group": "resistor", "src": "fused", "rot": 90, "lines": ["R200"], "score": 0.7687, "sec": 0.583, "blank": false, "voters": 3}
+{"ref": "R86", "group": "resistor", "src": "fused", "rot": 90, "lines": ["DIF"], "score": 0.2287, "sec": 0.451, "blank": false, "voters": 3}
+{"ref": "R87", "group": "resistor", "src": "fused", "rot": 90, "lines": ["EEE"], "score": 0.333, "sec": 0.312, "blank": false, "voters": 3}
+{"ref": "R88", "group": "resistor", "src": "fused", "rot": 90, "lines": ["EEE"], "score": 0.5506, "sec": 0.312, "blank": false, "voters": 3}
+{"ref": "R89", "group": "resistor", "src": "fused", "rot": 90, "lines": ["OIC"], "score": 0.259, "sec": 0.526, "blank": false, "voters": 3}
+{"ref": "R91", "group": "resistor", "src": "fused", "rot": 90, "lines": ["512"], "score": 0.3332, "sec": 0.615, "blank": false, "voters": 3}
+{"ref": "R92", "group": "resistor", "src": "fused", "rot": 90, "lines": ["512"], "score": 0.2936, "sec": 0.497, "blank": false, "voters": 3}
+{"ref": "R93", "group": "resistor", "src": "fused", "rot": 90, "lines": ["R93"], "score": 0.6218, "sec": 0.431, "blank": false, "voters": 3}
+{"ref": "R94", "group": "resistor", "src": "fused", "rot": 90, "lines": ["188"], "score": 0.5719, "sec": 0.482, "blank": false, "voters": 3}
+{"ref": "R97", "group": "resistor", "src": "fused", "rot": 90, "lines": ["512"], "score": 0.3269, "sec": 0.554, "blank": false, "voters": 3}
+{"ref": "R98", "group": "resistor", "src": "fused", "rot": 90, "lines": ["129"], "score": 0.2799, "sec": 0.503, "blank": false, "voters": 3}
+{"ref": "R99", "group": "resistor", "src": "fused", "rot": 90, "lines": ["512"], "score": 0.6482, "sec": 0.491, "blank": false, "voters": 3}
+{"ref": "R104", "group": "resistor", "src": "fused", "rot": 90, "lines": ["888"], "score": 0.3232, "sec": 0.502, "blank": false, "voters": 3}
+{"ref": "R106", "group": "resistor", "src": "fused", "rot": 0, "lines": ["101"], "score": 0.8898, "sec": 0.439, "blank": false, "voters": 3}
+{"ref": "R106", "group": "resistor", "src": "fused", "rot": 90, "lines": ["101"], "score": 0.5613, "sec": 0.448, "blank": false, "voters": 3}
+{"ref": "R106", "group": "resistor", "src": "fused", "rot": 180, "lines": ["101"], "score": 0.8576, "sec": 0.448, "blank": false, "voters": 3}
+{"ref": "R106", "group": "resistor", "src": "fused", "rot": 270, "lines": ["101"], "score": 0.4866, "sec": 0.439, "blank": false, "voters": 3}
+{"ref": "R107", "group": "resistor", "src": "fused", "rot": 90, "lines": ["019"], "score": 0.3067, "sec": 0.491, "blank": false, "voters": 3}
+{"ref": "U1", "group": "ic", "src": "fused", "rot": 90, "lines": [], "score": 0.3333, "sec": 0.355, "blank": false, "voters": 3}
+{"ref": "U2", "group": "ic", "src": "fused", "rot": 90, "lines": ["1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. 14. 1"], "score": 0.3032, "sec": 4.019, "blank": false, "voters": 3}
+{"ref": "U3", "group": "ic", "src": "fused", "rot": 90, "lines": ["PR534"], "score": 0.286, "sec": 3.051, "blank": false, "voters": 3}
+{"ref": "U4", "group": "ic", "src": "fused", "rot": 90, "lines": ["DIN"], "score": 0.2081, "sec": 0.902, "blank": false, "voters": 3}
+{"ref": "U6", "group": "ic", "src": "fused", "rot": 90, "lines": ["AGH4"], "score": 0.3017, "sec": 0.498, "blank": false, "voters": 3}
+{"ref": "U10_DC_5V", "group": "ic", "src": "fused", "rot": 90, "lines": ["1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. 14. 1"], "score": 0.3023, "sec": 2.901, "blank": false, "voters": 3}
+{"ref": "U10_DC_REG", "group": "ic", "src": "fused", "rot": 90, "lines": ["OEC"], "score": 0.2049, "sec": 0.366, "blank": false, "voters": 3}
+{"ref": "U11", "group": "ic", "src": "fused", "rot": 90, "lines": ["The quick brown fox jumps over the lazy dog."], "score": 0.273, "sec": 0.876, "blank": false, "voters": 3}
+{"ref": "U14", "group": "ic", "src": "fused", "rot": 90, "lines": ["101D"], "score": 0.3165, "sec": 0.532, "blank": false, "voters": 3}
+{"ref": "U16", "group": "ic", "src": "fused", "rot": 90, "lines": ["1610"], "score": 0.2783, "sec": 0.478, "blank": false, "voters": 3}
+{"ref": "U21_US1", "group": "ic", "src": "fused", "rot": 90, "lines": [], "score": 0.3333, "sec": 0.656, "blank": false, "voters": 3}
+{"ref": "U23", "group": "ic", "src": "fused", "rot": 90, "lines": ["2061"], "score": 0.5982, "sec": 0.513, "blank": false, "voters": 3}
+{"ref": "U24", "group": "ic", "src": "fused", "rot": 90, "lines": ["|1810"], "score": 0.3121, "sec": 0.567, "blank": false, "voters": 3}
+{"ref": "U25", "group": "ic", "src": "fused", "rot": 90, "lines": ["PINE"], "score": 0.2092, "sec": 1.055, "blank": false, "voters": 3}
+{"ref": "U26", "group": "ic", "src": "fused", "rot": 90, "lines": ["R24133", "R24133", "R24133", "R24133", "R24133", "R24133", "R24133"], "score": 0.3013, "sec": 2.286, "blank": false, "voters": 3}
+{"ref": "U29", "group": "ic", "src": "fused", "rot": 90, "lines": ["USB 2.0 HUB", "FE", "103N791A1818C"], "score": 0.3, "sec": 2.071, "blank": false, "voters": 3}
+{"ref": "X1", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["32.0", "AK9F"], "score": 0.64, "sec": 0.847, "blank": false, "voters": 3}
+{"ref": "X2", "group": "cap/ind/xtal", "src": "fused", "rot": 90, "lines": ["R65 1G", "-120-"], "score": 0.3113, "sec": 1.032, "blank": false, "voters": 3}

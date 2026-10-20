@@ -3,3 +3,5 @@ numpy~=1.26.4
 stitching~=0.5.3
 pyserial~=3.5
 dearpygui~=1.10.1
+rapidocr_onnxruntime~=1.2.3
+
