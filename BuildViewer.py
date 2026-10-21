@@ -317,7 +317,7 @@ TEMPLATE = r'''<!doctype html>
     <select id="lCheck"><option value="">any check</option><option value="problems">problems</option>
       <option value="ok">ok</option><option value="unread">unread</option><option value="text">marking read</option>
       <option value="ocrdiff">OCR differs</option><option value="ocrsame">OCR agrees</option>
-      <option value="codediff">code differs</option><option value="vlmdiff">VLM differs</option></select>
+      <option value="codediff">code differs</option><option value="vlmdiff">VLM differs</option><option value="viewsdiff">views differ / new</option></select>
     <input type="text" id="lFind" placeholder="ref, name, value, marking" size="16">
     <label>preview <input type="range" id="lSize" min="48" max="260" value="110" style="vertical-align:middle"></label>
     <span style="flex:1"></span>
@@ -620,6 +620,7 @@ const GROUP_ORDER = ['Resistors', 'Capacitors', 'Inductors', 'Diodes & protectio
 let CAD = null, cadPxPerMm = 77, part = null, cadHidden = new Set(), groupCol = {}, cadPaths = null;
 // markings.json (markingSheets.py + markingCheck.py): text read on each part and its check against the BOM
 let MARKS = {};
+let VIEWS = {};   // marking_views.json (cutMarkingViews.py): the part body cut out of every source frame that sees it
 const CHECK_COL = { ok: '#4fbf73', mismatch: '#e5534b', missing: '#e5534b', populated: '#e0a33a', unread: '#9aa5b1', info: '#6cbcff' };
 const PROBLEM = new Set(['mismatch', 'missing', 'populated']);
 const OCR_COL = { same: '#4fbf73', close: '#d9d65a', partial: '#a6d96a', differs: '#e0a33a', 'ocr-only': '#e0a33a', none: '#666' };
@@ -629,6 +630,12 @@ function vlmBadge(m) {   // Qwen3-VL-2B second reading (vlmMarkings.py, its own 
   const txt = v.agree === 'same' ? 'VLM ✓' : v.agree === 'none' ? 'VLM —' : v.agree === 'close' ? 'VLM ≈ ' + v.lines.join(' / ') :
     v.agree === 'partial' ? 'VLM ✓ part: ' + v.lines.join(' / ') : 'VLM: ' + (v.lines.join(' / ') || '—');
   return '<span style="color:' + col + '">' + esc(txt) + '</span>';
+}
+function viewsBadge(m) {   // VLM over every source view, voted (vlmMarkings.py --views)
+  if (!m || !m.vlmViews) return '';
+  const v = m.vlmViews, col = OCR_COL[v.agree] || '#999', t = v.lines.join(' / ');
+  const txt = !v.lines.length ? 'views —' : v.agree === 'same' ? 'views ✓' : v.agree === 'ocr-only' ? 'views new: ' + t : 'views: ' + t;
+  return '<span style="color:' + (v.agree === 'ocr-only' ? '#6cf' : col) + '">' + esc(txt) + ' <small>' + v.support + '/' + v.views + '</small></span>';
 }
 function codeBadge(m) {   // our resistor-code classifier (readResistorCodes.py), leave-one-out on parts in the dataset
   if (!m || !m.resistorCode) return '';
@@ -687,6 +694,8 @@ fetch('board.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).the
   return fetch('markings.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(m => {
     if (!m) return;
     MARKS = m.parts || {};
+    fetch('marking_views.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(v => {
+      VIEWS = v || {}; if (part) renderPart(); }).catch(() => {});
     const bad = Object.values(MARKS).filter(x => x.check && PROBLEM.has(x.check.status)).length;
     cb('findCount').textContent = '(' + bad + ')';
     cb('lblFind').hidden = false;
@@ -831,6 +840,10 @@ function renderPart() {
       return '<b>VLM</b><span>' + (v.lines.length ? '<span class="mkread" style="color:#c9f">' + v.lines.map(esc).join('<br>') + '</span>' : '<small>nothing</small>') +
         ' <small>score ' + v.score.toFixed(2) + ', turn ' + v.turn + '°, ' + esc(v.model.split('/').pop()) + '</small> ' + vlmBadge(markOf(part.ref)) +
         '</span>'; })() : '') +
+    (markOf(part.ref) && markOf(part.ref).vlmViews ? (() => { const v = markOf(part.ref).vlmViews;
+      return '<b>VLM views</b><span>' + (v.lines.length ? '<span class="mkread" style="color:#6cf">' + v.lines.map(esc).join('<br>') + '</span>' : '<small>nothing</small>') +
+        ' <small>' + (v.lines.length ? 'score ' + v.score.toFixed(2) + ', ' + esc(v.frame) + ' turn ' + v.turn + '°, ' : '') +
+        v.support + ' of ' + v.views + ' views agree, ' + esc(v.model.split('/').pop()) + '</small> ' + viewsBadge(markOf(part.ref)) + '</span>'; })() : '') +
     (markOf(part.ref) && markOf(part.ref).resistorCode ? (() => { const r = markOf(part.ref).resistorCode;
       return '<b>resistor code</b><span>' + (r.code ? '<span class="mkread" style="color:#fc9">' + esc(r.code) + '</span>' : '<small>not read</small>') +
         ' <small>score ' + (r.score ?? 0).toFixed(2) + (r.margin != null ? ', margin ' + r.margin.toFixed(2) : '') +
@@ -843,6 +856,14 @@ function renderPart() {
       (markOf(part.ref) && markOf(part.ref).img ? '<figure><img src="' + esc(markOf(part.ref).img) + '"><figcaption>reading image: grey (L), CLAHE, ' +
         'enlarged, turned ' + markOf(part.ref).turn + '° so the text stands upright — what the marking was read from</figcaption></figure>' : '') +
       '</div>' : '') +
+    (VIEWS[part.ref] && VIEWS[part.ref].views.length ? (() => { const vv = VIEWS[part.ref], m = markOf(part.ref), r = m && m.vlmViews;
+      const readOf = f => r ? r.readings.find(x => x.frame === f) : null;
+      return '<h4 style="margin:12px 0 4px">Source views <small>' + vv.views.length + ' frames, sharpest height each — the marking shows at some angles only</small></h4>' +
+        '<div class="imgs">' + vv.views.map(x => { const rd = readOf(x.frame), win = r && r.frame === x.frame;
+          return '<figure' + (win ? ' style="outline:2px solid #6cf"' : '') + '><a href="' + esc(x.file) + '" target="_blank"><img src="' + esc(x.file) + '"></a>' +
+            '<figcaption>' + esc(x.frame) + ' · z ' + x.z + ' · cover ' + x.cover.toFixed(2) +
+            (rd ? '<br><span style="color:#6cf">' + esc(rd.lines.join(' / ')) + '</span> <small>' + rd.score.toFixed(2) + ', ' + rd.turn + '°</small>' : r ? '<br><small>nothing read</small>' : '') +
+            '</figcaption></figure>'; }).join('') + '</div>'; })() : '') +
     (ds ? '<h4 style="margin:12px 0 4px">Datasheet</h4><a href="' + esc(ds.file) + '" target="_blank">' + esc(ds.title) + '</a> <small>' +
       esc(ds.vendor) + ' · ' + esc(ds.status) + ' · by ' + esc(ds.method) + (ds.mpn ? ' ' + esc(ds.mpn) : '') + '</small>' +
       (ds.excursus ? '<p><b>' + esc(ds.excursus.category) + '</b> <small>' + esc(ds.excursus.params.join(' · ')) + '</small></p>' : '') +
@@ -892,9 +913,10 @@ function renderList() {
     if (chk === 'ocrdiff' && !(oa === 'differs' || oa === 'ocr-only')) continue;
     if (chk === 'ocrsame' && !(oa === 'same' || oa === 'close' || oa === 'partial')) continue;
     if (chk === 'vlmdiff' && !(mk && mk.vlm && (mk.vlm.agree === 'differs' || mk.vlm.agree === 'ocr-only'))) continue;
+    if (chk === 'viewsdiff' && !(mk && mk.vlmViews && (mk.vlmViews.agree === 'differs' || mk.vlmViews.agree === 'ocr-only'))) continue;
     if (chk === 'codediff' && !(mk && mk.resistorCode && mk.resistorCode.agree !== 'same')) continue;
     const mtext = mk ? (mk.lines.join(' ') + ' ' + (mk.ocr ? mk.ocr.lines.join(' ') : '') + ' ' +
-      (mk.vlm ? mk.vlm.lines.join(' ') : '')).toLowerCase() : '';
+      (mk.vlm ? mk.vlm.lines.join(' ') : '') + ' ' + (mk.vlmViews ? mk.vlmViews.lines.join(' ') : '')).toLowerCase() : '';
     if (q && !mtext.includes(q) && !(ref.toLowerCase().includes(q) || (l && (l.name.toLowerCase().includes(q) ||
         (l.value && l.value.text.toLowerCase().replace(/\s/g, '') === qn))))) continue;
     const key = c.line == null ? 'none:' + (c.package || '') : 'line:' + c.line;
@@ -914,6 +936,7 @@ function renderList() {
         (PROBLEM.has(st) || st === 'unread' ? ': ' + esc(mk.check.text) : '') + '</div>' : '') +
       (mk.ocr && (mk.lines.length || mk.ocr.lines.length) ? '<div class="oc">' + ocrBadge(mk) + '</div>' : '') +
       (mk.vlm && (mk.lines.length || mk.vlm.lines.length) ? '<div class="oc">' + vlmBadge(mk) + '</div>' : '') +
+      (mk.vlmViews && (mk.lines.length || mk.vlmViews.lines.length) ? '<div class="oc">' + viewsBadge(mk) + '</div>' : '') +
       (mk.resistorCode ? '<div class="oc">' + codeBadge(mk) + '</div>' : '') : '';
     return '<div class="lcard" data-ref="' + esc(ref) + '" style="border-color:' + border + '" title="' +
       esc(mk ? (mk.note || '') + (mk.conf ? ' · read ' + mk.conf : '') : '') + '">' + img + '<div class="r">' + esc(ref) + '</div>' +
