@@ -4,10 +4,12 @@
 
 Needs an alignBoard.py panorama folder (board.json) and a stackFocus.py folder of the same reference stitch, built at
 --scale 1 (report.json, index.html, focus.jpg). Writes into the panorama folder:
-    marking_views/<ref>/<frame>.jpg   body crop from that frame, upright like parts/<ref>.jpg, registered onto
-                                      focus.jpg; black where the frame does not reach
+    marking_views/<ref>/<frame>_z<z>.jpg  body crop from that frame at that height, upright like parts/<ref>.jpg,
+                                      registered onto focus.jpg; black where the frame does not reach
     marking_views/<ref>/pano.jpg      the same crop of panorama.jpg, for comparison
-    marking_views.json                {ref: {w, h, pxPerMm, pano, views: [{frame, z, focus, cover, file}]}}
+    marking_views.json                {ref: {w, h, pxPerMm, pano, views, all}}: views = sharpest height per frame
+                                      (read by vlmMarkings.py --views), all = every frame x height; items
+                                      {frame, z, focus, cover, file}
     marking_views/sheets/<ref>.jpg    with --sheets: panorama + every view, colour over CLAHE, for reading by eye
 Default parts: fitted, own side, groups ICs / Transistors / Diodes / Crystals, tantalum capacitors, power chokes.
 See MarkingViews.py for the geometry.
@@ -58,8 +60,8 @@ def main():
     pano = cv2.imread(os.path.join(a.panorama, "panorama.jpg"), cv2.IMREAD_COLOR)
     if focus is None or pano is None or focus.shape != pano.shape:
         raise SystemExit("focus.jpg and panorama.jpg must exist and share the reference canvas")
-    targets = mv.collect(refs, focus, pano)
     folder = os.path.join(a.panorama, "marking_views")
+    targets = mv.collect(refs, focus, folder, pano)
     rec = mv.write(targets, folder)
     path = os.path.join(a.panorama, "marking_views.json")
     old = json.load(open(path, encoding="utf-8")) if a.refs and os.path.exists(path) else {}

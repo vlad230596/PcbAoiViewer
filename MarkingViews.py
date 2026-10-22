@@ -9,8 +9,9 @@ frame ~25 x 14 mm) at every height of the stack, so instead of the panorama, the
     -> layer frame px (one similarity per height, stack report: scale + centre shift)
 
 then registered onto the all-in-focus panorama (ECC, affine, over the frame's coverage) so all views are pixel-aligned.
-Per frame the sharpest height is kept (Laplacian energy over the body); which frame shows the marking is left to
-the reader (see ranked).
+Every (frame, height) view is written; per frame the sharpest height (Laplacian energy over the body) is the
+default view, and the viewer can narrow the heights (one height = what that layer's frames show). Which frame shows
+the marking is left to the reader (see ranked).
 
 Geometry inputs come from a stackFocus.py output folder: report.json (layers, camera distance), index.html (the
 reference frame positions the viewer embeds), focus.jpg (registration template). The board comes from an
@@ -55,7 +56,8 @@ class Target:
         self.corners = (W[:, :2] @ np.array([[0, 0], [w, 0], [0, h], [w, h]]).T + W[:, 2:]).T   # panorama px
         self.template = None      # all-in-focus crop (registration target)
         self.pano = None          # reference panorama crop (what the panorama shows)
-        self.views = {}           # frame -> view at the sharpest height (dict)
+        self.views = {}           # frame -> view at the sharpest height (dict, with the image)
+        self.allViews = []        # every (frame, height) view: dicts without the image (written to disk at once)
 
 
 class MarkingViews:
@@ -160,9 +162,15 @@ class MarkingViews:
                 cv2.warpAffine(mask, Mw, (w, h), flags=cv2.INTER_NEAREST | f))
 
     # ------------------------------------------------------------------ run
-    def collect(self, refs, focusImg, panoImg=None):
+    def collect(self, refs, focusImg, folder, panoImg=None):
+        """Cut every view; each (frame, height) view goes to folder/<ref>/<frame>_z<z>.jpg as soon as it is made."""
         t0 = time.time()
         targets = [self.target(r) for r in refs]
+        for t in targets:
+            d = os.path.join(folder, safeName(t.ref))
+            os.makedirs(d, exist_ok=True)
+            for f in os.listdir(d):
+                os.remove(os.path.join(d, f))
         for t in targets:
             f = cv2.INTER_LINEAR | cv2.WARP_INVERSE_MAP
             t.template = cv2.warpAffine(focusImg, t.W, (t.w, t.h), flags=f)
@@ -170,13 +178,13 @@ class MarkingViews:
                 t.pano = cv2.warpAffine(panoImg, t.W, (t.w, t.h), flags=f)
         fw, fh = self.frameSize
         ones = np.ones((fh, fw), np.uint8)
-        for z, folder, scale, shift in self.layers:
+        for z, layerDir, scale, shift in self.layers:
             def oneFrame(name):
                 pos = self.frames[name]
                 need = [t for t in targets if self.covers(t, pos)]
                 if not need:
                     return []
-                img = cv2.imread(os.path.join(folder, name + ".png"), cv2.IMREAD_COLOR)
+                img = cv2.imread(os.path.join(layerDir, name + ".png"), cv2.IMREAD_COLOR)
                 if img is None:
                     return []
                 out = []
@@ -194,19 +202,26 @@ class MarkingViews:
                     held = t.inner & (valid > 0)
                     if held.sum() < self.minCover * t.inner.sum():
                         continue
+                    file = f"{safeName(t.ref)}/{name}_z{z:.1f}.jpg"
+                    if not cv2.imwrite(os.path.join(folder, file), np.where(valid[..., None] > 0, crop, 0),
+                                       [cv2.IMWRITE_JPEG_QUALITY, 92]):
+                        raise IOError(f"cannot write {os.path.join(folder, file)}")
                     out.append((t, {"frame": name, "z": z, "focus": self.focusScore(crop, held),
-                                    "cover": float(held.sum() / t.inner.sum()), "img": crop, "valid": valid}))
+                                    "cover": float(held.sum() / t.inner.sum()),
+                                    "file": f"{os.path.basename(folder)}/{file}", "img": crop, "valid": valid}))
                 return out
 
             with ThreadPoolExecutor(self.threads) as pool:
                 for res in pool.map(oneFrame, list(self.frames)):
                     for t, v in res:
+                        t.allViews.append({k: v[k] for k in ("frame", "z", "focus", "cover", "file")})
                         old = t.views.get(v["frame"])
                         if old is None or v["focus"] > old["focus"]:
                             t.views[v["frame"]] = v
         self.timings["collect"] = time.time() - t0
-        n = sum(len(t.views) for t in targets)
-        self.log(f"{len(targets)} parts, {n} views ({n / max(1, len(targets)):.1f} per part), {time.time() - t0:.1f} s")
+        n, m = sum(len(t.views) for t in targets), sum(len(t.allViews) for t in targets)
+        self.log(f"{len(targets)} parts, {n} frames ({n / max(1, len(targets)):.1f} per part), {m} frame x height views, "
+                 f"{time.time() - t0:.1f} s")
         return targets
 
     @staticmethod
@@ -217,24 +232,18 @@ class MarkingViews:
         return sorted(t.views.values(), key=lambda v: (-round(v["cover"], 1), -v["focus"]))
 
     def write(self, targets, folder):
-        """marking_views/<ref>/<frame>.jpg (registered view, sharpest height) + pano.jpg; -> {ref: record}."""
-        os.makedirs(folder, exist_ok=True)
+        """pano.jpg per part; -> {ref: record}: views = sharpest height per frame (what the VLM reads), all = every
+        (frame, height) view, files relative to the panorama folder."""
         out = {}
         for t in targets:
-            d = os.path.join(folder, safeName(t.ref))
-            os.makedirs(d, exist_ok=True)
-            for f in os.listdir(d):
-                os.remove(os.path.join(d, f))
             rec = {"w": t.w, "h": t.h, "pxPerMm": round(self.k, 3), "views": []}
             if t.pano is not None:
-                cv2.imwrite(os.path.join(d, "pano.jpg"), t.pano, [cv2.IMWRITE_JPEG_QUALITY, 92])
+                cv2.imwrite(os.path.join(folder, safeName(t.ref), "pano.jpg"), t.pano, [cv2.IMWRITE_JPEG_QUALITY, 92])
                 rec["pano"] = f"{os.path.basename(folder)}/{safeName(t.ref)}/pano.jpg"
             for v in self.ranked(t):
-                img = np.where(v["valid"][..., None] > 0, v["img"], 0)
-                name = f"{v['frame']}.jpg"
-                cv2.imwrite(os.path.join(d, name), img, [cv2.IMWRITE_JPEG_QUALITY, 92])
                 rec["views"].append({"frame": v["frame"], "z": v["z"], "focus": round(v["focus"], 2),
-                                     "cover": round(v["cover"], 2),
-                                     "file": f"{os.path.basename(folder)}/{safeName(t.ref)}/{name}"})
+                                     "cover": round(v["cover"], 2), "file": v["file"]})
+            rec["all"] = [{"frame": v["frame"], "z": v["z"], "focus": round(v["focus"], 2), "cover": round(v["cover"], 2),
+                           "file": v["file"]} for v in sorted(t.allViews, key=lambda v: (v["frame"], v["z"]))]
             out[t.ref] = rec
         return out

@@ -247,6 +247,9 @@ TEMPLATE = r'''<!doctype html>
   .lcard .mk { font: 12px/1.25 monospace; color: #ffd36b; margin-top: 2px; min-height: 15px; }
   .lcard .ck { font-size: 11px; margin-top: 1px; max-width: calc(var(--h, 96px) * 3); }
   .lcard .oc { font: 11px monospace; margin-top: 1px; }
+  .zchips { margin: 2px 0 4px; }
+  .zchips button.zc { background: #222; color: #aaa; border: 1px solid #444; border-radius: 3px; padding: 1px 5px; margin: 0 2px 2px 0; font-size: 11px; cursor: pointer; }
+  .zchips button.zc.on { background: #1d4b66; color: #fff; border-color: #6cf; }
   .imgs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
   .imgs figure { margin: 0; }
   .imgs img { max-height: 240px; max-width: 300px; border-radius: 4px; display: block; background: #000; }
@@ -856,14 +859,7 @@ function renderPart() {
       (markOf(part.ref) && markOf(part.ref).img ? '<figure><img src="' + esc(markOf(part.ref).img) + '"><figcaption>reading image: grey (L), CLAHE, ' +
         'enlarged, turned ' + markOf(part.ref).turn + '° so the text stands upright — what the marking was read from</figcaption></figure>' : '') +
       '</div>' : '') +
-    (VIEWS[part.ref] && VIEWS[part.ref].views.length ? (() => { const vv = VIEWS[part.ref], m = markOf(part.ref), r = m && m.vlmViews;
-      const readOf = f => r ? r.readings.find(x => x.frame === f) : null;
-      return '<h4 style="margin:12px 0 4px">Source views <small>' + vv.views.length + ' frames, sharpest height each — the marking shows at some angles only</small></h4>' +
-        '<div class="imgs">' + vv.views.map(x => { const rd = readOf(x.frame), win = r && r.frame === x.frame;
-          return '<figure' + (win ? ' style="outline:2px solid #6cf"' : '') + '><a href="' + esc(x.file) + '" target="_blank"><img src="' + esc(x.file) + '"></a>' +
-            '<figcaption>' + esc(x.frame) + ' · z ' + x.z + ' · cover ' + x.cover.toFixed(2) +
-            (rd ? '<br><span style="color:#6cf">' + esc(rd.lines.join(' / ')) + '</span> <small>' + rd.score.toFixed(2) + ', ' + rd.turn + '°</small>' : r ? '<br><small>nothing read</small>' : '') +
-            '</figcaption></figure>'; }).join('') + '</div>'; })() : '') +
+    (VIEWS[part.ref] && VIEWS[part.ref].views.length ? '<div id="viewsBlock">' + viewsHtml(part.ref) + '</div>' : '') +
     (ds ? '<h4 style="margin:12px 0 4px">Datasheet</h4><a href="' + esc(ds.file) + '" target="_blank">' + esc(ds.title) + '</a> <small>' +
       esc(ds.vendor) + ' · ' + esc(ds.status) + ' · by ' + esc(ds.method) + (ds.mpn ? ' ' + esc(ds.mpn) : '') + '</small>' +
       (ds.excursus ? '<p><b>' + esc(ds.excursus.category) + '</b> <small>' + esc(ds.excursus.params.join(' · ')) + '</small></p>' : '') +
@@ -872,6 +868,50 @@ function renderPart() {
   info.style.display = 'block';
   cb('btnClose').onclick = () => { part = null; renderPart(); draw(); };
   cb('btnFrames').onclick = () => { picked = { x: part.cx, y: part.cy }; part = null; renderInfo(); draw(); };
+  bindViews();
+}
+
+// Source views of a part (cutMarkingViews.py): every frame that sees it, at the heights picked here. One height =
+// what that layer's frames show (the single-height panorama is one of them); several = per frame the sharpest of
+// them; all = per frame the sharpest overall (what vlmMarkings.py --views read). The pick stays across parts.
+let viewZ = null;   // Set of picked heights, null = all
+function viewsHtml(ref) {
+  const vv = VIEWS[ref], m = markOf(ref), r = m && m.vlmViews;
+  const all = vv.all || vv.views, zs = [...new Set(all.map(x => x.z))].sort((a, b) => a - b);
+  const on = z => !viewZ || viewZ.has(z);
+  const byFrame = {};
+  for (const x of all) if (on(x.z) && (!byFrame[x.frame] || x.focus > byFrame[x.frame].focus)) byFrame[x.frame] = x;
+  const order = vv.views.map(x => x.frame).filter(f => byFrame[f]);
+  const readZ = Object.fromEntries(vv.views.map(x => [x.frame, x.z]));   // the height the VLM read per frame
+  const chips = zs.map(z => '<button class="zc' + (on(z) ? ' on' : '') + '" data-z="' + z + '">' + z.toFixed(1) + '</button>').join('') +
+    ' <button class="zc' + (!viewZ ? ' on' : '') + '" data-z="all">all</button>';
+  return '<h4 style="margin:12px 0 4px">Source views <small>' + order.length + ' frames · ' +
+    (!viewZ ? 'all heights, sharpest per frame' : viewZ.size === 1 ? 'height ' + [...viewZ][0].toFixed(1) + ' only' :
+      viewZ.size + ' heights, sharpest per frame') + ' — the marking shows at some angles only</small></h4>' +
+    '<div class="zchips">' + chips + ' <small>click: only this height · ctrl+click: add/remove</small></div>' +
+    (order.length ? '' : '<p><small>No frame sees the part at these heights.</small></p>') +
+    '<div class="imgs">' + order.map(f => { const x = byFrame[f], rd = r ? r.readings.find(y => y.frame === f) : null;
+      const same = rd && readZ[f] === x.z, win = r && r.frame === f && same;
+      return '<figure' + (win ? ' style="outline:2px solid #6cf"' : '') + '><a href="' + esc(x.file) + '" target="_blank"><img src="' + esc(x.file) + '"></a>' +
+        '<figcaption>' + esc(f) + ' · z ' + x.z.toFixed(1) + ' · cover ' + x.cover.toFixed(2) +
+        (rd ? '<br><span style="color:#6cf">' + esc(rd.lines.join(' / ')) + '</span> <small>' + rd.score.toFixed(2) + ', ' + rd.turn + '°' +
+          (same ? '' : ', read at z ' + readZ[f].toFixed(1)) + '</small>' : r ? '<br><small>nothing read</small>' : '') +
+        '</figcaption></figure>'; }).join('') + '</div>';
+}
+function bindViews() {
+  const box = cb('viewsBlock');
+  if (!box) return;
+  box.querySelectorAll('button.zc').forEach(e => e.onclick = ev => {
+    const z = e.dataset.z;
+    if (z === 'all') viewZ = null;
+    else if (ev.ctrlKey || ev.metaKey) {
+      const zs = [...new Set((VIEWS[part.ref].all || VIEWS[part.ref].views).map(x => x.z))];
+      viewZ = viewZ ? new Set(viewZ) : new Set(zs);
+      viewZ.has(+z) ? viewZ.delete(+z) : viewZ.add(+z);
+      if (!viewZ.size || viewZ.size === zs.length) viewZ = null;
+    } else viewZ = new Set([+z]);
+    box.innerHTML = viewsHtml(part.ref); bindViews();
+  });
 }
 
 function focusPart(p) {
