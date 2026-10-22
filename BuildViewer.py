@@ -67,18 +67,47 @@ def seamImage(stitcher, factor=4):
     return rgba
 
 
-def rebuildHtml(outDir):
+def writeFocusZ(outDir, sigmaCells=1.0):
+    """focusz.bin for the page's floor fusion: depth of best focus per cell (focus_z.npy, Z mm), blurred as in
+    FocusStack.fuse, int16 um, row-major cells."""
+    z = np.load(os.path.join(outDir, 'focus_z.npy')).astype(np.float32)
+    z = cv2.GaussianBlur(z, (0, 0), sigmaCells)
+    np.clip(np.round(z * 1000), -32000, 32000).astype('<i2').tofile(os.path.join(outDir, 'focusz.bin'))
+
+
+def rebuildHtml(outDir, board=None):
     """Re-renders index.html with the current TEMPLATE and the DATA of the page already there (no re-stitching).
-    For viewer changes; a focus-stack page keeps its stack data too."""
+    For viewer changes; a focus-stack page keeps its stack data too. board: a panorama folder of the same reference
+    stitch whose board.json / markings / marking views the page shows (kept in DATA.boardBase for later rebuilds;
+    serve a common parent folder). A stack page also gets focusz.bin for fusing any set of heights."""
     path = os.path.join(outDir, 'index.html')
     with open(path, encoding='utf-8') as fp:
         html = fp.read()
     start = html.index('const DATA = ') + len('const DATA = ')
     end = html.index(';\nconst s = DATA.scale;', start)
+    data = json.loads(html[start:end])
+    if board:
+        data['boardBase'] = os.path.relpath(board, outDir).replace(os.sep, '/') + '/'
+    if data.get('stack'):
+        data['stack'].setdefault('depthSigma', 0.3)          # FocusStack depthSigmaMm default
+        if os.path.exists(os.path.join(outDir, 'focus_z.npy')):
+            writeFocusZ(outDir)
     out = TEMPLATE.replace('__OSD_URL__', OSD_URL).replace('__OSD_IMAGES__', OSD_IMAGES) \
-        .replace('__DATA__', html[start:end])
+        .replace('__DATA__', json.dumps(data))
     with open(path, 'w', encoding='utf-8') as fp:
         fp.write(out)
+
+
+def rebuild3d(outDir):
+    """Re-renders 3d.html with the current TEMPLATE_3D and the data of the page already there (no re-stacking).
+    The page picks up cad/viewer.json (compareCad.py) by itself when it is there."""
+    path = os.path.join(outDir, '3d.html')
+    with open(path, encoding='utf-8') as fp:
+        html = fp.read()
+    start = html.index('const D = ') + len('const D = ')
+    end = html.index(';\nconst status = ', start)
+    with open(path, 'w', encoding='utf-8') as fp:
+        fp.write(TEMPLATE_3D.replace('__DATA__', html[start:end]).replace('__THREE__', THREE_VERSION))
 
 
 def build(stitcher, pano, outDir, stack=None):
@@ -280,6 +309,12 @@ TEMPLATE = r'''<!doctype html>
       <label><input type="radio" name="layer" value="m"> marking: best view + height per part</label>
       <label><input type="checkbox" id="cbParts" checked> outlines</label>
     </div>
+    <div id="floorRow">
+      floors <span id="floorChips" class="zchips"></span><br>
+      <small>click: this floor only · ctrl+click: add / remove · all = all-in-focus; several = focus fusion of them only</small>
+      <label id="lblTops" style="display:none"><input type="checkbox" id="cbTops"> part tops from source views
+        <small>(the frame the VLM read, sharpest of the picked floors)</small></label>
+    </div>
     <div style="display:flex;align-items:center;gap:6px">
       <label style="white-space:nowrap"><input type="radio" name="layer" value="z"> height</label>
       <input type="range" id="zSlider" min="0" max="0" step="1" value="0" style="flex:1">
@@ -419,6 +454,7 @@ function draw() {
     }
     ctx.setLineDash([]);
   }
+  drawTops();
   drawCad(zoom);
   if (picked) {
     const [px, py] = toScreen(picked.x, picked.y);
@@ -525,9 +561,21 @@ function heightAt(x, y) {
   if (c < 0 || r < 0 || c >= ST.cells[0] || r >= ST.cells[1]) return null;
   return heights[r * ST.cells[0] + c] / 1000;
 }
-function showLayer(i) {             // -1 = all-in-focus (main item), 'm' = marking, else index of a height
+function showLayer(i) {             // -1 = all-in-focus (main item), 'm' = marking, 'f' = fused floors, else a height
   layerIdx = i;
+  if (i !== 'f') { floorSel = typeof i === 'number' && i >= 0 ? new Set([i]) : null; floorChips(); setTimeout(topsChanged); }
   for (const k in layerItems) layerItems[k].setOpacity(k === String(i) ? 1 : 0);
+  if (i === 'f') {
+    const sel = floorSel, key = floorKey();
+    if (layerItems.f && layerItems.f.floorKey === key) { layerItems.f.setOpacity(1); }
+    else fusedSource(sel).then(src => { if (floorKey() !== key) return;
+      viewer.addTiledImage({ tileSource: src, index: 1, x: 0, y: 0, width: 1, success: e => {
+        if (layerItems.f) viewer.world.removeItem(layerItems.f);
+        layerItems.f = e.item; e.item.floorKey = key; e.item.setOpacity(layerIdx === 'f' ? 1 : 0); } }); });
+    document.querySelectorAll('input[name=layer]').forEach(r => r.checked = false);
+    draw();
+    return;
+  }
   if (i !== -1 && !layerItems[i]) {
     viewer.addTiledImage({ tileSource: i === 'm' ? ST.marking.tiles : ST.layers[i].tiles, index: 1, x: 0, y: 0, width: 1,
       success: e => { layerItems[i] = e.item; e.item.setOpacity(layerIdx === i ? 1 : 0); } });
@@ -579,6 +627,128 @@ function legend() {
     (vmax / 2).toFixed(2) + '</span><span>&ge; ' + vmax.toFixed(1) + ' mm</span></small>' +
     '<small>faint = not measured (no texture), filled from around</small>';
 }
+// ---------------------------------------------------------------- floors: the board from any set of heights
+// One floor = that height's panorama; all = the all-in-focus panorama; several = focus fusion of those heights only,
+// made here per tile: weights exp(-(Zfocus - z)^2 / 2 sigma^2) over the picked heights (as FocusStack.fuse), Zfocus
+// per cell from focusz.bin (focus_z.npy, blurred like fuse).
+let floorSel = null, focusZ = null, fusedN = 0;
+function floorKey() { return floorSel ? [...floorSel].sort((a, b) => a - b).join(',') : 'all'; }
+function floorChips() {
+  cb('floorChips').innerHTML = ST.layers.map((l, i) => '<button class="zc' + (!floorSel || floorSel.has(i) ? ' on' : '') +
+    '" data-i="' + i + '">' + l.z.toFixed(1) + '</button>').join('') +
+    ' <button class="zc' + (!floorSel ? ' on' : '') + '" data-i="all">all</button>';
+  cb('floorChips').querySelectorAll('button').forEach(e => e.onclick = ev => {
+    const i = e.dataset.i;
+    if (i === 'all') floorSel = null;
+    else if (ev.ctrlKey || ev.metaKey) {
+      floorSel = floorSel ? new Set(floorSel) : new Set(ST.layers.map((_, k) => k));
+      floorSel.has(+i) ? floorSel.delete(+i) : floorSel.add(+i);
+      if (!floorSel.size || floorSel.size === ST.layers.length) floorSel = null;
+    } else floorSel = new Set([+i]);
+    showFloors();
+  });
+}
+function showFloors() {
+  floorChips();
+  topsChanged();
+  if (!floorSel) return showLayer(-1);
+  if (floorSel.size === 1) return showLayer([...floorSel][0]);
+  showLayer('f');
+}
+function dziInfo(url) {
+  return fetch(url).then(r => r.text()).then(t => {
+    const x = new DOMParser().parseFromString(t, 'text/xml'), im = x.documentElement, sz = x.getElementsByTagName('Size')[0];
+    return { w: +sz.getAttribute('Width'), h: +sz.getAttribute('Height'), ts: +im.getAttribute('TileSize'),
+             ov: +im.getAttribute('Overlap'), fmt: im.getAttribute('Format') };
+  });
+}
+function loadImg(src) {
+  return new Promise((ok, bad) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => bad(src); i.src = src; });
+}
+function fusedSource(sel) {
+  const idx = [...sel].sort((a, b) => a - b), zs = idx.map(i => ST.layers[i].z), sig = ST.depthSigma || 0.3;
+  const dirs = idx.map(i => ST.layers[i].tiles.replace(/\.dzi$/, '_files/'));
+  return Promise.all([dziInfo(ST.layers[idx[0]].tiles), focusZ ? null :
+    fetch('focusz.bin').then(r => r.arrayBuffer()).then(b => { focusZ = new Int16Array(b); })]).then(([d]) => {
+    const src = new OpenSeadragon.DziTileSource(d.w, d.h, d.ts, d.ov, dirs[0], d.fmt);
+    const maxLevel = src.maxLevel, key = 'fused' + (++fusedN) + '[' + zs.join(',') + ']';
+    src.getTileUrl = (level, x, y) => key + '/' + level + '/' + x + '_' + y;
+    src.downloadTileAbort = () => {};
+    src.downloadTileStart = ctx => {
+      const [, lv, xy] = ctx.src.split('/'), [x, y] = xy.split('_').map(Number), level = +lv;
+      Promise.all(dirs.map(dd => loadImg(dd + level + '/' + x + '_' + y + '.' + d.fmt))).then(ims => {
+        const w = ims[0].naturalWidth, h = ims[0].naturalHeight, c = document.createElement('canvas');
+        c.width = w; c.height = h;
+        const g = c.getContext('2d', { willReadFrequently: true }), px = ims.map(im => {
+          g.drawImage(im, 0, 0); return g.getImageData(0, 0, w, h).data; });
+        const out = g.createImageData(w, h), o = out.data, k = 2 ** (maxLevel - level);   // image px per level px
+        const x0 = x * d.ts - (x ? d.ov : 0), y0 = y * d.ts - (y ? d.ov : 0), [cw, chh] = ST.cells, cs = ST.cell;
+        const wk = new Float32Array(zs.length);
+        for (let v = 0; v < h; v++) {
+          const cy = Math.min(chh - 1, Math.max(0, ((y0 + v + 0.5) * k) / cs - 0.5)), r0 = Math.floor(cy), fy = cy - r0, r1 = Math.min(chh - 1, r0 + 1);
+          for (let u = 0; u < w; u++) {
+            const cx = Math.min(cw - 1, Math.max(0, ((x0 + u + 0.5) * k) / cs - 0.5)), c0 = Math.floor(cx), fx = cx - c0, c1 = Math.min(cw - 1, c0 + 1);
+            const t = ((focusZ[r0 * cw + c0] * (1 - fx) + focusZ[r0 * cw + c1] * fx) * (1 - fy) +
+                       (focusZ[r1 * cw + c0] * (1 - fx) + focusZ[r1 * cw + c1] * fx) * fy) / 1000;
+            let dmin = Infinity;
+            for (let a = 0; a < zs.length; a++) { wk[a] = (t - zs[a]) ** 2; if (wk[a] < dmin) dmin = wk[a]; }
+            let tot = 0;
+            for (let a = 0; a < zs.length; a++) { wk[a] = Math.exp(-0.5 * (wk[a] - dmin) / (sig * sig)); tot += wk[a]; }
+            const n = 4 * (v * w + u);
+            for (let ch = 0; ch < 3; ch++) {
+              let acc = 0;
+              for (let a = 0; a < zs.length; a++) acc += px[a][n + ch] * wk[a];
+              o[n + ch] = acc / tot;
+            }
+            o[n + 3] = 255;
+          }
+        }
+        g.putImageData(out, 0, 0);
+        ctx.finish(c, null);
+      }).catch(e => ctx.finish(null, null, 'fused tile: ' + e));
+    };
+    return src;
+  });
+}
+
+// part tops from the source views (cutMarkingViews.py): per part the frame the VLM read (vlmMarkings.py --views; else
+// the first view), at the sharpest of the picked floors, drawn into the part outline. VIEWS[ref].W maps view px to
+// image px.
+const topImgs = {};
+let tops = [];
+function topsChanged() {
+  tops = [];
+  if (!cb('cbTops') || !Object.keys(VIEWS).length) return;
+  cb('lblTops').style.display = 'block';
+  if (!cb('cbTops').checked || !CAD) return requestDraw();
+  const zs = ST && floorSel ? new Set([...floorSel].map(i => ST.layers[i].z)) : null;
+  for (const [ref, vv] of Object.entries(VIEWS)) {
+    const p = CAD.byRef[ref], m = markOf(ref), all = (vv.all || vv.views).filter(x => !zs || zs.has(x.z));
+    if (!p || !vv.W || !all.length) continue;
+    const want = m && m.vlmViews && m.vlmViews.frame || vv.views[0].frame;
+    const own = all.filter(x => x.frame === want), pool = own.length ? own : all.filter(x => x.cover >= 0.95);
+    if (!pool.length) continue;
+    const v = pool.reduce((a, b) => b.focus > a.focus ? b : a);
+    if (!topImgs[v.file]) { topImgs[v.file] = new Image(); topImgs[v.file].onload = requestDraw; topImgs[v.file].src = BASE + v.file; }
+    tops.push({ p, W: vv.W, img: topImgs[v.file] });
+  }
+  requestDraw();
+}
+function drawTops() {
+  if (!tops.length || !cb('cbTops').checked) return;
+  const dpr = window.devicePixelRatio || 1, [a, b, c, d, e, f] = imgToScreenAffine();
+  for (const t of tops) {
+    if (!t.img.complete || !t.img.naturalWidth) continue;
+    const W = t.W;
+    ctx.save();
+    ctx.setTransform(dpr * a, dpr * b, dpr * c, dpr * d, dpr * e, dpr * f);
+    ctx.clip(t.p.path);
+    ctx.transform(W[0][0], W[1][0], W[0][1], W[1][1], W[0][2], W[1][2]);
+    ctx.drawImage(t.img, 0, 0);
+    ctx.restore();
+  }
+}
+
 if (ST) {
   cb('stackPanel').style.display = 'block';
   fetch('height.bin').then(r => r.arrayBuffer()).then(b => { heights = new Int16Array(b); });
@@ -591,8 +761,12 @@ if (ST) {
   if (!tiled) document.querySelector('input[name=layer][value="z"]').parentElement.parentElement.style.display = 'none';
   showLayer(-1);
   cb('zSlider').addEventListener('input', () => showLayer(+cb('zSlider').value));
-  document.querySelectorAll('input[name=layer]').forEach(r => r.addEventListener('change', () =>
-    showLayer(r.value === '-1' ? -1 : r.value === 'm' ? 'm' : +cb('zSlider').value)));
+  document.querySelectorAll('input[name=layer]').forEach(r => r.addEventListener('change', () => {
+    const i = r.value === '-1' ? -1 : r.value === 'm' ? 'm' : +cb('zSlider').value;
+    floorSel = i === -1 || i === 'm' ? null : new Set([i]); floorChips(); topsChanged(); showLayer(i); }));
+  cb('zSlider').addEventListener('input', () => { floorSel = new Set([+cb('zSlider').value]); floorChips(); topsChanged(); });
+  floorChips();
+  cb('cbTops').addEventListener('change', topsChanged);
   if (ST.marking) cb('markingRow').style.display = 'flex';
   cb('cbParts').addEventListener('change', draw);
   cb('cbHeight').addEventListener('change', () => setHeightOverlay(cb('cbHeight').checked));
@@ -623,6 +797,7 @@ const GROUP_ORDER = ['Resistors', 'Capacitors', 'Inductors', 'Diodes & protectio
 let CAD = null, cadPxPerMm = 77, part = null, cadHidden = new Set(), groupCol = {}, cadPaths = null;
 // markings.json (markingSheets.py + markingCheck.py): text read on each part and its check against the BOM
 let MARKS = {};
+const BASE = DATA.boardBase || '';   // a focus-stack page shows the board of its reference panorama folder
 let VIEWS = {};   // marking_views.json (cutMarkingViews.py): the part body cut out of every source frame that sees it
 const CHECK_COL = { ok: '#4fbf73', mismatch: '#e5534b', missing: '#e5534b', populated: '#e0a33a', unread: '#9aa5b1', info: '#6cbcff' };
 const PROBLEM = new Set(['mismatch', 'missing', 'populated']);
@@ -670,7 +845,7 @@ function toPath(polys) {
 }
 const natKey = t => t.split(/(\d+)/).map(x => /^\d+$/.test(x) ? x.padStart(6, '0') : x.toLowerCase()).join('');
 
-fetch('board.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(b => {   // revalidate: alignBoard.py rewrites it
+fetch(BASE + 'board.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(b => {   // revalidate: alignBoard.py rewrites it
   if (!b || !b.align) return;
   const M = b.align.M, side = b.align.side;
   CAD = { board: b, parts: [], byRef: {}, crops: b.align.crops || {} };
@@ -694,11 +869,11 @@ fetch('board.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).the
   cb('btnList').textContent = 'parts list (' + Object.keys(b.components).length + ')';
   cb('cadPanel').style.display = 'block';
   cadChanged();
-  return fetch('markings.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(m => {
+  return fetch(BASE + 'markings.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(m => {
     if (!m) return;
     MARKS = m.parts || {};
-    fetch('marking_views.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(v => {
-      VIEWS = v || {}; if (part) renderPart(); }).catch(() => {});
+    fetch(BASE + 'marking_views.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(v => {
+      VIEWS = v || {}; if (part) renderPart(); topsChanged(); }).catch(() => {});
     const bad = Object.values(MARKS).filter(x => x.check && PROBLEM.has(x.check.status)).length;
     cb('findCount').textContent = '(' + bad + ')';
     cb('lblFind').hidden = false;
@@ -813,7 +988,7 @@ function renderPart() {
   const lab = { zero: '0 Ω', 3: '3-digit', 4: '4-digit', eia96: 'EIA-96' };
   const codes = l && l.value && l.value.marking ? Object.entries(l.value.marking).map(([k, v]) => '<code title="' + lab[k] + '">' + esc(v) + '</code>').join('') +
     '<small>' + Object.keys(l.value.marking).map(k => lab[k]).join(' / ') + '</small>' : '';
-  const dir = ds ? ds.file.replace(/\/[^/]*$/, '') : '';
+  const dir = ds ? BASE + ds.file.replace(/\/[^/]*$/, '') : '';
   const secs = ds ? Object.entries(ds.sections).map(([kind, list]) => list.map((x, i) =>
     '<details' + (kind === 'marking' && i === 0 ? ' open' : '') + '><summary>' + esc(kind) + ': ' + esc(x.title) +
     (x.page ? ' <small>p. ' + esc(x.page) + '</small>' : '') + '</summary><div class="md">' + md(x.text, dir) + '</div></details>').join('')).join('') : '';
@@ -854,13 +1029,13 @@ function renderPart() {
         codeBadge(markOf(part.ref)) + (r.bom === 'mismatch' ? ' <span style="color:#e5534b">BOM mismatch</span>' : '') +
         '<br><small>own classifier (readResistorCodes.py), trained without this part</small></span>'; })() : '') +
     '</div>' +
-    (CAD.crops[part.ref] ? '<div class="imgs"><figure><img src="' + esc(CAD.crops[part.ref].file) + '"><figcaption>crop as cut: the part frame, ' +
+    (CAD.crops[part.ref] ? '<div class="imgs"><figure><img src="' + esc(BASE + CAD.crops[part.ref].file) + '"><figcaption>crop as cut: the part frame, ' +
       CAD.crops[part.ref].pxPerMm.toFixed(0) + ' px/mm</figcaption></figure>' +
-      (markOf(part.ref) && markOf(part.ref).img ? '<figure><img src="' + esc(markOf(part.ref).img) + '"><figcaption>reading image: grey (L), CLAHE, ' +
+      (markOf(part.ref) && markOf(part.ref).img ? '<figure><img src="' + esc(BASE + markOf(part.ref).img) + '"><figcaption>reading image: grey (L), CLAHE, ' +
         'enlarged, turned ' + markOf(part.ref).turn + '° so the text stands upright — what the marking was read from</figcaption></figure>' : '') +
       '</div>' : '') +
     (VIEWS[part.ref] && VIEWS[part.ref].views.length ? '<div id="viewsBlock">' + viewsHtml(part.ref) + '</div>' : '') +
-    (ds ? '<h4 style="margin:12px 0 4px">Datasheet</h4><a href="' + esc(ds.file) + '" target="_blank">' + esc(ds.title) + '</a> <small>' +
+    (ds ? '<h4 style="margin:12px 0 4px">Datasheet</h4><a href="' + esc(BASE + ds.file) + '" target="_blank">' + esc(ds.title) + '</a> <small>' +
       esc(ds.vendor) + ' · ' + esc(ds.status) + ' · by ' + esc(ds.method) + (ds.mpn ? ' ' + esc(ds.mpn) : '') + '</small>' +
       (ds.excursus ? '<p><b>' + esc(ds.excursus.category) + '</b> <small>' + esc(ds.excursus.params.join(' · ')) + '</small></p>' : '') +
       (secs || '<p><small>No marking / ordering / package sections.</small></p>')
@@ -892,7 +1067,7 @@ function viewsHtml(ref) {
     (order.length ? '' : '<p><small>No frame sees the part at these heights.</small></p>') +
     '<div class="imgs">' + order.map(f => { const x = byFrame[f], rd = r ? r.readings.find(y => y.frame === f) : null;
       const same = rd && readZ[f] === x.z, win = r && r.frame === f && same;
-      return '<figure' + (win ? ' style="outline:2px solid #6cf"' : '') + '><a href="' + esc(x.file) + '" target="_blank"><img src="' + esc(x.file) + '"></a>' +
+      return '<figure' + (win ? ' style="outline:2px solid #6cf"' : '') + '><a href="' + esc(BASE + x.file) + '" target="_blank"><img src="' + esc(BASE + x.file) + '"></a>' +
         '<figcaption>' + esc(f) + ' · z ' + x.z.toFixed(1) + ' · cover ' + x.cover.toFixed(2) +
         (rd ? '<br><span style="color:#6cf">' + esc(rd.lines.join(' / ')) + '</span> <small>' + rd.score.toFixed(2) + ', ' + rd.turn + '°' +
           (same ? '' : ', read at z ' + readZ[f].toFixed(1)) + '</small>' : r ? '<br><small>nothing read</small>' : '') +
@@ -966,7 +1141,7 @@ function renderList() {
   cb('lCount').textContent = shown + ' of ' + Object.keys(b.components).length;
   const card = ref => {
     const c = b.components[ref], cr = CAD.crops[ref];
-    const img = cr ? '<img loading="lazy" style="aspect-ratio:' + cr.w + '/' + cr.h + '" src="' + esc(cr.file) + '" title="' + (cr.w / cr.pxPerMm).toFixed(1) + ' × ' +
+    const img = cr ? '<img loading="lazy" style="aspect-ratio:' + cr.w + '/' + cr.h + '" src="' + esc(BASE + cr.file) + '" title="' + (cr.w / cr.pxPerMm).toFixed(1) + ' × ' +
       (cr.h / cr.pxPerMm).toFixed(1) + ' mm">' : '<div class="noimg">' + esc(c.side) + ' side</div>';
     const mk = markOf(ref), st = mk && mk.check ? mk.check.status : '';
     const border = PROBLEM.has(st) ? CHECK_COL[st] : (c.fit === 'fitted' ? '#333' : FIT[c.fit]);
@@ -1156,9 +1331,18 @@ TEMPLATE_3D = r'''<!doctype html>
   <label><input type="radio" name="tex" value="photo" checked> photo</label>
   <label><input type="radio" name="tex" value="height"> height colours 0 &hellip;
     <input type="range" id="hRange" min="0.3" max="5" step="0.1" value="1.5" style="width:90px"> <span id="hRangeV"></span> mm</label>
+  <div id="cadPanel" style="display:none;border-top:1px solid #444;margin-top:4px;padding-top:4px">
+    <small>CAD reference (STEP top view, <a href="cad/summary.json">summary</a>)</small>
+    <label><input type="radio" name="tex" value="cad"> CAD height colours (same range)</label>
+    <label><input type="radio" name="tex" value="error"> error measured &minus; CAD &plusmn;
+      <input type="range" id="eRange" min="0.2" max="2" step="0.1" value="0.6" style="width:80px"> <span id="eRangeV"></span> mm</label>
+    <label><input type="checkbox" id="cadSurface"> CAD surface instead of measured</label>
+    <label><input type="checkbox" id="cadOverlay"> CAD overlay (translucent)</label>
+    <small id="cadInfo"></small>
+  </div>
   <label><input type="checkbox" id="light" checked> relief shading</label>
   <label><input type="checkbox" id="hd"> high-res texture (8k)</label>
-  <small>drag: rotate &middot; right-drag: pan &middot; wheel: zoom &middot; double-click: orbit around point</small>
+  <small>drag: rotate &middot; right-drag: pan &middot; wheel: zoom &middot; double-click: orbit around point &middot; click: read heights</small>
 </div>
 <div id="status">loading&hellip;</div>
 <script type="module">
@@ -1192,7 +1376,9 @@ scene.add(sun);
 const [cw, ch] = D.cells, step = D.meshStep;
 const nx = Math.floor((cw - 1) / step) + 1, ny = Math.floor((ch - 1) / step) + 1;
 const heights = new Int16Array(await (await fetch('mesh.bin')).arrayBuffer());   // um, -32768 = no data
+let surface = heights;                              // geometry source: measured (mesh.bin) or CAD (cad_height.bin)
 const hAt = (i, j) => heights[(j * step) * cw + i * step];
+const sAt = (i, j) => { const v = surface[(j * step) * cw + i * step]; return v === -32768 ? 0 : v; };
 const geo = new THREE.BufferGeometry();
 const pos = new Float32Array(nx * ny * 3), uv = new Float32Array(nx * ny * 2);
 for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) {
@@ -1229,7 +1415,7 @@ for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) {
 geo.setAttribute('wallUv', new THREE.BufferAttribute(wallUv, 2));
 function setExaggeration(k) {
   for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++)
-    pos[3 * (j * nx + i) + 2] = Math.max(-2, hAt(i, j) / 1000) * k;
+    pos[3 * (j * nx + i) + 2] = Math.max(-2, (surface === heights ? hAt(i, j) : sAt(i, j)) / 1000) * k;
   geo.attributes.position.needsUpdate = true;
   // normals from a 5x5 box-blurred surface (staircase walls would show stripes)
   const zb = new Float32Array(nx * ny), tmp = new Float32Array(nx * ny), r = 2;
@@ -1257,6 +1443,20 @@ function setExaggeration(k) {
   geo.attributes.steep.needsUpdate = true;
   geo.computeBoundingSphere();
   document.getElementById('exagV').textContent = k + 'x';
+  cadOverlayUpdate(k);
+}
+// ---- CAD reference (compareCad.py writes cad/viewer.json + int16 um rasters on the same cells)
+let cad = null, overlay = null;
+function cadOverlayUpdate(k) {
+  if (!overlay) return;
+  const p = overlay.geometry.attributes.position.array;
+  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) {
+    const v = cad.height[(j * step) * cw + i * step];
+    p[3 * (j * nx + i) + 2] = (v === -32768 ? 0 : v / 1000) * k + 0.01;
+  }
+  overlay.geometry.attributes.position.needsUpdate = true;
+  overlay.geometry.computeVertexNormals();
+  overlay.geometry.computeBoundingSphere();
 }
 setExaggeration(+document.getElementById('exag').value);
 
@@ -1320,16 +1520,94 @@ function heightTexture(vmax) {     // turbo 0..vmax from the mesh heights, rows 
   heightTexRange = vmax;
   return heightTex;
 }
+const dataTex = {};
+function rasterTexture(key, fn) {   // RGBA texture over all cells, rows flipped; fn(cell index) -> [r, g, b]
+  if (dataTex[key]) return dataTex[key];
+  for (const k in dataTex) { dataTex[k].dispose(); delete dataTex[k]; }
+  const data = new Uint8Array(cw * ch * 4);
+  for (let r = 0; r < ch; r++) for (let c = 0; c < cw; c++) {
+    const t = fn(r * cw + c);
+    data.set([t[0], t[1], t[2], 255], 4 * ((ch - 1 - r) * cw + c));
+  }
+  const tx = new THREE.DataTexture(data, cw, ch, THREE.RGBAFormat);
+  tx.colorSpace = THREE.SRGBColorSpace; tx.magFilter = THREE.LinearFilter; tx.needsUpdate = true;
+  return dataTex[key] = tx;
+}
+function diverging(x) {   // -1 blue .. 0 white .. 1 red
+  const P = [[5, 48, 97], [67, 147, 195], [247, 247, 247], [214, 96, 77], [103, 0, 31]];
+  const f = (Math.max(-1, Math.min(1, x)) + 1) * 2, i = Math.min(3, Math.floor(f)), u = f - i;
+  return P[i].map((v, n) => Math.round(v + (P[i + 1][n] - v) * u));
+}
+function cadTexture(vmax) {
+  const lut = []; for (let i = 0; i < 256; i++) lut.push(turbo(i / 255));
+  return rasterTexture('cad' + vmax, n => {
+    const v = cad.height[n];
+    return v === -32768 ? [40, 40, 40] : lut[Math.max(0, Math.min(255, Math.round(v / 1000 / vmax * 255)))];
+  });
+}
+function errorTexture(span) {
+  return rasterTexture('err' + span, n => {
+    const v = cad.error[n];
+    if (v === -32768) return [25, 25, 25];
+    const t = diverging(v / 1000 / span);
+    return cad.state[n] === 2 ? t : t.map(x => Math.round(x * 0.25 + 60));   // dim: filled or above the range
+  });
+}
+function buildOverlay() {
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(pos), 3));
+  const ix = new Uint32Array((nx - 1) * (ny - 1) * 6);
+  let m = 0;
+  const off = (i, j) => cad.height[(j * step) * cw + i * step] === -32768;
+  for (let j = 0; j < ny - 1; j++) for (let i = 0; i < nx - 1; i++) {
+    if (off(i, j) || off(i + 1, j) || off(i, j + 1) || off(i + 1, j + 1)) continue;
+    const a = j * nx + i, b = a + 1, c = a + nx, d = c + 1;
+    ix.set([a, c, b, b, c, d], m); m += 6;
+  }
+  g.setIndex(new THREE.BufferAttribute(ix.subarray(0, m), 1));
+  overlay = new THREE.Mesh(g, new THREE.MeshLambertMaterial({ color: 0x66ccff, transparent: true, opacity: 0.45,
+    depthWrite: false, side: THREE.DoubleSide }));
+  overlay.renderOrder = 1;
+  scene.add(overlay);
+  cadOverlayUpdate(+document.getElementById('exag').value);
+}
+async function loadCad() {
+  const r = await fetch('cad/viewer.json').catch(() => null);
+  if (!r || !r.ok) return;
+  const info = await r.json();
+  if (info.cells[0] !== cw || info.cells[1] !== ch) { console.warn('cad/viewer.json: other cell grid'); return; }
+  const bin = async (u, T) => new T(await (await fetch(u)).arrayBuffer());
+  cad = { info, height: await bin(info.files.cad, Int16Array), error: await bin(info.files.error, Int16Array),
+          state: await bin(info.files.state, Uint8Array) };
+  document.getElementById('cadPanel').style.display = '';
+  document.getElementById('cadInfo').textContent = 'XY shift ' + info.shiftCells.join(', ') + ' cells, fit scale ' +
+    info.fit.scale + ', bias ' + info.fit.bias + ' mm, stack range top ~' + info.rangeTop + ' mm';
+  document.getElementById('eRangeV').textContent = (+document.getElementById('eRange').value).toFixed(1);
+}
 function updateMaterial() {
   const tex = document.querySelector('input[name=tex]:checked').value;
   const hd = document.getElementById('hd').checked && renderer.capabilities.maxTextureSize >= 8192;
-  document.getElementById('hRangeV').textContent = (+document.getElementById('hRange').value).toFixed(1);
-  const map = tex === 'height' ? heightTexture(+document.getElementById('hRange').value)
+  const vmax = +document.getElementById('hRange').value;
+  document.getElementById('hRangeV').textContent = vmax.toFixed(1);
+  const map = tex === 'height' ? heightTexture(vmax)
+    : tex === 'cad' && cad ? cadTexture(vmax)
+    : tex === 'error' && cad ? errorTexture(+document.getElementById('eRange').value)
     : texture(hd ? 'focus_tex.jpg' : 'focus_tex_4k.jpg');
   lit.map = flat.map = map; lit.needsUpdate = flat.needsUpdate = true;
   mesh.material = document.getElementById('light').checked ? lit : flat;
 }
-document.querySelectorAll('input[name=tex], #light, #hd, #hRange').forEach(e => e.addEventListener('change', updateMaterial));
+document.querySelectorAll('input[name=tex], #light, #hd, #hRange, #eRange').forEach(e => e.addEventListener('change', updateMaterial));
+document.getElementById('eRange').addEventListener('input', e => {
+  document.getElementById('eRangeV').textContent = (+e.target.value).toFixed(1); });
+document.getElementById('cadSurface').addEventListener('change', e => {
+  surface = e.target.checked && cad ? cad.height : heights;
+  setExaggeration(+document.getElementById('exag').value);
+});
+document.getElementById('cadOverlay').addEventListener('change', e => {
+  if (e.target.checked && !overlay && cad) buildOverlay();
+  if (overlay) overlay.visible = e.target.checked;
+});
+loadCad();
 document.getElementById('hRange').addEventListener('input', e => {
   document.getElementById('hRangeV').textContent = (+e.target.value).toFixed(1); });
 document.getElementById('hRangeV').textContent = '1.5';
@@ -1341,11 +1619,26 @@ renderer.domElement.addEventListener('dblclick', e => {
   const hit = ray.intersectObject(mesh)[0];
   if (hit) { camera.position.add(hit.point.clone().sub(controls.target)); controls.target.copy(hit.point); }
 });
+let down = null;
+renderer.domElement.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY]; });
+renderer.domElement.addEventListener('click', e => {   // readout: measured / CAD / error at the clicked cell
+  if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 4) return;
+  ray.setFromCamera(new THREE.Vector2(e.clientX / innerWidth * 2 - 1, -e.clientY / innerHeight * 2 + 1), camera);
+  const hit = ray.intersectObject(mesh)[0];
+  if (!hit) return;
+  const c = Math.floor((hit.point.x + Wmm / 2) / mm / D.cell), r = Math.floor((Hmm / 2 - hit.point.y) / mm / D.cell);
+  if (c < 0 || r < 0 || c >= cw || r >= ch) return;
+  const n = r * cw + c, f = v => v === -32768 ? '-' : (v / 1000).toFixed(2);
+  let t = 'cell ' + c + ', ' + r + ': measured ' + f(heights[n]) + ' mm';
+  if (cad) t += ', CAD ' + f(cad.height[n]) + ', error ' + f(cad.error[n]) +
+    (cad.state[n] === 2 ? '' : cad.state[n] === 1 ? ' (filled / above range)' : '');
+  status.textContent = t;
+});
 addEventListener('resize', () => {
   camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
   renderer.setSize(innerWidth, innerHeight);
 });
-window.relief = { camera, controls, mesh, mm, Wmm, Hmm };   // for debugging from the console
+window.relief = { camera, controls, mesh, mm, Wmm, Hmm, cad: () => cad };   // for debugging from the console
 renderer.setAnimationLoop(() => { controls.update(); renderer.render(scene, camera); });
 </script>
 </body>
@@ -1358,6 +1651,9 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser(description='Re-render index.html of stitchGrid / stackFocus output folders with the '
                                              'current viewer template (no re-stitching).')
     ap.add_argument('folders', nargs='+', help='output folders, e.g. out/captured_51.5')
-    for folder in ap.parse_args().folders:
-        rebuildHtml(folder)
+    ap.add_argument('--board', help='panorama folder with board.json + markings to show on these pages, e.g. a stack '
+                                    'page: BuildViewer.py out/stack --board out/captured_51.5 (serve out/)')
+    a = ap.parse_args()
+    for folder in a.folders:
+        rebuildHtml(folder, a.board)
         print(f'{folder}/index.html rebuilt')

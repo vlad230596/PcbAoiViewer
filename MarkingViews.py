@@ -236,7 +236,7 @@ class MarkingViews:
         (frame, height) view, files relative to the panorama folder."""
         out = {}
         for t in targets:
-            rec = {"w": t.w, "h": t.h, "pxPerMm": round(self.k, 3), "views": []}
+            rec = {"w": t.w, "h": t.h, "pxPerMm": round(self.k, 3), "W": np.round(t.W, 6).tolist(), "views": []}
             if t.pano is not None:
                 cv2.imwrite(os.path.join(folder, safeName(t.ref), "pano.jpg"), t.pano, [cv2.IMWRITE_JPEG_QUALITY, 92])
                 rec["pano"] = f"{os.path.basename(folder)}/{safeName(t.ref)}/pano.jpg"
