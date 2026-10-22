@@ -313,7 +313,7 @@ TEMPLATE = r'''<!doctype html>
       floors <span id="floorChips" class="zchips"></span><br>
       <small>click: this floor only · ctrl+click: add / remove · all = all-in-focus; several = focus fusion of them only</small>
       <label id="lblTops" style="display:none"><input type="checkbox" id="cbTops"> part tops from source views
-        <small>(the frame the VLM read, sharpest of the picked floors)</small></label>
+        <small>(mosaic of the frames, the one the VLM read on top; sharpest of the picked floors)</small></label>
     </div>
     <div style="display:flex;align-items:center;gap:6px">
       <label style="white-space:nowrap"><input type="radio" name="layer" value="z"> height</label>
@@ -711,11 +711,16 @@ function fusedSource(sel) {
   });
 }
 
-// part tops from the source views (cutMarkingViews.py): per part the frame the VLM read (vlmMarkings.py --views; else
-// the first view), at the sharpest of the picked floors, drawn into the part outline. VIEWS[ref].W maps view px to
-// image px.
+// part tops from the source views (cutMarkingViews.py): a mosaic per part. Every frame that sees the part gives its
+// sharpest view among the picked floors, clipped to the part outline AND to that frame's coverage (poly): the frames
+// with less of the body go first, the frame the VLM read (vlmMarkings.py --views; else the most complete one) last,
+// on top. Where no frame reaches, the board below shows. VIEWS[ref].W maps view px to image px.
 const topImgs = {};
 let tops = [];
+function topImg(file) {
+  if (!topImgs[file]) { topImgs[file] = new Image(); topImgs[file].onload = requestDraw; topImgs[file].src = BASE + file; }
+  return topImgs[file];
+}
 function topsChanged() {
   tops = [];
   if (!cb('cbTops') || !Object.keys(VIEWS).length) return;
@@ -723,14 +728,20 @@ function topsChanged() {
   if (!cb('cbTops').checked || !CAD) return requestDraw();
   const zs = ST && floorSel ? new Set([...floorSel].map(i => ST.layers[i].z)) : null;
   for (const [ref, vv] of Object.entries(VIEWS)) {
-    const p = CAD.byRef[ref], m = markOf(ref), all = (vv.all || vv.views).filter(x => !zs || zs.has(x.z));
-    if (!p || !vv.W || !all.length) continue;
-    const want = m && m.vlmViews && m.vlmViews.frame || vv.views[0].frame;
-    const own = all.filter(x => x.frame === want), pool = own.length ? own : all.filter(x => x.cover >= 0.95);
-    if (!pool.length) continue;
-    const v = pool.reduce((a, b) => b.focus > a.focus ? b : a);
-    if (!topImgs[v.file]) { topImgs[v.file] = new Image(); topImgs[v.file].onload = requestDraw; topImgs[v.file].src = BASE + v.file; }
-    tops.push({ p, W: vv.W, img: topImgs[v.file] });
+    const p = CAD.byRef[ref], m = markOf(ref);
+    if (!p || !vv.W) continue;
+    const best = {};
+    for (const x of vv.all || vv.views) if ((!zs || zs.has(x.z)) && (!best[x.frame] || x.focus > best[x.frame].focus)) best[x.frame] = x;
+    const views = Object.values(best);
+    if (!views.length) continue;
+    const want = m && m.vlmViews && (m.vlmViews.show || m.vlmViews.frame);
+    const top = best[want] || views.reduce((a, b) => b.cover > a.cover ? b : a);
+    const layers = views.filter(x => x !== top).sort((a, b) => a.cover - b.cover).concat([top]).map(x => {
+      const clip = new Path2D();
+      (x.poly || []).forEach(([u, v], n) => n ? clip.lineTo(u, v) : clip.moveTo(u, v));
+      return { img: topImg(x.file), clip: x.poly && x.poly.length > 2 ? clip : null };
+    });
+    tops.push({ p, W: vv.W, layers });
   }
   requestDraw();
 }
@@ -738,13 +749,18 @@ function drawTops() {
   if (!tops.length || !cb('cbTops').checked) return;
   const dpr = window.devicePixelRatio || 1, [a, b, c, d, e, f] = imgToScreenAffine();
   for (const t of tops) {
-    if (!t.img.complete || !t.img.naturalWidth) continue;
     const W = t.W;
     ctx.save();
     ctx.setTransform(dpr * a, dpr * b, dpr * c, dpr * d, dpr * e, dpr * f);
     ctx.clip(t.p.path);
     ctx.transform(W[0][0], W[1][0], W[0][1], W[1][1], W[0][2], W[1][2]);
-    ctx.drawImage(t.img, 0, 0);
+    for (const l of t.layers) {
+      if (!l.img.complete || !l.img.naturalWidth) continue;
+      ctx.save();
+      if (l.clip) ctx.clip(l.clip);
+      ctx.drawImage(l.img, 0, 0);
+      ctx.restore();
+    }
     ctx.restore();
   }
 }

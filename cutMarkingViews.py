@@ -9,7 +9,7 @@ Needs an alignBoard.py panorama folder (board.json) and a stackFocus.py folder o
     marking_views/<ref>/pano.jpg      the same crop of panorama.jpg, for comparison
     marking_views.json                {ref: {w, h, pxPerMm, W, pano, views, all}}, W: view px -> panorama px: views = sharpest height per frame
                                       (read by vlmMarkings.py --views), all = every frame x height; items
-                                      {frame, z, focus, cover, file}
+                                      {frame, z, focus, cover, file}, all items also poly (the frame's coverage outline, view px)
     marking_views/sheets/<ref>.jpg    with --sheets: panorama + every view, colour over CLAHE, for reading by eye
 Default parts: fitted, own side, groups ICs / Transistors / Diodes / Crystals, tantalum capacitors, power chokes.
 See MarkingViews.py for the geometry.

@@ -143,6 +143,17 @@ class MarkingViews:
         v = np.abs(cv2.Laplacian(g, cv2.CV_32F)[mask])
         return float(v.mean()) if v.size else 0.0
 
+    @staticmethod
+    def coverPolygon(valid, insetPx=3):
+        """Outline of the part of a view the frame covers, view px (the viewer clips the view to it: outside it the
+        view is black); the frame border is straight, so a few vertices do."""
+        m = cv2.erode(valid, np.ones((2 * insetPx + 1, 2 * insetPx + 1), np.uint8))
+        cs, _ = cv2.findContours(m, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        if not cs:
+            return []
+        c = cv2.approxPolyDP(max(cs, key=cv2.contourArea), 1.5, True)
+        return c.reshape(-1, 2).tolist()
+
     def register(self, img, valid, template):
         """ECC (affine) of a view onto the all-in-focus crop over the view's coverage. -> (img, valid) or None."""
         g0 = cv2.GaussianBlur(self.grey(template), (0, 0), 1.5)
@@ -208,13 +219,14 @@ class MarkingViews:
                         raise IOError(f"cannot write {os.path.join(folder, file)}")
                     out.append((t, {"frame": name, "z": z, "focus": self.focusScore(crop, held),
                                     "cover": float(held.sum() / t.inner.sum()),
-                                    "file": f"{os.path.basename(folder)}/{file}", "img": crop, "valid": valid}))
+                                    "file": f"{os.path.basename(folder)}/{file}", "poly": self.coverPolygon(valid),
+                                    "img": crop, "valid": valid}))
                 return out
 
             with ThreadPoolExecutor(self.threads) as pool:
                 for res in pool.map(oneFrame, list(self.frames)):
                     for t, v in res:
-                        t.allViews.append({k: v[k] for k in ("frame", "z", "focus", "cover", "file")})
+                        t.allViews.append({k: v[k] for k in ("frame", "z", "focus", "cover", "file", "poly")})
                         old = t.views.get(v["frame"])
                         if old is None or v["focus"] > old["focus"]:
                             t.views[v["frame"]] = v
@@ -244,6 +256,6 @@ class MarkingViews:
                 rec["views"].append({"frame": v["frame"], "z": v["z"], "focus": round(v["focus"], 2),
                                      "cover": round(v["cover"], 2), "file": v["file"]})
             rec["all"] = [{"frame": v["frame"], "z": v["z"], "focus": round(v["focus"], 2), "cover": round(v["cover"], 2),
-                           "file": v["file"]} for v in sorted(t.allViews, key=lambda v: (v["frame"], v["z"]))]
+                           "file": v["file"], "poly": v["poly"]} for v in sorted(t.allViews, key=lambda v: (v["frame"], v["z"]))]
             out[t.ref] = rec
         return out

@@ -23,7 +23,7 @@ Survey numbers (research/ocr_engines/REPORT.md): 90/116 exact on these crops, re
 --views reads the source views of cutMarkingViews.py instead (marking_views.json): every view in all four turns, no
 reference turn needed (an unread part has none). Per view the turn with the best score stands; the views then vote:
 readings equal after folding look-alikes form a group, a group weighs the sum of its views' scores, the heaviest wins.
-Result into parts[ref].vlmViews = {lines, score, frame, turn, support (views agreeing), views (views read),
+Result into parts[ref].vlmViews = {lines, score, frame, show (the view to show, see showView), turn, support (views agreeing), views (views read),
 readings [{frame, turn, lines, score}], agree (vs the first reading), model}.
 """
 import argparse
@@ -90,8 +90,10 @@ def vote(readings):
     """readings: the best turn of every view (the model reads sideways text too, so the turn is no key). Readings
     vote by text: greedy groups, best score first; a reading joins a group whose leader folds (look-alikes merged) to
     the same text, or, from 4 characters on, within an edit distance of len / 5 (short noise like J6 / J8 / JE must
-    not pile up). A group weighs the sum of its views' scores, the heaviest wins.
-    -> (winner = the group leader, support = views in the group) or (None, 0)."""
+    not pile up). A group weighs the sum of its views' scores, the heaviest wins. Its reading is that of its most
+    complete view (cover rounded to 0.1, then score): a view cut by the frame border may read as well, but it is
+    the view the viewer shows and the marking must be whole in it.
+    -> (winner reading, support = views in the group) or (None, 0)."""
     groups = []
     for x in sorted(readings, key=lambda x: -x["score"]):
         key = fold(x["lines"])
@@ -100,13 +102,23 @@ def vote(readings):
         for g in groups:
             if key == g["key"] or (len(g["key"]) >= 4 and editDistance(key, g["key"]) <= max(1, len(g["key"]) // 5)):
                 g["views"][x["frame"]] = max(g["views"].get(x["frame"], 0.0), x["score"])
+                g["members"].append(x)
                 break
         else:
-            groups.append({"key": key, "lead": x, "views": {x["frame"]: x["score"]}})
+            groups.append({"key": key, "lead": x, "views": {x["frame"]: x["score"]}, "members": [x]})
     if not groups:
         return None, 0
     best = max(groups, key=lambda g: (sum(g["views"].values()), g["lead"]["score"]))
-    return best["lead"], len(best["views"])
+    return max(best["members"], key=lambda x: (round(x.get("cover", 1.0), 1), x["score"])), len(best["views"])
+
+
+def showView(win, readings):
+    """The view to show for a reading: the most complete one whose reading holds the winner's longest line (4+
+    characters, folded) - e.g. D25 reads "B540C / 133" in a view the frame border cuts, "B540C / 3H133" in a whole
+    one; the whole one is shown. -> frame."""
+    anchor = max((fold([l]) for l in win["lines"]), key=len, default="")
+    cands = [x for x in readings if x is win or (len(anchor) >= 4 and anchor in fold(x["lines"]))]
+    return max(cands, key=lambda x: (round(x.get("cover", 1.0), 1), x["score"]))["frame"]
 
 
 def readViews(a, pano, mk, refs):
@@ -129,12 +141,14 @@ def readViews(a, pano, mk, refs):
             for t in TURNS:
                 x = res["parts"].get(f"{r}|{v['frame']}|{t}", {"lines": [], "score": 0.0})
                 if x["lines"] and x["score"] >= a.min_score and not garbage(x["lines"]):
-                    own.append({"frame": v["frame"], "turn": t, "lines": x["lines"], "score": x["score"]})
+                    own.append({"frame": v["frame"], "turn": t, "lines": x["lines"], "score": x["score"],
+                                "cover": v["cover"]})
             if own:
                 perView.append(max(own, key=lambda x: x["score"]))
         win, support = vote(perView)
         lines = win["lines"] if win else []
         m["vlmViews"] = {"lines": lines, "score": win["score"] if win else 0.0, "frame": win and win["frame"],
+                         "show": win and showView(win, perView),
                          "turn": win and win["turn"], "support": support, "views": len(views[r]["views"]),
                          "readings": perView, "agree": agree(m.get("lines", []), lines), "model": res["model"]}
         k = m["vlmViews"]["agree"]
