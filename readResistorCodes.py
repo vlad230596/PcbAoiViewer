@@ -1,7 +1,7 @@
 """CLI: read the SMD resistor marking codes of a panorama with the local recognizer (ResistorCodes.py), or evaluate it.
 
-    venv/Scripts/python.exe readResistorCodes.py out/captured_51.5            # -> markings.json parts[ref].resistorCode
-    venv/Scripts/python.exe readResistorCodes.py --eval                       # accuracy on dataset/resistor_codes
+    uv run readResistorCodes.py out/captured_51.5            # -> markings.json parts[ref].resistorCode
+    uv run readResistorCodes.py --eval                       # accuracy on dataset/resistor_codes
 
 Reading: every resistor of board.json that markings.json does not mark absent; parts/<ref>.jpg is tried in turns 0 and
 180 (arrays, footprint *ARRAY*: all four), without looking at the first reading. The recognizer is trained on

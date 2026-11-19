@@ -1,10 +1,10 @@
 """CLI: stitch a grid of "{x}_{y}.png" frames using machine coordinates as primary geometry.
 
 Example:
-    venv/Scripts/python.exe stitchGrid.py SocketTester2/captured_51.5
-    venv/Scripts/python.exe stitchGrid.py SocketTester2/captured_51.5 --no-refine --out out/captured_51.5_norefine
-    venv/Scripts/python.exe stitchGrid.py SocketTester2/captured_51.5 --parallax-regions --out out/captured_51.5_parallax
-    venv/Scripts/python.exe stitchGrid.py SocketTester2/captured_51.5 --scale 0.25 --no-viewer
+    uv run stitchGrid.py SocketTester2/captured_51.5
+    uv run stitchGrid.py SocketTester2/captured_51.5 --no-refine --out out/captured_51.5_norefine
+    uv run stitchGrid.py SocketTester2/captured_51.5 --parallax-regions --out out/captured_51.5_parallax
+    uv run stitchGrid.py SocketTester2/captured_51.5 --scale 0.25 --no-viewer
 """
 import argparse
 import json

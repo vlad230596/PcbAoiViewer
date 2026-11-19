@@ -1,6 +1,6 @@
 """CLI: one page that lines up every reading of every resistor marking — for eyes, and as the labelled dataset view.
 
-    venv/Scripts/python.exe compareReadings.py out/captured_51.5 [--group Resistors]
+    uv run compareReadings.py out/captured_51.5 [--group Resistors]
 
 Row per part: the crop as cut (parts/), the same crop turned upright (`turn` of the reference reading), the
 brightened reading image (marking_img/: grey + CLAHE + enlarged + upright), then

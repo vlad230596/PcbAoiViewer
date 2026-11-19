@@ -1,7 +1,7 @@
 """CLI: compare the focus-stack height map with the board's STEP model (CadReference.py).
 
 Example:
-    venv/Scripts/python.exe compareCad.py out/stack --board boards/Antilatency.SocketTester.Main-r79 --align out/captured_51.5
+    uv run compareCad.py out/stack --board boards/Antilatency.SocketTester.Main-r79 --align out/captured_51.5
 
 Needs boards/<board>/model/ (stepToMesh.py, CAD venv) and the alignBoard.py fit of the reference panorama the stack
 was built on (same canvas, --scale 1). Writes <stack>/cad/: cad_height.npy, error.npy, cad_owner.npy, *.bin for 3d.html,

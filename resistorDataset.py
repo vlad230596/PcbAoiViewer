@@ -1,11 +1,11 @@
 """CLI: the dataset of SMD resistor marking codes (ResistorCodes.py), grown from every panorama whose markings were read.
 
-    venv/Scripts/python.exe resistorDataset.py add out/captured_51.5 --auto       # labels where two readings agree
-    venv/Scripts/python.exe resistorDataset.py add out/captured_51.5              # labels = the reference reading
-    venv/Scripts/python.exe resistorDataset.py correct out/captured_51.5 R91 512  # one part, the right label
-    venv/Scripts/python.exe resistorDataset.py correct out/captured_51.5 R44 -    # not a usable sample
-    venv/Scripts/python.exe resistorDataset.py synth --sheet out/synth_sheet.png  # synthetic glyphs (SynthGlyphs.py)
-    venv/Scripts/python.exe resistorDataset.py stats
+    uv run resistorDataset.py add out/captured_51.5 --auto       # labels where two readings agree
+    uv run resistorDataset.py add out/captured_51.5              # labels = the reference reading
+    uv run resistorDataset.py correct out/captured_51.5 R91 512  # one part, the right label
+    uv run resistorDataset.py correct out/captured_51.5 R44 -    # not a usable sample
+    uv run resistorDataset.py synth --sheet out/synth_sheet.png  # synthetic glyphs (SynthGlyphs.py)
+    uv run resistorDataset.py stats
 
 dataset/resistor_codes/ (tracked in git, small):
     manifest.csv            one row per part: image, bodyBox, label, source (panorama folder), board, ref, footprint,

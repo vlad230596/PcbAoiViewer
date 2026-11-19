@@ -1,0 +1,22 @@
+[project]
+name = "pcb-aoi-viewer"
+version = "0.1.0"
+description = "PCB automated optical inspection: grid stitching, focus stacking, board alignment, marking reading"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "opencv-python>=4.9,<5", # OpenCV 5 has no AKAZE_create
+    "numpy>=1.26",
+    "rapidocr-onnxruntime~=1.2.3", # 1.4 reads differently; results in README are from 1.2.3
+    "pyserial>=3.5",
+    "dearpygui>=1.10",
+]
+
+[dependency-groups]
+# old pipeline only (main.py, MainStitcher.py, PlaneStitcher.py, ViewDrawer.py, test.py)
+legacy = [
+    "stitching>=0.5.3",
+]
+
+[tool.uv]
+package = false

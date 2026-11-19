@@ -1,9 +1,9 @@
 """CLI: focus stacking of grids captured at several heights -> all-in-focus panorama, height map, 3D viewer.
 
 Example:
-    venv/Scripts/python.exe stackFocus.py "SocketTester2/captured_*" --ref 51.5
-    venv/Scripts/python.exe stackFocus.py "SocketTester2/captured_*" --ref 51.5 --scale 0.5 --no-viewer
-    venv/Scripts/python.exe -m http.server 8765 --directory out/stack
+    uv run stackFocus.py "SocketTester2/captured_*" --ref 51.5
+    uv run stackFocus.py "SocketTester2/captured_*" --ref 51.5 --scale 0.5 --no-viewer
+    uv run python -m http.server 8765 --directory out/stack
 """
 import argparse
 import json

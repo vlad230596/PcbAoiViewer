@@ -23,14 +23,18 @@
 - `PickPlace/` — Pick&Place из Altium (`test.csv`), размеры футпринтов (`AntilatencyFootprints.txt`, высот пока нет), рендер платы `test.png`.
 - `images/`, `withLight/`, `fullLine*`, `line/`, `sq*`, `map/`, `multi/`, `FinalBlended/` — ранние эксперименты, к новому конвейеру не относятся.
 
+## Окружение
+
+Зависимости в `pyproject.toml`, менеджер — [uv](https://docs.astral.sh/uv/). `uv sync` ставит всё в `.venv/` (Python 3.13), `uv sync --group legacy` добавляет `stitching` для старого конвейера. Скрипты запускаются через `uv run <скрипт>.py`.
+
 ## Сшивка (этапы 2–4)
 
-Запуск и все опции: `venv/Scripts/python.exe stitchGrid.py --help`. Результат пишется в `out/<папка>/` (в `.gitignore`).
+Запуск и все опции: `uv run stitchGrid.py --help`. Результат пишется в `out/<папка>/` (в `.gitignore`).
 
 ```bash
-venv/Scripts/python.exe stitchGrid.py SocketTester2/captured_51.5
-venv/Scripts/python.exe stitchGrid.py SocketTester2/captured_51.5 --parallax-regions --out out/captured_51.5_parallax
-venv/Scripts/python.exe -m http.server 8765 --directory out/captured_51.5
+uv run stitchGrid.py SocketTester2/captured_51.5
+uv run stitchGrid.py SocketTester2/captured_51.5 --parallax-regions --out out/captured_51.5_parallax
+uv run python -m http.server 8765 --directory out/captured_51.5
 ```
 
 Конвейер (`GridStitcher.py`):
@@ -64,9 +68,9 @@ venv/Scripts/python.exe -m http.server 8765 --directory out/captured_51.5
 ## Фокус-стекинг, карта высот, 3D (этап 5)
 
 ```bash
-venv/Scripts/python.exe stackFocus.py "SocketTester2/captured_*" --ref 51.5
-venv/Scripts/python.exe stackFocus.py "SocketTester2/captured_*" --ref 51.5 --scale 0.5 --out out/stack_s05
-venv/Scripts/python.exe -m http.server 8765 --directory out/stack
+uv run stackFocus.py "SocketTester2/captured_*" --ref 51.5
+uv run stackFocus.py "SocketTester2/captured_*" --ref 51.5 --scale 0.5 --out out/stack_s05
+uv run python -m http.server 8765 --directory out/stack
 ```
 
 Берутся папки по шаблону, число в конце имени — Z. По умолчанию Z от 50.0 с шагом 0.5 (`--zmin`, `--zstep`), это 11 слоёв. Конвейер (`FocusStack.py`):
@@ -140,8 +144,8 @@ venv/Scripts/python.exe -m http.server 8765 --directory out/stack
 ## Совмещение платы с панорамой (этап 6)
 
 ```bash
-venv/Scripts/python.exe stitchGrid.py captured_51.5
-venv/Scripts/python.exe alignBoard.py out/captured_51.5 boards/Antilatency.SocketTester.Main-r79
+uv run stitchGrid.py captured_51.5
+uv run alignBoard.py out/captured_51.5 boards/Antilatency.SocketTester.Main-r79
 ```
 
 Модель — одно аффинное преобразование M: мм платы (Datum IPC-2581, Y вверх) → пиксели `panorama.jpg`. Камера только переносится, так что хватило бы подобия; аффинное поглощает ещё и анизотропию калибровки (77.66 / 77.35 px/мм).
@@ -162,7 +166,7 @@ venv/Scripts/python.exe alignBoard.py out/captured_51.5 boards/Antilatency.Socke
 - `parts/<ref>.jpg` — каждый компонент своей стороны отдельной картинкой, «прямо»: поворот компонента снят, вид сверху, контур + площадки + 0.5 мм поля, родное разрешение 77 px/мм (крупные разъёмы ужаты до 1400 px). На них потом читается маркировка. Надпись может оказаться повёрнутой на 180° (R3, X1), поэтому распознавать нужно в обеих ориентациях;
 - `align_check.jpg` и `align_crops/<ref>.jpg` — для контроля на глаз.
 
-Вьювер (`index.html`) сам находит `board.json` и показывает слой «Board (CAD)». После изменения `BuildViewer.py` страницу можно пересобрать без повторной сшивки: `venv/Scripts/python.exe BuildViewer.py out/captured_51.5`.
+Вьювер (`index.html`) сам находит `board.json` и показывает слой «Board (CAD)». После изменения `BuildViewer.py` страницу можно пересобрать без повторной сшивки: `uv run BuildViewer.py out/captured_51.5`.
 
 - Контуры компонентов окрашиваются по статусу установки или по группе. Статусы: fitted, NC (штрихом), optional, нет в BOM. Клик по легенде прячет группу.
 - Площадки — отдельный слой, независимый от контуров. Подписи появляются при приближении и только у видимых компонентов.
@@ -188,9 +192,9 @@ venv/Scripts/python.exe alignBoard.py out/captured_51.5 boards/Antilatency.Socke
 ## Маркировка: чтение и сверка с BOM (этап 7)
 
 ```bash
-venv/Scripts/python.exe markingSheets.py out/captured_51.5     # листы для чтения: marking_sheets/*.jpg + sheets.json
+uv run markingSheets.py out/captured_51.5     # листы для чтения: marking_sheets/*.jpg + sheets.json
 # чтение -> out/captured_51.5/markings.json
-venv/Scripts/python.exe markingCheck.py out/captured_51.5      # сверка с BOM, вердикт пишется в markings.json
+uv run markingCheck.py out/captured_51.5      # сверка с BOM, вердикт пишется в markings.json
 ```
 
 `markingSheets.py` раскладывает вырезки из `parts/` по группам BOM на листы шириной 1800 px. У мелких деталей рядом с вырезкой лежит её копия, повёрнутая на 180°. На листе подписано только позиционное обозначение, без номинала и ожидаемого кода, чтобы не подсказывать читающему. Площадки, отверстия и перемычки (35 шт.) пропускаются.
@@ -223,8 +227,8 @@ venv/Scripts/python.exe markingCheck.py out/captured_51.5      # сверка с
 ### Локальный OCR как второе, независимое чтение
 
 ```bash
-venv/Scripts/python.exe ocrMarkings.py out/captured_51.5                  # ~6 мин на 233 детали
-venv/Scripts/python.exe ocrMarkings.py out/captured_51.5 --compare-only   # только пересравнить после правки markings.json
+uv run ocrMarkings.py out/captured_51.5                  # ~6 мин на 233 детали
+uv run ocrMarkings.py out/captured_51.5 --compare-only   # только пересравнить после правки markings.json
 ```
 
 Движок — RapidOCR (`rapidocr_onnxruntime`, PaddleOCR PP-OCRv3 det + rec в ONNX, CPU). Модели (13 МБ) лежат в самом пакете, при запуске ничего не скачивается. Для каждой детали:
@@ -261,14 +265,14 @@ venv/Scripts/python.exe ocrMarkings.py out/captured_51.5 --compare-only   # то
 ### Свой распознаватель кодов резисторов (третье чтение)
 
 ```bash
-venv/Scripts/python.exe resistorDataset.py add out/captured_51.5 --auto       # метки там, где эталон и Qwen совпали
-venv/Scripts/python.exe resistorDataset.py add out/captured_51.5              # метки = эталонное чтение (conf high/medium)
-venv/Scripts/python.exe resistorDataset.py correct out/captured_51.5 R91 512  # одна деталь, правильный код
-venv/Scripts/python.exe resistorDataset.py correct out/captured_51.5 R41 -    # пример негоден (грязь, не в фокусе)
-venv/Scripts/python.exe resistorDataset.py synth --sheet out/synth_sheet.png  # синтетические символы + лист «живые/синт.»
-venv/Scripts/python.exe resistorDataset.py stats                              # сколько каких кодов и символов
-venv/Scripts/python.exe readResistorCodes.py out/captured_51.5                # -> markings.json parts[ref].resistorCode
-venv/Scripts/python.exe readResistorCodes.py --eval                           # точность по шагам, out/resistor_codes_eval/
+uv run resistorDataset.py add out/captured_51.5 --auto       # метки там, где эталон и Qwen совпали
+uv run resistorDataset.py add out/captured_51.5              # метки = эталонное чтение (conf high/medium)
+uv run resistorDataset.py correct out/captured_51.5 R91 512  # одна деталь, правильный код
+uv run resistorDataset.py correct out/captured_51.5 R41 -    # пример негоден (грязь, не в фокусе)
+uv run resistorDataset.py synth --sheet out/synth_sheet.png  # синтетические символы + лист «живые/синт.»
+uv run resistorDataset.py stats                              # сколько каких кодов и символов
+uv run readResistorCodes.py out/captured_51.5                # -> markings.json parts[ref].resistorCode
+uv run readResistorCodes.py --eval                           # точность по шагам, out/resistor_codes_eval/
 ```
 
 RapidOCR не видит точечные коды 0603, поэтому для резисторов сделан свой распознаватель: только numpy + OpenCV, CPU, ~0.1 с на деталь, обучение ~1 с при каждом запуске (модель — сами примеры). Код: `ResistorCodes.py`, синтетика — `SynthGlyphs.py`.
@@ -320,13 +324,13 @@ RapidOCR не видит точечные коды 0603, поэтому для �
 
 ### Qwen3-VL-2B: второе чтение локальной VLM (основное автоматическое)
 
-По обзору `research/ocr_engines/REPORT.md` лучший локальный читатель — Qwen3-VL-2B-Instruct (Apache-2.0, 4 ГБ весов). Он работает в **отдельном venv**, проектный `venv/` остаётся лёгким:
+По обзору `research/ocr_engines/REPORT.md` лучший локальный читатель — Qwen3-VL-2B-Instruct (Apache-2.0, 4 ГБ весов). Он работает в **отдельном venv**, проектное окружение (`.venv/`, uv) остаётся лёгким:
 
 ```bash
-venv/Scripts/python.exe vlmMarkings.py out/captured_51.5    # ~40 с на 233 детали на RTX 5080 (вместе с загрузкой модели)
+uv run vlmMarkings.py out/captured_51.5    # ~40 с на 233 детали на RTX 5080 (вместе с загрузкой модели)
 ```
 
-- `vlmMarkings.py` (проектный venv) собирает задания из `markings.json`: `parts/<ref>.jpg` и поворот `turn` из первого чтения. Дальше он запускает подпроцессом `vlmWorker.py` в VLM-venv и пишет `parts[ref].vlm = {lines, score, turn, agree, model}`. `agree` считается как у OCR. Обмен идёт через `vlm_jobs.json` / `vlm_results.json` в папке панорамы.
+- `vlmMarkings.py` (проектное окружение) собирает задания из `markings.json`: `parts/<ref>.jpg` и поворот `turn` из первого чтения. Дальше он запускает подпроцессом `vlmWorker.py` в VLM-venv и пишет `parts[ref].vlm = {lines, score, turn, agree, model}`. `agree` считается как у OCR. Обмен идёт через `vlm_jobs.json` / `vlm_results.json` в папке панорамы.
 - VLM-venv — `--python` или `AOI_VLM_PYTHON`. По умолчанию это `research/ocr_engines/venvs/gpu`: torch 2.14 cu130 + transformers 5.20, ≈3.4 ГБ. Веса — `--hf-home` / `HF_HOME`, по умолчанию `research/ocr_engines/cache/hf`; если модель там есть, запуск идёт офлайн. Как собрать свой venv, написано в шапке `vlmMarkings.py`. На CPU — около 7 с на деталь.
 - Вход — цветная вырезка без обработки: CLAHE модели вредит. Короткая сторона увеличивается до ≥ 448 px, декодирование жадное. Промпт фиксированный и **никогда не содержит ожидаемого значения из BOM**, иначе проверка превратится в эхо.
 
@@ -355,9 +359,9 @@ venv/Scripts/python.exe vlmMarkings.py out/captured_51.5    # ~40 с на 233 д
 ### Ракурсы из исходных кадров (стек): маркировка микросхем
 
 ```bash
-venv/Scripts/python.exe cutMarkingViews.py out/captured_51.5 --stack out/stack --sheets   # ~20 с, 50 деталей, 162 вида
-venv/Scripts/python.exe vlmMarkings.py out/captured_51.5 --views                            # все виды × 4 поворота, голосование
-venv/Scripts/python.exe BuildViewer.py out/captured_51.5                                    # блок «Source views» в карточке
+uv run cutMarkingViews.py out/captured_51.5 --stack out/stack --sheets   # ~20 с, 50 деталей, 162 вида
+uv run vlmMarkings.py out/captured_51.5 --views                            # все виды × 4 поворота, голосование
+uv run BuildViewer.py out/captured_51.5                                    # блок «Source views» в карточке
 ```
 
 Лазерная маркировка на корпусах видна только под некоторыми углами к свету. Каждую деталь видят 2–4 соседних кадра (шаг сетки 10 мм, кадр ~25 × 14 мм), а панорама в каждой точке берёт один кадр, ближайший к центру, и часто именно тот, где надписи нет. Пример: у U17 в панораме пустой корпус, в кадре `60_70` чётко `K177`. Высота (фокус) влияет меньше, решает **ракурс**.
@@ -406,8 +410,8 @@ U18 (DPAK, ST) читается частично, U19 — виден логот�
 ### Этажи для всей платы (стековый вьювер)
 
 ```bash
-venv/Scripts/python.exe BuildViewer.py out/stack --board out/captured_51.5   # CAD, чтения и ракурсы на странице стека
-venv/Scripts/python.exe -m http.server 8794 --directory out                  # -> http://localhost:8794/stack/
+uv run BuildViewer.py out/stack --board out/captured_51.5   # CAD, чтения и ракурсы на странице стека
+uv run python -m http.server 8794 --directory out                  # -> http://localhost:8794/stack/
 ```
 
 `index.html` одиночной панорамы (`out/captured_51.5`) — это **один этаж**, Z 51.5: в каждой точке один кадр, ближайший к центру. Страница стека теперь показывает плату из любого набора этажей:
@@ -463,12 +467,12 @@ python importBoard.py <artifacts.zip | папка сборки>     # -> boards/
 STEP из архива реестра (`export/ExportSTEP/*.step`) переводится в меш один раз. OpenCascade живёт в отдельном venv, в проектный `venv/` его не ставим:
 
 ```bash
-venv/Scripts/python.exe -m venv research/cad/venv
+uv run python -m venv research/cad/venv
 research/cad/venv/Scripts/python.exe -m pip install cadquery-ocp numpy
 research/cad/venv/Scripts/python.exe stepToMesh.py boards/Antilatency.SocketTester.Main-r79        # -> boards/<плата>/model/ (17 с)
-venv/Scripts/python.exe compareCad.py out/stack --board boards/Antilatency.SocketTester.Main-r79     # эталон высот -> out/stack/cad/, 3d.html (6 с)
-venv/Scripts/python.exe texturedModel.py out/stack --board boards/Antilatency.SocketTester.Main-r79  # фото на модели -> out/stack/model.html (7 с)
-venv/Scripts/python.exe -m http.server 8765 --directory out/stack                                    # model.html и 3d.html только по http
+uv run compareCad.py out/stack --board boards/Antilatency.SocketTester.Main-r79     # эталон высот -> out/stack/cad/, 3d.html (6 с)
+uv run texturedModel.py out/stack --board boards/Antilatency.SocketTester.Main-r79  # фото на модели -> out/stack/model.html (7 с)
+uv run python -m http.server 8765 --directory out/stack                                    # model.html и 3d.html только по http
 ```
 
 - `model/mesh.npz` + `parts.json`: 416 листовых деталей, 645k вершин; позиционное обозначение — `path[2]`. Система координат STEP совпадает с Datum IPC-2581 (без сдвига и зеркала), верх платы z = 0, плата z −1.59…0. Все 324 компонента `board.json` есть в STEP.

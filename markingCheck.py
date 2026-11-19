@@ -1,6 +1,6 @@
 """CLI: check the read markings (markings.json, see markingSheets.py) against the BOM in board.json.
 
-    venv/Scripts/python.exe markingCheck.py out/captured_51.5
+    uv run markingCheck.py out/captured_51.5
 
 Per part, into markings.json parts[ref].check = {status, text}:
     missing     BOM says fitted, the place is empty

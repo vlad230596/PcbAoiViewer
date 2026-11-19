@@ -1,7 +1,7 @@
 """CLI: second reading of the part markings by a local vision-language model (Qwen3-VL-2B), run in its own venv.
 
-    venv/Scripts/python.exe vlmMarkings.py out/captured_51.5 [--refs R1,U3] [--python <vlm venv python>] [--device cpu]
-    venv/Scripts/python.exe vlmMarkings.py out/captured_51.5 --views [--model Qwen/Qwen3-VL-4B-Instruct]
+    uv run vlmMarkings.py out/captured_51.5 [--refs R1,U3] [--python <vlm venv python>] [--device cpu]
+    uv run vlmMarkings.py out/captured_51.5 --views [--model Qwen/Qwen3-VL-4B-Instruct]
 
 The project venv stays light: vlmWorker.py runs in a separate venv with torch + transformers, started here as a
 subprocess; jobs and results go through two JSON files in the panorama folder (vlm_jobs.json, vlm_results.json).

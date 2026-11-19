@@ -1,8 +1,8 @@
 """CLI: the board's STEP model with the stack's photo texture, for a browser viewer (CadTexture.py).
 
-    venv/Scripts/python.exe texturedModel.py out/stack --board boards/Antilatency.SocketTester.Main-r79 \
+    uv run texturedModel.py out/stack --board boards/Antilatency.SocketTester.Main-r79 \
         [--align out/captured_51.5] [--image focus.jpg] [--tex-size 8192] [--no-parallax]
-    venv/Scripts/python.exe -m http.server 8765 --directory out/stack     # then open /model.html
+    uv run python -m http.server 8765 --directory out/stack     # then open /model.html
 
 Needs boards/<board>/model/ (research/cad/venv/Scripts/python.exe stepToMesh.py boards/<board>), the board -> panorama
 fit (alignBoard.py, its board.json; the stack must share the reference canvas, which a stack built from the same

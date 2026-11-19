@@ -1,6 +1,6 @@
 """CLI: local OCR of the part markings as a second, independent reading, and the images the readings come from.
 
-    venv/Scripts/python.exe ocrMarkings.py out/captured_51.5 [--refs R1,U3]
+    uv run ocrMarkings.py out/captured_51.5 [--refs R1,U3]
 
 For every part in markings.json (markingSheets.py -> reading -> markings.json):
   1. marking_img/<ref>.jpg — the image a marking is read from: the part crop (parts/<ref>.jpg) in grey (L of Lab),

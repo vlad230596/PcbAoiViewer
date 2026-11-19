@@ -1,6 +1,6 @@
 """CLI: align a board (importBoard.py -> boards/<name>/board.json) to a stitched panorama (stitchGrid.py -> out/<name>/).
 
-    venv/Scripts/python.exe alignBoard.py out/captured_51.5 boards/Antilatency.SocketTester.Main-r79 [--side top]
+    uv run alignBoard.py out/captured_51.5 boards/Antilatency.SocketTester.Main-r79 [--side top]
 
 Model: one affine M (2x3) from board mm (IPC-2581 Datum, Y up) to panorama px. The camera only translates, so a
 similarity would do; the affine also absorbs the small px/mm anisotropy of the calibration (77.66 / 77.35).

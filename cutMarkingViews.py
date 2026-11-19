@@ -1,6 +1,6 @@
 """CLI: every source view (frame x sharpest height) of the marked parts, for reading their marking.
 
-    venv/Scripts/python.exe cutMarkingViews.py out/captured_51.5 [--stack out/stack] [--refs U17,Q2] [--sheets]
+    uv run cutMarkingViews.py out/captured_51.5 [--stack out/stack] [--refs U17,Q2] [--sheets]
 
 Needs an alignBoard.py panorama folder (board.json) and a stackFocus.py folder of the same reference stitch, built at
 --scale 1 (report.json, index.html, focus.jpg). Writes into the panorama folder:

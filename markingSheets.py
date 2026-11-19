@@ -1,7 +1,7 @@
 """CLI: contact sheets of the part crops (alignBoard.py -> out/<name>/parts/) for reading the markings by eye or by a
 vision model, and the template of markings.json that the reading fills in.
 
-    venv/Scripts/python.exe markingSheets.py out/captured_51.5 [--groups Resistors,ICs] [--no-flip]
+    uv run markingSheets.py out/captured_51.5 [--groups Resistors,ICs] [--no-flip]
 
 Each tile: the crop as cut (the part's own frame) and, for small parts, the same crop turned 180 deg next to it, since
 a code can be printed either way round. Tiles are labelled with the designator only: no BOM value or expected code,
